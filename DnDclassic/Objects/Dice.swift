@@ -1,0 +1,32 @@
+//
+//  Dice.swift
+//  DnDclassic
+//
+//  Created by Adam Lovastyik on 23/02/2020.
+//  Copyright © 2020 Adam Lovastyik. All rights reserved.
+//
+
+import Foundation
+
+struct Dice {
+    
+    private let multiplier: Int
+    
+    init(number: Int = 1) {
+        
+        self.multiplier = number
+    }
+    
+    func roll(delta: Int = 0) -> Int {
+        
+        var result = 0
+        
+        for _ in 0..<multiplier {
+            result += Int.random(in: 1...6)
+        }
+        
+        result += delta
+        
+        return result
+    }
+}
