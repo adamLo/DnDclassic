@@ -25,10 +25,14 @@ class Player {
     
     var coins: Int = 0
     var gems: Int = 0
-    private(set)var food: Int = 10
+    private(set)var food: Int = 0
     
-    private(set) var inventory = [Any]()
+    private(set) var inventory = [InventoryItem]()
     private(set) var potions = [Potion]()
+
+    var leftHandEquipment: InventoryItem?
+    var rightHandEquipment: InventoryItem?
+    var armor: InventoryItem?
     
     init(isPlayer: Bool, name: String, gender: Gender, dexerity: Int, health: Int, luck: Int) {
         
@@ -111,5 +115,23 @@ class Player {
     func hitDamage(points: Int) {
         
         healthCurrent = max(healthCurrent - points, 0)
+    }
+    
+    func fillStartingInventory(potionType: CharacterProperty) {
+        
+        let sword = InventoryItem(type: .weapon, name: "Sword", identifier: 0)
+        let armor = InventoryItem(type: .armor, name: "Leather Armor", identifier: 1)
+        let lamp = InventoryItem(type: .lamp, name: "Lamp", identifier: 2)
+        inventory = [sword, armor, lamp]
+        
+        rightHandEquipment = sword
+        self.armor = armor
+        
+        let potion = Potion(type: potionType)
+        potions = [potion]
+        
+        coins = 0
+        food = 0
+        gems = 0
     }
 }
