@@ -15,7 +15,7 @@ class Player {
     let gender: Gender
     
     let dexterityStarting: Int
-    var dexterityCurrenty: Int = 0
+    var dexterityCurrent: Int = 0
     
     let healthStarting: Int
     private(set)var healthCurrent: Int  = 0
@@ -37,7 +37,7 @@ class Player {
         self.gender = gender
         
         dexterityStarting = dexerity
-        dexterityCurrenty = dexerity
+        dexterityCurrent = dexerity
         
         healthStarting = health
         healthCurrent = health
@@ -76,7 +76,7 @@ class Player {
         
         food -= 1
         
-        healthCurrent = min(healthCurrent + 1, healthStarting)
+        healthCurrent = min(healthCurrent + 4, healthStarting)
     }
     
     func drinkPotion(of type: CharacterProperty) {
@@ -96,7 +96,7 @@ class Player {
         
         switch potion.type {
         case .dexerity:
-            dexterityCurrenty = dexterityStarting
+            dexterityCurrent = dexterityStarting
         case .health:
             healthCurrent = healthStarting
         case .luck:

@@ -24,8 +24,8 @@ struct Fight {
         
         guard player.healthCurrent > 0, opponent.healthCurrent > 0 else {return (0,0)}
         
-        let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterityCurrenty
-        let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrenty
+        let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterityCurrent
+        let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
         
         var damage = 2
                 

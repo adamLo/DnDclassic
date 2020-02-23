@@ -14,7 +14,6 @@
 		193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 193015442402BD4C00E7B815 /* DnDclassic.xcdatamodeld */; };
 		193015482402BD5200E7B815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193015472402BD5200E7B815 /* Assets.xcassets */; };
 		1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193015492402BD5200E7B815 /* LaunchScreen.storyboard */; };
-		193015562402BD5200E7B815 /* DnDclassicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015552402BD5200E7B815 /* DnDclassicTests.swift */; };
 		193015612402BD5300E7B815 /* DnDclassicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015602402BD5300E7B815 /* DnDclassicUITests.swift */; };
 		193015702402BDA100E7B815 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930156F2402BDA100E7B815 /* Player.swift */; };
 		193015722402BFFB00E7B815 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015712402BFFB00E7B815 /* Gender.swift */; };
@@ -22,6 +21,8 @@
 		193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015752402C2E500E7B815 /* CharacterProperty.swift */; };
 		193015782402C5B100E7B815 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015772402C5B100E7B815 /* Potion.swift */; };
 		1930157A2402CAC600E7B815 /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015792402CAC600E7B815 /* Fight.swift */; };
+		1930157C2402D3C400E7B815 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930157B2402D3C400E7B815 /* PlayerTests.swift */; };
+		1930157E2402D51D00E7B815 /* FightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930157D2402D51D00E7B815 /* FightTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		1930154A2402BD5200E7B815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1930154C2402BD5200E7B815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		193015512402BD5200E7B815 /* DnDclassicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDclassicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		193015552402BD5200E7B815 /* DnDclassicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDclassicTests.swift; sourceTree = "<group>"; };
 		193015572402BD5200E7B815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1930155C2402BD5300E7B815 /* DnDclassicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDclassicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		193015602402BD5300E7B815 /* DnDclassicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDclassicUITests.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		193015752402C2E500E7B815 /* CharacterProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProperty.swift; sourceTree = "<group>"; };
 		193015772402C5B100E7B815 /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 		193015792402CAC600E7B815 /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
+		1930157B2402D3C400E7B815 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		1930157D2402D51D00E7B815 /* FightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,9 @@
 		193015542402BD5200E7B815 /* DnDclassicTests */ = {
 			isa = PBXGroup;
 			children = (
-				193015552402BD5200E7B815 /* DnDclassicTests.swift */,
 				193015572402BD5200E7B815 /* Info.plist */,
+				1930157B2402D3C400E7B815 /* PlayerTests.swift */,
+				1930157D2402D51D00E7B815 /* FightTests.swift */,
 			);
 			path = DnDclassicTests;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 					};
 					193015502402BD5200E7B815 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = 193015372402BD4C00E7B815;
 					};
 					1930155B2402BD5300E7B815 = {
@@ -305,7 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				193015562402BD5200E7B815 /* DnDclassicTests.swift in Sources */,
+				1930157E2402D51D00E7B815 /* FightTests.swift in Sources */,
+				1930157C2402D3C400E7B815 /* PlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +512,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X37H2S679C;
 				INFOPLIST_FILE = DnDclassicTests/Info.plist;
@@ -518,6 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hu.lovastyik.DnDclassicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDclassic.app/DnDclassic";
@@ -529,6 +536,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X37H2S679C;
 				INFOPLIST_FILE = DnDclassicTests/Info.plist;
