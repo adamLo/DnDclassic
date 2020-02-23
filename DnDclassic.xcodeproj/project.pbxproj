@@ -24,6 +24,13 @@
 		1930157C2402D3C400E7B815 /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930157B2402D3C400E7B815 /* PlayerTests.swift */; };
 		1930157E2402D51D00E7B815 /* FightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930157D2402D51D00E7B815 /* FightTests.swift */; };
 		193015802402DC7300E7B815 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930157F2402DC7300E7B815 /* InventoryItem.swift */; };
+		19301582240310F400E7B815 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19301581240310F400E7B815 /* Scene.swift */; };
+		193015842403118A00E7B815 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015832403118A00E7B815 /* Direction.swift */; };
+		193015862403120700E7B815 /* WayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015852403120700E7B815 /* WayPoint.swift */; };
+		19301588240316D700E7B815 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19301587240316D700E7B815 /* Game.swift */; };
+		1930158B240318DE00E7B815 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930158A240318DE00E7B815 /* cover.png */; };
+		1930158D24031CD800E7B815 /* scene_001.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930158C24031CD800E7B815 /* scene_001.png */; };
+		1930158F24031E4400E7B815 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930158E24031E4400E7B815 /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +74,13 @@
 		1930157B2402D3C400E7B815 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		1930157D2402D51D00E7B815 /* FightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightTests.swift; sourceTree = "<group>"; };
 		1930157F2402DC7300E7B815 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
+		19301581240310F400E7B815 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		193015832403118A00E7B815 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		193015852403120700E7B815 /* WayPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayPoint.swift; sourceTree = "<group>"; };
+		19301587240316D700E7B815 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1930158A240318DE00E7B815 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
+		1930158C24031CD800E7B815 /* scene_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_001.png; sourceTree = "<group>"; };
+		1930158E24031E4400E7B815 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +131,7 @@
 		1930153A2402BD4C00E7B815 /* DnDclassic */ = {
 			isa = PBXGroup;
 			children = (
+				19301589240318DE00E7B815 /* Resources */,
 				1930156E2402BD6B00E7B815 /* Objects */,
 				1930153B2402BD4C00E7B815 /* AppDelegate.swift */,
 				1930153D2402BD4C00E7B815 /* SceneDelegate.swift */,
@@ -159,8 +174,22 @@
 				193015772402C5B100E7B815 /* Potion.swift */,
 				193015792402CAC600E7B815 /* Fight.swift */,
 				1930157F2402DC7300E7B815 /* InventoryItem.swift */,
+				19301581240310F400E7B815 /* Scene.swift */,
+				193015832403118A00E7B815 /* Direction.swift */,
+				193015852403120700E7B815 /* WayPoint.swift */,
+				19301587240316D700E7B815 /* Game.swift */,
+				1930158E24031E4400E7B815 /* Action.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		19301589240318DE00E7B815 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1930158C24031CD800E7B815 /* scene_001.png */,
+				1930158A240318DE00E7B815 /* cover.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +300,8 @@
 				1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */,
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
+				1930158B240318DE00E7B815 /* cover.png in Resources */,
+				1930158D24031CD800E7B815 /* scene_001.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,16 +327,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				193015722402BFFB00E7B815 /* Gender.swift in Sources */,
+				19301588240316D700E7B815 /* Game.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
+				1930158F24031E4400E7B815 /* Action.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,
+				193015862403120700E7B815 /* WayPoint.swift in Sources */,
+				19301582240310F400E7B815 /* Scene.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015702402BDA100E7B815 /* Player.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
+				193015842403118A00E7B815 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

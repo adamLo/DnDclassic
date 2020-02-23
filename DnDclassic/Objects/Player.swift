@@ -34,6 +34,8 @@ class Player {
     var rightHandEquipment: InventoryItem?
     var armor: InventoryItem?
     
+    var journey = [Scene]()
+    
     init(isPlayer: Bool, name: String, gender: Gender, dexerity: Int, health: Int, luck: Int) {
         
         self.isPlayer = isPlayer
