@@ -58,7 +58,6 @@ class Player {
         }
     }
     
-    @discardableResult
     func tryLuck(rolled: Int? = nil) -> (rolled: Int, success: Bool)  {
         
         let _rolled = rolled ?? Dice(number: 2).roll()

@@ -23,11 +23,12 @@ class PlayerTests: XCTestCase {
         
         XCTAssertEqual(result.rolled, roll)
         XCTAssertTrue(result.success)
+        XCTAssertEqual(player.luckCurrent, 11)
     }
 
     func testLuckNegative() {
         
-        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 2)
+        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 1)
         
         let roll = 24
         
@@ -35,6 +36,7 @@ class PlayerTests: XCTestCase {
         
         XCTAssertEqual(result.rolled, roll)
         XCTAssertFalse(result.success)
+        XCTAssertEqual(player.luckCurrent, 0)
     }
     
     // MARK: - Health
