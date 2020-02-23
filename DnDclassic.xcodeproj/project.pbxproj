@@ -21,6 +21,7 @@
 		193015742402C0B700E7B815 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015732402C0B700E7B815 /* Dice.swift */; };
 		193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015752402C2E500E7B815 /* CharacterProperty.swift */; };
 		193015782402C5B100E7B815 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015772402C5B100E7B815 /* Potion.swift */; };
+		1930157A2402CAC600E7B815 /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015792402CAC600E7B815 /* Fight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		193015732402C0B700E7B815 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		193015752402C2E500E7B815 /* CharacterProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProperty.swift; sourceTree = "<group>"; };
 		193015772402C5B100E7B815 /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
+		193015792402CAC600E7B815 /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				193015732402C0B700E7B815 /* Dice.swift */,
 				193015752402C2E500E7B815 /* CharacterProperty.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
+				193015792402CAC600E7B815 /* Fight.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
+				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015702402BDA100E7B815 /* Player.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,

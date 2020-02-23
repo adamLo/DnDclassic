@@ -11,14 +11,14 @@ import Foundation
 class Player {
     
     let name: String
-    
+    let isPlayer: Bool
     let gender: Gender
     
     let dexterityStarting: Int
     var dexterityCurrenty: Int = 0
     
     let healthStarting: Int
-    var healthCurrent: Int  = 0
+    private(set)var healthCurrent: Int  = 0
     
     private(set) var luckStarting: Int
     var luckCurrent: Int = 0
@@ -30,8 +30,9 @@ class Player {
     private(set) var inventory = [Any]()
     private(set) var potions = [Potion]()
     
-    init(name: String, gender: Gender, dexerity: Int, health: Int, luck: Int) {
+    init(isPlayer: Bool, name: String, gender: Gender, dexerity: Int, health: Int, luck: Int) {
         
+        self.isPlayer = isPlayer
         self.name = name
         self.gender = gender
         
@@ -57,7 +58,8 @@ class Player {
         }
     }
     
-    func tryLuck() -> Bool {
+    @discardableResult
+    func tryLuck() -> (rolled: Int, success: Bool)  {
         
         let rolled = Dice(number: 2).roll()
                     
@@ -65,7 +67,7 @@ class Player {
         
         luckCurrent = max(luckCurrent - 1, 0)
         
-        return result
+        return (rolled, result)
     }
     
     func eat() {
@@ -105,5 +107,10 @@ class Player {
         if potion.amount == 0 {
             potions.remove(at: index)
         }
+    }
+    
+    func hitDamage(points: Int) {
+        
+        healthCurrent = max(healthCurrent - points, 0)
     }
 }
