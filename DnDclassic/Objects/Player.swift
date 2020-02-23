@@ -59,15 +59,15 @@ class Player {
     }
     
     @discardableResult
-    func tryLuck() -> (rolled: Int, success: Bool)  {
+    func tryLuck(rolled: Int? = nil) -> (rolled: Int, success: Bool)  {
         
-        let rolled = Dice(number: 2).roll()
+        let _rolled = rolled ?? Dice(number: 2).roll()
                     
-        let result = rolled <= luckCurrent
+        let result = _rolled <= luckCurrent
         
         luckCurrent = max(luckCurrent - 1, 0)
         
-        return (rolled, result)
+        return (_rolled, result)
     }
     
     func eat() {

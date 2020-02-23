@@ -20,12 +20,12 @@ struct Fight {
     }
     
     @discardableResult
-    func performRound(withLuck: Bool? = nil) -> (playerHit: Int, opponentHit: Int) {
+    func performRound(playerRoll: Int? = nil, opponentRoll: Int? = nil, withLuck: Bool? = nil) -> (playerHit: Int, opponentHit: Int) {
         
         guard player.healthCurrent > 0, opponent.healthCurrent > 0 else {return (0,0)}
         
-        let opponentAttack = Dice(number: 2).roll() + opponent.dexterityCurrenty
-        let playerAttack = Dice(number: 2).roll() + player.dexterityCurrenty
+        let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterityCurrenty
+        let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrenty
         
         var damage = 2
                 
