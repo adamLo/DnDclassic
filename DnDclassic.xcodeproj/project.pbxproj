@@ -16,6 +16,11 @@
 		1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193015492402BD5200E7B815 /* LaunchScreen.storyboard */; };
 		193015562402BD5200E7B815 /* DnDclassicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015552402BD5200E7B815 /* DnDclassicTests.swift */; };
 		193015612402BD5300E7B815 /* DnDclassicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015602402BD5300E7B815 /* DnDclassicUITests.swift */; };
+		193015702402BDA100E7B815 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930156F2402BDA100E7B815 /* Player.swift */; };
+		193015722402BFFB00E7B815 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015712402BFFB00E7B815 /* Gender.swift */; };
+		193015742402C0B700E7B815 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015732402C0B700E7B815 /* Dice.swift */; };
+		193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015752402C2E500E7B815 /* CharacterProperty.swift */; };
+		193015782402C5B100E7B815 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015772402C5B100E7B815 /* Potion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		1930155C2402BD5300E7B815 /* DnDclassicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDclassicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		193015602402BD5300E7B815 /* DnDclassicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDclassicUITests.swift; sourceTree = "<group>"; };
 		193015622402BD5300E7B815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1930156F2402BDA100E7B815 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		193015712402BFFB00E7B815 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		193015732402C0B700E7B815 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		193015752402C2E500E7B815 /* CharacterProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProperty.swift; sourceTree = "<group>"; };
+		193015772402C5B100E7B815 /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		1930153A2402BD4C00E7B815 /* DnDclassic */ = {
 			isa = PBXGroup;
 			children = (
+				1930156E2402BD6B00E7B815 /* Objects */,
 				1930153B2402BD4C00E7B815 /* AppDelegate.swift */,
 				1930153D2402BD4C00E7B815 /* SceneDelegate.swift */,
 				1930153F2402BD4C00E7B815 /* ViewController.swift */,
@@ -129,6 +140,18 @@
 				193015622402BD5300E7B815 /* Info.plist */,
 			);
 			path = DnDclassicUITests;
+			sourceTree = "<group>";
+		};
+		1930156E2402BD6B00E7B815 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1930156F2402BDA100E7B815 /* Player.swift */,
+				193015712402BFFB00E7B815 /* Gender.swift */,
+				193015732402C0B700E7B815 /* Dice.swift */,
+				193015752402C2E500E7B815 /* CharacterProperty.swift */,
+				193015772402C5B100E7B815 /* Potion.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193015722402BFFB00E7B815 /* Gender.swift in Sources */,
+				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,
+				193015782402C5B100E7B815 /* Potion.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
+				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
+				193015702402BDA100E7B815 /* Player.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
