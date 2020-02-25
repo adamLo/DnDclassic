@@ -83,7 +83,599 @@
 				{
 					"direction": "south", 
 					"destination": 332, 
-					"catpion": "Dél felé veszed az utad, ahonnan szintén keletnek visz az út, néhány méter megtétele után"
+					"caption": "Dél felé veszed az utad, ahonnan szintén keletnek visz az út, néhány méter megtétele után"
+				}
+			]
+		},
+		{
+			"id": 5,
+			"story": "A folyosó keleti falán durva gerendákból ácsolt kapubejáró áll. Hallgatózol az ajtónál, és egy jókedvű, dünnyögő hangot hallasz.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 97,
+					"caption": "Bekopogsz az ajtón és bemész"
+				},
+				{
+					"direction": "north",
+					"destination": 292,
+					"caption": "Folytatod az utadat észak felé"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"story": "Az ajtó hatalmas és szilárd, kilincs nincsen rajta. Nekirontasz, de mindhiába. Az ajtó meg sem moccan. Úgy döntesz, hogy feladod, és azon a nyíláson mész keresztül, amely mellett a kelet-nyugati átjáróhelynél haladtál el előbb.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 89,
+					"caption": "Lapozz"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"story": "Egy sebesen áramló folyó északi partján vagy, egy hatalmas föld alatti barlangban.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 214,
+					"caption": "Lapozz"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"story": "A folyosót előtted erős ajtó zárja le. Hallgatózol, de nem hallasz semmit. Megpróbálod lenyomni a kilincset. Az ajtó enged, és te belépsz a szobába. Ahogy körülnézel, egyszer csak hangos kiáltást hallasz a hátad mögül, s ahogy megfordulsz, megpillantasz egy vadembert, amint nagyokat ugorva feléd rohan, miközben feje felett egy hatalmas csatabárdot forgat. Egy őrült Barbárral állsz szemben, és meg kell küzdened vele! Szemben az északi falon van egy ajtó, amelyen keresztül a Csata közben akár elmenekülhetsz.",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Barbár",
+							"gender": "male",
+							"dexerity": 6,
+							"health": 6
+						}
+					],
+					"escape": {
+						"direction": "north",
+						"destination": 189,
+						"caption": "Lapozz"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 273,
+						"caption": "Legyőzted a barbárt"
+					}
+				}
+			]
+		},
+		{
+			"id": 9,
+			"cover": "scene_009.png",
+			"story": "Meghökkensz, hogy a blöff milyen jól sikerült, és elhatározod, hogy továbbra is próbára teszed a szerencsédet. Ha akarod, megvizsgálhatod a Csontvázak szerszámait, vagy úgy tehetsz, mintha keresnél valamit, miközben átkutathatod a különféle asztalok, padok fiókjait. Zajt hallasz az északi ajtó mögül, és tudod, hogy sietned kell!",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 34,
+					"caption": "A szerszámokra vagy kíváncsi"
+				},
+				{
+					"direction": "unknown",
+					"destination": 332,
+					"caption": "A fiókokat kutatod át"
+				}
+			]
+		},
+		{
+			"id": 10,
+			"story": "Visszaérkeztél az elágazáshoz, és észak felé indulsz.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"destination": 77,
+					"caption": "Lapozz"
+				}
+			]
+		},
+		{
+			"id": 11,
+			"story": "Követed a folyosót nyugat felé, amikor az egy kanyarral hirtelen dél felé fordul. Közvetlenül a forduló előtt megpillantasz egy útjelző táblát, melyen ez áll: Építési terület. Előtted egy lépcső vezet lefelé. Eddig még csak három lépcsőfok készült el. Egy csomó lapát, csákány és egyéb szerszám hever szanaszét a lépcsők mellett, de amint befordulsz a saroknál, hirtelen mozgásba lendülnek, és lázasan dolgoznak a lépcsőkön. Nézed, hogy a különféle szerszámok hogyan ásnak és kalapálnak, mintha láthatatlan munkások dolgoznának velük. Zümmögő énekszót hallasz, amely egyre erősödik, és felismered a Törpék indulóját: „Hej-hó, hej-hó, hej dalolni jó...“ Amint állsz és nézelődsz, elkezdesz kuncogni, a látvány egészen szórakoztató. Leülsz, és tovább figyelsz, sőt még beszélgetni is sikerül némelyik mágikus szerszámmal.",
+			"actions": [
+				{
+					"type": "Rest",
+					"health": 2,
+					"dexerity": 1,
+					"finished": [
+						{
+							"direction": "north",
+							"destination": 366,
+							"caption": "Visszamész a folyosóra az útkereszteződéshez, ahonnan elindulhatsz észak felé"
+						},
+						{
+							"direction": "south",
+							"destination": 250,
+							"caption": "Elindulsz dél felé"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 12,
+			"story": "Amint meghúzod az ajtónyitó gombot, fülsiketítő csengő-bongó hang tölti be a folyosót. Kétségbeesetten becsapod az ajtót, hogy a riasztó elhallgasson, de az már megtette a dolgát. Hallod a lábdobogást, amint feléd rohan valaki a folyosón.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 161,
+					"caption": "Kit haragítottál magadra?",
+					"return": [
+						{
+							"direction": "unknown",
+							"destination": 256,
+							"caption": "Visszafordulsz az elágazáshoz"
+						},
+						{
+							"direction": "unknown",
+							"destination": 364,
+							"caption": "Megpróbálod megnyomni az ajtónyitó gombot"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 13,
+			"story": "Megsebesültél a fejeden, szédelegsz, amint lábra állsz. A négy férfi készen áll a harcra, és libasorban, fegyverrel a kezükben feléd közelednek. Tapogatózva mászol le a falon a déli kapu irányába, de ez még akkor is kockázatos, ha sikerül elérned oda. A lábad megcsúszik a laza kavicsokon, és a földre zuhansz. Még meg sem tudod vetni a lábad, mikor ellenfeleid rád vetik magukat.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 282,
+					"caption": "Lapozz"
+				}
+			]
+		},
+		{
+			"id": 14,
+			"story": "Bár semmi jele, hogy titkos folyosók is lennének, egyszer csak lépések közeledő zaját hallod.",			
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"destination": 161,
+					"caption": "Hogy megtudd, ki vagy mi az, meg kell küzdened vele.",
+					"return": [
+						{
+							"direction": "unknown",
+							"destination": 117,
+							"caption": "Legyőzted a szörnyet (vagy elmenekültél)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 15,
+			"story": "Amint ülsz a padon és falatozol, egyszer csak érzed, hogy teljesen kipihented magad, és a fájdalom is saját magától illant el testedből. Ez egy elvarázsolt pihenőhely.",
+			"actions": [
+				{
+					"type": "Rest",
+					"health": 2,
+					"dexerity": 1,
+					"finished": [
+						{
+							"direction": "north",
+							"destination": 367,
+							"caption": "Továbbmész a folyosón"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": 16,
+			"story": "Miközben kirántod a kardodat, az Ogre meghall téged, és támadásba lendül.",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Ogre",
+							"gender": "male",
+							"dexerity": 8,
+							"health": 10
+						}
+					],
+					"escape": {
+						"direction": "north",
+						"destination": 269,
+						"caption": "Elmenekülsz visszafelé a folyosón",
+						"minimumRounds": 1
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 50,
+						"caption": "Legyőzted az ogrét"
+					}
+				}
+			]
+		},
+		{
+			"id": 17,
+			"story": "A cövek és a fakalapács segítségével (ha nincs nálad, ideiglenesen összetákolsz valamit) keresztet formálsz, azzal mész tovább a Vámpír felé, és sarokba kényszeríted. Sziszeg rád, és kapkod feléd, de nem jöhet közel hozzád. Mindazonáltal elég bonyolultnak látszik a feladat, hogy a cövekkel döfjed szíven. Amint haladsz előre, megbotlasz és előrezuhansz. Szerencsére a cövek a kezedből egyenesen a Vámpír felé repül, és belehasít a sikoltozó szörnyeteg testébe. Tedd próbára Szerencséd! Ha szerencsés vagy, a cövek pontosan átütötte a Vámpír Szívét. Ha nincs szerencséd, csak súrolta a szörnyeteget (a sebesüléssel 3 pontot vesztett Életerejéből), dühösen rád támad, keresztülzavar a szobán a nyugati ajtó felé.",
+			"actions": [
+				{
+					"type": "tryLuck",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "back", 
+						"destination": 327, 
+						"caption": "A cövek pontosan átütötte a Vámpír Szívét"
+					},
+					"badLuck": {
+						"type": "waypoint",
+						"direction": "east", 
+						"destination": 16, 
+						"caption": "Az Ogre meghallotta a zajt"
+					}       
+				}				
+			]
+		},
+		{
+			"id": 17001,
+			"story": "Nincs szerencséd: a cövek csak súrolta a szörnyeteget (a sebesüléssel 3 pontot vesztett Életerejéből), dühösen rád támad",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Tovább küzdesz vele",
+					"destination": 144
+				},
+				{
+					"direction": "unknown",
+					"caption": "Elmenekülsz az ajtón át",
+					"destination": 380
+				}
+			]
+		},
+		{
+			"id": 18,
+			"story": "Továbbhaladsz a folyosón nyugat felé. Vagy ötven méter után az út észak felé kanyarodik. Két vagy három lépés után furcsa hangot hallasz, mintha valami szétmorzsolódna a lábad alatt. Tedd próbára Szerencséd! Ha szerencsés vagy, még sikerül gyorsan viszszaugranod, mielőtt a verem kinyílna alattad. Ha nem volt szerencséd, túl lassú vagy, és belezuhansz a két méter mély verembe.",
+			"actions": [
+				{
+					"type": "tryLuck",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "back", 
+						"destination": 261, 
+						"caption": "Szerencséd volt! Jobban teszed, ha visszamész az elágazáshoz"
+					},
+					"badLuck": {
+						"dexerity": -1,
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 348, 
+						"caption": "Túl lassú vagy, és belezuhansz a két méter mély verembe (1 ÉLETERŐ pontot elveszítesz)"
+					}       
+				}				
+			]
+		},
+		{
+			"id": 19,
+			"story": "Ezt a két gonosz teremtményt Goblinnak hívják. Egyenként támadnak rád.",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Első Goblin",
+							"gender": "unknown",
+							"dexerity": 5,
+							"health": 5
+						},
+						{
+							"name": "Második Goblin",
+							"gender": "unknown",
+							"dexerity": 5,
+							"health": 6
+						}
+					],
+					"escape": {
+						"direction": "unknown",
+						"destination": 317,
+						"caption": "Elmenekülsz",
+						"minimumRounds": 1
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 317,
+						"caption": "Legyőzted a goblinokat"
+					}
+				}
+			]
+		},
+		{
+			"id": 20,
+			"story": "A csetepaté elkezdődik. Te karddal, ők fejszével vannak felfegyverezve. Egyenként rontanak rád.",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Első Törpe",
+							"gender": "unknown",
+							"dexerity": 7,
+							"health": 4
+						},
+						{
+							"name": "Második Törpe",
+							"gender": "unknown",
+							"dexerity": 6,
+							"health": 6
+						},
+						{
+							"name": "Harmadik Törpe",
+							"gender": "unknown",
+							"dexerity": 7,
+							"health": 5
+						},
+						{
+							"name": "Negyedik Törpe",
+							"gender": "unknown",
+							"dexerity": 7,
+							"health": 5
+						}
+					],
+					"escape": {
+						"direction": "unknown",
+						"destination": 291,
+						"caption": "Elmenekülsz az ajtón keresztül",
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 376,
+						"caption": "Győztél"
+					}
+				}
+			]
+		},
+		{
+			"id": 21,
+			"story": "A halott Orkok testéből patakzó zöld vér undorító szagot áraszt. Megkerülöd a holttesteket, és megvizsgálod a ládát. Nem lesz könnyű kinyitni - erős tölgyfából és vasból készült, és szilárdan le van lakatolva.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Megpróbálod lefeszíteni a lakatot a kardoddal",
+					"destination": 339
+				},
+				{
+					"direction": "unknown",
+					"caption": "otthagyod a ládát, és átmész a nyitott ajtón",
+					"destination": 293
+				}
+			]
+		},
+		{
+			"id": 22,
+			"story": "Körültapogatózol titkos ajtók után kutatva, de nem találsz egyet sem. Megállsz, hogy eltöprengj helyzeteden, amikor a mennyezetről gázsugár csap le rád sziszegve. Köhögsz és visszatartod lélegzeted, de nem tudod kitisztítani a tüdőd, térdre csuklasz. Forogni kezd veled a világ, és öntudatlan állapotban a padlóra zuhansz. Mikor magadhoz térsz és körülnézel, ismeretlen helyen találod magad.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Lapozz",
+					"destination": 4
+				},
+			]
+		},
+
+		{
+			"id": 101,
+			"story": "Szerencsés hajításod váratlanul éri a Vámpírt, aki sikoltozik fájdalmában, ahogy a facövek átveri a szívét. Odaugrasz, és még mélyebbre nyomod testébe a cöveket. Halálsikolya egyre gyengül, élettelen teste a földre omlik.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Lapozz",
+					"destination": 327
+				}
+			]
+		},
+
+		{
+			"id": 118,
+			"story": "Ahogy megközelíted, felemelkedik koporsójából, szétnyitja köpenyét, és alávon. Életed utolsó emlékeként éles fájdalom hasít beléd, amint hegyes fogait a nyakadba mélyeszti. Soha nem lett volna szabad a Vámpír szemébe nézned...",
+			"status": {
+				"finished": true,
+				"win": false
+			}			
+		},
+
+		{
+			"id": 144,
+			"story": "A lény rád mered. Pillantásával elkapja tekinteted, és érzed, hogy mostantól fogva képtelen vagy bármit is csinálni. Hívólag int a fejével. Lassan közeledsz feléje. Rád parancsol, hogy dobd el a cöveket. Amint lenézel a cövekre, hirtelen hatalmas akaraterőt érzel magadban. Közvetlen közelről a szörny felé hajítod a cöveket. Tedd próbára Szerencséd! Ha szerencsés vagy, lapozz a 101-re, ha balszerencse üldöz, lapozz a 217- re!",
+			"actions": [
+				{
+					"type": "tryLuck",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 101, 
+						"caption": "Szerencséd van!"
+					},
+					"badLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 217, 
+						"caption": "Nincs szerencséd!"
+					}       
+				}				
+			]
+		},
+
+
+		{
+			"id": 161,
+			"story": "Titkos átjárót vagy ajtót keresve végigtapogatod, végigkopogtatod a sziklafalat. Az okozott zaj visszaverődik a labirintus falairól. A föld alatti világ számtalan különféle teremtménye kóborol szabadon az útvesztőben, és a szörnyek valamelyike felfigyel a zajra.",
+			"actions": [
+				{
+					"type": "roll",
+					"dices": 1,
+					"choices": [
+						{
+							"roll": 1,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Goblin",
+										"gender": "unknown",
+										"dexerity": 5,
+										"health": 3
+									}
+								],
+							}
+						},
+						{
+							"roll": 2,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Ork",
+										"gender": "unknown",
+										"dexerity": 6,
+										"health": 3
+									}
+								]
+							}
+						},
+						{
+							"roll": 3,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Gremlin",
+										"gender": "unknown",
+										"dexerity": 6,
+										"health": 4
+									}
+								]
+							}
+						},
+						{
+							"roll": 4,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Óriás patkány",
+										"gender": "unknown",
+										"dexerity": 5,
+										"health": 4
+									}
+								]
+							}
+						},
+						{
+							"roll": 5,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Csontváz",
+										"gender": "unknown",
+										"dexerity": 6,
+										"health": 5
+									}
+								]
+							}
+						},
+						{
+							"roll": 6,
+							"action": {
+								"type": "fight",
+								"opponents": [
+									{
+										"name": "Troll",
+										"gender": "unknown",
+										"dexerity": 8,
+										"health": 4
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"id": 217,
+			"story": "A cövek épp csak egy kicsivel suhan el a Vámpír feje mellett. Míg figyeled, célba találsz-e, ismét belenézel a szemébe. Hívogatóan újból közelebb int magához. Akaratodat elveszted.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Lapozz",
+					"destination": 118
+				}
+			]
+		},
+
+		{
+			"id": 282,
+			"story": "A négy, feléd csoszogó alak értelem nélküli Zombi. Üres tekintetükön látszik, tevékenységüket nem saját akaratuk irányítja. Még mindig túlságosan szédülsz ahhoz, hogy helyesen gondolkodjál, de most sietve tenned kell valamit. Az első Zombi odaér, és ütésre emeli dorongját. Meg kell küzdened vele. Ha legyőzted az első Zombit, 2 Szerencse pontot nyersz, és már fordulhatsz is szembe a másik hárommal. Egyesével támadnak rád.",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Zombi",
+							"gender": "unknown",
+							"dexerity": 7,
+							"health": 6,
+							"bonus": {
+								"type": "gain",
+								"key": "luck",
+								"value": 2
+							},
+							"order": 0
+						},
+						{
+							"name": "Zombi kaszával",
+							"gender": "unknown",
+							"dexerity": 6,
+							"health": 6,
+							"order": 1
+						},
+						{
+							"name": "Zombi csákánnyal",
+							"gender": "unknown",
+							"dexerity": 6,
+							"health": 6,
+							"order": 2
+						},
+						{
+							"name": "Zombi bárddal",
+							"gender": "unknown",
+							"dexerity": 6,
+							"health": 5,
+							"order": 3
+						},
+					],
+					"escape": {
+						"direction": "north",
+						"destination": 115,
+						"caption": "Lapozz"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 115,
+						"caption": "Legyőzted mind a négy zombit"
+					}
 				}
 			]
 		}
