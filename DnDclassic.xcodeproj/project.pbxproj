@@ -34,6 +34,8 @@
 		19497D692405876A0072CFD0 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D682405876A0072CFD0 /* Deserializable.swift */; };
 		19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */; };
 		19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */ = {isa = PBXBuildFile; fileRef = 19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */; };
+		19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D702405AE400072CFD0 /* SceneViewController.swift */; };
+		19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D722405AF0A0072CFD0 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		19497D682405876A0072CFD0 /* Deserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
 		19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDefinitions.swift; sourceTree = "<group>"; };
 		19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "warlock-firetop-mountain.json"; sourceTree = "<group>"; };
+		19497D702405AE400072CFD0 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		19497D722405AF0A0072CFD0 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		1930153A2402BD4C00E7B815 /* DnDclassic */ = {
 			isa = PBXGroup;
 			children = (
+				19497D6E2405AE020072CFD0 /* UI */,
 				19301589240318DE00E7B815 /* Resources */,
 				1930156E2402BD6B00E7B815 /* Objects */,
 				1930153B2402BD4C00E7B815 /* AppDelegate.swift */,
@@ -207,6 +212,23 @@
 				19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */,
 			);
 			name = Definitions;
+			sourceTree = "<group>";
+		};
+		19497D6E2405AE020072CFD0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				19497D6F2405AE100072CFD0 /* Scene */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		19497D6F2405AE100072CFD0 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				19497D702405AE400072CFD0 /* SceneViewController.swift */,
+				19497D722405AF0A0072CFD0 /* IntroViewController.swift */,
+			);
+			name = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +370,7 @@
 				19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */,
 				19497D692405876A0072CFD0 /* Deserializable.swift in Sources */,
 				19301588240316D700E7B815 /* Game.swift in Sources */,
+				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
@@ -358,6 +381,7 @@
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,
 				193015862403120700E7B815 /* WayPoint.swift in Sources */,
 				19301582240310F400E7B815 /* Scene.swift in Sources */,
+				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015702402BDA100E7B815 /* Player.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,

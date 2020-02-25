@@ -61,6 +61,18 @@ struct Game: Deserializable {
         scenes = _scenes
     }
     
+    var firstScene: Scene? {
+        
+        return scene(id: 0) ?? scene(id: 1)
+    }
+    
+    func scene(id: Int) -> Scene? {
+
+        return scenes.first { (_scene) -> Bool in
+            return _scene.id == id
+        }
+    }
+    
     private struct JSONKeys {
         static let title        = "title"
         static let author       = "author"
