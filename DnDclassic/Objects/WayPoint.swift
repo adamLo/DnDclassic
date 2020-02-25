@@ -8,9 +8,26 @@
 
 import Foundation
 
-struct WayPoint {
+struct WayPoint: Deserializable {
     
     let direction: Direction
-    let destinationId: Int
-    let text: String
+    let destination: Int
+    let caption: String
+    
+    init?(json: JSON) {
+        
+        guard let _directionString = json[JSONKeys.direction] as? String, let _direction = Direction(rawValue: _directionString) else {return nil}
+        guard let _destination = json[JSONKeys.destination] as? Int else {return nil}
+        guard let _caption = json[JSONKeys.caption] as? String else {return nil}
+        
+        direction = _direction
+        destination = _destination
+        caption = _caption
+    }
+    
+    private struct JSONKeys {
+        static let direction    = "direction"
+        static let destination  = "destination"
+        static let caption      = "caption"
+    }
 }

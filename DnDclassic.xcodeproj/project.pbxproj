@@ -31,6 +31,9 @@
 		1930158B240318DE00E7B815 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930158A240318DE00E7B815 /* cover.png */; };
 		1930158D24031CD800E7B815 /* scene_001.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930158C24031CD800E7B815 /* scene_001.png */; };
 		1930158F24031E4400E7B815 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930158E24031E4400E7B815 /* Action.swift */; };
+		19497D692405876A0072CFD0 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D682405876A0072CFD0 /* Deserializable.swift */; };
+		19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */; };
+		19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */ = {isa = PBXBuildFile; fileRef = 19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		1930158A240318DE00E7B815 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
 		1930158C24031CD800E7B815 /* scene_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_001.png; sourceTree = "<group>"; };
 		1930158E24031E4400E7B815 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		19497D682405876A0072CFD0 /* Deserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
+		19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDefinitions.swift; sourceTree = "<group>"; };
+		19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "warlock-firetop-mountain.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 		1930156E2402BD6B00E7B815 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				19497D67240587500072CFD0 /* Definitions */,
 				1930156F2402BDA100E7B815 /* Player.swift */,
 				193015712402BFFB00E7B815 /* Gender.swift */,
 				193015732402C0B700E7B815 /* Dice.swift */,
@@ -186,10 +193,20 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */,
 				1930158C24031CD800E7B815 /* scene_001.png */,
 				1930158A240318DE00E7B815 /* cover.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		19497D67240587500072CFD0 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				19497D682405876A0072CFD0 /* Deserializable.swift */,
+				19497D6A240587A00072CFD0 /* ObjectDefinitions.swift */,
+			);
+			name = Definitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +316,7 @@
 			files = (
 				1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */,
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
+				19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
 				1930158B240318DE00E7B815 /* cover.png in Resources */,
 				1930158D24031CD800E7B815 /* scene_001.png in Resources */,
@@ -327,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				193015722402BFFB00E7B815 /* Gender.swift in Sources */,
+				19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */,
+				19497D692405876A0072CFD0 /* Deserializable.swift in Sources */,
 				19301588240316D700E7B815 /* Game.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,

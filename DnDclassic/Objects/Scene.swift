@@ -9,24 +9,59 @@
 import Foundation
 import UIKit
 
-struct Scene {
+struct Scene: Deserializable {
     
     let id: Int
     let story: String
     let image: UIImage?
     
-    let wayPoints: [WayPoint]
-    var items: [InventoryItem]
-    let actions: [Action]
+    let wayPoints: [WayPoint]?
+    var items: [InventoryItem]?
+    let actions: [Action]?
+        
+    init?(json: JSON) {
+        
+        // ID, Story
+        guard let _id = json[JSONKeys.id] as? Int else {return nil}
+        guard let _story = json[JSONKeys.story] as? String else {return nil}
+        id = _id
+        story = _story
+        
+        // Image
+        if let _imageName = json[JSONKeys.cover] as? String, let _image = UIImage(named: _imageName) {
+            image = _image
+        }
+        else {
+            image = nil
+        }
+        
+        // Items, actions
+        // FIXME: Load items, actions
+        items = nil
+        actions = nil
+        
+        // Waypoints
+        var _waypoints = [WayPoint]()
+        if let _waypointsArray = json[JSONKeys.waypoints] as? JSONArray {
+            for _waypointJson in _waypointsArray {
+                if let _wayPoint = WayPoint(json: _waypointJson) {
+                    _waypoints.append(_wayPoint)
+                }
+            }
+        }
+        if !_waypoints.isEmpty {
+            wayPoints = _waypoints
+        }
+        else {
+            wayPoints = nil
+        }
+    }
     
-    init(id: Int, story: String, image: UIImage? = nil, wayPoints: [WayPoint]? = nil, items: [InventoryItem]? = nil, actions: [Action]? = nil) {
-        
-        self.id = id
-        self.story = story
-        self.image = image
-        
-        self.wayPoints = wayPoints ?? []
-        self.items = items ?? []
-        self.actions = actions ?? []
+    private struct JSONKeys {
+        static let id           = "id"
+        static let story        = "story"
+        static let waypoints    = "waypoints"
+        static let actions      = "actions"
+        static let cover        = "cover"
     }
 }
