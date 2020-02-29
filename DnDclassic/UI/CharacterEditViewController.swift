@@ -188,22 +188,33 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     private func change(potion current: CharacterProperty?) {
+        
+        let reload: (() -> ()) = {
+            self.characterTableView.beginUpdates()
+            self.characterTableView.reloadSections(IndexSet(arrayLiteral: Section.inventory.rawValue, Section.potion.rawValue), with: .automatic)
+            self.characterTableView.endUpdates()
+        }
                 
         let alert = UIAlertController(title: NSLocalizedString("Potion", comment: "Potion selection dialog title"), message: NSLocalizedString("Select potion to help you in your journey", comment: "Potion selection dialog message"), preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + NSLocalizedString("Potion of Health", comment: "Potion of Health title"), style: .default, handler: { (_) in
             self.potion = .health
-            self.characterTableView.reloadData()
+            reload()
         }))
         
         alert.addAction(UIAlertAction(title: "\(current == .dexerity ? "* " : "")" + NSLocalizedString("Potion of Dexerity", comment: "Potion of Dexerity title"), style: .default, handler: { (_) in
             self.potion = .dexerity
-            self.characterTableView.reloadData()
+            reload()
         }))
         
         alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + NSLocalizedString("Potion of Luck", comment: "Potion of Luck title"), style: .default, handler: { (_) in
             self.potion = .luck
-            self.characterTableView.reloadData()
+            reload()
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Remove", comment: "Remove title"), style: .destructive, handler: { (_) in
+            self.potion = nil
+            reload()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
