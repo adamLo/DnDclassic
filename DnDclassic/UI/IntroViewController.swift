@@ -22,6 +22,7 @@ class IntroViewController: UIViewController {
     
     private struct Segues {
         static let begin = "begin"
+        static let generateCharacter = "generateCharacter"
     }
     
     override func viewDidLoad() {
@@ -129,9 +130,10 @@ class IntroViewController: UIViewController {
     
     @IBAction func beginButtonTouched(_ sender: Any) {
         
-        guard game != nil, let scene = game.firstScene else {return}
-        
-        performSegue(withIdentifier: Segues.begin, sender: scene)
+//        guard game != nil, let scene = game.firstScene else {return}
+//
+//        performSegue(withIdentifier: Segues.begin, sender: scene)
+        performSegue(withIdentifier: Segues.generateCharacter, sender: self)
     }
     
 

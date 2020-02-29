@@ -135,7 +135,6 @@
 					"opponents": [
 						{
 							"name": "Barbár",
-							"gender": "male",
 							"dexerity": 6,
 							"health": 6
 						}
@@ -284,7 +283,6 @@
 					"opponents": [
 						{
 							"name": "Ogre",
-							"gender": "male",
 							"dexerity": 8,
 							"health": 10
 						}
@@ -372,13 +370,11 @@
 					"opponents": [
 						{
 							"name": "Első Goblin",
-							"gender": "unknown",
 							"dexerity": 5,
 							"health": 5
 						},
 						{
 							"name": "Második Goblin",
-							"gender": "unknown",
 							"dexerity": 5,
 							"health": 6
 						}
@@ -407,25 +403,21 @@
 					"opponents": [
 						{
 							"name": "Első Törpe",
-							"gender": "unknown",
 							"dexerity": 7,
 							"health": 4
 						},
 						{
 							"name": "Második Törpe",
-							"gender": "unknown",
 							"dexerity": 6,
 							"health": 6
 						},
 						{
 							"name": "Harmadik Törpe",
-							"gender": "unknown",
 							"dexerity": 7,
 							"health": 5
 						},
 						{
 							"name": "Negyedik Törpe",
-							"gender": "unknown",
 							"dexerity": 7,
 							"health": 5
 						}
@@ -469,6 +461,26 @@
 					"destination": 4
 				}
 			]
+		},
+		{
+			"id": 23,
+			"story": "A folyosót erős ajtó zárja el előtted, és meglepődve veszed észre, hogy az ajtó aljához egy bőrpántot szegeztek. Hallgatózol, de nem hallasz semmit. Ha belépsz a szobába, lapozz a 326-ra, ha visszafordulsz az elágazáshoz, lapozz a 229-re.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Belépsz a szobába",
+					"destination": 326
+				},
+				{
+					"direction": "unknown",
+					"caption": "Visszafordulsz az elágazáshoz",
+					"destination": 229
+				}
+			]
+		},
+		{
+			"id": 24,
+			"story": "Miután harmadszor is megsebesültél, érzed, hogy erőd fogytán van. Elvesztettél 1 ÜGYESSÉG pontot. Rádöbbensz, hogy ennek az ocsmány szörnyetegnek ez is a varázserejéhez tartozik, és érzed, amint végigfut a hátadon a hideg. Folytatod a harcot, vagy menekülsz? Ha Menekülni akarsz, fizesd meg a büntetést gyávaságodért, és rohanj az északi ajtón át. Lapozz a 360-ra. Ha maradsz, a küzdelem folytatódik. De mostantól számítva minden harmadik sebesülés, amit a bestiától kapsz, levon tőled 1 ÜGYESSÉG pontot. Ha legyőzted ellenfeledet, lapozz a 135-re."
 		},
 
 		{
@@ -530,7 +542,6 @@
 								"opponents": [
 									{
 										"name": "Goblin",
-										"gender": "unknown",
 										"dexerity": 5,
 										"health": 3
 									}
@@ -544,7 +555,6 @@
 								"opponents": [
 									{
 										"name": "Ork",
-										"gender": "unknown",
 										"dexerity": 6,
 										"health": 3
 									}
@@ -558,7 +568,6 @@
 								"opponents": [
 									{
 										"name": "Gremlin",
-										"gender": "unknown",
 										"dexerity": 6,
 										"health": 4
 									}
@@ -572,7 +581,6 @@
 								"opponents": [
 									{
 										"name": "Óriás patkány",
-										"gender": "unknown",
 										"dexerity": 5,
 										"health": 4
 									}
@@ -586,7 +594,6 @@
 								"opponents": [
 									{
 										"name": "Csontváz",
-										"gender": "unknown",
 										"dexerity": 6,
 										"health": 5
 									}
@@ -600,7 +607,6 @@
 								"opponents": [
 									{
 										"name": "Troll",
-										"gender": "unknown",
 										"dexerity": 8,
 										"health": 4
 									}
@@ -634,7 +640,6 @@
 					"opponents": [
 						{
 							"name": "Zombi",
-							"gender": "unknown",
 							"dexerity": 7,
 							"health": 6,
 							"bonus": {
@@ -646,21 +651,18 @@
 						},
 						{
 							"name": "Zombi kaszával",
-							"gender": "unknown",
 							"dexerity": 6,
 							"health": 6,
 							"order": 1
 						},
 						{
 							"name": "Zombi csákánnyal",
-							"gender": "unknown",
 							"dexerity": 6,
 							"health": 6,
 							"order": 2
 						},
 						{
 							"name": "Zombi bárddal",
-							"gender": "unknown",
 							"dexerity": 6,
 							"health": 5,
 							"order": 3

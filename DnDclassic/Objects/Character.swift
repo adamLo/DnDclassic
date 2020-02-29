@@ -1,5 +1,5 @@
 //
-//  Player.swift
+//  Character.swift
 //  DnDclassic
 //
 //  Created by Adam Lovastyik on 23/02/2020.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-class Player {
+class Character {
     
     let name: String
     let isPlayer: Bool
-    let gender: Gender
     
     let dexterityStarting: Int
     var dexterityCurrent: Int = 0
@@ -29,18 +28,13 @@ class Player {
     
     private(set) var inventory = [InventoryItem]()
     private(set) var potions = [Potion]()
-
-    var leftHandEquipment: InventoryItem?
-    var rightHandEquipment: InventoryItem?
-    var armor: InventoryItem?
     
     var journey = [Scene]()
     
-    init(isPlayer: Bool, name: String, gender: Gender, dexerity: Int, health: Int, luck: Int) {
+    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int) {
         
         self.isPlayer = isPlayer
         self.name = name
-        self.gender = gender
         
         dexterityStarting = dexerity
         dexterityCurrent = dexerity
@@ -119,21 +113,11 @@ class Player {
         healthCurrent = max(healthCurrent - points, 0)
     }
     
-    func fillStartingInventory(potionType: CharacterProperty) {
-        
+    static var startInventory: [InventoryItem] {
+     
         let sword = InventoryItem(type: .weapon, name: "Sword", identifier: 0)
         let armor = InventoryItem(type: .armor, name: "Leather Armor", identifier: 1)
         let lamp = InventoryItem(type: .lamp, name: "Lamp", identifier: 2)
-        inventory = [sword, armor, lamp]
-        
-        rightHandEquipment = sword
-        self.armor = armor
-        
-        let potion = Potion(type: potionType)
-        potions = [potion]
-        
-        coins = 0
-        food = 0
-        gems = 0
+        return [sword, armor, lamp]
     }
 }

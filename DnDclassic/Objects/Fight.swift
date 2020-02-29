@@ -10,10 +10,10 @@ import Foundation
 
 struct Fight {
     
-    let player: Player
-    let opponent: Player
+    let player: Character
+    let opponent: Character
     
-    init(player: Player, opponent: Player) {
+    init(player: Character, opponent: Character) {
         
         self.player = player
         self.opponent = opponent

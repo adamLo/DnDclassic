@@ -15,8 +15,6 @@
 		193015482402BD5200E7B815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193015472402BD5200E7B815 /* Assets.xcassets */; };
 		1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193015492402BD5200E7B815 /* LaunchScreen.storyboard */; };
 		193015612402BD5300E7B815 /* DnDclassicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015602402BD5300E7B815 /* DnDclassicUITests.swift */; };
-		193015702402BDA100E7B815 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930156F2402BDA100E7B815 /* Player.swift */; };
-		193015722402BFFB00E7B815 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015712402BFFB00E7B815 /* Gender.swift */; };
 		193015742402C0B700E7B815 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015732402C0B700E7B815 /* Dice.swift */; };
 		193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015752402C2E500E7B815 /* CharacterProperty.swift */; };
 		193015782402C5B100E7B815 /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193015772402C5B100E7B815 /* Potion.swift */; };
@@ -36,6 +34,12 @@
 		19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */ = {isa = PBXBuildFile; fileRef = 19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */; };
 		19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D702405AE400072CFD0 /* SceneViewController.swift */; };
 		19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D722405AF0A0072CFD0 /* IntroViewController.swift */; };
+		19497D772406AC620072CFD0 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D762406AC620072CFD0 /* Character.swift */; };
+		19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D792406AD590072CFD0 /* CharacterEditViewController.swift */; };
+		19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7B2406B2120072CFD0 /* CharacterEditNameCell.swift */; };
+		19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */; };
+		19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */; };
+		19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +74,6 @@
 		1930155C2402BD5300E7B815 /* DnDclassicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDclassicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		193015602402BD5300E7B815 /* DnDclassicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDclassicUITests.swift; sourceTree = "<group>"; };
 		193015622402BD5300E7B815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1930156F2402BDA100E7B815 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		193015712402BFFB00E7B815 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		193015732402C0B700E7B815 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		193015752402C2E500E7B815 /* CharacterProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProperty.swift; sourceTree = "<group>"; };
 		193015772402C5B100E7B815 /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
@@ -91,6 +93,12 @@
 		19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "warlock-firetop-mountain.json"; sourceTree = "<group>"; };
 		19497D702405AE400072CFD0 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		19497D722405AF0A0072CFD0 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		19497D762406AC620072CFD0 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		19497D792406AD590072CFD0 /* CharacterEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditViewController.swift; sourceTree = "<group>"; };
+		19497D7B2406B2120072CFD0 /* CharacterEditNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditNameCell.swift; sourceTree = "<group>"; };
+		19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditPropertyCell.swift; sourceTree = "<group>"; };
+		19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditPotionCell.swift; sourceTree = "<group>"; };
+		19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditInventoryItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				19497D67240587500072CFD0 /* Definitions */,
-				1930156F2402BDA100E7B815 /* Player.swift */,
-				193015712402BFFB00E7B815 /* Gender.swift */,
+				19497D762406AC620072CFD0 /* Character.swift */,
 				193015732402C0B700E7B815 /* Dice.swift */,
 				193015752402C2E500E7B815 /* CharacterProperty.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
@@ -217,6 +224,7 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				19497D782406AD370072CFD0 /* Character */,
 				19497D6F2405AE100072CFD0 /* Scene */,
 			);
 			path = UI;
@@ -229,6 +237,18 @@
 				19497D722405AF0A0072CFD0 /* IntroViewController.swift */,
 			);
 			name = Scene;
+			sourceTree = "<group>";
+		};
+		19497D782406AD370072CFD0 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				19497D792406AD590072CFD0 /* CharacterEditViewController.swift */,
+				19497D7B2406B2120072CFD0 /* CharacterEditNameCell.swift */,
+				19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */,
+				19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */,
+				19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */,
+			);
+			name = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,26 +386,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				193015722402BFFB00E7B815 /* Gender.swift in Sources */,
 				19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */,
 				19497D692405876A0072CFD0 /* Deserializable.swift in Sources */,
 				19301588240316D700E7B815 /* Game.swift in Sources */,
 				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,
+				19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
+				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,
 				193015862403120700E7B815 /* WayPoint.swift in Sources */,
 				19301582240310F400E7B815 /* Scene.swift in Sources */,
 				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,
+				19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
-				193015702402BDA100E7B815 /* Player.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
 				193015842403118A00E7B815 /* Direction.swift in Sources */,
+				19497D772406AC620072CFD0 /* Character.swift in Sources */,
+				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
+				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

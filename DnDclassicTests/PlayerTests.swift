@@ -15,7 +15,7 @@ class PlayerTests: XCTestCase {
 
     func testLuckPositive() {
         
-        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
         
         let roll = 2
         
@@ -28,7 +28,7 @@ class PlayerTests: XCTestCase {
 
     func testLuckNegative() {
         
-        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 1)
+        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 1)
         
         let roll = 24
         
@@ -43,7 +43,7 @@ class PlayerTests: XCTestCase {
     
     func testDamage() {
         
-        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
         
         player.hitDamage(points: 14)
         XCTAssertEqual(player.healthCurrent, 10)
@@ -54,7 +54,7 @@ class PlayerTests: XCTestCase {
     
     func testEat() {
         
-        let player = Player(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
         
         player.hitDamage(points: 4)
         XCTAssertEqual(player.healthCurrent, 20)
