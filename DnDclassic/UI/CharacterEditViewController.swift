@@ -194,7 +194,6 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private func change(name newValue: String?, indexPath: IndexPath) {
         
         name = newValue
-        reload(row: indexPath)
     }
     
     private func reload(row: IndexPath) {
@@ -204,10 +203,49 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         characterTableView.endUpdates()
     }
     
+    private func validateData() -> Character? {
+        
+        var errors = [String]()
+        
+        if name?.nilIfEmpty == nil {
+            errors.append(NSLocalizedString("Please provide name for your character!", comment: "Error message when character name is empty"))
+        }
+        
+        if dexerity ?? 0 <= 0 {
+            errors.append(NSLocalizedString("Please set dexerty for your character!", comment: "Error message when character dexerity is not set"))
+        }
+        
+        if health ?? 0 <= 0 {
+            errors.append(NSLocalizedString("Please set health for your character!", comment: "Error message when character health is not set"))
+        }
+        
+        if luck ?? 0 <= 0 {
+            errors.append(NSLocalizedString("Please set luck for your character!", comment: "Error message when character luck is not set"))
+        }
+        
+        if !errors.isEmpty {
+            
+            let alert = UIAlertController(title: NSLocalizedString("Your character is not complete!", comment: "Error dialog title when character properties not set"), message: errors.joined(separator: "\n"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button title"), style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            return nil
+        }
+        
+        guard let _name = name, let _dexerity = dexerity, let _health = health, let _luck = luck else {return nil}
+        
+        let player = Character(isPlayer: true, name: _name, dexerity: _dexerity, health: _health, luck: _luck, coins: Character.startCoinsAmount, food: Character.startCoinsAmount, potion: potion, inventory: inventory)
+        
+        return player
+    }
+    
     // MARK: - Actions
     
     @objc
     private func doneButtonTopuched(_ sender: Any) {
         
+        if let player = validateData() {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }

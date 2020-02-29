@@ -23,7 +23,6 @@ class Character {
     var luckCurrent: Int = 0
     
     var coins: Int = 0
-    var gems: Int = 0
     private(set)var food: Int = 0
     
     private(set) var inventory = [InventoryItem]()
@@ -31,7 +30,7 @@ class Character {
     
     var journey = [Scene]()
     
-    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int) {
+    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, coins: Int, food: Int, potion: CharacterProperty? = nil, inventory: [InventoryItem]? = nil) {
         
         self.isPlayer = isPlayer
         self.name = name
@@ -44,6 +43,17 @@ class Character {
         
         luckStarting = luck
         luckCurrent = luck
+        
+        self.coins = coins
+        self.food = food
+        
+        if let _potionType = potion {
+            self.potions = [Potion(type: _potionType)]
+        }
+        
+        if let _inventory = inventory {
+            self.inventory = _inventory
+        }
     }
     
     class func generate(property: CharacterProperty) -> Int {
@@ -120,4 +130,8 @@ class Character {
         let lamp = InventoryItem(type: .lamp, name: "Lamp", identifier: 2)
         return [sword, armor, lamp]
     }
+    
+    static let startFoodAmount: Int = 10
+    
+    static let startCoinsAmount: Int = 0
 }
