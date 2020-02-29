@@ -115,6 +115,7 @@ class IntroViewController: UIViewController {
                 
                 if let __game = _game {
                     _self.game = __game
+                    GameData.shared.game = __game
                     _self.displayGame()
                 }
                 else {
@@ -130,18 +131,32 @@ class IntroViewController: UIViewController {
     
     @IBAction func beginButtonTouched(_ sender: Any) {
         
-//        guard game != nil, let scene = game.firstScene else {return}
-//
-//        performSegue(withIdentifier: Segues.begin, sender: scene)
-        performSegue(withIdentifier: Segues.generateCharacter, sender: self)
+        if GameData.shared.player == nil {
+            performSegue(withIdentifier: Segues.generateCharacter, sender: self)
+        }
+        else {
+            startGame()
+        }
     }
     
+    private func startGame() {
+        
+        guard GameData.shared.game != nil, let scene = GameData.shared.game.firstScene else {return}
+        performSegue(withIdentifier: Segues.begin, sender: scene)
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == Segues.begin, let scene = sender as? Scene, let destination = segue.destination as? SceneViewController {
+
+        if segue.identifier == Segues.generateCharacter, let navController = segue.destination as? UINavigationController, let destination = navController.viewControllers.first as? CharacterEditViewController {
+
+            destination.playerCreated = {[weak self] (player) in
+                GameData.shared.player = player
+                self?.startGame()
+            }
+        }
+        else if segue.identifier == Segues.begin, let scene = sender as? Scene, let destination = segue.destination as? SceneViewController {
             destination.scene = scene
         }
     }

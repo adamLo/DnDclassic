@@ -11,10 +11,12 @@ import Foundation
 struct Dice {
     
     private let multiplier: Int
+    private let sides: Int
     
-    init(number: Int = 1) {
+    init(number: Int = 1, sides: Int = 6) {
         
         self.multiplier = number
+        self.sides = sides
     }
     
     func roll(delta: Int = 0) -> Int {
@@ -22,7 +24,7 @@ struct Dice {
         var result = 0
         
         for _ in 0..<multiplier {
-            result += Int.random(in: 1...6)
+            result += Int.random(in: 1...sides)
         }
         
         result += delta

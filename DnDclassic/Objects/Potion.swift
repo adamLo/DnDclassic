@@ -8,18 +8,28 @@
 
 import Foundation
 
-class Potion {
+class Potion: InventoryItem {
     
-    let type: CharacterProperty
+    var identifier: Any? {
+        return "potion_\(type)"
+    }
     
-    let name: String
+    let type: InventoryItemType = .potion
+    
+    let modifiesPropertyWhenEquipped: CharacterProperty? = nil
+    let modifierValueWhenEquipped: Int? = 0
+    let modifiesPropertyWhenUsed: CharacterProperty?
+    let modiferValueWhenUsed: Int? = nil
+    
+    var description: String {
+        return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiesPropertyWhenUsed?.rawValue ?? "N/A", amount)
+    }
     
     private(set) var amount: Int = 2
     
     init(type: CharacterProperty) {
         
-        self.type = type
-        name = "Potion of \(type.rawValue)"
+        self.modifiesPropertyWhenUsed = type
     }
     
     func use() {

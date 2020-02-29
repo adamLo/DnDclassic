@@ -23,7 +23,7 @@ class CharacterEditInventoryItemCell: UITableViewCell {
 
     func setup(item: InventoryItem) {
         
-        itemNameLabel.text = item.name
+        itemNameLabel.text = item.description
     }
 
 }

@@ -23,13 +23,13 @@ class CharacterEditPotionCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        changeButton.setTitle(NSLocalizedString("Select", comment: "Select potion button title"), for: .normal)
         potionTitleLabel.text = NSLocalizedString("Potion", comment: "Potion title on chcracter generatrion screen")
     }
     
     func setup(type: CharacterProperty?) {
         
         potionNameLabel.text = type?.rawValue ?? nil
+        changeButton.setTitle(type == nil ? NSLocalizedString("Add", comment: "Add butotn title") : NSLocalizedString("Change", comment: "Chnage button title"), for: .normal)
     }
 
     @IBAction func changeButtonTouched(_ sender: Any) {

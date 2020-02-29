@@ -21,16 +21,12 @@ class Character {
     
     private(set) var luckStarting: Int
     var luckCurrent: Int = 0
-    
-    var coins: Int = 0
-    private(set)var food: Int = 0
-    
+        
     private(set) var inventory = [InventoryItem]()
-    private(set) var potions = [Potion]()
     
     var journey = [Scene]()
     
-    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, coins: Int, food: Int, potion: CharacterProperty? = nil, inventory: [InventoryItem]? = nil) {
+    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
         
         self.isPlayer = isPlayer
         self.name = name
@@ -43,14 +39,7 @@ class Character {
         
         luckStarting = luck
         luckCurrent = luck
-        
-        self.coins = coins
-        self.food = food
-        
-        if let _potionType = potion {
-            self.potions = [Potion(type: _potionType)]
-        }
-        
+                
         if let _inventory = inventory {
             self.inventory = _inventory
         }
@@ -81,29 +70,27 @@ class Character {
     
     func eat() {
         
-        guard food > 0 else {return}
+        guard let food = inventory.first(where: { (item) -> Bool in
+            return item.type == .food
+        }) as? Food else {return}
         
-        food -= 1
+        guard food.amount > 0 else {return}
         
         healthCurrent = min(healthCurrent + 4, healthStarting)
+        food.eat()
     }
     
     func drinkPotion(of type: CharacterProperty) {
         
-        guard let index = potions.firstIndex(where: { (potion) -> Bool in
-            return potion.type == type
-        }) else {return}
-        
-        let potion = potions[index]
-        
-        if potion.amount <= 0 {
-            potions.remove(at: index)
-            return
-        }
+        guard let potion = inventory.first(where: { (item) -> Bool in
+            return item.type == .potion
+        }) as? Potion else {return}
+                
+        guard let potionType = potion.modifiesPropertyWhenUsed else {return}
         
         potion.use()
         
-        switch potion.type {
+        switch potionType {
         case .dexerity:
             dexterityCurrent = dexterityStarting
         case .health:
@@ -113,8 +100,12 @@ class Character {
             luckStarting += 1
         }
         
-        if potion.amount == 0 {
-            potions.remove(at: index)
+        inventory.removeAll { (item) -> Bool in
+            
+            if potion.amount <= 0, let potionId = potion.identifier as? String, let itemId = item.identifier as? String, potionId == itemId {
+                return true
+            }
+            return false
         }
     }
     
@@ -125,13 +116,12 @@ class Character {
     
     static var startInventory: [InventoryItem] {
      
-        let sword = InventoryItem(type: .weapon, name: "Sword", identifier: 0)
-        let armor = InventoryItem(type: .armor, name: "Leather Armor", identifier: 1)
-        let lamp = InventoryItem(type: .lamp, name: "Lamp", identifier: 2)
-        return [sword, armor, lamp]
+        let sword = InventoryObject(type: .weapon, name: NSLocalizedString("Long sword", comment: "Long sword name"), identifier: "longsword_default")
+        let armor = InventoryObject(type: .armor, name: NSLocalizedString("Leather Armor", comment: "Leather armor name"), identifier: "leatherarmor_default")
+        let lamp = InventoryObject(type: .lighting, name: NSLocalizedString("Lamp", comment: "lamp name"), identifier: "lamp_default")
+        let money = Money(amount: 0)
+        let food = Food(amount: 10)
+        
+        return [sword, armor, lamp, money, food]
     }
-    
-    static let startFoodAmount: Int = 10
-    
-    static let startCoinsAmount: Int = 0
 }

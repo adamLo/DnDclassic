@@ -16,16 +16,34 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private var dexerity: Int?
     private var health: Int?
     private var luck: Int?
-    private var potion: CharacterProperty?
-    private let inventory = Character.startInventory
+    private var potion: CharacterProperty? {
+        get {
+            guard let potion = inventory.first(where: { (item) -> Bool in
+                return item.type == .potion
+            }) else {return nil}
+            return potion.modifiesPropertyWhenUsed
+        }
+        set {
+            inventory.removeAll { (item) -> Bool in
+                return item.type == .potion
+            }
+            if let _value = newValue {
+                let potion = Potion(type: _value)
+                inventory.append(potion)
+            }
+        }
+    }
+    private var inventory = Character.startInventory
     
     private enum Section: Int {
         case name = 0, properties, potion, inventory
     }
+    
     private enum PropertyRow: Int {
         case health = 0, dexerity, luck
     }
     
+    var playerCreated: ((_ player: Character) -> ())?
     
     // MARK: - Controller lifecycle
     
@@ -85,7 +103,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
                     cell.setup(name: name)
                     
                     cell.nameChanged = {[weak self] newName in
-                        self?.change(name: newName, indexPath: indexPath)
+                        self?.name = newName
                     }
                     
                     return cell
@@ -120,7 +138,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
                     cell.setup(type: potion)
                     
                     cell.changeTouched = {[weak self] () in
-                        self?.change(potion: self?.potion, indexPath: indexPath)
+                        self?.change(potion: self?.potion)
                     }
                     
                     return cell
@@ -164,43 +182,33 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         case .luck: luck = Character.generate(property: property)
         }
         
-        reload(row: indexPath)
+        characterTableView.beginUpdates()
+        characterTableView.reloadRows(at: [indexPath], with: .automatic)
+        characterTableView.endUpdates()
     }
 
-    private func change(potion current: CharacterProperty?, indexPath: IndexPath) {
-        
+    private func change(potion current: CharacterProperty?) {
+                
         let alert = UIAlertController(title: NSLocalizedString("Potion", comment: "Potion selection dialog title"), message: NSLocalizedString("Select potion to help you in your journey", comment: "Potion selection dialog message"), preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + NSLocalizedString("Potion of Health", comment: "Potion of Health title"), style: .default, handler: { (_) in
             self.potion = .health
-            self.reload(row: indexPath)
+            self.characterTableView.reloadData()
         }))
         
         alert.addAction(UIAlertAction(title: "\(current == .dexerity ? "* " : "")" + NSLocalizedString("Potion of Dexerity", comment: "Potion of Dexerity title"), style: .default, handler: { (_) in
             self.potion = .dexerity
-            self.reload(row: indexPath)
+            self.characterTableView.reloadData()
         }))
         
         alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + NSLocalizedString("Potion of Luck", comment: "Potion of Luck title"), style: .default, handler: { (_) in
             self.potion = .luck
-            self.reload(row: indexPath)
+            self.characterTableView.reloadData()
         }))
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    private func change(name newValue: String?, indexPath: IndexPath) {
-        
-        name = newValue
-    }
-    
-    private func reload(row: IndexPath) {
-        
-        characterTableView.beginUpdates()
-        characterTableView.reloadRows(at: [row], with: .automatic)
-        characterTableView.endUpdates()
     }
     
     private func validateData() -> Character? {
@@ -234,7 +242,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         
         guard let _name = name, let _dexerity = dexerity, let _health = health, let _luck = luck else {return nil}
         
-        let player = Character(isPlayer: true, name: _name, dexerity: _dexerity, health: _health, luck: _luck, coins: Character.startCoinsAmount, food: Character.startCoinsAmount, potion: potion, inventory: inventory)
+        let player = Character(isPlayer: true, name: _name, dexerity: _dexerity, health: _health, luck: _luck, inventory: inventory)
         
         return player
     }
@@ -245,7 +253,9 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private func doneButtonTopuched(_ sender: Any) {
         
         if let player = validateData() {
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true) {
+                self.playerCreated?(player)
+            }
         }
     }
 }

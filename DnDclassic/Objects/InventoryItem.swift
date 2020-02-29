@@ -10,37 +10,21 @@ import Foundation
 
 enum InventoryItemType: String {
     
-    case weapon, armor, key, lamp
+    case weapon, armor, key, lighting, money, food, potion
 }
 
-struct InventoryItem {
+protocol InventoryItem: CustomStringConvertible {
     
-    let type: InventoryItemType
-    let name: String
+    var identifier: Any? {get}
     
-    let modifiesPropertyWhenEquipped: CharacterProperty?
-    let modifierValueWhenEquipped: Int
+    var type: InventoryItemType {get}
     
-    let modifiesPropertyWhenUsed: CharacterProperty?
-    let modiferValueWhenUsed: Int
+    var modifiesPropertyWhenEquipped: CharacterProperty? {get}
+    var modifierValueWhenEquipped: Int? {get}
     
-    let identifier: Any?
+    var modifiesPropertyWhenUsed: CharacterProperty? {get}
+    var modiferValueWhenUsed: Int? {get}
     
-    init(type: InventoryItemType, name: String,
-         modifiesPropertyWhenEquipped: CharacterProperty? = nil, modifierValueWhenEquipped: Int? = 0,
-         modifiesPropertyWhenUsed: CharacterProperty? = nil, modiferValueWhenUsed: Int? = 0,
-         identifier: Any? = nil
-    ) {
-        
-        self.type = type
-        self.name = name
-        
-        self.modifiesPropertyWhenEquipped = modifiesPropertyWhenEquipped
-        self.modifierValueWhenEquipped = modifierValueWhenEquipped ?? 0
-        
-        self.modifiesPropertyWhenUsed = modifiesPropertyWhenUsed
-        self.modiferValueWhenUsed = modiferValueWhenUsed ?? 0
-        
-        self.identifier = identifier
-    }
+    var amount: Int {get}
 }
+
