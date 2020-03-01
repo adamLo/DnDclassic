@@ -116,6 +116,11 @@ class IntroViewController: UIViewController {
                 if let __game = _game {
                     _self.game = __game
                     GameData.shared.game = __game
+                    
+                    /// FIXME: Remove in production!
+                    let player = Character(isPlayer: true, name: "Adam Test", dexerity: 12, health: 12, luck: 12, inventory: Character.startInventory)
+                    GameData.shared.player = player
+                    
                     _self.displayGame()
                 }
                 else {
