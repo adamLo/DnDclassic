@@ -18,7 +18,8 @@ class SceneStoryCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         selectionStyle = .none
     }
 
