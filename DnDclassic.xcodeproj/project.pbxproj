@@ -45,6 +45,8 @@
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
 		19A855A0240ACC0B007174C8 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559F240ACC0B007174C8 /* Money.swift */; };
 		19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A1240ACE58007174C8 /* InventoryObject.swift */; };
+		19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A3240BEC95007174C8 /* SceneStoryCell.swift */; };
+		19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A5240BF168007174C8 /* SceneWaypointCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		19A8559F240ACC0B007174C8 /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		19A855A1240ACE58007174C8 /* InventoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryObject.swift; sourceTree = "<group>"; };
+		19A855A3240BEC95007174C8 /* SceneStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStoryCell.swift; sourceTree = "<group>"; };
+		19A855A5240BF168007174C8 /* SceneWaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWaypointCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				19497D702405AE400072CFD0 /* SceneViewController.swift */,
+				19A855A3240BEC95007174C8 /* SceneStoryCell.swift */,
 				19497D722405AF0A0072CFD0 /* IntroViewController.swift */,
+				19A855A5240BF168007174C8 /* SceneWaypointCell.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
 				19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */,
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
+				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
 				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
@@ -439,6 +446,7 @@
 				19A8559C240AC6B6007174C8 /* GameData.swift in Sources */,
 				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,
 				19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */,
+				19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
 				193015842403118A00E7B815 /* Direction.swift in Sources */,

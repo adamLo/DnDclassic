@@ -172,6 +172,16 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableView.automaticDimension
+    }
+    
     // MARK: - Data integration
     
     private func change(property: CharacterProperty, indexPath: IndexPath) {
