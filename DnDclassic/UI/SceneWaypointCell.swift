@@ -10,6 +10,8 @@ import UIKit
 
 class SceneWaypointCell: UITableViewCell {
 
+    @IBOutlet weak var captionTitle: UILabel!
+    @IBOutlet weak var directionLabel: UILabel!
     
     static let reuseId = "waypointCell"
     
@@ -17,11 +19,14 @@ class SceneWaypointCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        selectionStyle = .none
+        backgroundColor = UIColor.white.withAlphaComponent(0.95)
+        selectionStyle = .gray
     }
 
     func setup(waypoint: WayPoint) {
         
+        captionTitle.text = waypoint.caption
+        directionLabel.text = String(format: NSLocalizedString("Direction %@ to %d", comment: "Direction title format"), waypoint.direction.rawValue, waypoint.destination)
     }
 
 }

@@ -15,7 +15,6 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var sceneTableView: UITableView!
     @IBOutlet weak var sceneTitleLabel: UILabel!
     
-    var game: Game!
     var scene: Scene!
     
     private enum Section: Int, CaseIterable {
@@ -28,6 +27,10 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        if scene == nil, GameData.shared.game != nil, let _scene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) {
+            scene = _scene
+        }
 
         setupUI()
         distributeGame()
@@ -50,23 +53,15 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func distributeGame() {
         
-        guard game != nil else {return}
+        guard scene != nil else {return}
         
         let _title = String(format: NSLocalizedString("Scene %d", comment: "Scene navigation title format"), scene.id)
         title = title
         sceneTitleLabel.text = _title
         coverImageView.image = scene.image
+        
+        sceneTableView.contentInset = UIEdgeInsets(top: scene.image != nil ? coverImageView.bounds.size.height - 50 : 0, left: 0, bottom: 0, right: 0)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - TableView
     
@@ -121,5 +116,23 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        guard GameData.shared.game != nil, scene != nil, let section = Section(rawValue: indexPath.section) else {return}
+        
+        if section == .waypoints, let waypoints = scene.wayPoints, indexPath.row < waypoints.count  {
+            
+            let wayPoint = waypoints[indexPath.row]
+            guard let _scene = GameData.shared.game.scene(id: wayPoint.destination) else {return}
+            
+            GameData.shared.advance(player: GameData.shared.player, scene: scene)
+            scene = _scene
+            distributeGame()
+            sceneTableView.reloadData()
+        }
     }
 }

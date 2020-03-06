@@ -24,7 +24,14 @@ class Character {
         
     private(set) var inventory = [InventoryItem]()
     
-    var journey = [Scene]()
+    struct JourneyMilestone {
+        
+        let sceneId: Int
+        let sourceDirection: Direction
+        let sourceSceneId: Int
+    }
+    
+    private(set) var journey = [JourneyMilestone]()
     
     init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
         
@@ -123,5 +130,18 @@ class Character {
         let food = Food(amount: 10)
         
         return [sword, armor, lamp, money, food]
+    }
+    
+    func advance(to scene: Scene) {
+        
+        var sourceId = 0
+        var sourceDirection: Direction = .unknown
+        if let lastMileStone = journey.last {
+            sourceId = lastMileStone.sourceSceneId
+            sourceDirection = lastMileStone.sourceDirection
+        }
+        
+        let mileStone = JourneyMilestone(sceneId: scene.id, sourceDirection: sourceDirection, sourceSceneId: sourceId)
+        journey.append(mileStone)
     }
 }

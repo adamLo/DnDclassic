@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930153B2402BD4C00E7B815 /* AppDelegate.swift */; };
 		1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930153D2402BD4C00E7B815 /* SceneDelegate.swift */; };
-		193015402402BD4C00E7B815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930153F2402BD4C00E7B815 /* ViewController.swift */; };
 		193015432402BD4C00E7B815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193015412402BD4C00E7B815 /* Main.storyboard */; };
 		193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 193015442402BD4C00E7B815 /* DnDclassic.xcdatamodeld */; };
 		193015482402BD5200E7B815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193015472402BD5200E7B815 /* Assets.xcassets */; };
@@ -47,6 +46,10 @@
 		19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A1240ACE58007174C8 /* InventoryObject.swift */; };
 		19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A3240BEC95007174C8 /* SceneStoryCell.swift */; };
 		19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A5240BF168007174C8 /* SceneWaypointCell.swift */; };
+		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
+		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
+		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
+		19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA972412F9B300199175 /* CharacterViewInventoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +73,6 @@
 		193015382402BD4C00E7B815 /* DnDclassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDclassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1930153B2402BD4C00E7B815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1930153D2402BD4C00E7B815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1930153F2402BD4C00E7B815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		193015422402BD4C00E7B815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		193015452402BD4C00E7B815 /* DnDclassic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DnDclassic.xcdatamodel; sourceTree = "<group>"; };
 		193015472402BD5200E7B815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,10 @@
 		19A855A1240ACE58007174C8 /* InventoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryObject.swift; sourceTree = "<group>"; };
 		19A855A3240BEC95007174C8 /* SceneStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStoryCell.swift; sourceTree = "<group>"; };
 		19A855A5240BF168007174C8 /* SceneWaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWaypointCell.swift; sourceTree = "<group>"; };
+		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
+		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
+		19FCFA972412F9B300199175 /* CharacterViewInventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewInventoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +174,6 @@
 				19301589240318DE00E7B815 /* Resources */,
 				1930156E2402BD6B00E7B815 /* Objects */,
 				19A8559A240AC69F007174C8 /* Application */,
-				1930153F2402BD4C00E7B815 /* ViewController.swift */,
-				193015412402BD4C00E7B815 /* Main.storyboard */,
 				193015472402BD5200E7B815 /* Assets.xcassets */,
 				193015492402BD5200E7B815 /* LaunchScreen.storyboard */,
 				1930154C2402BD5200E7B815 /* Info.plist */,
@@ -241,6 +245,7 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19497D782406AD370072CFD0 /* Character */,
 				19497D6F2405AE100072CFD0 /* Scene */,
 			);
@@ -261,11 +266,8 @@
 		19497D782406AD370072CFD0 /* Character */ = {
 			isa = PBXGroup;
 			children = (
-				19497D792406AD590072CFD0 /* CharacterEditViewController.swift */,
-				19497D7B2406B2120072CFD0 /* CharacterEditNameCell.swift */,
-				19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */,
-				19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */,
-				19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */,
+				19FCFA90241295AF00199175 /* View */,
+				19FCFA8F2412956800199175 /* Edit */,
 			);
 			name = Character;
 			sourceTree = "<group>";
@@ -286,6 +288,29 @@
 				19A8559B240AC6B6007174C8 /* GameData.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		19FCFA8F2412956800199175 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				19497D792406AD590072CFD0 /* CharacterEditViewController.swift */,
+				19497D7B2406B2120072CFD0 /* CharacterEditNameCell.swift */,
+				19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */,
+				19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */,
+				19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */,
+			);
+			name = Edit;
+			sourceTree = "<group>";
+		};
+		19FCFA90241295AF00199175 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19FCFA91241295D900199175 /* CharacterViewController.swift */,
+				19FCFA932412F98700199175 /* CharacterViewNameCell.swift */,
+				19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */,
+				19FCFA972412F9B300199175 /* CharacterViewInventoryCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,7 +454,6 @@
 				19301588240316D700E7B815 /* Game.swift in Sources */,
 				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
-				193015402402BD4C00E7B815 /* ViewController.swift in Sources */,
 				19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */,
 				19A85599240AB6E6007174C8 /* Strings.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
@@ -437,9 +461,11 @@
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
 				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
+				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
 				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
+				19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */,
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,
 				193015862403120700E7B815 /* WayPoint.swift in Sources */,
 				19301582240310F400E7B815 /* Scene.swift in Sources */,
@@ -454,6 +480,8 @@
 				19497D772406AC620072CFD0 /* Character.swift in Sources */,
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
+				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
+				19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

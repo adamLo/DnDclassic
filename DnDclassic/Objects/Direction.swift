@@ -10,5 +10,5 @@ import Foundation
 
 enum Direction: String {
     
-    case north, south, west, east, unkown, backup
+    case north, south, west, east, unknown, backup
 }

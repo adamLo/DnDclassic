@@ -14,4 +14,11 @@ class GameData {
     
     var player: Character!
     var game: Game!
+    var currentSceneId = 0
+    
+    func advance(player: Character, scene: Scene) {
+        
+        player.advance(to: scene)
+        currentSceneId = scene.id        
+    }
 }
