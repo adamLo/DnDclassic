@@ -120,7 +120,58 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        // TODO: Implement selection logic
+        guard GameData.shared.player != nil, let section = Section(rawValue: indexPath.section), section == .inventory, indexPath.row < GameData.shared.player.inventory.count else {return}
+        
+        let item = GameData.shared.player.inventory[indexPath.row]
+        
+        if item.type == .food, let food = item as? Food {
+            showOptions(food: food)
+        }
+        else if item.type == .potion, let potion = item as? Potion {
+            showOptions(potion: potion)
+        }
+        
     }
+    
+    // MARK: - Inventory item functions
+    
+    private func showOptions(food: Food) {
+        
+        guard GameData.shared.player != nil else {return}
 
+        let alert = UIAlertController(title: NSLocalizedString("Eat", comment: "Eat alert sheet title"), message: NSLocalizedString("Would you like to eat?\nIt increases your health by 4 points and takes one portion of your food rations", comment: "Eat alert sheet message"), preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Eat", comment: "Eat option title"), style: .default, handler: { (_) in
+            GameData.shared.player.eat()
+            self.characterTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showOptions(potion: Potion) {
+        
+        guard GameData.shared.player != nil, let property = potion.modifiesPropertyWhenUsed else {return}
+        
+        var message: String!
+        
+        switch property {
+        case .dexerity:
+            message = String(format: NSLocalizedString("Restores your dexerity to start level (%d)", comment: "Dexerity potion option alert message format"), GameData.shared.player.dexterityStarting)
+        case .health:
+            message = String(format: NSLocalizedString("Restores your health to start level (%d)", comment: "Health potion alert message format"), GameData.shared.player.healthStarting)
+        case .luck:
+            message = String(format: NSLocalizedString("Restores your luck to start level (%d) and increses starting levelby one", comment: "Luck potoion alert message format"), GameData.shared.player.luckStarting)
+        }
+        
+        let alert = UIAlertController(title: String(format: NSLocalizedString("Drink potion of %@?", comment: "Drink potion alert title format"), property.rawValue), message: message, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Drink", comment: "Drink option title"), style: .default, handler: { (_) in
+            
+            GameData.shared.player.drink(potion: potion)
+            self.characterTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

@@ -85,15 +85,15 @@ class Character {
         
         healthCurrent = min(healthCurrent + 4, healthStarting)
         food.eat()
+        
+        inventory.removeAll { (item) -> Bool in
+            return item.type == .food && item.amount < 1
+        }
     }
     
-    func drinkPotion(of type: CharacterProperty) {
-        
-        guard let potion = inventory.first(where: { (item) -> Bool in
-            return item.type == .potion
-        }) as? Potion else {return}
-                
-        guard let potionType = potion.modifiesPropertyWhenUsed else {return}
+    func drink(potion: Potion) {
+                        
+        guard let potionType = potion.modifiesPropertyWhenUsed, potion.amount > 0 else {return}
         
         potion.use()
         
