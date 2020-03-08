@@ -35,10 +35,8 @@ struct Scene: Deserializable {
             image = nil
         }
         
-        // Items, actions
-        // FIXME: Load items, actions
+        // FIXME: Load items
         items = nil
-        actions = nil
         
         // Waypoints
         var _waypoints = [WayPoint]()
@@ -54,6 +52,26 @@ struct Scene: Deserializable {
         }
         else {
             wayPoints = nil
+        }
+        
+        if _id == 71 {
+            print("71")
+        }
+        
+        // Actions
+        var _actions = [Action]()
+        if let _actionsArray = json[JSONKeys.actions] as? JSONArray {
+            for _actionJson in _actionsArray {
+                if let _action = ActionFactory.action(json: _actionJson) {
+                    _actions.append(_action)
+                }
+            }
+        }
+        if !_actions.isEmpty {
+            actions = _actions
+        }
+        else {
+            actions = nil
         }
     }
     

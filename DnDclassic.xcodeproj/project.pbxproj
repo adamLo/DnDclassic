@@ -50,6 +50,10 @@
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
 		19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA972412F9B300199175 /* CharacterViewInventoryCell.swift */; };
+		19FCFA9B24157A1900199175 /* scene_009.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FCFA9924157A1800199175 /* scene_009.png */; };
+		19FCFA9C24157A1900199175 /* scene_071.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FCFA9A24157A1900199175 /* scene_071.png */; };
+		19FCFA9E24157BA000199175 /* SceneActionTryLuckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA9D24157BA000199175 /* SceneActionTryLuckCell.swift */; };
+		19FCFAA024157CF100199175 /* TryLuckAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA9F24157CF100199175 /* TryLuckAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,10 @@
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
 		19FCFA972412F9B300199175 /* CharacterViewInventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewInventoryCell.swift; sourceTree = "<group>"; };
+		19FCFA9924157A1800199175 /* scene_009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_009.png; sourceTree = "<group>"; };
+		19FCFA9A24157A1900199175 /* scene_071.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_071.png; sourceTree = "<group>"; };
+		19FCFA9D24157BA000199175 /* SceneActionTryLuckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneActionTryLuckCell.swift; sourceTree = "<group>"; };
+		19FCFA9F24157CF100199175 /* TryLuckAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryLuckAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +225,7 @@
 				193015852403120700E7B815 /* WayPoint.swift */,
 				19301587240316D700E7B815 /* Game.swift */,
 				1930158E24031E4400E7B815 /* Action.swift */,
+				19FCFA9F24157CF100199175 /* TryLuckAction.swift */,
 				19A8559D240ACB5B007174C8 /* Food.swift */,
 				19A8559F240ACC0B007174C8 /* Money.swift */,
 			);
@@ -228,6 +237,8 @@
 			children = (
 				19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */,
 				1930158C24031CD800E7B815 /* scene_001.png */,
+				19FCFA9924157A1800199175 /* scene_009.png */,
+				19FCFA9A24157A1900199175 /* scene_071.png */,
 				1930158A240318DE00E7B815 /* cover.png */,
 			);
 			path = Resources;
@@ -259,6 +270,7 @@
 				19A855A3240BEC95007174C8 /* SceneStoryCell.swift */,
 				19497D722405AF0A0072CFD0 /* IntroViewController.swift */,
 				19A855A5240BF168007174C8 /* SceneWaypointCell.swift */,
+				19FCFA9D24157BA000199175 /* SceneActionTryLuckCell.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -423,6 +435,8 @@
 				19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
 				1930158B240318DE00E7B815 /* cover.png in Resources */,
+				19FCFA9C24157A1900199175 /* scene_071.png in Resources */,
+				19FCFA9B24157A1900199175 /* scene_009.png in Resources */,
 				1930158D24031CD800E7B815 /* scene_001.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +472,7 @@
 				19A85599240AB6E6007174C8 /* Strings.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
 				19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */,
+				19FCFAA024157CF100199175 /* TryLuckAction.swift in Sources */,
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
 				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
@@ -480,6 +495,7 @@
 				19497D772406AC620072CFD0 /* Character.swift in Sources */,
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
+				19FCFA9E24157BA000199175 /* SceneActionTryLuckCell.swift in Sources */,
 				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
 				19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */,
 			);

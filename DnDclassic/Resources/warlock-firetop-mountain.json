@@ -484,6 +484,29 @@
 		},
 
 		{
+			"id": 71,
+			"story": "Jobbra egy benyíló van az észak felé vezető úton. Óvatosan megközelíted a sarkon lévő őrhelyet, belesel, és egy különös, Goblin-szerű teremtményt pillantasz meg. amint bőrruhájában őrhelyén szunyókál. Megpróbálsz lábujjhegyen elsurranni mellette. ",
+			"actions": [
+				{
+					"type": "tryLuck",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 301, 
+						"caption": "Nem ébred fel, továbbra is hangosan horkol"
+					},
+					"badLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 248, 
+						"caption": "Valami megcsikordul a talpad alatt, és az őr szemei felpattannak"
+					}       
+				}		
+			],
+			"cover": "scene_071.png"
+		},
+
+		{
 			"id": 101,
 			"story": "Szerencsés hajításod váratlanul éri a Vámpírt, aki sikoltozik fájdalmában, ahogy a facövek átveri a szívét. Odaugrasz, és még mélyebbre nyomod testébe a cöveket. Halálsikolya egyre gyengül, élettelen teste a földre omlik.",
 			"waypoints": [
@@ -631,6 +654,33 @@
 		},
 
 		{
+			"id": 248,
+			"story": "A teremtmény, amit most felébresztettél, egy Ork! Feltápászkodik a földről, és elfordul, hogy megragadjon egy kötelet, mely valószínűleg a riasztóharangot kondítja meg. Gyorsan rá kell támadnod!",
+			"actions": [
+				{
+					"type": "fight",
+					"opponents": [
+						{
+							"name": "Ork",
+							"dexerity": 6,
+							"health": 5
+						}
+					],
+					"escape": {
+						"direction": "unknown",
+						"destination": 301,
+						"caption": "Elmenekültél"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 301,
+						"caption": "Legyőzted az orkot"
+					}
+				}
+			]
+		},
+
+		{
 			"id": 282,
 			"story": "A négy, feléd csoszogó alak értelem nélküli Zombi. Üres tekintetükön látszik, tevékenységüket nem saját akaratuk irányítja. Még mindig túlságosan szédülsz ahhoz, hogy helyesen gondolkodjál, de most sietve tenned kell valamit. Az első Zombi odaér, és ütésre emeli dorongját. Meg kell küzdened vele. Ha legyőzted az első Zombit, 2 Szerencse pontot nyersz, és már fordulhatsz is szembe a másik hárommal. Egyesével támadnak rád.",
 			"actions": [
@@ -680,6 +730,24 @@
 					}
 				}
 			]
+		},
+
+		{
+			"id": 301,
+			"story": "A folyosó nyugati oldalán, tőled balra egy durván faragott faajtó áll, mely mögül reszelős hang szűrődik ki, olyan, mintha valaki bent hortyogna.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Kinyitod az ajtót",
+					"destination": 82
+				},
+				{
+					"direction": "north",
+					"caption": "Továbbhaladsz északnak",
+					"destination": 208
+				}
+			]
 		}
+
 	]
 }

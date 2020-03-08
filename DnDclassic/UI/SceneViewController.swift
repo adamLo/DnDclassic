@@ -19,7 +19,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private enum Section: Int, CaseIterable {
         
-        case story = 0, waypoints
+        case story = 0, waypoints, actions
     }
     
     // MARK: - Controller lifecycle
@@ -79,6 +79,8 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return 1
         case .waypoints:
             return scene.wayPoints?.count ?? 0
+        case .actions:
+            return scene.actions?.count ?? 0
         }
     }
     
@@ -100,6 +102,12 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     let waypoint = _waypoints[indexPath.row]
                     cell.setup(waypoint: waypoint)
+                    return cell
+                }
+                
+            case .actions:
+                if let _actions = scene.actions, indexPath.row < _actions.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneActionTryLuckCell.reuseId, for: indexPath) as? SceneActionTryLuckCell {
+                    
                     return cell
                 }
             }
@@ -134,5 +142,35 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             distributeGame()
             sceneTableView.reloadData()
         }
+        else if section == .actions, let actions = scene.actions, indexPath.row < actions.count {
+            
+            let action = actions[indexPath.row]
+            
+            if let tryLuck = action as? TryLuckAction {
+                tryLuckAction(tryLuck)
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    private func tryLuckAction(_ action: TryLuckAction) {
+                
+        let luck = GameData.shared.player.tryLuck()
+        
+        let alert = UIAlertController(title: NSLocalizedString("You tried your luck", comment: "Try luck action result title"), message: String(format: NSLocalizedString("You rolled %d, %@", comment: "Try luck action result message format"), luck.rolled, luck.success ? NSLocalizedString("Good luck!", comment: "Good luck result title") : NSLocalizedString("Bad luck :(", comment: "Bad luck result title")), preferredStyle: .alert)
+        
+        if luck.success {
+            alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in
+                
+            }))
+        }
+        else {
+            alert.addAction(UIAlertAction(title: action.badLuck.caption, style: .default, handler: { (_) in
+                
+            }))
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
 }

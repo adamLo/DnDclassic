@@ -407,6 +407,32 @@
                                             <outlet property="directionLabel" destination="LGs-XA-up3" id="WR3-Qa-OeN"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tryLuckCell" id="cPb-lw-V5Y" customClass="SceneActionTryLuckCell" customModule="DnDclassic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="149.33333396911621" width="414" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPb-lw-V5Y" id="G0t-co-cYz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try your luck!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjn-cX-os7">
+                                                    <rect key="frame" x="155.66666666666666" y="10" width="102.99999999999997" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fjn-cX-os7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G0t-co-cYz" secondAttribute="leading" constant="10" id="4zz-4T-504"/>
+                                                <constraint firstAttribute="bottom" secondItem="fjn-cX-os7" secondAttribute="bottom" constant="10" id="JgA-eg-gMI"/>
+                                                <constraint firstItem="fjn-cX-os7" firstAttribute="centerX" secondItem="G0t-co-cYz" secondAttribute="centerX" id="SaU-ct-MzJ"/>
+                                                <constraint firstItem="fjn-cX-os7" firstAttribute="top" secondItem="G0t-co-cYz" secondAttribute="top" constant="10" id="Wve-Rw-20M"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fjn-cX-os7" secondAttribute="trailing" constant="10" id="hqP-Iy-olI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="fjn-cX-os7" id="8B7-uM-Qce"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="r1L-de-LSn" id="rrA-xH-tqr"/>
