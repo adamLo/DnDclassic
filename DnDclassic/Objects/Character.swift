@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Character {
+class Character: Deserializable {
     
     let name: String
     let isPlayer: Bool
@@ -143,5 +143,32 @@ class Character {
         
         let mileStone = JourneyMilestone(sceneId: scene.id, sourceDirection: sourceDirection, sourceSceneId: sourceId)
         journey.append(mileStone)
+    }
+    
+    // MARK: - JSON
+    
+    required init?(json: JSON) {
+        
+        guard let _nameString = json[JSONKeys.name] as? String, let _name = _nameString.nilIfEmpty else {return nil}
+        name = _name
+        
+        guard let _dexerity = json[JSONKeys.dexerity] as? Int else {return nil}
+        dexterityStarting = _dexerity
+        dexterityCurrent = _dexerity
+        
+        guard let _health = json[JSONKeys.health] as? Int else {return nil}
+        healthStarting = _health
+        healthCurrent = _health
+        
+        isPlayer = false
+        luckStarting = 0
+        luckCurrent = 0
+        
+    }
+    
+    private struct JSONKeys {
+        static let name     = "name"
+        static let dexerity = "dexerity"
+        static let health   = "health"
     }
 }

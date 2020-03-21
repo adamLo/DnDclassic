@@ -10,21 +10,24 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck
+    case tryLuck, fight
 }
 
 class Action: Deserializable {
         
     let type: ActionType
+    let caption: String?
     
     required init?(json: JSON) {
         
         guard let _typeString = json[JSONKeys.type] as? String, let _type = ActionType(rawValue: _typeString) else {return nil}
         self.type = _type
+        self.caption = json[JSONKeys.caption] as? String
     }
     
     struct JSONKeys {
         static let type     = "type"
+        static let caption  = "caption"
     }
 }
 
@@ -36,6 +39,7 @@ class ActionFactory {
         
         switch type {
         case .tryLuck: return TryLuckAction(json: json)
+        case .fight: return FightAction(json: json)
         }
     }
 }

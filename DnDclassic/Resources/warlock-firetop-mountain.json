@@ -484,6 +484,41 @@
 		},
 
 		{
+			"id": 33,
+			"story": "Az alvó teremtmény riadtan felébred. Felugrik és rád ront, de fegyvertelen. Kardoddal le tudnád győzni, de éles fogai gonoszul villognak.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Elmenekülsz az ajtón keresztül",
+					"destination": 320
+				}
+			],
+			"actions": [
+				{
+					"type": "fight",
+					"caption": "Megállsz, és megküzdesz a rád támadó Orkkal",
+					"opponents": [
+						{
+							"name": "Ork",
+							"dexerity": 6,
+							"health": 4
+						}
+					],
+					"escape": {
+						"direction": "unknown",
+						"destination": 320,
+						"caption": "Elmenekülsz az ajtón keresztül"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 147,
+						"caption": "Legyőzted a szörnyet, elveheted a ládikát"
+					}
+				}
+			]
+		},
+
+		{
 			"id": 71,
 			"story": "Jobbra egy benyíló van az észak felé vezető úton. Óvatosan megközelíted a sarkon lévő őrhelyet, belesel, és egy különös, Goblin-szerű teremtményt pillantasz meg. amint bőrruhájában őrhelyén szunyókál. Megpróbálsz lábujjhegyen elsurranni mellette. ",
 			"actions": [
@@ -501,9 +536,39 @@
 						"destination": 248, 
 						"caption": "Valami megcsikordul a talpad alatt, és az őr szemei felpattannak"
 					}       
-				}		
+				}
 			],
 			"cover": "scene_071.png"
+		},
+
+		{
+			"id": 82,
+			"story": "Az ajtó kinyílik, és egy kicsi, büdös odú tárul a szemed elé. A szoba közepén egy roskatag faasztal éli, rajta égő gyertya, alatta egy kicsi faládika. A szoba egyik távoli sarkában egy szalmamatracon egy alacsony, zömök, csúnya bibircsókos arcú teremtmény alszik. Ugyanabból a fajtából való, akit alva találtál az őrhelyen. Nyilván ő az éjszakai szolgálatban lévő őr.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"caption": "Visszatérsz a folyosóra, és haladsz tovább észak felé",
+					"destination": 208
+				}
+			],
+			"actions": [
+				{
+					"type": "tryLuck",
+					"caption": "Bekúszol a szobába, és megpróbálod megszerezni a ládikát, anélkül hogy felébresztenéd őrzőjét",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 147, 
+						"caption": "Nem ébred fel"
+					},
+					"badLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 33, 
+						"caption": "Balszerencsés vagy"
+					}       
+				}
+			]
 		},
 
 		{

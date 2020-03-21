@@ -106,8 +106,10 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 
             case .actions:
-                if let _actions = scene.actions, indexPath.row < _actions.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneActionTryLuckCell.reuseId, for: indexPath) as? SceneActionTryLuckCell {
+                if let _actions = scene.actions, indexPath.row < _actions.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneActionCell.reuseId, for: indexPath) as? SceneActionCell {
                     
+                    let action = _actions[indexPath.row]
+                    cell.setup(action: action)
                     return cell
                 }
             }
@@ -135,26 +137,28 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if section == .waypoints, let waypoints = scene.wayPoints, indexPath.row < waypoints.count  {
             
             let wayPoint = waypoints[indexPath.row]
-            guard let _scene = GameData.shared.game.scene(id: wayPoint.destination) else {return}
-            
-            GameData.shared.advance(player: GameData.shared.player, scene: scene)
-            scene = _scene
-            distributeGame()
-            sceneTableView.reloadData()
+            advance(to: wayPoint)
         }
         else if section == .actions, let actions = scene.actions, indexPath.row < actions.count {
             
             let action = actions[indexPath.row]
-            
-            if let tryLuck = action as? TryLuckAction {
-                tryLuckAction(tryLuck)
-            }
+            perform(action: action)
         }
     }
     
     // MARK: - Actions
     
-    private func tryLuckAction(_ action: TryLuckAction) {
+    private func perform(action: Action) {
+
+        if action.type == .tryLuck, let _action = action as? TryLuckAction {
+            tryLuck(_action)
+        }
+        else if action.type == .fight, let _action = action as? FightAction {
+            fight(_action)
+        }
+    }
+    
+    private func tryLuck(_ action: TryLuckAction) {
                 
         let luck = GameData.shared.player.tryLuck()
         
@@ -162,15 +166,29 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if luck.success {
             alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in
-                
+                self.advance(to: action.goodLuck)
             }))
         }
         else {
             alert.addAction(UIAlertAction(title: action.badLuck.caption, style: .default, handler: { (_) in
-                
+                self.advance(to: action.badLuck)
             }))
         }
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func fight(_ fight: FightAction) {
+        
+    }
+    
+    private func advance(to wayPoint: WayPoint) {
+        
+        guard let _scene = GameData.shared.game.scene(id: wayPoint.destination) else {return}
+        
+        GameData.shared.advance(player: GameData.shared.player, scene: scene)
+        scene = _scene
+        distributeGame()
+        sceneTableView.reloadData()
     }
 }
