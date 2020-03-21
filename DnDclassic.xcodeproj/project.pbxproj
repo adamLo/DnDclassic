@@ -47,6 +47,8 @@
 		19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A3240BEC95007174C8 /* SceneStoryCell.swift */; };
 		19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A5240BF168007174C8 /* SceneWaypointCell.swift */; };
 		19E193B9242627CC00334B0F /* FightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193B8242627CC00334B0F /* FightAction.swift */; };
+		19E193BC2426462600334B0F /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BB2426462600334B0F /* FightViewController.swift */; };
+		19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BE242647FC00334B0F /* FightOpponentCell.swift */; };
 		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
@@ -121,6 +123,8 @@
 		19A855A3240BEC95007174C8 /* SceneStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStoryCell.swift; sourceTree = "<group>"; };
 		19A855A5240BF168007174C8 /* SceneWaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWaypointCell.swift; sourceTree = "<group>"; };
 		19E193B8242627CC00334B0F /* FightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightAction.swift; sourceTree = "<group>"; };
+		19E193BB2426462600334B0F /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
+		19E193BE242647FC00334B0F /* FightOpponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightOpponentCell.swift; sourceTree = "<group>"; };
 		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				19E193BA2426404700334B0F /* Fight */,
 				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19497D782406AD370072CFD0 /* Character */,
 				19497D6F2405AE100072CFD0 /* Scene */,
@@ -303,6 +308,15 @@
 				19A8559B240AC6B6007174C8 /* GameData.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		19E193BA2426404700334B0F /* Fight */ = {
+			isa = PBXGroup;
+			children = (
+				19E193BB2426462600334B0F /* FightViewController.swift */,
+				19E193BE242647FC00334B0F /* FightOpponentCell.swift */,
+			);
+			name = Fight;
 			sourceTree = "<group>";
 		};
 		19FCFA8F2412956800199175 /* Edit */ = {
@@ -494,6 +508,8 @@
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
 				193015842403118A00E7B815 /* Direction.swift in Sources */,
+				19E193BC2426462600334B0F /* FightViewController.swift in Sources */,
+				19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */,
 				19A8559E240ACB5B007174C8 /* Food.swift in Sources */,
 				19497D772406AC620072CFD0 /* Character.swift in Sources */,
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
