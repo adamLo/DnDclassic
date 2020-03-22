@@ -519,6 +519,23 @@
 		},
 
 		{
+			"id": 42,
+			"story": "Végül a folyosó egy hármas elágazásba torkollik.",
+			"waypoints": [
+				{
+					"direction": "west",
+					"caption": "Nyugatnak mész",
+					"destination": 257
+				},
+				{
+					"direction": "east",
+					"caption": "Keletnek mész",
+					"destination": 113
+				}
+			]
+		},
+
+		{
 			"id": 71,
 			"story": "Jobbra egy benyíló van az észak felé vezető úton. Óvatosan megközelíted a sarkon lévő őrhelyet, belesel, és egy különös, Goblin-szerű teremtményt pillantasz meg. amint bőrruhájában őrhelyén szunyókál. Megpróbálsz lábujjhegyen elsurranni mellette. ",
 			"actions": [
@@ -539,6 +556,23 @@
 				}
 			],
 			"cover": "scene_071.png"
+		},
+
+		{
+			"id": 78,
+			"story": "Az út egy sarokvasakon függő tömör faajtónál ér véget. Ennél hallgatózva furcsa mormogást és konyhai edények zörgését hallod. Egy biztos: az ajtó mögött többen vannak.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Benyitsz",
+					"destination": 159
+				},
+				{
+					"direction": "unknown",
+					"caption": "Visszafordulsz",
+					"destination": 237
+				}
+			]
 		},
 
 		{
@@ -584,6 +618,23 @@
 		},
 
 		{
+			"id": 113,
+			"story": "A folyosó újabb elágazáshoz érkezett.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"caption": "Észak felé mész",
+					"destination": 285
+				},
+				{
+					"direction": "east",
+					"caption": "Folytatod az utad keletnek",
+					"destination": 78
+				}
+			]
+		},
+
+		{
 			"id": 118,
 			"story": "Ahogy megközelíted, felemelkedik koporsójából, szétnyitja köpenyét, és alávon. Életed utolsó emlékeként éles fájdalom hasít beléd, amint hegyes fogait a nyakadba mélyeszti. Soha nem lett volna szabad a Vámpír szemébe nézned...",
 			"status": {
@@ -614,6 +665,35 @@
 			]
 		},
 
+		{
+			"id": 159,
+			"story": "Az ajtó egy hatalmas terembe nyílik, a terem valószínűleg a már előbb látott bibircsókos arcú teremtmények ebédlője. A nagy asztal körül öt Ork ül, iszogatnak, és tányérjukból patkánybendőből készült levest szürcsölgetnek. Hevesen vitatkoznak azon, hogy ki szopogathatja majd le a hatalmas üstben benn hagyott patkánycsontokat, így nem vesznek észre, amint belépsz. Ha elég merész vagy, megtámadhatod őket, ha nem látod túl biztatónak ezt, megpróbálhatsz elmenekülni.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Megtámadod őket",
+					"destination": 365
+				}
+			],
+			"actions": [
+				{
+					"type": "tryLuck",
+					"caption": "Megpróbálsz elmenekülni",
+					"goodLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 237, 
+						"caption": "Kijutsz észrevétlenül"
+					},
+					"badLuck": {
+						"type": "waypoint",
+						"direction": "unknown", 
+						"destination": 365, 
+						"caption": "Balszerencsés vagy, észrevesznek, és meg kell küzdenetek"
+					}       
+				}				
+			]
+		},
 
 		{
 			"id": 161,
@@ -810,6 +890,52 @@
 					"direction": "north",
 					"caption": "Továbbhaladsz északnak",
 					"destination": 208
+				}
+			]
+		},
+
+		{
+			"id": 320,
+			"story": "Kirohansz a szobából, és becsapod magad mögött az ajtót.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"caption": "Észak felé indulsz, és valamivel távolabb egy hasonló ajtó mellett haladsz el.",
+					"destination": 363
+				}
+			]
+		},
+
+		{
+			"id": 363,
+			"story": "Továbbhaladva az úton jobbra egy hasonló ajtót találsz. Megállsz előtte, és bentről vérfagyasztó éneket hallasz!",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Bemész a szobába, hogy kiderítsd e hangok kibocsátóját",
+					"destination": 370
+				},
+				{
+					"direction": "unknown",
+					"caption": "Továbbmész",
+					"destination": 42
+				}
+			]
+		},
+
+		{
+			"id": 370,
+			"story": "Az ajtó kinyílik, és egy kis, rendetlen, piszkos szoba tárul eléd. Az egyik sarokban szalmazsák hever. A helyiség közepén faasztal, rajta gyertya, reszkető fénye bevilágítja a szobát. Az asztal alatt egy apró doboz. Az asztal körül kér bibircsókos bőrű, bőrpáncélt viselő kicsi lény ül. Valami grogfélét iszogatnak. Érkezésedkor feltápászkodnak, de mozgásukon látszik, rettenetesen berúgtak.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Kivont karddal rájuk veted magad",
+					"destination": 116
+				},
+				{
+					"direction": "unknown",
+					"caption": "Gyorsan becsapod az ajtót és visszaszaladsz a folyosóra",
+					"destination": 42
 				}
 			]
 		}
