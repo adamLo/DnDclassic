@@ -159,6 +159,16 @@ class Character: Deserializable {
         return healthCurrent <= 0
     }
     
+    func escape(goodLuck: Bool? = nil) {
+        
+        if let _luck = goodLuck {
+            hitDamage(points: _luck ? 1 : 3)
+        }
+        else {
+            hitDamage(points: 2)
+        }
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {

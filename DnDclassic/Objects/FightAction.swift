@@ -62,4 +62,5 @@ class FightAction: Action {
         
         return true
     }
+        
 }

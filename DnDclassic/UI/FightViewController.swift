@@ -24,6 +24,22 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     var figthOver: ((_ wayPoint: WayPoint?) -> ())?
     var didEscape: ((_ wayPoint: WayPoint) ->())?
     
+    var fights: [Fight]!
+    var action: FightAction! {
+        didSet {
+            if action != nil {
+                fights = [Fight]()
+                let orderedOpponents = action.opponents.sorted { (opponent1, opponent2) -> Bool in
+                    return opponent1.order <= opponent2.order
+                }
+                for opponent in orderedOpponents {
+                    let fight = Fight(player: GameData.shared.player, opponent: opponent)
+                    fights.append(fight)
+                }
+            }
+        }
+    }
+    
     // MARK: - Controller lifecycle
     
     override func viewDidLoad() {
@@ -40,19 +56,18 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         distributeCharacterData()
     }
     
-    var fights: [Fight]!
-    var action: FightAction! {
-        didSet {
-            if action != nil {
-                fights = [Fight]()
-                let orderedOpponents = action.opponents.sorted { (opponent1, opponent2) -> Bool in
-                    return opponent1.order <= opponent2.order
-                }
-                for opponent in orderedOpponents {
-                    let fight = Fight(player: GameData.shared.player, opponent: opponent)
-                    fights.append(fight)
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        guard !action.isOver, GameData.shared.player != nil, !GameData.shared.player.isDead else {
+            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("The battle is over", comment: "Alert message when fight is over")) {
+                self.dismiss(animated: true) {
+                    self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
                 }
             }
+            present(alert, animated: true, completion: nil)
+            return
         }
     }
     
@@ -149,10 +164,17 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.deselectRow(at: indexPath, animated: false)
         
+        guard !action.isOver else {
+            dismiss(animated: true) {
+                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+            }
+            return
+        }
+        
         guard let section = Section(rawValue: indexPath.section) else {return}
         
         if section == .actions {
-            // FIXME: Impement escape
+            escape()
         }
         else if section == .opponents, fights != nil, indexPath.row < fights.count {
             
@@ -206,5 +228,29 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func displayPotions() {
         
+    }
+    
+    private func escape() {
+        
+        let alert = UIAlertController(title: NSLocalizedString("Escape", comment: "Escape alert title"), message: NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message"), preferredStyle: .alert)
+        if GameData.shared.player != nil && GameData.shared.player.luckCurrent > 0 {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Try your luck", comment: "Escape alert luck option title"), style: .default, handler: { (_) in
+                let luck = GameData.shared.player.tryLuck()
+                GameData.shared.player.escape(goodLuck: luck.success)
+                self.dismiss(animated: true) {
+                    self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+                }
+            }))
+        }
+        if GameData.shared.player != nil {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Escape", comment: "Escape alert default title"), style: .default, handler: { (_) in
+                GameData.shared.player.escape()
+                self.dismiss(animated: true) {
+                    self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+                }
+            }))
+        }
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
