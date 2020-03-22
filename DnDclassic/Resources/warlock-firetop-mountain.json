@@ -924,6 +924,59 @@
 		},
 
 		{
+			"id": 365,
+			"story": "Az Orkok egyesével támadnak rád",
+			"actions": [
+				{
+					"type": "fight",
+					"order": "single",
+					"opponents": [
+						{
+							"name": "Első ork",
+							"dexerity": 6,
+							"health": 4,							
+							"order": 0
+						},
+						{
+							"name": "Második ork",
+							"dexerity": 5,
+							"health": 3,							
+							"order": 1
+						},
+						{
+							"name": "Harmadik ork",
+							"dexerity": 6,
+							"health": 4,							
+							"order": 2
+						},
+						{
+							"name": "Negyedik ork",
+							"dexerity": 5,
+							"health": 2,							
+							"order": 3
+						},
+						{
+							"name": "Ötödik ork",
+							"dexerity": 4,
+							"health": 4,							
+							"order": 4
+						}
+					],
+					"escape": {
+						"direction": "unknown",
+						"destination": 237,
+						"caption": "Elmenekülsz"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 183,
+						"caption": " Győztél"
+					}
+				}
+			]
+		},
+
+		{
 			"id": 370,
 			"story": "Az ajtó kinyílik, és egy kis, rendetlen, piszkos szoba tárul eléd. Az egyik sarokban szalmazsák hever. A helyiség közepén faasztal, rajta gyertya, reszkető fénye bevilágítja a szobát. Az asztal alatt egy apró doboz. Az asztal körül kér bibircsókos bőrű, bőrpáncélt viselő kicsi lény ül. Valami grogfélét iszogatnak. Érkezésedkor feltápászkodnak, de mozgásukon látszik, rettenetesen berúgtak.",
 			"waypoints": [
