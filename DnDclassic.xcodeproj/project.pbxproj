@@ -49,6 +49,8 @@
 		19E193B9242627CC00334B0F /* FightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193B8242627CC00334B0F /* FightAction.swift */; };
 		19E193BC2426462600334B0F /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BB2426462600334B0F /* FightViewController.swift */; };
 		19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BE242647FC00334B0F /* FightOpponentCell.swift */; };
+		19E193C32427990400334B0F /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193C22427990400334B0F /* Opponent.swift */; };
+		19E193C52427A1E900334B0F /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193C42427A1E900334B0F /* Alerts.swift */; };
 		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
@@ -125,6 +127,8 @@
 		19E193B8242627CC00334B0F /* FightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightAction.swift; sourceTree = "<group>"; };
 		19E193BB2426462600334B0F /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		19E193BE242647FC00334B0F /* FightOpponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightOpponentCell.swift; sourceTree = "<group>"; };
+		19E193C22427990400334B0F /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
+		19E193C42427A1E900334B0F /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			children = (
 				19497D67240587500072CFD0 /* Definitions */,
 				19497D762406AC620072CFD0 /* Character.swift */,
+				19E193C22427990400334B0F /* Opponent.swift */,
 				193015732402C0B700E7B815 /* Dice.swift */,
 				193015752402C2E500E7B815 /* CharacterProperty.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				19A85598240AB6E6007174C8 /* Strings.swift */,
+				19E193C42427A1E900334B0F /* Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +497,8 @@
 				19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */,
 				19FCFAA024157CF100199175 /* TryLuckAction.swift in Sources */,
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
+				19E193C52427A1E900334B0F /* Alerts.swift in Sources */,
+				19E193C32427990400334B0F /* Opponent.swift in Sources */,
 				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,

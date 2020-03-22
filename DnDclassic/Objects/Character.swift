@@ -14,13 +14,13 @@ class Character: Deserializable {
     let isPlayer: Bool
     
     let dexterityStarting: Int
-    var dexterityCurrent: Int = 0
+    private(set) var dexterityCurrent: Int = 0
     
     let healthStarting: Int
     private(set)var healthCurrent: Int  = 0
     
     private(set) var luckStarting: Int
-    var luckCurrent: Int = 0
+    private(set) var luckCurrent: Int = 0
         
     private(set) var inventory = [InventoryItem]()
     
@@ -32,6 +32,8 @@ class Character: Deserializable {
     }
     
     private(set) var journey = [JourneyMilestone]()
+    
+    var changed: (() -> ())?
     
     init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
         
@@ -72,6 +74,8 @@ class Character: Deserializable {
         
         luckCurrent = max(luckCurrent - 1, 0)
         
+        changed?()
+        
         return (_rolled, result)
     }
     
@@ -89,6 +93,8 @@ class Character: Deserializable {
         inventory.removeAll { (item) -> Bool in
             return item.type == .food && item.amount < 1
         }
+        
+        changed?()
     }
     
     func drink(potion: Potion) {
@@ -114,11 +120,15 @@ class Character: Deserializable {
             }
             return false
         }
+        
+        changed?()
     }
     
     func hitDamage(points: Int) {
         
         healthCurrent = max(healthCurrent - points, 0)
+        
+        changed?()
     }
     
     static var startInventory: [InventoryItem] {
@@ -143,6 +153,10 @@ class Character: Deserializable {
         
         let mileStone = JourneyMilestone(sceneId: scene.id, sourceDirection: sourceDirection, sourceSceneId: sourceId)
         journey.append(mileStone)
+    }
+    
+    var isDead: Bool {
+        return healthCurrent <= 0
     }
     
     // MARK: - JSON

@@ -11,9 +11,9 @@ import Foundation
 struct Fight {
     
     let player: Character
-    let opponent: Character
+    let opponent: Opponent
     
-    init(player: Character, opponent: Character) {
+    init(player: Character, opponent: Opponent) {
         
         self.player = player
         self.opponent = opponent

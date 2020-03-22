@@ -27,6 +27,12 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         setupUI()
+        
+        if GameData.shared.player != nil {
+            GameData.shared.player.changed = {[weak self] in
+                self?.characterTableView.reloadData()
+            }
+        }
     }
     
     // MARK: - UI Customization

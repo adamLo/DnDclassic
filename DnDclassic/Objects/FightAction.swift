@@ -15,7 +15,7 @@ enum FightOrder: String {
 class FightAction: Action {
     
     let order: FightOrder
-    let opponents: [Character]
+    let opponents: [Opponent]
     let escape: WayPoint
     let win: WayPoint
     
@@ -35,9 +35,9 @@ class FightAction: Action {
         escape = _escape
         
         guard let _opponentObjects = json[JSONKeys.opponents] as? JSONArray else {return nil}
-        var _opponents = [Character]()
+        var _opponents = [Opponent]()
         for object in _opponentObjects {
-            guard let opponent = Character(json: object) else {return nil}
+            guard let opponent = Opponent(json: object) else {return nil}
             _opponents.append(opponent)
         }
         opponents = _opponents
@@ -50,5 +50,16 @@ class FightAction: Action {
         static let escape       = "escape"
         static let win          = "win"
         static let order        = "order"
+    }
+    
+    var isOver: Bool {
+        
+        for opponent in opponents {
+            if !opponent.isDead {
+                return false
+            }
+        }
+        
+        return true
     }
 }

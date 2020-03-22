@@ -21,6 +21,9 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var fightTableView: UITableView!
     
+    var figthOver: ((_ wayPoint: WayPoint?) -> ())?
+    var didEscape: ((_ wayPoint: WayPoint) ->())?
+    
     // MARK: - Controller lifecycle
     
     override func viewDidLoad() {
@@ -37,7 +40,21 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         distributeCharacterData()
     }
     
-    var action: FightAction!
+    var fights: [Fight]!
+    var action: FightAction! {
+        didSet {
+            if action != nil {
+                fights = [Fight]()
+                let orderedOpponents = action.opponents.sorted { (opponent1, opponent2) -> Bool in
+                    return opponent1.order <= opponent2.order
+                }
+                for opponent in orderedOpponents {
+                    let fight = Fight(player: GameData.shared.player, opponent: opponent)
+                    fights.append(fight)
+                }
+            }
+        }
+    }
     
     // MARK: - UI Customization
     
@@ -107,10 +124,10 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
                     return cell
                 }
             }
-            else if _section == .opponents, indexPath.row < action.opponents.count, let cell = tableView.dequeueReusableCell(withIdentifier: FightOpponentCell.reuseId, for: indexPath) as? FightOpponentCell {
+            else if _section == .opponents, fights != nil, indexPath.row < fights.count, let cell = tableView.dequeueReusableCell(withIdentifier: FightOpponentCell.reuseId, for: indexPath) as? FightOpponentCell {
                 
-                let opponent = action.opponents[indexPath.row]
-                cell.setup(opponent: opponent)
+                let fight = fights[indexPath.row]
+                cell.setup(opponent: fight.opponent)
                 return cell
             }
         }
@@ -131,6 +148,38 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: false)
+        
+        guard let section = Section(rawValue: indexPath.section) else {return}
+        
+        if section == .actions {
+            // FIXME: Impement escape
+        }
+        else if section == .opponents, fights != nil, indexPath.row < fights.count {
+            
+            let fight = fights[indexPath.row]
+            
+            guard fight.opponent.healthCurrent > 0 else {return}
+            
+            fight.performRound(withLuck: useLuckSwitch.isOn)
+            
+            distributeCharacterData()
+            
+            tableView.beginUpdates()
+            tableView.reloadRows(at: [indexPath], with: .none)
+            tableView.endUpdates()
+            
+            if fight.opponent.healthCurrent <= 0 {
+                let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You won again!", comment: "Alert message when opponent was beaten"), title: NSLocalizedString("Congratlations!", comment:"Alert title when opponent was beaten")) {
+                    
+                    if GameData.shared.player.isDead || self.action.isOver {
+                        self.dismiss(animated: true) {
+                            self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+                        }
+                    }
+                }
+                present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     // MARK: - Data integrations
@@ -138,13 +187,13 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func distributeCharacterData() {
 
         let healthStatus = Double(GameData.shared.player.healthCurrent) / Double(max(GameData.shared.player.healthStarting, 1)) * 100
-        healthLabel.text = NSLocalizedString("Health", comment: "Heatlh title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.healthCurrent, GameData.shared.player.healthCurrent, healthStatus)
+        healthLabel.text = NSLocalizedString("Health", comment: "Heatlh title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.healthCurrent, GameData.shared.player.healthStarting, healthStatus)
         
         let dexterityStatus = Double(GameData.shared.player.dexterityCurrent) / Double(max(GameData.shared.player.dexterityStarting, 1)) * 100
-        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.dexterityCurrent, GameData.shared.player.dexterityCurrent, dexterityStatus)
+        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.dexterityCurrent, GameData.shared.player.dexterityStarting, dexterityStatus)
         
         let luckStatus = Double(GameData.shared.player.luckCurrent) / Double(max(GameData.shared.player.luckStarting, 1)) * 100
-        luckLabel.text = NSLocalizedString("Luck", comment: "Luck title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.luckCurrent, GameData.shared.player.luckCurrent, luckStatus)
+        luckLabel.text = NSLocalizedString("Luck", comment: "Luck title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.luckCurrent, GameData.shared.player.luckStarting, luckStatus)
         
         if GameData.shared.player.luckCurrent < 0 {
             useLuckSwitch.isOn = false

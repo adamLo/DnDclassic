@@ -26,6 +26,8 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         static let fight = "fight"
     }
     
+    var isFightOver = false
+    
     // MARK: - Controller lifecycle
     
     override func viewDidLoad() {
@@ -38,6 +40,13 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         setupUI()
         distributeGame()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        sceneTableView.reloadData()
     }
     
     // MARK: - UI customization
@@ -203,6 +212,24 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if segue.identifier == Segues.fight, let destination = segue.destination as? FightViewController, let fight = sender as? FightAction {
             destination.action = fight
+            destination.figthOver = {[weak self] (wayPoint) in
+                if let _wayPoint = wayPoint {
+                    self?.advance(to: _wayPoint)
+                }
+                else {
+                    self?.playerDied()
+                }
+            }
+            destination.didEscape = {[weak self] (wayPoint) in
+                self?.advance(to: wayPoint)
+            }
+        }
+    }
+    
+    private func playerDied() {
+        
+        let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You just died :(", comment: "Alert message when user gone KIA"), title: NSLocalizedString("Sorry", comment: "Aelrt title when user gone KIA")) {
+            // FIXME: Proceed to dead screen
         }
     }
 }

@@ -23,15 +23,17 @@ class FightOpponentCell: UITableViewCell {
         
     }
 
-    func setup(opponent: Character) {
+    func setup(opponent: Opponent) {
         
         nameLabel.text = opponent.name
         
         let healthStatus = Double(opponent.healthCurrent) / Double(max(opponent.healthStarting, 1)) * 100
-        healthLabel.text = NSLocalizedString("Health", comment: "Health title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.healthCurrent, opponent.healthCurrent, healthStatus)
+        healthLabel.text = NSLocalizedString("Health", comment: "Health title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.healthCurrent, opponent.healthStarting, healthStatus)
         
         let dexterityStatus = Double(opponent.dexterityCurrent) / Double(max(opponent.dexterityStarting, 1)) * 100
-        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.dexterityCurrent, opponent.dexterityCurrent, dexterityStatus)
+        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.dexterityCurrent, opponent.dexterityStarting, dexterityStatus)
+        
+        backgroundColor = opponent.healthCurrent > 0 ? UIColor.white : UIColor.darkGray
     }
 
 }
