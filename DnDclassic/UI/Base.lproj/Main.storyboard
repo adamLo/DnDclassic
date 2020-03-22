@@ -652,10 +652,10 @@
             </objects>
             <point key="canvasLocation" x="3042.0289855072465" y="-193.20652173913044"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab View Controller-->
         <scene sceneID="Fy8-YN-qVn">
             <objects>
-                <tabBarController id="gks-lX-vIZ" sceneMemberID="viewController">
+                <tabBarController id="gks-lX-vIZ" customClass="MainTabViewController" customModule="DnDclassic" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Dq7-kQ-gZq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dEo-co-d1b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -663,8 +663,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="r1L-de-LSn" kind="relationship" relationship="viewControllers" id="atd-u2-smb"/>
-                        <segue destination="vXl-nh-5nI" kind="relationship" relationship="viewControllers" id="Rzc-rc-TKj"/>
+                        <segue destination="r1L-de-LSn" kind="relationship" relationship="viewControllers" destinationCreationSelector="scene" id="atd-u2-smb"/>
+                        <segue destination="vXl-nh-5nI" kind="relationship" relationship="viewControllers" destinationCreationSelector="character" id="Rzc-rc-TKj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiL-er-SDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

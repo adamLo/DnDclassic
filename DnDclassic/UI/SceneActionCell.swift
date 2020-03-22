@@ -30,15 +30,19 @@ class SceneActionCell: UITableViewCell {
         }
         else if action.type == .tryLuck {
             captionLabel.text = NSLocalizedString("Try your luck!", comment: "Try luck action cell caption title")
-            if GameData.shared.player == nil || GameData.shared.player.luckCurrent <= 0 {
-                backgroundColor = UIColor.darkGray
-            }
         }
         else if action.type == .fight {
             captionLabel.text = NSLocalizedString("Fight!", comment: "Fight action cell caption title")
-            if let _fight = action as? FightAction, (_fight.isOver || GameData.shared.player == nil || GameData.shared.player.isDead) {
-                backgroundColor = UIColor.darkGray
-            }
+        }
+        else if action.type == .rest {
+            captionLabel.text = NSLocalizedString("Get some rest", comment: "Restaction cell caption title")
+        }
+        
+        if let _fight = action as? FightAction, (_fight.isOver || GameData.shared.player == nil || GameData.shared.player.isDead) {
+            backgroundColor = UIColor.darkGray
+        }
+        else if GameData.shared.player == nil || GameData.shared.player.luckCurrent <= 0 {
+            backgroundColor = UIColor.darkGray
         }
     }
 }

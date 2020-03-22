@@ -91,7 +91,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case .story:
             return 1
         case .waypoints:
-            return scene.wayPoints?.count ?? 0
+            return (scene.wayPoints?.count ?? 0) + 1
         case .actions:
             return scene.actions?.count ?? 0
         }
@@ -115,6 +115,12 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     let waypoint = _waypoints[indexPath.row]
                     cell.setup(waypoint: waypoint)
+                    return cell
+                }
+                else {
+                    // FIXME: Cheating! Rmeove in production
+                    let cell = UITableViewCell(style: .default, reuseIdentifier: "cheat")
+                    cell.textLabel?.text = "Go Directly to a location"
                     return cell
                 }
                 
@@ -147,10 +153,28 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         guard GameData.shared.game != nil, scene != nil, let section = Section(rawValue: indexPath.section) else {return}
         
-        if section == .waypoints, let waypoints = scene.wayPoints, indexPath.row < waypoints.count  {
+        if section == .waypoints, let waypoints = scene.wayPoints  {
             
-            let wayPoint = waypoints[indexPath.row]
-            advance(to: wayPoint)
+            if indexPath.row < waypoints.count {
+                let wayPoint = waypoints[indexPath.row]
+                advance(to: wayPoint)
+            }
+            else {
+                let alert = UIAlertController(title: "Scene selection", message: nil, preferredStyle: .alert)
+                alert.addTextField { (textField) in
+                    textField.placeholder = "Enter scene id"
+                }
+                alert.addAction(UIAlertAction(title: "Go to scene", style: .default, handler: { (_) in
+                    if GameData.shared.game != nil, let textField = alert.textFields?.first, let sceneString = textField.text?.nilIfEmpty, let sceneId = Int(sceneString), let _scene = GameData.shared.game.scene(id: sceneId) {
+                        GameData.shared.advance(player: GameData.shared.player, scene: _scene)
+                        self.scene = _scene
+                        self.distributeGame()
+                        self.sceneTableView.reloadData()
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
         }
         else if section == .actions, let actions = scene.actions, indexPath.row < actions.count {
             
@@ -180,7 +204,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let alert = UIAlertController(title: NSLocalizedString("You tried your luck", comment: "Try luck action result title"), message: String(format: NSLocalizedString("You rolled %d, %@", comment: "Try luck action result message format"), luck.rolled, luck.success ? NSLocalizedString("Good luck!", comment: "Good luck result title") : NSLocalizedString("Bad luck :(", comment: "Bad luck result title")), preferredStyle: .alert)
         
-        if false /*luck.success*/ {
+        if luck.success {
             alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in
                 self.advance(to: action.goodLuck)
             }))

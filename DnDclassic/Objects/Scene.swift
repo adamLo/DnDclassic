@@ -54,8 +54,8 @@ struct Scene: Deserializable {
             wayPoints = nil
         }
         
-        if _id == 71 {
-            print("71")
+        if _id == 11 {
+            print("11")
         }
         
         // Actions

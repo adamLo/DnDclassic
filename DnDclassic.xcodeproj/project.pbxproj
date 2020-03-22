@@ -52,6 +52,7 @@
 		19E193C32427990400334B0F /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193C22427990400334B0F /* Opponent.swift */; };
 		19E193C52427A1E900334B0F /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193C42427A1E900334B0F /* Alerts.swift */; };
 		19E193C92427E71F00334B0F /* RestAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193C82427E71F00334B0F /* RestAction.swift */; };
+		19E193CB2427F6B300334B0F /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193CA2427F6B300334B0F /* MainTabViewController.swift */; };
 		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
@@ -131,6 +132,7 @@
 		19E193C22427990400334B0F /* Opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
 		19E193C42427A1E900334B0F /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		19E193C82427E71F00334B0F /* RestAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAction.swift; sourceTree = "<group>"; };
+		19E193CA2427F6B300334B0F /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19497D782406AD370072CFD0 /* Character */,
 				19497D6F2405AE100072CFD0 /* Scene */,
+				19E193CA2427F6B300334B0F /* MainTabViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				19E193BC2426462600334B0F /* FightViewController.swift in Sources */,
 				19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */,
 				19A8559E240ACB5B007174C8 /* Food.swift in Sources */,
+				19E193CB2427F6B300334B0F /* MainTabViewController.swift in Sources */,
 				19497D772406AC620072CFD0 /* Character.swift in Sources */,
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,

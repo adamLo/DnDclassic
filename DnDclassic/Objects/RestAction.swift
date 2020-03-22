@@ -23,7 +23,7 @@ class RestAction: Action {
                 _finished.append(waypoint)
             }
         }
-        guard _finished.isEmpty else {return nil}
+        guard !_finished.isEmpty else {return nil}
         finished = _finished
                 
         health = json[JSONKeys.health] as? Int

@@ -163,7 +163,7 @@ class IntroViewController: UIViewController {
                 self?.startGame()
             }
         }
-        else if segue.identifier == Segues.begin, let scene = sender as? Scene, let destination = segue.destination as? SceneViewController {
+        else if segue.identifier == Segues.begin, let scene = sender as? Scene, let destination = segue.destination as? MainTabViewController {
             destination.scene = scene
         }
     }
