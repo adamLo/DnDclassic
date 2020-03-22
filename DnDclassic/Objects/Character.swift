@@ -169,6 +169,13 @@ class Character: Deserializable {
         }
     }
     
+    func rest(health: Int? = nil, dexterity: Int? = nil) {
+        
+        healthCurrent = min(healthCurrent + (health ?? 0), healthStarting)
+        dexterityCurrent = min(dexterityCurrent + (dexterity ?? 0), dexterityStarting)
+        changed?()
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {

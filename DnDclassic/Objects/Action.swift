@@ -10,7 +10,7 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck, fight
+    case tryLuck, fight, rest
 }
 
 class Action: Deserializable {
@@ -40,6 +40,7 @@ class ActionFactory {
         switch type {
         case .tryLuck: return TryLuckAction(json: json)
         case .fight: return FightAction(json: json)
+        case .rest: return RestAction(json: json)
         }
     }
 }

@@ -135,7 +135,7 @@
 					"opponents": [
 						{
 							"name": "Barbár",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 6
 						}
 					],
@@ -185,9 +185,9 @@
 			"story": "Követed a folyosót nyugat felé, amikor az egy kanyarral hirtelen dél felé fordul. Közvetlenül a forduló előtt megpillantasz egy útjelző táblát, melyen ez áll: Építési terület. Előtted egy lépcső vezet lefelé. Eddig még csak három lépcsőfok készült el. Egy csomó lapát, csákány és egyéb szerszám hever szanaszét a lépcsők mellett, de amint befordulsz a saroknál, hirtelen mozgásba lendülnek, és lázasan dolgoznak a lépcsőkön. Nézed, hogy a különféle szerszámok hogyan ásnak és kalapálnak, mintha láthatatlan munkások dolgoznának velük. Zümmögő énekszót hallasz, amely egyre erősödik, és felismered a Törpék indulóját: „Hej-hó, hej-hó, hej dalolni jó...“ Amint állsz és nézelődsz, elkezdesz kuncogni, a látvány egészen szórakoztató. Leülsz, és tovább figyelsz, sőt még beszélgetni is sikerül némelyik mágikus szerszámmal.",
 			"actions": [
 				{
-					"type": "Rest",
+					"type": "rest",
 					"health": 2,
-					"dexerity": 1,
+					"dexterity": 1,
 					"finished": [
 						{
 							"direction": "north",
@@ -260,9 +260,9 @@
 			"story": "Amint ülsz a padon és falatozol, egyszer csak érzed, hogy teljesen kipihented magad, és a fájdalom is saját magától illant el testedből. Ez egy elvarázsolt pihenőhely.",
 			"actions": [
 				{
-					"type": "Rest",
+					"type": "rest",
 					"health": 2,
-					"dexerity": 1,
+					"dexterity": 1,
 					"finished": [
 						{
 							"direction": "north",
@@ -283,7 +283,7 @@
 					"opponents": [
 						{
 							"name": "Ogre",
-							"dexerity": 8,
+							"dexterity": 8,
 							"health": 10
 						}
 					],
@@ -351,7 +351,7 @@
 						"caption": "Szerencséd volt! Jobban teszed, ha visszamész az elágazáshoz"
 					},
 					"badLuck": {
-						"dexerity": -1,
+						"dexterity": -1,
 						"type": "waypoint",
 						"direction": "unknown", 
 						"destination": 348, 
@@ -370,12 +370,12 @@
 					"opponents": [
 						{
 							"name": "Első Goblin",
-							"dexerity": 5,
+							"dexterity": 5,
 							"health": 5
 						},
 						{
 							"name": "Második Goblin",
-							"dexerity": 5,
+							"dexterity": 5,
 							"health": 6
 						}
 					],
@@ -403,22 +403,22 @@
 					"opponents": [
 						{
 							"name": "Első Törpe",
-							"dexerity": 7,
+							"dexterity": 7,
 							"health": 4
 						},
 						{
 							"name": "Második Törpe",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 6
 						},
 						{
 							"name": "Harmadik Törpe",
-							"dexerity": 7,
+							"dexterity": 7,
 							"health": 5
 						},
 						{
 							"name": "Negyedik Törpe",
-							"dexerity": 7,
+							"dexterity": 7,
 							"health": 5
 						}
 					],
@@ -500,7 +500,7 @@
 					"opponents": [
 						{
 							"name": "Ork",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 4
 						}
 					],
@@ -710,7 +710,7 @@
 								"opponents": [
 									{
 										"name": "Goblin",
-										"dexerity": 5,
+										"dexterity": 5,
 										"health": 3
 									}
 								]
@@ -723,7 +723,7 @@
 								"opponents": [
 									{
 										"name": "Ork",
-										"dexerity": 6,
+										"dexterity": 6,
 										"health": 3
 									}
 								]
@@ -736,7 +736,7 @@
 								"opponents": [
 									{
 										"name": "Gremlin",
-										"dexerity": 6,
+										"dexterity": 6,
 										"health": 4
 									}
 								]
@@ -749,7 +749,7 @@
 								"opponents": [
 									{
 										"name": "Óriás patkány",
-										"dexerity": 5,
+										"dexterity": 5,
 										"health": 4
 									}
 								]
@@ -762,7 +762,7 @@
 								"opponents": [
 									{
 										"name": "Csontváz",
-										"dexerity": 6,
+										"dexterity": 6,
 										"health": 5
 									}
 								]
@@ -775,7 +775,7 @@
 								"opponents": [
 									{
 										"name": "Troll",
-										"dexerity": 8,
+										"dexterity": 8,
 										"health": 4
 									}
 								]
@@ -807,7 +807,7 @@
 					"opponents": [
 						{
 							"name": "Ork",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 5
 						}
 					],
@@ -826,6 +826,18 @@
 		},
 
 		{
+			"id": 250,
+			"story": "Egy rövid folyosón vagy, amely néhány méterrel előtted zsákutcába torkollik. Átvizsgálod a sziklafalat, de nem látsz sehol átjárót. Visszamész az útkereszteződéshez, és ez alkalommal egyenesen északnak indulsz.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"caption": "Lapozz",
+					"destination": 366
+				}
+			]
+		},
+
+		{
 			"id": 282,
 			"story": "A négy, feléd csoszogó alak értelem nélküli Zombi. Üres tekintetükön látszik, tevékenységüket nem saját akaratuk irányítja. Még mindig túlságosan szédülsz ahhoz, hogy helyesen gondolkodjál, de most sietve tenned kell valamit. Az első Zombi odaér, és ütésre emeli dorongját. Meg kell küzdened vele. Ha legyőzted az első Zombit, 2 Szerencse pontot nyersz, és már fordulhatsz is szembe a másik hárommal. Egyesével támadnak rád.",
 			"actions": [
@@ -835,7 +847,7 @@
 					"opponents": [
 						{
 							"name": "Zombi",
-							"dexerity": 7,
+							"dexterity": 7,
 							"health": 6,
 							"bonus": {
 								"type": "gain",
@@ -846,19 +858,19 @@
 						},
 						{
 							"name": "Zombi kaszával",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 6,
 							"order": 1
 						},
 						{
 							"name": "Zombi csákánnyal",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 6,
 							"order": 2
 						},
 						{
 							"name": "Zombi bárddal",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 5,
 							"order": 3
 						}
@@ -933,31 +945,31 @@
 					"opponents": [
 						{
 							"name": "Első ork",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 4,							
 							"order": 0
 						},
 						{
 							"name": "Második ork",
-							"dexerity": 5,
+							"dexterity": 5,
 							"health": 3,							
 							"order": 1
 						},
 						{
 							"name": "Harmadik ork",
-							"dexerity": 6,
+							"dexterity": 6,
 							"health": 4,							
 							"order": 2
 						},
 						{
 							"name": "Negyedik ork",
-							"dexerity": 5,
+							"dexterity": 5,
 							"health": 2,							
 							"order": 3
 						},
 						{
 							"name": "Ötödik ork",
-							"dexerity": 4,
+							"dexterity": 4,
 							"health": 4,							
 							"order": 4
 						}
@@ -972,6 +984,22 @@
 						"destination": 183,
 						"caption": " Győztél"
 					}
+				}
+			]
+		},
+		{
+			"id": 366,
+			"story":"Haladsz tovább az észak felé tartó úton. Jó néhány méter után az út egy éles kanyart vesz keletnek. Mész tovább keletnek, mígnem egy szűk átjáróhoz érsz az út északi oldalán.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Átmész rajta",
+					"destination": 89
+				},
+				{
+					"direction": "east",
+					"caption": "Kelet felé folytatod az utadat",
+					"destination": 62
 				}
 			]
 		},

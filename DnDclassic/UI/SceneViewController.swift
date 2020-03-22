@@ -169,6 +169,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .fight, let _action = action as? FightAction {
             fight(_action)
         }
+        else if action.type == .rest, let _action = action as? RestAction {
+            rest(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -228,8 +231,24 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func playerDied() {
         
-        let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You just died :(", comment: "Alert message when user gone KIA"), title: NSLocalizedString("Sorry", comment: "Aelrt title when user gone KIA")) {
+        let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You just died :(", comment: "Alert message when user gone KIA"), title: NSLocalizedString("Sorry", comment: "Alert title when user gone KIA")) {
             // FIXME: Proceed to dead screen
         }
+    }
+    
+    private func rest(_ action: RestAction) {
+        
+        guard GameData.shared.player != nil else {return}
+        
+        GameData.shared.player.rest(health: action.health, dexterity: action.dexterity)
+        
+        let alert = UIAlertController(title: NSLocalizedString("Resting", comment: "Resting alert title"), message: NSLocalizedString("You feel refreshed after resting. Where would you like to go from here?", comment: "Resting alert message"), preferredStyle: .alert)
+        for waypoint in action.finished {
+            alert.addAction(UIAlertAction(title: waypoint.caption, style: .default, handler: { (_) in
+                self.advance(to: waypoint)
+            }))
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
 }
