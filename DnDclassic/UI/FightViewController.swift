@@ -121,7 +121,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         guard action != nil, let _section = Section(rawValue: section) else {return 0}
         
         if _section == .actions {
-            return 1
+            return action.escape != nil ? 1 : 0
         }
         else {
             return action.opponents.count
@@ -133,9 +133,9 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         if action != nil, let _section = Section(rawValue: indexPath.section) {
             
             if _section == .actions {
-                if let cell = tableView.dequeueReusableCell(withIdentifier: SceneWaypointCell.reuseId, for: indexPath) as? SceneWaypointCell {
+                if let escape = action.escape, let cell = tableView.dequeueReusableCell(withIdentifier: SceneWaypointCell.reuseId, for: indexPath) as? SceneWaypointCell {
                     
-                    cell.setup(waypoint: action.escape)
+                    cell.setup(waypoint: escape)
                     return cell
                 }
             }

@@ -183,9 +183,9 @@ class Character: Deserializable {
         guard let _nameString = json[JSONKeys.name] as? String, let _name = _nameString.nilIfEmpty else {return nil}
         name = _name
         
-        guard let _dexerity = json[JSONKeys.dexerity] as? Int else {return nil}
-        dexterityStarting = _dexerity
-        dexterityCurrent = _dexerity
+        guard let _dexterity = json[JSONKeys.dexterity] as? Int else {return nil}
+        dexterityStarting = _dexterity
+        dexterityCurrent = _dexterity
         
         guard let _health = json[JSONKeys.health] as? Int else {return nil}
         healthStarting = _health
@@ -198,8 +198,8 @@ class Character: Deserializable {
     }
     
     private struct JSONKeys {
-        static let name     = "name"
-        static let dexerity = "dexerity"
-        static let health   = "health"
+        static let name         = "name"
+        static let dexterity    = "dexterity"
+        static let health       = "health"
     }
 }

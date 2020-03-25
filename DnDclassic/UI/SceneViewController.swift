@@ -186,7 +186,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Actions
     
     private func perform(action: Action) {
-
+        
         if action.type == .tryLuck, let _action = action as? TryLuckAction {
             tryLuck(_action)
         }
@@ -195,6 +195,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else if action.type == .rest, let _action = action as? RestAction {
             rest(_action)
+        }
+        else if action.type == .roll, let _action = action as? RollAction {
+            roll(_action)
         }
     }
     
@@ -231,6 +234,34 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         scene = _scene
         distributeGame()
         sceneTableView.reloadData()
+    }
+    
+    private func roll(_ action: RollAction) {
+        
+        let roll = Dice(number: action.dice).roll()
+        
+        var actions = [UIAlertAction]()
+        for choice in action.choices {
+            if choice.roll == roll {
+                let _action = UIAlertAction(title: choice.action.caption, style: .default) { (_) in
+                    self.perform(action: choice.action)
+                }
+                actions.append(_action)
+            }
+        }
+        if actions.isEmpty {
+            let _action = UIAlertAction(title: NSLocalizedString("Roll again", comment: "Roll again option title"), style: .default) { (_) in
+                self.roll(action)
+            }
+            actions.append(_action)
+        }
+        
+        let alert = UIAlertController(title: NSLocalizedString("Roll", comment: "Roll action dialog title"), message: String(format: NSLocalizedString("You rolled %d", comment: "Roll value format"), roll), preferredStyle: .alert)
+        for _action in actions {
+            alert.addAction(_action)
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

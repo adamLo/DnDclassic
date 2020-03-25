@@ -18,13 +18,14 @@ struct Scene: Deserializable {
     let wayPoints: [WayPoint]?
     var items: [InventoryItem]?
     let actions: [Action]?
+    let returnWaypoints: [WayPoint]?
         
     init?(json: JSON) {
         
-        // ID, Story
         guard let _id = json[JSONKeys.id] as? Int else {return nil}
-        guard let _story = json[JSONKeys.story] as? String else {return nil}
         id = _id
+        
+        guard let _story = json[JSONKeys.story] as? String else {return nil}
         story = _story
         
         // Image
@@ -53,9 +54,8 @@ struct Scene: Deserializable {
         else {
             wayPoints = nil
         }
-        
-        if _id == 11 {
-            print("11")
+        if _id == 161 {
+            print("Gotcha!")
         }
         
         // Actions
@@ -73,6 +73,16 @@ struct Scene: Deserializable {
         else {
             actions = nil
         }
+        
+        var _returns = [WayPoint]()
+        if let _returnsArray = json[JSONKeys.returnWps] as? JSONArray {
+            for _waypointJson in _returnsArray {
+                if let _waypoint = WayPoint(json: _waypointJson) {
+                    _returns.append(_waypoint)
+                }
+            }
+        }
+        returnWaypoints = _returns.isEmpty ? nil :_returns
     }
     
     private struct JSONKeys {
@@ -81,5 +91,6 @@ struct Scene: Deserializable {
         static let waypoints    = "waypoints"
         static let actions      = "actions"
         static let cover        = "cover"
+        static let returnWps    = "return"
     }
 }

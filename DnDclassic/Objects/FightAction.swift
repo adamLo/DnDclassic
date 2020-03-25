@@ -16,8 +16,8 @@ class FightAction: Action {
     
     let order: FightOrder
     let opponents: [Opponent]
-    let escape: WayPoint
-    let win: WayPoint
+    let escape: WayPoint?
+    let win: WayPoint?
     
     required init?(json: JSON) {
 
@@ -28,11 +28,19 @@ class FightAction: Action {
             order = .single
         }
         
-        guard let _winObject = json[JSONKeys.win] as? JSON, let _win = WayPoint(json: _winObject) else {return nil}
-        win = _win
+        if let _winObject = json[JSONKeys.win] as? JSON, let _win = WayPoint(json: _winObject) {
+            win = _win
+        }
+        else {
+            win = nil
+        }
         
-        guard let _escapeObject = json[JSONKeys.escape] as? JSON, let _escape = WayPoint(json: _escapeObject) else {return nil}
-        escape = _escape
+        if let _escapeObject = json[JSONKeys.escape] as? JSON, let _escape = WayPoint(json: _escapeObject) {
+            escape = _escape
+        }
+        else {
+            escape = nil
+        }
         
         guard let _opponentObjects = json[JSONKeys.opponents] as? JSONArray else {return nil}
         var _opponents = [Opponent]()

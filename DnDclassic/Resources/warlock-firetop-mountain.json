@@ -701,7 +701,7 @@
 			"actions": [
 				{
 					"type": "roll",
-					"dices": 1,
+					"dice": 1,
 					"choices": [
 						{
 							"roll": 1,
