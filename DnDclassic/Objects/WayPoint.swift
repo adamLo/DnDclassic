@@ -25,6 +25,13 @@ struct WayPoint: Deserializable {
         caption = _caption
     }
     
+    init(direction: Direction, destination: Int, caption: String) {
+        
+        self.direction = direction
+        self.destination = destination
+        self.caption = caption
+    }
+    
     private struct JSONKeys {
         static let direction    = "direction"
         static let destination  = "destination"

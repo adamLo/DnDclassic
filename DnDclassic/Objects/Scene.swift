@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Scene: Deserializable {
+class Scene: Deserializable {
     
     let id: Int
     let story: String
@@ -20,7 +20,9 @@ struct Scene: Deserializable {
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
         
-    init?(json: JSON) {
+    var completed = false
+        
+    required init?(json: JSON) {
         
         guard let _id = json[JSONKeys.id] as? Int else {return nil}
         id = _id

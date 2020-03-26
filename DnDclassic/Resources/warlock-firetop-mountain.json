@@ -707,6 +707,7 @@
 							"roll": 1,
 							"action": {
 								"type": "fight",
+								"caption": "Goblin - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Goblin",
@@ -720,6 +721,7 @@
 							"roll": 2,
 							"action": {
 								"type": "fight",
+								"caption": "Ork - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Ork",
@@ -733,6 +735,7 @@
 							"roll": 3,
 							"action": {
 								"type": "fight",
+								"caption": "GGremlin - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Gremlin",
@@ -746,6 +749,7 @@
 							"roll": 4,
 							"action": {
 								"type": "fight",
+								"caption": "Óriás patkány - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Óriás patkány",
@@ -759,6 +763,7 @@
 							"roll": 5,
 							"action": {
 								"type": "fight",
+								"caption": "Csontváz - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Csontváz",
@@ -772,6 +777,7 @@
 							"roll": 6,
 							"action": {
 								"type": "fight",
+								"caption": "Troll - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Troll",
