@@ -9,7 +9,7 @@
 import Foundation
 
 enum FightOrder: String {
-    case single
+    case single, random
 }
 
 class FightAction: Action {
@@ -25,7 +25,7 @@ class FightAction: Action {
             order = _order
         }
         else {
-            order = .single
+            order = .random
         }
         
         if let _winObject = json[JSONKeys.win] as? JSON, let _win = WayPoint(json: _winObject) {
@@ -70,5 +70,15 @@ class FightAction: Action {
         
         return true
     }
+
+    var currentOpponent: Opponent? {
         
+        let aliveOpponents = opponents.filter { (opponent) -> Bool in
+            return !opponent.isDead
+        }
+        let orderedAliveOpponents = aliveOpponents.sorted { (opponent1, opponent2) -> Bool in
+            return opponent1.order <= opponent2.order
+        }
+        return orderedAliveOpponents.first
+    }
 }

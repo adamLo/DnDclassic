@@ -164,7 +164,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.deselectRow(at: indexPath, animated: false)
         
-        guard !action.isOver else {
+        guard action != nil, !action.isOver else {
             dismiss(animated: true) {
                 self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
             }
@@ -181,6 +181,15 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             let fight = fights[indexPath.row]
             
             guard fight.opponent.healthCurrent > 0 else {return}
+            
+            if action.order == .single && action.opponents.count > 1 {
+                
+                guard let current = action.currentOpponent, current == fight.opponent else {
+                    let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You have to fight your opponents in sequential order!", comment: "Error message when user wants to find an opponent outside of order"))
+                    present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
             
             fight.performRound(withLuck: useLuckSwitch.isOn)
             

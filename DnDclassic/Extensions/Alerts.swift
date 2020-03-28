@@ -11,7 +11,7 @@ import UIKit
 
 extension UIAlertController {
     
-    class func simpleMessageAlert(message: String, title: String? = nil, canceled: (() -> ())?) -> UIAlertController {
+    class func simpleMessageAlert(message: String, title: String? = nil, canceled: (() -> ())? = nil) -> UIAlertController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     

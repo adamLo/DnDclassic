@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Character: Deserializable {
+class Character: Deserializable, Equatable {
     
     let name: String
     let isPlayer: Bool
@@ -23,6 +23,8 @@ class Character: Deserializable {
     private(set) var luckCurrent: Int = 0
         
     private(set) var inventory = [InventoryItem]()
+    
+    let id = UUID().uuidString
     
     struct JourneyMilestone {
         
@@ -195,6 +197,11 @@ class Character: Deserializable {
         luckStarting = 0
         luckCurrent = 0
         
+    }
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        
+        return lhs.id == rhs.id
     }
     
     private struct JSONKeys {
