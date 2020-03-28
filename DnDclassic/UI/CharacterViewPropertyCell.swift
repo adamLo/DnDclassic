@@ -30,7 +30,7 @@ class CharacterViewPropertyCell: UITableViewCell {
         var status: Double = 0
         
         switch property {
-        case .dexerity:
+        case .dexterity:
             currentValue = character.dexterityCurrent
             startValue = character.dexterityStarting
         case .health:

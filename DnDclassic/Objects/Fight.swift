@@ -28,12 +28,17 @@ struct Fight {
         let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
         
         var damage = 2
-                
+                        
         if playerAttack > opponentAttack {
             if let _luck = withLuck {
                 damage += _luck ? 2 : -1
             }
             opponent.hitDamage(points: damage)
+            
+            if opponent.isDead, let bonus = opponent.killBonus {
+                player.apply(bonus: bonus)
+            }
+            
             return (damage, 0)
         }
         else if opponentAttack > playerAttack {

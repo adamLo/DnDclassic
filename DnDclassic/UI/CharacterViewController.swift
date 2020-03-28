@@ -82,7 +82,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
                     var property: CharacterProperty!
                     switch indexPath.row {
                     case 0: property = .health
-                    case 1: property = .dexerity
+                    case 1: property = .dexterity
                     default: property = .luck
                     }
                     cell.setup(character: GameData.shared.player, property: property)
@@ -162,7 +162,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         var message: String!
         
         switch property {
-        case .dexerity:
+        case .dexterity:
             message = String(format: NSLocalizedString("Restores your dexerity to start level (%d)", comment: "Dexerity potion option alert message format"), GameData.shared.player.dexterityStarting)
         case .health:
             message = String(format: NSLocalizedString("Restores your health to start level (%d)", comment: "Health potion alert message format"), GameData.shared.player.healthStarting)

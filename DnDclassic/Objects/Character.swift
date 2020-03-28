@@ -59,7 +59,7 @@ class Character: Deserializable, Equatable {
     class func generate(property: CharacterProperty) -> Int {
         
         switch property {
-        case .dexerity:
+        case .dexterity:
             return Dice(number: 1).roll(delta: 6)
         case .health:
             return Dice(number: 2).roll(delta: 12)
@@ -106,7 +106,7 @@ class Character: Deserializable, Equatable {
         potion.use()
         
         switch potionType {
-        case .dexerity:
+        case .dexterity:
             dexterityCurrent = dexterityStarting
         case .health:
             healthCurrent = healthStarting
@@ -178,6 +178,15 @@ class Character: Deserializable, Equatable {
         changed?()
     }
     
+    func apply(bonus: KillBonus) {
+        
+        switch bonus.property {
+        case .dexterity: dexterityCurrent = min(dexterityCurrent + bonus.gain, dexterityStarting)
+        case .health: healthCurrent = min(healthCurrent + bonus.gain, healthStarting)
+        case .luck: luckCurrent = min(luckCurrent + bonus.gain, luckStarting)
+        }
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {
@@ -196,12 +205,6 @@ class Character: Deserializable, Equatable {
         isPlayer = false
         luckStarting = 0
         luckCurrent = 0
-        
-    }
-    
-    static func == (lhs: Character, rhs: Character) -> Bool {
-        
-        return lhs.id == rhs.id
     }
     
     private struct JSONKeys {
@@ -209,4 +212,11 @@ class Character: Deserializable, Equatable {
         static let dexterity    = "dexterity"
         static let health       = "health"
     }
+    
+    // MARK: - Equatable
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
+    }
+        
 }

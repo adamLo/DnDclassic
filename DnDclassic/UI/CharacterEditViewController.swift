@@ -112,11 +112,11 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
                 if let _row = PropertyRow(rawValue: indexPath.row), let cell = tableView.dequeueReusableCell(withIdentifier: CharacterEditPropertyCell.reuseId, for: indexPath) as? CharacterEditPropertyCell {
                     
                     var value: Int = 0
-                    var type: CharacterProperty = .dexerity
+                    var type: CharacterProperty = .dexterity
                     switch _row {
                     case .dexerity:
                         value = dexerity ?? 0
-                        type = .dexerity
+                        type = .dexterity
                     case .health:
                         value = health ?? 0
                         type = .health
@@ -187,7 +187,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private func change(property: CharacterProperty, indexPath: IndexPath) {
         
         switch property {
-        case .dexerity: dexerity = Character.generate(property: property)
+        case .dexterity: dexerity = Character.generate(property: property)
         case .health: health = Character.generate(property: property)
         case .luck: luck = Character.generate(property: property)
         }
@@ -212,8 +212,8 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: "\(current == .dexerity ? "* " : "")" + NSLocalizedString("Potion of Dexerity", comment: "Potion of Dexerity title"), style: .default, handler: { (_) in
-            self.potion = .dexerity
+        alert.addAction(UIAlertAction(title: "\(current == .dexterity ? "* " : "")" + NSLocalizedString("Potion of Dexerity", comment: "Potion of Dexerity title"), style: .default, handler: { (_) in
+            self.potion = .dexterity
             reload()
         }))
         

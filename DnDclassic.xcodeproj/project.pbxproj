@@ -55,6 +55,7 @@
 		19E193CB2427F6B300334B0F /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193CA2427F6B300334B0F /* MainTabViewController.swift */; };
 		19E193CF242BBB9000334B0F /* RollAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193CE242BBB9000334B0F /* RollAction.swift */; };
 		19E193D2242BBD6000334B0F /* RollChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193D1242BBD6000334B0F /* RollChoice.swift */; };
+		19FC5401242FBEF200988644 /* KillBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC5400242FBEF200988644 /* KillBonus.swift */; };
 		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
@@ -137,6 +138,7 @@
 		19E193CA2427F6B300334B0F /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		19E193CE242BBB9000334B0F /* RollAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollAction.swift; sourceTree = "<group>"; };
 		19E193D1242BBD6000334B0F /* RollChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollChoice.swift; sourceTree = "<group>"; };
+		19FC5400242FBEF200988644 /* KillBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillBonus.swift; sourceTree = "<group>"; };
 		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				19497D67240587500072CFD0 /* Definitions */,
 				19497D762406AC620072CFD0 /* Character.swift */,
 				19E193C22427990400334B0F /* Opponent.swift */,
+				19FC5400242FBEF200988644 /* KillBonus.swift */,
 				193015732402C0B700E7B815 /* Dice.swift */,
 				193015752402C2E500E7B815 /* CharacterProperty.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
@@ -530,6 +533,7 @@
 				19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */,
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,
 				193015862403120700E7B815 /* WayPoint.swift in Sources */,
+				19FC5401242FBEF200988644 /* KillBonus.swift in Sources */,
 				19301582240310F400E7B815 /* Scene.swift in Sources */,
 				19A8559C240AC6B6007174C8 /* GameData.swift in Sources */,
 				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,

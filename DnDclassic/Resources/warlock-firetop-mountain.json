@@ -131,7 +131,6 @@
 			"actions": [
 				{
 					"type": "fight",
-					"order": "single",
 					"opponents": [
 						{
 							"name": "Barbár",
@@ -279,7 +278,6 @@
 			"actions": [
 				{
 					"type": "fight",
-					"order": "single",
 					"opponents": [
 						{
 							"name": "Ogre",
@@ -855,10 +853,9 @@
 							"name": "Zombi",
 							"dexterity": 7,
 							"health": 6,
-							"bonus": {
-								"type": "gain",
-								"key": "luck",
-								"value": 2
+							"killBonus": {
+								"property": "luck",
+								"gain": 2
 							},
 							"order": 0
 						},

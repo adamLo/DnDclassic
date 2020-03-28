@@ -10,5 +10,5 @@ import Foundation
 
 enum CharacterProperty: String {
     
-    case dexerity, health, luck
+    case dexterity, health, luck
 }
