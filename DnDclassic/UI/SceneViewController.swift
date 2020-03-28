@@ -19,11 +19,13 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         didSet {
             if scene != nil {
                 waypoints = scene.wayPoints
+                actions = scene.actions
             }
         }
     }
     
     private var waypoints: [WayPoint]?
+    private var actions: [Action]?
     
     private enum Section: Int, CaseIterable {
         
@@ -93,17 +95,18 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func checkSceneCompleted() {
         
-        if scene.completed, scene.wayPoints == nil, GameData.shared.player != nil, !GameData.shared.player.isDead {
+        if GameData.shared.isCompleted(scene: scene), GameData.shared.player != nil, !GameData.shared.player.isDead {
             
             if let _waypoints = scene.returnWaypoints {
                 waypoints = _waypoints
                 sceneTableView.reloadData()
             }
-            else if GameData.shared.player.journey.count > 1 {
+            else if scene.wayPoints == nil, GameData.shared.player.journey.count > 1 {
                 // Add return to previous scene if no waypoints and scene is completed
                 let lastScene = GameData.shared.player.journey[GameData.shared.player.journey.count - 2]
                 let waypoint = WayPoint(direction: .back, destination: lastScene.sceneId, caption: NSLocalizedString("Go back", comment: "Go back waypoint title"))
                 waypoints = [waypoint]
+                actions = nil
                 sceneTableView.reloadData()
             }
         }
@@ -126,7 +129,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case .waypoints:
             return (waypoints?.count ?? 0) + 1
         case .actions:
-            return scene.actions?.count ?? 0
+            return actions?.count ?? 0
         }
     }
     
@@ -158,7 +161,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 
             case .actions:
-                if let _actions = scene.actions, indexPath.row < _actions.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneActionCell.reuseId, for: indexPath) as? SceneActionCell {
+                if let _actions = actions, indexPath.row < _actions.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneActionCell.reuseId, for: indexPath) as? SceneActionCell {
                     
                     let action = _actions[indexPath.row]
                     cell.setup(action: action)
@@ -200,6 +203,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 alert.addAction(UIAlertAction(title: "Go to scene", style: .default, handler: { (_) in
                     if GameData.shared.game != nil, let textField = alert.textFields?.first, let sceneString = textField.text?.nilIfEmpty, let sceneId = Int(sceneString), let _scene = GameData.shared.game.scene(id: sceneId) {
                         GameData.shared.advance(player: GameData.shared.player, scene: _scene)
+                        GameData.shared.completed(scene: self.scene)
                         self.scene = _scene
                         self.distributeGame()
                         self.sceneTableView.reloadData()
@@ -209,9 +213,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 present(alert, animated: true, completion: nil)
             }
         }
-        else if section == .actions, let actions = scene.actions, indexPath.row < actions.count {
+        else if section == .actions, let _actions = actions, indexPath.row < _actions.count {
             
-            let action = actions[indexPath.row]
+            let action = _actions[indexPath.row]
             perform(action: action)
         }
     }
@@ -252,7 +256,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         present(alert, animated: true) {
-            self.scene.completed = true
+            GameData.shared.completed(scene: self.scene)
         }
     }
     
@@ -265,10 +269,13 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         guard let _scene = GameData.shared.game.scene(id: wayPoint.destination) else {return}
         
-        GameData.shared.advance(player: GameData.shared.player, scene: scene)
+        GameData.shared.advance(player: GameData.shared.player, scene: _scene)
+        GameData.shared.completed(scene: scene)
+        
         scene = _scene
         distributeGame()
-        sceneTableView.reloadData()
+        checkSceneCompleted()
+        sceneTableView.reloadData()        
     }
     
     private func roll(_ action: RollAction) {
@@ -297,7 +304,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         present(alert, animated: true) {
-            self.scene.completed = true
+            GameData.shared.completed(scene: self.scene)
         }
     }
     
@@ -327,7 +334,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self?.advance(to: wayPoint)
                 }
             }
-            scene.completed = true
+            GameData.shared.completed(scene: scene)
         }
     }
     

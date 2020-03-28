@@ -20,8 +20,6 @@ class Scene: Deserializable {
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
         
-    var completed = false
-        
     required init?(json: JSON) {
         
         guard let _id = json[JSONKeys.id] as? Int else {return nil}

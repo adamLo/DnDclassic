@@ -210,19 +210,19 @@
 				{
 					"direction": "unknown",
 					"destination": 161,
-					"caption": "Kit haragítottál magadra?",
-					"return": [
-						{
-							"direction": "unknown",
-							"destination": 256,
-							"caption": "Visszafordulsz az elágazáshoz"
-						},
-						{
-							"direction": "unknown",
-							"destination": 364,
-							"caption": "Megpróbálod megnyomni az ajtónyitó gombot"
-						}
-					]
+					"caption": "Kit haragítottál magadra?",					
+				}				
+			],
+			"return": [
+				{
+					"direction": "unknown",
+					"destination": 256,
+					"caption": "Visszafordulsz az elágazáshoz"
+				},
+				{
+					"direction": "unknown",
+					"destination": 364,
+					"caption": "Megpróbálod megnyomni az ajtónyitó gombot"
 				}
 			]
 		},
@@ -244,14 +244,14 @@
 				{
 					"direction": "unknown",
 					"destination": 161,
-					"caption": "Hogy megtudd, ki vagy mi az, meg kell küzdened vele.",
-					"return": [
-						{
-							"direction": "unknown",
-							"destination": 117,
-							"caption": "Legyőzted a szörnyet (vagy elmenekültél)"
-						}
-					]
+					"caption": "Hogy megtudd, ki vagy mi az, meg kell küzdened vele.",					
+				}
+			],
+			"return": [
+				{
+					"direction": "unknown",
+					"destination": 117,
+					"caption": "Legyőzted a szörnyet (vagy elmenekültél)"
 				}
 			]
 		},
@@ -735,7 +735,7 @@
 							"roll": 3,
 							"action": {
 								"type": "fight",
-								"caption": "GGremlin - meg kell küzdened vele!",
+								"caption": "Gremlin - meg kell küzdened vele!",
 								"opponents": [
 									{
 										"name": "Gremlin",

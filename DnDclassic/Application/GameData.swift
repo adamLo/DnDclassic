@@ -15,10 +15,22 @@ class GameData {
     var player: Character!
     var game: Game!
     var currentSceneId = 0
+    private(set) var completedScenes = [Int]()
     
     func advance(player: Character, scene: Scene) {
         
         player.advance(to: scene)
-        currentSceneId = scene.id        
+        currentSceneId = scene.id
+    }
+    
+    func isCompleted(scene: Scene) -> Bool {
+        return completedScenes.firstIndex(of: scene.id) != nil
+    }
+    
+    func completed(scene: Scene) {
+        
+        if !isCompleted(scene: scene) {
+            completedScenes.append(scene.id)
+        }
     }
 }
