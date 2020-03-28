@@ -28,6 +28,8 @@ struct Fight {
         let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
         
         var damage = 2
+        
+        player.log(event: .fight(opponent: opponent.name, playerAttack: playerAttack, opponentAttack: opponentAttack))
                         
         if playerAttack > opponentAttack {
             if let _luck = withLuck {
@@ -35,8 +37,12 @@ struct Fight {
             }
             opponent.hitDamage(points: damage)
             
-            if opponent.isDead, let bonus = opponent.killBonus {
-                player.apply(bonus: bonus)
+            if opponent.isDead {
+                if let bonus = opponent.killBonus {
+                    player.apply(bonus: bonus)
+                }
+                opponent.log(event: .died)
+                player.log(event: .kill(opponent: opponent.name))
             }
             
             return (damage, 0)
@@ -46,6 +52,11 @@ struct Fight {
                 damage += _luck ? 1 : -1
             }
             player.hitDamage(points: damage)
+            
+            if player.isDead {
+                player.log(event: .died)
+            }
+            
             return (0, damage)
         }
         else {

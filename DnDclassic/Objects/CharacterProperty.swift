@@ -8,7 +8,15 @@
 
 import Foundation
 
-enum CharacterProperty: String {
+enum CharacterProperty: String, CustomStringConvertible {
     
     case dexterity, health, luck
+    
+    var description: String {
+        switch self {
+        case .dexterity: return NSLocalizedString("Dexterity", comment: "Dexterity title")
+        case .health: return NSLocalizedString("Health", comment: "Health title")
+        case .luck: return NSLocalizedString("Luck", comment: "Luck title")
+        }
+    }
 }

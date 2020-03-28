@@ -194,12 +194,10 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             var luck: Bool?
             if useLuckSwitch.isOn {
                 let _luck = fight.player.tryLuck()
-                print("*** Try luck result: \(_luck)")
                 luck = _luck.success
             }
             
-            let round = fight.performRound(withLuck: luck)
-            print("*** Fight round: \(round)")
+            fight.performRound(withLuck: luck)
             
             distributeCharacterData()
             

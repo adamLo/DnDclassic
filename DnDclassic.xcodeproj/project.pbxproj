@@ -56,6 +56,10 @@
 		19E193CF242BBB9000334B0F /* RollAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193CE242BBB9000334B0F /* RollAction.swift */; };
 		19E193D2242BBD6000334B0F /* RollChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193D1242BBD6000334B0F /* RollChoice.swift */; };
 		19FC5401242FBEF200988644 /* KillBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC5400242FBEF200988644 /* KillBonus.swift */; };
+		19FC5404242FC77300988644 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC5403242FC77300988644 /* LogItem.swift */; };
+		19FC5406242FCFEF00988644 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC5405242FCFEF00988644 /* Date.swift */; };
+		19FC5409242FD12700988644 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC5408242FD12700988644 /* LogViewController.swift */; };
+		19FC540B242FD4C000988644 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FC540A242FD4C000988644 /* LogCell.swift */; };
 		19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA91241295D900199175 /* CharacterViewController.swift */; };
 		19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA932412F98700199175 /* CharacterViewNameCell.swift */; };
 		19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */; };
@@ -139,6 +143,10 @@
 		19E193CE242BBB9000334B0F /* RollAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollAction.swift; sourceTree = "<group>"; };
 		19E193D1242BBD6000334B0F /* RollChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollChoice.swift; sourceTree = "<group>"; };
 		19FC5400242FBEF200988644 /* KillBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillBonus.swift; sourceTree = "<group>"; };
+		19FC5403242FC77300988644 /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
+		19FC5405242FCFEF00988644 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		19FC5408242FD12700988644 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		19FC540A242FD4C000988644 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		19FCFA91241295D900199175 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		19FCFA932412F98700199175 /* CharacterViewNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewNameCell.swift; sourceTree = "<group>"; };
 		19FCFA952412F99C00199175 /* CharacterViewPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewPropertyCell.swift; sourceTree = "<group>"; };
@@ -232,12 +240,9 @@
 		1930156E2402BD6B00E7B815 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				19FC5402242FC73B00988644 /* Character */,
 				19497D67240587500072CFD0 /* Definitions */,
-				19497D762406AC620072CFD0 /* Character.swift */,
-				19E193C22427990400334B0F /* Opponent.swift */,
-				19FC5400242FBEF200988644 /* KillBonus.swift */,
 				193015732402C0B700E7B815 /* Dice.swift */,
-				193015752402C2E500E7B815 /* CharacterProperty.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
 				193015792402CAC600E7B815 /* Fight.swift */,
 				1930157F2402DC7300E7B815 /* InventoryItem.swift */,
@@ -277,6 +282,7 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				19FC5407242FD11000988644 /* Log */,
 				19E193BA2426404700334B0F /* Fight */,
 				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19497D782406AD370072CFD0 /* Character */,
@@ -312,6 +318,7 @@
 			children = (
 				19A85598240AB6E6007174C8 /* Strings.swift */,
 				19E193C42427A1E900334B0F /* Alerts.swift */,
+				19FC5405242FCFEF00988644 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +353,27 @@
 				19E193D1242BBD6000334B0F /* RollChoice.swift */,
 			);
 			name = Actions;
+			sourceTree = "<group>";
+		};
+		19FC5402242FC73B00988644 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				19497D762406AC620072CFD0 /* Character.swift */,
+				19E193C22427990400334B0F /* Opponent.swift */,
+				19FC5400242FBEF200988644 /* KillBonus.swift */,
+				193015752402C2E500E7B815 /* CharacterProperty.swift */,
+				19FC5403242FC77300988644 /* LogItem.swift */,
+			);
+			name = Character;
+			sourceTree = "<group>";
+		};
+		19FC5407242FD11000988644 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				19FC5408242FD12700988644 /* LogViewController.swift */,
+				19FC540A242FD4C000988644 /* LogCell.swift */,
+			);
+			name = Log;
 			sourceTree = "<group>";
 		};
 		19FCFA8F2412956800199175 /* Edit */ = {
@@ -527,6 +555,8 @@
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
+				19FC5406242FCFEF00988644 /* Date.swift in Sources */,
+				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,
 				19E193D2242BBD6000334B0F /* RollChoice.swift in Sources */,
 				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
@@ -549,10 +579,12 @@
 				19E193CB2427F6B300334B0F /* MainTabViewController.swift in Sources */,
 				19497D772406AC620072CFD0 /* Character.swift in Sources */,
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
+				19FC5404242FC77300988644 /* LogItem.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
 				19FCFA9E24157BA000199175 /* SceneActionCell.swift in Sources */,
 				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
 				19E193B9242627CC00334B0F /* FightAction.swift in Sources */,
+				19FC5409242FD12700988644 /* LogViewController.swift in Sources */,
 				19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

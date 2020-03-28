@@ -35,6 +35,8 @@ class Character: Deserializable, Equatable {
     
     private(set) var journey = [JourneyMilestone]()
     
+    private(set) var log = [LogItem]()
+    
     var changed: (() -> ())?
     
     init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
@@ -78,6 +80,8 @@ class Character: Deserializable, Equatable {
         
         changed?()
         
+        log(event: .tryLuck(roll: _rolled, success: result))
+        
         return (_rolled, result)
     }
     
@@ -97,6 +101,8 @@ class Character: Deserializable, Equatable {
         }
         
         changed?()
+        
+        log(event: .eat)
     }
     
     func drink(potion: Potion) {
@@ -124,13 +130,17 @@ class Character: Deserializable, Equatable {
         }
         
         changed?()
+        
+        log(event: .drink(type: potionType))
     }
     
     func hitDamage(points: Int) {
         
         healthCurrent = max(healthCurrent - points, 0)
-        
+                
         changed?()
+        
+        log(event: .damage(value: points))
     }
     
     static var startInventory: [InventoryItem] {
@@ -155,6 +165,8 @@ class Character: Deserializable, Equatable {
         
         let mileStone = JourneyMilestone(sceneId: scene.id, sourceDirection: sourceDirection, sourceSceneId: sourceId)
         journey.append(mileStone)
+        
+        log(event: .advance(sceneId: scene.id))
     }
     
     var isDead: Bool {
@@ -163,12 +175,14 @@ class Character: Deserializable, Equatable {
     
     func escape(goodLuck: Bool? = nil) {
         
+        var damage = 2
         if let _luck = goodLuck {
-            hitDamage(points: _luck ? 1 : 3)
+            damage = _luck ? 1 : 3
         }
-        else {
-            hitDamage(points: 2)
-        }
+        
+        hitDamage(points: damage)
+        
+        log(event: .escape(damage: damage))
     }
     
     func rest(health: Int? = nil, dexterity: Int? = nil) {
@@ -176,6 +190,8 @@ class Character: Deserializable, Equatable {
         healthCurrent = min(healthCurrent + (health ?? 0), healthStarting)
         dexterityCurrent = min(dexterityCurrent + (dexterity ?? 0), dexterityStarting)
         changed?()
+        
+        log(event: .rest(healthGain: health, dexterityGain: dexterity))
     }
     
     func apply(bonus: KillBonus) {
@@ -185,6 +201,16 @@ class Character: Deserializable, Equatable {
         case .health: healthCurrent = min(healthCurrent + bonus.gain, healthStarting)
         case .luck: luckCurrent = min(luckCurrent + bonus.gain, luckStarting)
         }
+        
+        log(event: .bonus(property: bonus.property, gain: bonus.gain))
+    }
+    
+    func log(event: LogEvent) {
+        
+        let item = LogItem(event: event)
+        log.append(item)
+        
+        print("\(item.description) \(name) \(isPlayer ? "- (\(NSLocalizedString("Player", comment: "Player title")))" : "")")
     }
     
     // MARK: - JSON

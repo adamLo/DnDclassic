@@ -279,7 +279,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func roll(_ action: RollAction) {
-        
+                
         let roll = Dice(number: action.dice).roll()
         
         var actions = [UIAlertAction]()
@@ -302,6 +302,8 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         for _action in actions {
             alert.addAction(_action)
         }
+        
+        GameData.shared.player.log(event: .roll(value: roll))
         
         present(alert, animated: true) {
             GameData.shared.completed(scene: self.scene)
