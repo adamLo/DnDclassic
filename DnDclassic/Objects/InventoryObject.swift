@@ -11,11 +11,11 @@ import Foundation
 struct InventoryObject: InventoryItem {
     
     var description: String {
-        return "\(name) (\(type.rawValue))"
+        return "\(name ?? "N/A") (\(type.rawValue))"
     }
         
     let type: InventoryItemType
-    let name: String
+    let name: String?
     
     let modifiesPropertyWhenEquipped: CharacterProperty?
     let modifierValueWhenEquipped: Int?
@@ -25,7 +25,7 @@ struct InventoryObject: InventoryItem {
 
     let identifier: Any?
     
-    let amount: Int = 1
+    let amount: Int
     
     init(type: InventoryItemType, name: String,
          modifiesPropertyWhenEquipped: CharacterProperty? = nil, modifierValueWhenEquipped: Int? = 0,
@@ -43,5 +43,26 @@ struct InventoryObject: InventoryItem {
         self.modiferValueWhenUsed = modiferValueWhenUsed ?? 0
         
         self.identifier = identifier
+        self.amount = 1
+    }
+    
+    // MARK: - JSON
+        
+    struct JSONKeys {
+        static let amount   = "amount"
+        static let type     = "type"
+    }
+}
+
+class InventoryItemFactory {
+    
+    class func item(json: JSON) -> InventoryItem? {
+        
+        guard let _typeString = json[InventoryObject.JSONKeys.type] as? String, let type = InventoryItemType(rawValue: _typeString) else {return nil}
+        
+        switch type {
+        case .money: return Money(json: json)
+        default: return nil
+        }
     }
 }

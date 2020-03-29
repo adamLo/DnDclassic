@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Money: InventoryItem {
+class Money: InventoryItem, Deserializable {
 
     let identifier: Any? = "money"
     let type: InventoryItemType = .money
@@ -25,5 +25,14 @@ class Money: InventoryItem {
     
     var description: String {
         return String(format: NSLocalizedString("Coins (%d)", comment: "Money description format"), amount)
+    }
+    
+    // MARK: - JSON
+    
+    required convenience init?(json: JSON) {
+        
+        guard let _amount = json[InventoryObject.JSONKeys.amount] as? Int else {return nil}
+        
+        self.init(amount: _amount)
     }
 }

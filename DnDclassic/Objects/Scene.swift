@@ -16,7 +16,7 @@ class Scene: Deserializable {
     let image: UIImage?
     
     let wayPoints: [WayPoint]?
-    var items: [InventoryItem]?
+    private(set) var inventory: [InventoryItem]?
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
     let visitBonus: Bonus?
@@ -37,16 +37,31 @@ class Scene: Deserializable {
             image = nil
         }
         
-        // FIXME: Load items
-        items = nil
+        if _id == 135 {
+            print("Gotcha!")
+        }
+        
+        // inventory
+        var _inventory = [InventoryItem]()
+        if let _inventoryObjects = json[JSONKeys.inventory] as? JSONArray {
+            for _json in _inventoryObjects {
+                guard let _item = InventoryItemFactory.item(json: _json) else {return nil}
+                _inventory.append(_item)
+            }
+        }
+        if !_inventory.isEmpty {
+            inventory = _inventory
+        }
+        else {
+            inventory = nil
+        }
         
         // Waypoints
         var _waypoints = [WayPoint]()
         if let _waypointsArray = json[JSONKeys.waypoints] as? JSONArray {
             for _waypointJson in _waypointsArray {
-                if let _wayPoint = WayPoint(json: _waypointJson) {
-                    _waypoints.append(_wayPoint)
-                }
+                guard let _wayPoint = WayPoint(json: _waypointJson) else {return nil}
+                _waypoints.append(_wayPoint)
             }
         }
         if !_waypoints.isEmpty {
@@ -55,17 +70,13 @@ class Scene: Deserializable {
         else {
             wayPoints = nil
         }
-        if _id == 25 {
-            print("Gotcha!")
-        }
         
         // Actions
         var _actions = [Action]()
         if let _actionsArray = json[JSONKeys.actions] as? JSONArray {
             for _actionJson in _actionsArray {
-                if let _action = ActionFactory.action(json: _actionJson) {
-                    _actions.append(_action)
-                }
+                guard let _action = ActionFactory.action(json: _actionJson) else {return nil}
+                _actions.append(_action)
             }
         }
         if !_actions.isEmpty {
@@ -78,9 +89,8 @@ class Scene: Deserializable {
         var _returns = [WayPoint]()
         if let _returnsArray = json[JSONKeys.returnWps] as? JSONArray {
             for _waypointJson in _returnsArray {
-                if let _waypoint = WayPoint(json: _waypointJson) {
-                    _returns.append(_waypoint)
-                }
+                guard let _waypoint = WayPoint(json: _waypointJson) else {return nil}
+                _returns.append(_waypoint)
             }
         }
         returnWaypoints = _returns.isEmpty ? nil :_returns
@@ -101,5 +111,6 @@ class Scene: Deserializable {
         static let cover        = "cover"
         static let returnWps    = "return"
         static let visitBonus   = "visitBonus"
+        static let inventory    = "inventory"
     }
 }

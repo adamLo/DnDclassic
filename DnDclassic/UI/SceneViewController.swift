@@ -29,7 +29,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private enum Section: Int, CaseIterable {
         
-        case story = 0, waypoints, actions
+        case story = 0, waypoints, actions, inventory
     }
     
     private struct Segues {
@@ -130,6 +130,8 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return (waypoints?.count ?? 0) + 1
         case .actions:
             return actions?.count ?? 0
+        case .inventory:
+            return scene.inventory?.count ?? 0
         }
     }
     
@@ -165,6 +167,14 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     let action = _actions[indexPath.row]
                     cell.setup(action: action)
+                    return cell
+                }
+                
+            case .inventory:
+                if let _inventory = scene.inventory, indexPath.row < _inventory.count, let cell = tableView.dequeueReusableCell(withIdentifier: SceneInventoryCell.reuseId, for: indexPath) as? SceneInventoryCell {
+                    
+                    let item = _inventory[indexPath.row]
+                    cell.setup(item: item)
                     return cell
                 }
             }
@@ -217,6 +227,11 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let action = _actions[indexPath.row]
             perform(action: action)
+        }
+        else if section == .inventory, let _inventory = scene.inventory, indexPath.row < _inventory.count {
+         
+            let item = _inventory[indexPath.row]
+            grab(inventoryItem: item)
         }
     }
     
@@ -333,6 +348,10 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func grab(inventoryItem: InventoryItem) {
+        
     }
     
     // MARK: - Navigation
