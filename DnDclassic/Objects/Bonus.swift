@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Bonus: Deserializable {
+class Bonus: Deserializable {
     
     let property: CharacterProperty
     let gain: Int
     
-    init?(json: JSON) {
+    required init?(json: JSON) {
         
         guard let propertyString = json[JSONkeys.property] as? String, let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString) else {return nil}
         property = _property

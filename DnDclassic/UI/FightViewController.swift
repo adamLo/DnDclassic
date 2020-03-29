@@ -178,7 +178,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else if section == .opponents, fights != nil, indexPath.row < fights.count {
             
-            let fight = fights[indexPath.row]
+            var fight = fights[indexPath.row]
             
             guard fight.opponent.healthCurrent > 0 else {return}
             

@@ -217,6 +217,14 @@ class Character: Deserializable, Equatable {
         print("\(item.description) \(name) \(isPlayer ? "- (\(NSLocalizedString("Player", comment: "Player title")))" : "")")
     }
     
+    func hasInventoryItem(of type: InventoryItemType) -> Bool {
+        
+        let item = inventory.first { (_item) -> Bool in
+            return _item.type == type
+        }
+        return item != nil
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {

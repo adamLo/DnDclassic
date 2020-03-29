@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct Fight {
+class Fight {
     
     let player: Character
     let opponent: Opponent
+    
+    private(set) var rounds = 0
     
     init(player: Character, opponent: Opponent) {
         
@@ -24,8 +26,15 @@ struct Fight {
         
         guard player.healthCurrent > 0, opponent.healthCurrent > 0 else {return (0,0)}
         
+        rounds += 1
+        
         let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterityCurrent
-        let playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
+        var playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
+        
+        if let _damagedBy = opponent.damagedBy, !player.hasInventoryItem(of: _damagedBy) {
+            // When opponent can be damaged only by specific type of item and player doesn't own any of it
+            playerAttack = 0
+        }
         
         var damage = 2
         
@@ -48,10 +57,15 @@ struct Fight {
             return (damage, 0)
         }
         else if opponentAttack > playerAttack {
+            
             if let _luck = withLuck {
                 damage += _luck ? 1 : -1
             }
             player.hitDamage(points: damage)
+            
+            if let _bonus = opponent.hitBonus, (rounds % _bonus.round == 0) {
+                player.apply(bonus: _bonus)
+            }
             
             if player.isDead {
                 player.log(event: .died)

@@ -498,7 +498,12 @@
 							"name": "Wight",
 							"dexterity": 9,
 							"health": 6,
-							"damagedBy": "silver"
+							"damagedBy": "silverWeapon",
+							"hitBonus": {
+								"property": "dexterity",
+								"gain": -1,
+								"round": 3
+							}
 						}
 					],
 					"escape": {
@@ -708,6 +713,21 @@
 				"finished": true,
 				"win": false
 			}			
+		},
+
+		{
+			"id": 135,
+			"story": "A Wight (rossz szellem) a szoba sarkában roskad össze. Odamész az asztalhoz, és kinyitod a ládikát. Tizennyolc aranypénz van benne. Magaddal viheted, ha akarod, de vezesd rá a Kalandlapra. Adj 2-t Szerencse pontjaidhoz, mivel legyőzted ezt a teremtményt is. Pihenj egy kicsit, és egyél valamit. Ha készen vagy, az északi ajtón keresztül elhagyhatod a szobát.",
+			"visitBonus": {
+				"property": "luck",
+				"gain": 2
+			},
+			"inventory": [
+				{
+					"type": "money",
+					"amount": 18
+				}
+			]
 		},
 
 		{
@@ -1026,6 +1046,18 @@
 					"direction": "unknown",
 					"caption": "Megdobod egy darab sajttal",
 					"destination": 45
+				}
+			]
+		},
+
+		{
+			"id": 360,
+			"story": "Az ajtó nagyot dörrenve becsapódik mögötted. Egy észak felé vezető folyosón találod magad. Ezen mész egy darabig, azután az út nyugatnak kanyarodik. Kicsit később véletlenül ráakadsz egy kis nyílásra az északi falban, és úgy döntesz, átbújsz rajta.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"caption": "Átbújsz a nyíláson",
+					"destination": 89
 				}
 			]
 		},

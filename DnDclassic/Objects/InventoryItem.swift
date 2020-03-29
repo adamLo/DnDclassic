@@ -10,7 +10,7 @@ import Foundation
 
 enum InventoryItemType: String {
     
-    case weapon, armor, key, lighting, money, food, potion
+    case weapon, armor, key, lighting, money, food, potion, silverWeapon
 }
 
 protocol InventoryItem: CustomStringConvertible {

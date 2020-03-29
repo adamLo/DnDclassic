@@ -47,6 +47,7 @@
 		19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A1240ACE58007174C8 /* InventoryObject.swift */; };
 		19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A3240BEC95007174C8 /* SceneStoryCell.swift */; };
 		19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A5240BF168007174C8 /* SceneWaypointCell.swift */; };
+		19D295632430D713003713E5 /* HitBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D295622430D713003713E5 /* HitBonus.swift */; };
 		19E193B9242627CC00334B0F /* FightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193B8242627CC00334B0F /* FightAction.swift */; };
 		19E193BC2426462600334B0F /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BB2426462600334B0F /* FightViewController.swift */; };
 		19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BE242647FC00334B0F /* FightOpponentCell.swift */; };
@@ -135,6 +136,7 @@
 		19A855A1240ACE58007174C8 /* InventoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryObject.swift; sourceTree = "<group>"; };
 		19A855A3240BEC95007174C8 /* SceneStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStoryCell.swift; sourceTree = "<group>"; };
 		19A855A5240BF168007174C8 /* SceneWaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWaypointCell.swift; sourceTree = "<group>"; };
+		19D295622430D713003713E5 /* HitBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitBonus.swift; sourceTree = "<group>"; };
 		19E193B8242627CC00334B0F /* FightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightAction.swift; sourceTree = "<group>"; };
 		19E193BB2426462600334B0F /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		19E193BE242647FC00334B0F /* FightOpponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightOpponentCell.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				193015732402C0B700E7B815 /* Dice.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
 				193015792402CAC600E7B815 /* Fight.swift */,
+				19D295622430D713003713E5 /* HitBonus.swift */,
 				1930157F2402DC7300E7B815 /* InventoryItem.swift */,
 				19FC5400242FBEF200988644 /* Bonus.swift */,
 				19A855A1240ACE58007174C8 /* InventoryObject.swift */,
@@ -580,6 +583,7 @@
 				19A8559C240AC6B6007174C8 /* GameData.swift in Sources */,
 				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,
 				19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */,
+				19D295632430D713003713E5 /* HitBonus.swift in Sources */,
 				19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */,
 				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
