@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct KillBonus: Deserializable {
+struct Bonus: Deserializable {
     
     let property: CharacterProperty
     let gain: Int

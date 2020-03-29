@@ -15,7 +15,7 @@ class PlayerTests: XCTestCase {
 
     func testLuckPositive() {
         
-        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", dexterity: 12, health: 24, luck: 12)
         
         let roll = 2
         
@@ -28,7 +28,7 @@ class PlayerTests: XCTestCase {
 
     func testLuckNegative() {
         
-        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 1)
+        let player = Character(isPlayer: true, name: "Test", dexterity: 12, health: 24, luck: 1)
         
         let roll = 24
         
@@ -43,7 +43,7 @@ class PlayerTests: XCTestCase {
     
     func testDamage() {
         
-        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", dexterity: 12, health: 24, luck: 12)
         
         player.hitDamage(points: 14)
         XCTAssertEqual(player.healthCurrent, 10)
@@ -54,20 +54,33 @@ class PlayerTests: XCTestCase {
     
     func testEat() {
         
-        let player = Character(isPlayer: true, name: "Test", gender: .other, dexerity: 12, health: 24, luck: 12)
+        let player = Character(isPlayer: true, name: "Test", dexterity: 12, health: 24, luck: 12, inventory: Character.startInventory)
         
         player.hitDamage(points: 4)
         XCTAssertEqual(player.healthCurrent, 20)
         
         player.eat()
         XCTAssertEqual(player.healthCurrent, 24)
-        XCTAssertEqual(player.food, 9)
+        XCTAssertEqual(sumFood(player: player), 9)
         
         player.hitDamage(points: 2)
         XCTAssertEqual(player.healthCurrent, 22)
         
         player.eat()
         XCTAssertEqual(player.healthCurrent, 24)
-        XCTAssertEqual(player.food, 8)
+        XCTAssertEqual(sumFood(player: player), 8)
+    }
+    
+    private func sumFood(player: Character) -> Int {
+        
+        var sum = 0
+        
+        for item in player.inventory {
+            if item.type == .food {
+                sum += item.amount
+            }
+        }
+        
+        return sum
     }
 }

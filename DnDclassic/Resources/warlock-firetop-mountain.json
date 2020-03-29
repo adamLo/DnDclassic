@@ -209,7 +209,7 @@
 				{
 					"direction": "unknown",
 					"destination": 161,
-					"caption": "Kit haragítottál magadra?",					
+					"caption": "Kit haragítottál magadra?"
 				}				
 			],
 			"return": [
@@ -243,7 +243,7 @@
 				{
 					"direction": "unknown",
 					"destination": 161,
-					"caption": "Hogy megtudd, ki vagy mi az, meg kell küzdened vele.",					
+					"caption": "Hogy megtudd, ki vagy mi az, meg kell küzdened vele."
 				}
 			],
 			"return": [
@@ -479,6 +479,28 @@
 		{
 			"id": 24,
 			"story": "Miután harmadszor is megsebesültél, érzed, hogy erőd fogytán van. Elvesztettél 1 ÜGYESSÉG pontot. Rádöbbensz, hogy ennek az ocsmány szörnyetegnek ez is a varázserejéhez tartozik, és érzed, amint végigfut a hátadon a hideg. Folytatod a harcot, vagy menekülsz? Ha Menekülni akarsz, fizesd meg a büntetést gyávaságodért, és rohanj az északi ajtón át. Lapozz a 360-ra. Ha maradsz, a küzdelem folytatódik. De mostantól számítva minden harmadik sebesülés, amit a bestiától kapsz, levon tőled 1 ÜGYESSÉG pontot. Ha legyőzted ellenfeledet, lapozz a 135-re."
+		},
+		{
+			"id": 25,
+			"story": "A festmények férfiportrékat ábrázolnak. Borsózik a hátad, amint a nyugati falon lévő festmény névtábláját olvasod. A kép Zagort, a Varázslót ábrázolja, akinek a kincsét hajszolod. Végigméred a portrét, és rádöbbensz, félelmetes ellenféllel kerültél szembe. Az az érzésed támad, mintha valaki figyelne, és észreveszed, hogy szúrós tekintetek követik minden lépésedet. Úgy érzed, a kép magához szív téged, és félni kezdesz. Elvesztettél 1 ÜGYESSÉG pontot. Van anynyi bátorságod, hogy megpróbálj megküzdeni a Varázslóval? Ha nincs, azonnal távozol az északi ajtón keresztül, de ne feledd, ez is Menekülésnek számít. Ha akarod, átkutathatod a felszerelésed egy olyan fegyverért, amelyet a Varázsló ereje ellen fel tudsz használni.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "átkutatod a felszerelésed egy olyan fegyverért, amelyet a Varázsló ereje ellen fel tudsz használni",
+					"destination": 340
+				}
+			],
+			"actions": [
+				{
+					"type": "escape",
+					"destination": 90,	
+					"direction": "north"
+				}
+			],
+			"visitBonus": {
+				"property": "dexterity",
+				"gain": -1
+			}
 		},
 
 		{

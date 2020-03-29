@@ -13,8 +13,8 @@ class FightTests: XCTestCase {
 
     func testPlayerWins() {
         
-        let player = Character(isPlayer: true, name: "Player", gender: .other, dexerity: 12, health: 24, luck: 12)
-        let opponent = Character(isPlayer: false, name: "Opponent", gender: .other, dexerity: 7, health: 4, luck: 7)
+        let player = Character(isPlayer: true, name: "Player", dexterity: 12, health: 24, luck: 12)
+        let opponent = Opponent(name: "Opponent", dexterity: 7, health: 4, luck: 7, order: 0)
         
         let fight = Fight(player: player, opponent: opponent)
         

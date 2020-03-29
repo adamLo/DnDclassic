@@ -19,6 +19,7 @@ class Scene: Deserializable {
     var items: [InventoryItem]?
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
+    let visitBonus: Bonus?
         
     required init?(json: JSON) {
         
@@ -54,7 +55,7 @@ class Scene: Deserializable {
         else {
             wayPoints = nil
         }
-        if _id == 161 {
+        if _id == 25 {
             print("Gotcha!")
         }
         
@@ -83,6 +84,13 @@ class Scene: Deserializable {
             }
         }
         returnWaypoints = _returns.isEmpty ? nil :_returns
+        
+        if let bonusObject = json[JSONKeys.visitBonus] as? JSON, let _bonus = Bonus(json: bonusObject) {
+            visitBonus = _bonus
+        }
+        else {
+            visitBonus = nil
+        }
     }
     
     private struct JSONKeys {
@@ -92,5 +100,6 @@ class Scene: Deserializable {
         static let actions      = "actions"
         static let cover        = "cover"
         static let returnWps    = "return"
+        static let visitBonus   = "visitBonus"
     }
 }

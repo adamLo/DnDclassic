@@ -263,7 +263,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         
         guard let _name = name, let _dexerity = dexerity, let _health = health, let _luck = luck else {return nil}
         
-        let player = Character(isPlayer: true, name: _name, dexerity: _dexerity, health: _health, luck: _luck, inventory: inventory)
+        let player = Character(isPlayer: true, name: _name, dexterity: _dexerity, health: _health, luck: _luck, inventory: inventory)
         
         return player
     }

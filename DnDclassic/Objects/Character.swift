@@ -39,13 +39,13 @@ class Character: Deserializable, Equatable {
     
     var changed: (() -> ())?
     
-    init(isPlayer: Bool, name: String, dexerity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
+    init(isPlayer: Bool, name: String, dexterity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
         
         self.isPlayer = isPlayer
         self.name = name
         
-        dexterityStarting = dexerity
-        dexterityCurrent = dexerity
+        dexterityStarting = dexterity
+        dexterityCurrent = dexterity
         
         healthStarting = health
         healthCurrent = health
@@ -167,6 +167,10 @@ class Character: Deserializable, Equatable {
         journey.append(mileStone)
         
         log(event: .advance(sceneId: scene.id))
+        
+        if let bonus = scene.visitBonus {
+            apply(bonus: bonus)
+        }
     }
     
     var isDead: Bool {
@@ -194,7 +198,7 @@ class Character: Deserializable, Equatable {
         log(event: .rest(healthGain: health, dexterityGain: dexterity))
     }
     
-    func apply(bonus: KillBonus) {
+    func apply(bonus: Bonus) {
         
         switch bonus.property {
         case .dexterity: dexterityCurrent = min(dexterityCurrent + bonus.gain, dexterityStarting)

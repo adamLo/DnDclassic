@@ -11,13 +11,21 @@ import Foundation
 class Opponent: Character {
     
     let order: Int
-    let killBonus: KillBonus?
+    let killBonus: Bonus?
+    
+    init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil) {
+        
+        self.order = order
+        self.killBonus = killBonus
+        
+        super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
+    }
     
     required init?(json: JSON) {
         
         order = json[JSONkeys.order] as? Int ?? 0
         
-        if let _bonusObject = json[JSONkeys.killBonus] as? JSON, let _killBonus = KillBonus(json: _bonusObject) {
+        if let _bonusObject = json[JSONkeys.killBonus] as? JSON, let _killBonus = Bonus(json: _bonusObject) {
             killBonus = _killBonus
         }
         else {

@@ -120,7 +120,7 @@ class IntroViewController: UIViewController {
                     /// FIXME: Remove in production!
                     var inventory = Character.startInventory
                     inventory.append(Potion(type: .luck))
-                    let player = Character(isPlayer: true, name: "Adam Test", dexerity: Character.generate(property: .dexterity), health: Character.generate(property: .health), luck: Character.generate(property: .luck), inventory: inventory )
+                    let player = Character(isPlayer: true, name: "Adam Test", dexterity: Character.generate(property: .dexterity), health: Character.generate(property: .health), luck: Character.generate(property: .luck), inventory: inventory )
                     GameData.shared.player = player
                     
                     _self.displayGame()
