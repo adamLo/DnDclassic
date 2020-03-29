@@ -249,25 +249,39 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func escape() {
         
+        let alert = FightViewController.excapeDialog(withTryLuck: {
+            let luck = GameData.shared.player.tryLuck()
+            GameData.shared.player.escape(goodLuck: luck.success)
+            self.dismiss(animated: true) {
+                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+            }
+        }) {
+            GameData.shared.player.escape()
+            self.dismiss(animated: true) {
+                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+            }
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    static func excapeDialog(withTryLuck: (() -> ())?, escape: (() -> ())?) -> UIAlertController {
+        
         let alert = UIAlertController(title: NSLocalizedString("Escape", comment: "Escape alert title"), message: NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message"), preferredStyle: .alert)
+        
         if GameData.shared.player != nil && GameData.shared.player.luckCurrent > 0 {
             alert.addAction(UIAlertAction(title: NSLocalizedString("Try your luck", comment: "Escape alert luck option title"), style: .default, handler: { (_) in
-                let luck = GameData.shared.player.tryLuck()
-                GameData.shared.player.escape(goodLuck: luck.success)
-                self.dismiss(animated: true) {
-                    self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
-                }
+                withTryLuck?()
             }))
         }
+        
         if GameData.shared.player != nil {
             alert.addAction(UIAlertAction(title: NSLocalizedString("Escape", comment: "Escape alert default title"), style: .default, handler: { (_) in
-                GameData.shared.player.escape()
-                self.dismiss(animated: true) {
-                    self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
-                }
+                escape?()
             }))
         }
+        
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        
+        return alert
     }
 }

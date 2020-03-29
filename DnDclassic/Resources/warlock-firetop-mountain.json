@@ -478,7 +478,41 @@
 		},
 		{
 			"id": 24,
-			"story": "Miután harmadszor is megsebesültél, érzed, hogy erőd fogytán van. Elvesztettél 1 ÜGYESSÉG pontot. Rádöbbensz, hogy ennek az ocsmány szörnyetegnek ez is a varázserejéhez tartozik, és érzed, amint végigfut a hátadon a hideg. Folytatod a harcot, vagy menekülsz? Ha Menekülni akarsz, fizesd meg a büntetést gyávaságodért, és rohanj az északi ajtón át. Lapozz a 360-ra. Ha maradsz, a küzdelem folytatódik. De mostantól számítva minden harmadik sebesülés, amit a bestiától kapsz, levon tőled 1 ÜGYESSÉG pontot. Ha legyőzted ellenfeledet, lapozz a 135-re."
+			"story": "Miután harmadszor is megsebesültél, érzed, hogy erőd fogytán van. Elvesztettél 1 ÜGYESSÉG pontot. Rádöbbensz, hogy ennek az ocsmány szörnyetegnek ez is a varázserejéhez tartozik, és érzed, amint végigfut a hátadon a hideg. Folytatod a harcot, vagy menekülsz? Ha Menekülni akarsz, fizesd meg a büntetést gyávaságodért, és rohanj az északi ajtón át. Ha maradsz, a küzdelem folytatódik. De mostantól számítva minden harmadik sebesülés, amit a bestiától kapsz, levon tőled 1 ÜGYESSÉG pontot. Ha legyőzted ellenfeledet, lapozz a 135-re.",
+			"visitBonus": {
+				"property": "dexterity",
+				"gain": -1
+			},
+			"actions": [
+				{
+					"type": "escape",
+					"caption": "Kirohansz az északi ajtón át",
+					"destination": 360,
+					"direction": "north"
+				},
+				{
+					"type": "fight",
+					"caption": "Maradsz, a küzdelem folytatódik",
+					"opponents": [
+						{
+							"name": "Wight",
+							"dexterity": 9,
+							"health": 6,
+							"damagedBy": "silver"
+						}
+					],
+					"escape": {
+						"direction": "north",
+						"destination": 360,
+						"caption": "Elfutsz az északi ajtón keresztül"
+					},
+					"win": {
+						"direction": "unknown",
+						"destination": 135,
+						"caption": "Legyőzted a szörnyet, elveheted a ládikát"
+					}
+				}
+			]
 		},
 		{
 			"id": 25,
@@ -492,6 +526,7 @@
 			],
 			"actions": [
 				{
+					"caption": "Elmenekülsz az északi ajtón keresztül",
 					"type": "escape",
 					"destination": 90,	
 					"direction": "north"
@@ -623,6 +658,18 @@
 					}       
 				}
 			]
+		},
+
+		{
+			"id": 90,
+			"story": "Az ajtó egy keskeny alagútba vezet, amely északi irányba halad. Néhány méter után az út előbb keletnek, utána északnak kanyarodik. A második kanyarnál egy kis bemélyedés van a sziklafalon. Megfelelő búvóhelynek látszik, az egyik szikla még kényelmes üléssel is szolgál. Itt elfogyaszthatod Élelmiszerkészleted egy részét. Pihenés után haladj tovább észak felé.",
+			"waypoints": [
+				{
+					"direction": "north",
+					"destination": 253,
+					"caption": "Továbbmész észak felé"
+				}
+			]		
 		},
 
 		{
@@ -813,6 +860,19 @@
 		},
 
 		{
+			"id": 173,
+			"story": "Itt csak az ezüstfegyverek segíthetnének. Amikor a lény harmadszor is sebet ejt rajtad, lapozz a 24-re! Ha legyőzöd, mielőtt harmadszor is megsebezne, lapozz a 135-re. Ha Elmenekülsz az északi ajtón át, lapozz a 360-ra. Ha van nálad Örök Álmot Adó Nyílvessző, megpróbálkozhatsz használatával. Tedd próbára Szerencséd! Ha szerencsés voltál, eltalálod vele a lényt, és az azonnal meghal. Ha balszerencsés vagy, elhibázod.",
+			"actions": [
+				{
+					"type": "escape",
+					"destination": 360,
+					"direction": "north",
+					"caption": "Elmenekülsz az északi ajtón át"
+				}
+			]
+		},
+
+		{
 			"id": 217,
 			"story": "A cövek épp csak egy kicsivel suhan el a Vámpír feje mellett. Míg figyeled, célba találsz-e, ismét belenézel a szemébe. Hívogatóan újból közelebb int magához. Akaratodat elveszted.",
 			"waypoints": [
@@ -939,6 +999,33 @@
 					"direction": "north",
 					"caption": "Észak felé indulsz, és valamivel távolabb egy hasonló ajtó mellett haladsz el.",
 					"destination": 363
+				}
+			]
+		},
+
+		{
+			"id": 340,
+			"story": "Különféle tárgyakkal próbálkozol Felszerelésedből, hogy szembeszegülj a festmény pillantásával, de egyik sem segít.",
+			"waypoints": [
+				{
+					"direction": "unknown",
+					"caption": "Kardoddal széthasítod a festményt",
+					"destination": 388
+				},
+				{
+					"direction": "unknown",
+					"caption": "Felmutatsz egy drágakövet vele szemben",
+					"destination": 31
+				},
+				{
+					"direction": "unknown",
+					"caption": "Belevágsz egy facöveket",
+					"destination": 241
+				},
+				{
+					"direction": "unknown",
+					"caption": "Megdobod egy darab sajttal",
+					"destination": 45
 				}
 			]
 		},

@@ -39,6 +39,7 @@
 		19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */; };
 		19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */; };
 		19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */; };
+		196EC2D72430ADFA004732A7 /* EscapeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EC2D62430ADFA004732A7 /* EscapeAction.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -126,6 +127,7 @@
 		19497D7D2406B22B0072CFD0 /* CharacterEditPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditPropertyCell.swift; sourceTree = "<group>"; };
 		19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditPotionCell.swift; sourceTree = "<group>"; };
 		19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditInventoryItemCell.swift; sourceTree = "<group>"; };
+		196EC2D62430ADFA004732A7 /* EscapeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeAction.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				19E193C82427E71F00334B0F /* RestAction.swift */,
 				19E193CE242BBB9000334B0F /* RollAction.swift */,
 				19E193D1242BBD6000334B0F /* RollChoice.swift */,
+				196EC2D62430ADFA004732A7 /* EscapeAction.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,
 				19E193D2242BBD6000334B0F /* RollChoice.swift in Sources */,
 				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
+				196EC2D72430ADFA004732A7 /* EscapeAction.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,
 				19FCFA92241295D900199175 /* CharacterViewController.swift in Sources */,
 				193015802402DC7300E7B815 /* InventoryItem.swift in Sources */,

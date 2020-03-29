@@ -236,6 +236,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .roll, let _action = action as? RollAction {
             roll(_action)
         }
+        else if action.type == .escape, let _action = action as? EscapeAction {
+            escape(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -308,6 +311,28 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true) {
             GameData.shared.completed(scene: self.scene)
         }
+    }
+    
+    private func escape(_ action: EscapeAction) {
+        
+        guard GameData.shared.player != nil, !GameData.shared.player.isDead, let scene = GameData.shared.game.scene(id: action.destination) else {return}
+        
+        let advanceBlock: ((_ scene: Scene, _ withLuck: Bool?) -> ()) = { (scene, withLuck) in
+            GameData.shared.player.escape(goodLuck: withLuck)
+            GameData.shared.advance(player: GameData.shared.player, scene: scene)
+            self.scene = scene
+            self.distributeGame()
+            self.sceneTableView.reloadData()
+        }
+        
+        let alert = FightViewController.excapeDialog(withTryLuck: {
+            let luck = GameData.shared.player.tryLuck()
+            advanceBlock(scene, luck.success)
+        }) {
+            advanceBlock(scene, nil)
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

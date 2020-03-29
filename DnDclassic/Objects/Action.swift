@@ -10,7 +10,7 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck, fight, rest, roll
+    case tryLuck, fight, rest, roll, escape
 }
 
 class Action: Deserializable {
@@ -27,6 +27,7 @@ class Action: Deserializable {
         case .fight: return NSLocalizedString("Fight!", comment: "Fight action default caption")
         case .rest: return NSLocalizedString("Get some rest!", comment: "Rest action default caption")
         case .roll: return NSLocalizedString("Roll!", comment: "Roll action default caption")
+        case .escape: return NSLocalizedString("Escape!", comment: "Escape action default caption")
         }
     }
     
@@ -54,6 +55,7 @@ class ActionFactory {
         case .fight:    return FightAction(json: json)
         case .rest:     return RestAction(json: json)
         case .roll:     return RollAction(json: json)
+        case .escape:   return EscapeAction(json: json)
         }
     }
 }
