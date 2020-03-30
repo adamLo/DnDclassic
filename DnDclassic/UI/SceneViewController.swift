@@ -230,8 +230,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         else if section == .inventory, let _inventory = scene.inventory, indexPath.row < _inventory.count {
          
-            let item = _inventory[indexPath.row]
-            grab(inventoryItem: item)
+            grab(inventory: indexPath.row)
         }
     }
     
@@ -350,8 +349,15 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true, completion: nil)
     }
     
-    private func grab(inventoryItem: InventoryItem) {
+    private func grab(inventory index: Int) {
         
+        guard GameData.shared.player != nil, !GameData.shared.player.isDead, scene != nil, let _inventory = scene.inventory, index < _inventory.count else {return}
+        
+        let item = _inventory[index]
+        GameData.shared.player.add(inventoryItem: item)
+        scene.grabbed(inventory: index)
+        distributeGame()
+        sceneTableView.reloadData()
     }
     
     // MARK: - Navigation

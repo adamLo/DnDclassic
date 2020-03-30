@@ -32,7 +32,10 @@ class Potion: InventoryItem {
         self.modifiesPropertyWhenUsed = type
     }
     
-    func use() {
-        amount = max(amount - 1, 0)
+    func use(amount: Int) {
+        self.amount = max(self.amount - amount, 0)
+    }
+        
+    func add(amount: Int) {
     }
 }

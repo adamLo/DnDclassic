@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct InventoryObject: InventoryItem {
+class InventoryObject: InventoryItem {
     
     var description: String {
         return "\(name ?? "N/A") (\(type.rawValue))"
@@ -44,6 +44,12 @@ struct InventoryObject: InventoryItem {
         
         self.identifier = identifier
         self.amount = 1
+    }
+    
+    func use(amount: Int) {
+    }
+    
+    func add(amount: Int) {
     }
     
     // MARK: - JSON

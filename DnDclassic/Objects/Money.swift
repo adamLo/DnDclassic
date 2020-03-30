@@ -17,7 +17,7 @@ class Money: InventoryItem, Deserializable {
     let modifiesPropertyWhenUsed: CharacterProperty? = nil
     let modiferValueWhenUsed: Int? = nil
     
-    var amount: Int
+    private(set) var amount: Int
     
     init(amount: Int) {
         self.amount = amount
@@ -34,5 +34,15 @@ class Money: InventoryItem, Deserializable {
         guard let _amount = json[InventoryObject.JSONKeys.amount] as? Int else {return nil}
         
         self.init(amount: _amount)
+    }
+    
+    func use(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
+    }
+    
+    func add(amount: Int) {
+        
+        self.amount += amount
     }
 }

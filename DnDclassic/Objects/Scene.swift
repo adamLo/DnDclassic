@@ -103,6 +103,14 @@ class Scene: Deserializable {
         }
     }
     
+    func grabbed(inventory index: Int) {
+        
+        inventory?.remove(at: index)
+        inventory?.removeAll(where: { (item) -> Bool in
+            item.amount <= 0
+        })
+    }
+    
     private struct JSONKeys {
         static let id           = "id"
         static let story        = "story"

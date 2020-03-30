@@ -26,5 +26,8 @@ protocol InventoryItem: CustomStringConvertible {
     var modiferValueWhenUsed: Int? {get}
     
     var amount: Int {get}
+    
+    func use(amount: Int)
+    func add(amount: Int)
 }
 

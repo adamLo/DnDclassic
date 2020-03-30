@@ -495,13 +495,30 @@
                                             <outlet property="captionLabel" destination="fjn-cX-os7" id="8B7-uM-Qce"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inventoryCell" id="DYu-X0-7o3">
-                                        <rect key="frame" x="0.0" y="190.00000190734863" width="414" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inventoryCell" id="DYu-X0-7o3" customClass="SceneInventoryCell" customModule="DnDclassic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="190.00000190734863" width="414" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DYu-X0-7o3" id="6yD-yt-AAX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money (10 coins)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYw-ob-n6f">
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="131.33333333333334" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jYw-ob-n6f" secondAttribute="bottom" id="2vX-v6-0vd"/>
+                                                <constraint firstItem="jYw-ob-n6f" firstAttribute="leading" secondItem="6yD-yt-AAX" secondAttribute="leadingMargin" id="f91-Pu-aBh"/>
+                                                <constraint firstItem="jYw-ob-n6f" firstAttribute="top" secondItem="6yD-yt-AAX" secondAttribute="topMargin" id="u6p-95-UqQ"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jYw-ob-n6f" secondAttribute="trailing" id="wtN-Q6-c8N"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="jYw-ob-n6f" id="HEV-HY-ykP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

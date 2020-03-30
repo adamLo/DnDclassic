@@ -34,4 +34,14 @@ class Food: InventoryItem {
         amount -= 1
         return true
     }
+    
+    func use(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
+    }
+    
+    func add(amount: Int) {
+        
+        self.amount += amount
+    }
 }

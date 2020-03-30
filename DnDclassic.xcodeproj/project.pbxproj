@@ -254,7 +254,6 @@
 				19D29566243113C8003713E5 /* Inventory */,
 				193015792402CAC600E7B815 /* Fight.swift */,
 				19D295622430D713003713E5 /* HitBonus.swift */,
-				1930157F2402DC7300E7B815 /* InventoryItem.swift */,
 				19FC5400242FBEF200988644 /* Bonus.swift */,
 				19FC540C2430A04D00988644 /* Scene */,
 				19301587240316D700E7B815 /* Game.swift */,
@@ -342,6 +341,7 @@
 		19D29566243113C8003713E5 /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
+				1930157F2402DC7300E7B815 /* InventoryItem.swift */,
 				193015772402C5B100E7B815 /* Potion.swift */,
 				19A855A1240ACE58007174C8 /* InventoryObject.swift */,
 				19A8559D240ACB5B007174C8 /* Food.swift */,

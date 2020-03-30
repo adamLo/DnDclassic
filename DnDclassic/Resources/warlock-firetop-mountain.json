@@ -727,6 +727,13 @@
 					"type": "money",
 					"amount": 18
 				}
+			],
+			"waypoints": [
+				{
+					"direction": "east",
+					"caption": "Az északi ajtón keresztül elhagyod a szobát",
+					"destination": 360
+				}
 			]
 		},
 

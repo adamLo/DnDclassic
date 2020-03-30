@@ -109,7 +109,7 @@ class Character: Deserializable, Equatable {
                         
         guard let potionType = potion.modifiesPropertyWhenUsed, potion.amount > 0 else {return}
         
-        potion.use()
+        potion.use(amount: 1)
         
         switch potionType {
         case .dexterity:
@@ -223,6 +223,22 @@ class Character: Deserializable, Equatable {
             return _item.type == type
         }
         return item != nil
+    }
+    
+    func add(inventoryItem: InventoryItem) {
+        
+        if inventoryItem.type == .food || inventoryItem.type == .money {
+            for item in inventory {
+                if item.type == inventoryItem.type {
+                    item.add(amount: inventoryItem.amount)
+                    changed?()
+                    return
+                }
+            }
+        }
+        
+        inventory.append(inventoryItem)
+        changed?()
     }
     
     // MARK: - JSON

@@ -10,6 +10,8 @@ import UIKit
 
 class SceneInventoryCell: UITableViewCell {
 
+    @IBOutlet var captionLabel: UILabel!
+    
     static let reuseId = "inventoryCell"
     
     override func awakeFromNib() {
@@ -19,6 +21,7 @@ class SceneInventoryCell: UITableViewCell {
 
     func setup(item: InventoryItem) {
         
+        captionLabel.text = item.description
     }
 
 }
