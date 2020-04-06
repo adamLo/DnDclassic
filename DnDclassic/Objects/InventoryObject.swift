@@ -55,8 +55,12 @@ class InventoryObject: InventoryItem {
     // MARK: - JSON
         
     struct JSONKeys {
-        static let amount   = "amount"
-        static let type     = "type"
+        static let amount           = "amount"
+        static let type             = "type"
+        static let modifiesWhenUsed = "modifiesWhenUsed"
+        static let modifierWhenUsed = "modifierWhenUsed"
+        static let id               = "id"
+        static let name             = "name"
     }
 }
 
@@ -68,6 +72,7 @@ class InventoryItemFactory {
         
         switch type {
         case .money: return Money(json: json)
+        case .weapon: return Weapon(json: json)
         default: return nil
         }
     }

@@ -542,6 +542,41 @@
 				"gain": -1
 			}
 		},
+        {
+            "id": 26,
+            "story": "Eszedbe jut Di Maggio kicsi, bőrkötéses könyve, és halkan elmondod a benne található varázsigét. Hangosan rákiáltasz a Sárkányra, mire ő feltápászkodik. Felkapja a fejét, és gyanakvóan bámul rád. Egy követ hajítasz a fejéhez, de a szikla visszapattan az orráról. A bestia mérgesen felhördül, nagyokat zihál, a torkából morajló hang hallatszik. A Sárkány nagyot fúj, és a fogai között egy újabb tűzgolyó kezd növekedni. Már felkészültél erre, és amikor a lángoló gömb felbukkan a szájában, rákiáltasz. „Ekil Erif Ekam Erif Erif Erif Di Maggio” A tűzgolyó szétpukkad. A Sárkány kétségbeesett üvöltés közben próbálja lerázni orráról a lángokat. De a tüzet nem tudja eloltani, fájdalmában sikoltozva megfordul, és fejét rázva beleveti magát a sötétségbe.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destnatin": 371
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "story": "Ez egy varázskard, és segíteni fog téged a küzdelemben. Amíg ezt a fegyvert használod, megnövelheted kezdeti ÜGYESSÉG pontjaidat 2-vel. Ugyancsak 2 pontot adhatsz jelenlegi Ügyességedhez is. Szerencséd is növekedett 2 ponttal, mivel rátaláltál erre a kardra. Dobd el régi kardodat. Ha inkább meg akarod tartani saját régi fegyvered, hagyd az ÜGYESSÉG pontokat, ahogy vannak, és csak a Szerencséhez adj hozzá 2 pontot.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 319
+                }
+            ],
+            "visitBonus": {
+                "property": "luck",
+                "gain": 2
+            },
+            "inventory": [
+                {
+                    "type": "weapon",
+                    "name": "Varázskard",
+                    "modifiesWhenUsed": "dexterity",
+                    "modifierWhenUsed": 2,
+                    "id": "magic_sword_27"
+                }
+            ]
+        },
 
 		{
 			"id": 33,

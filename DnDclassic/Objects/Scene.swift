@@ -37,7 +37,7 @@ class Scene: Deserializable {
             image = nil
         }
         
-        if _id == 135 {
+        if _id == 27 {
             print("Gotcha!")
         }
         

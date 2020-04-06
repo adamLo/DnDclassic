@@ -16,6 +16,7 @@ class Money: InventoryItem, Deserializable {
     let modifierValueWhenEquipped: Int? = nil
     let modifiesPropertyWhenUsed: CharacterProperty? = nil
     let modiferValueWhenUsed: Int? = nil
+    let name: String? = nil
     
     private(set) var amount: Int
     

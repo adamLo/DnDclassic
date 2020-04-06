@@ -16,6 +16,7 @@ class Food: InventoryItem {
     let modifierValueWhenEquipped: Int? = nil
     let modifiesPropertyWhenUsed: CharacterProperty? = nil
     let modiferValueWhenUsed: Int? = nil
+    let name: String? = nil
         
     var amount: Int
     

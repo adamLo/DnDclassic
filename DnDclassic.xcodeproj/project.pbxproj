@@ -47,6 +47,7 @@
 		19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A1240ACE58007174C8 /* InventoryObject.swift */; };
 		19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A3240BEC95007174C8 /* SceneStoryCell.swift */; };
 		19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A855A5240BF168007174C8 /* SceneWaypointCell.swift */; };
+		19C9151E243B9184002E0102 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9151D243B9183002E0102 /* Weapon.swift */; };
 		19D295632430D713003713E5 /* HitBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D295622430D713003713E5 /* HitBonus.swift */; };
 		19D2956524311244003713E5 /* Loot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D2956424311244003713E5 /* Loot.swift */; };
 		19D2956824312017003713E5 /* SceneInventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D2956724312017003713E5 /* SceneInventoryCell.swift */; };
@@ -138,6 +139,7 @@
 		19A855A1240ACE58007174C8 /* InventoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryObject.swift; sourceTree = "<group>"; };
 		19A855A3240BEC95007174C8 /* SceneStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStoryCell.swift; sourceTree = "<group>"; };
 		19A855A5240BF168007174C8 /* SceneWaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWaypointCell.swift; sourceTree = "<group>"; };
+		19C9151D243B9183002E0102 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		19D295622430D713003713E5 /* HitBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitBonus.swift; sourceTree = "<group>"; };
 		19D2956424311244003713E5 /* Loot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loot.swift; sourceTree = "<group>"; };
 		19D2956724312017003713E5 /* SceneInventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneInventoryCell.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				19A855A1240ACE58007174C8 /* InventoryObject.swift */,
 				19A8559D240ACB5B007174C8 /* Food.swift */,
 				19A8559F240ACC0B007174C8 /* Money.swift */,
+				19C9151D243B9183002E0102 /* Weapon.swift */,
 			);
 			name = Inventory;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				19D2956524311244003713E5 /* Loot.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
 				19FCFA9E24157BA000199175 /* SceneActionCell.swift in Sources */,
+				19C9151E243B9184002E0102 /* Weapon.swift in Sources */,
 				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
 				19E193B9242627CC00334B0F /* FightAction.swift in Sources */,
 				19FC5409242FD12700988644 /* LogViewController.swift in Sources */,
