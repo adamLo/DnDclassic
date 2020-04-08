@@ -24,12 +24,12 @@ class Fight {
     @discardableResult
     func performRound(playerRoll: Int? = nil, opponentRoll: Int? = nil, withLuck: Bool? = nil) -> (playerHit: Int, opponentHit: Int) {
         
-        guard player.healthCurrent > 0, opponent.healthCurrent > 0 else {return (0,0)}
+        guard player.health > 0, opponent.health > 0 else {return (0,0)}
         
         rounds += 1
         
-        let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterityCurrent
-        var playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterityCurrent
+        let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterity
+        var playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterity
         
         if let _damagedBy = opponent.damagedBy, !player.hasInventoryItem(of: _damagedBy) {
             // When opponent can be damaged only by specific type of item and player doesn't own any of it
@@ -92,11 +92,11 @@ class Fight {
     }
     
     var isFinished: Bool {
-        return player.healthCurrent <= 0 || opponent.healthCurrent <= 0
+        return player.health <= 0 || opponent.health <= 0
     }
     
     var hasUserWon: Bool {
         guard isFinished else {return false}
-        return player.healthCurrent > opponent.healthCurrent
+        return player.health > opponent.health
     }
 }

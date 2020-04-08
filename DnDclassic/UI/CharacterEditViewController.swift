@@ -19,17 +19,17 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private var potion: CharacterProperty? {
         get {
             guard let potion = inventory.first(where: { (item) -> Bool in
-                return item.type == .potion
-            }) else {return nil}
-            return potion.modifiesPropertyWhenUsed
+                return item.item.type == .potion
+            })?.item as? Potion else {return nil}
+            return potion.modifiedProperty
         }
         set {
             inventory.removeAll { (item) -> Bool in
-                return item.type == .potion
+                return item.item.type == .potion
             }
             if let _value = newValue {
                 let potion = Potion(type: _value)
-                inventory.append(potion)
+                inventory.append(InventoryWrapper(item: potion))
             }
         }
     }

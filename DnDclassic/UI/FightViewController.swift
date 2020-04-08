@@ -180,7 +180,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             var fight = fights[indexPath.row]
             
-            guard fight.opponent.healthCurrent > 0 else {return}
+            guard fight.opponent.health > 0 else {return}
             
             if action.order == .single && action.opponents.count > 1 {
                 
@@ -207,7 +207,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             useLuckSwitch.isOn = false
             
-            if fight.opponent.healthCurrent <= 0 {
+            if fight.opponent.health <= 0 {
                 let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You won again!", comment: "Alert message when opponent was beaten"), title: NSLocalizedString("Congratlations!", comment:"Alert title when opponent was beaten")) {
                     
                     if GameData.shared.player.isDead || self.action.isOver {
@@ -225,16 +225,16 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func distributeCharacterData() {
 
-        let healthStatus = Double(GameData.shared.player.healthCurrent) / Double(max(GameData.shared.player.healthStarting, 1)) * 100
-        healthLabel.text = NSLocalizedString("Health", comment: "Heatlh title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.healthCurrent, GameData.shared.player.healthStarting, healthStatus)
+        let healthStatus = Double(GameData.shared.player.health) / Double(max(GameData.shared.player.healthStarting, 1)) * 100
+        healthLabel.text = NSLocalizedString("Health", comment: "Heatlh title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.health, GameData.shared.player.healthStarting, healthStatus)
         
-        let dexterityStatus = Double(GameData.shared.player.dexterityCurrent) / Double(max(GameData.shared.player.dexterityStarting, 1)) * 100
-        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.dexterityCurrent, GameData.shared.player.dexterityStarting, dexterityStatus)
+        let dexterityStatus = Double(GameData.shared.player.dexterity) / Double(max(GameData.shared.player.dexterityStarting, 1)) * 100
+        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.dexterity, GameData.shared.player.dexterityStarting, dexterityStatus)
         
-        let luckStatus = Double(GameData.shared.player.luckCurrent) / Double(max(GameData.shared.player.luckStarting, 1)) * 100
-        luckLabel.text = NSLocalizedString("Luck", comment: "Luck title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.luckCurrent, GameData.shared.player.luckStarting, luckStatus)
+        let luckStatus = Double(GameData.shared.player.luck) / Double(max(GameData.shared.player.luckStarting, 1)) * 100
+        luckLabel.text = NSLocalizedString("Luck", comment: "Luck title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), GameData.shared.player.luck, GameData.shared.player.luckStarting, luckStatus)
         
-        if GameData.shared.player.luckCurrent < 0 {
+        if GameData.shared.player.luck < 0 {
             useLuckSwitch.isOn = false
             useLuckSwitch.isEnabled = false
         }
@@ -268,7 +268,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let alert = UIAlertController(title: NSLocalizedString("Escape", comment: "Escape alert title"), message: NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message"), preferredStyle: .alert)
         
-        if GameData.shared.player != nil && GameData.shared.player.luckCurrent > 0 {
+        if GameData.shared.player != nil && GameData.shared.player.luck > 0 {
             alert.addAction(UIAlertAction(title: NSLocalizedString("Try your luck", comment: "Escape alert luck option title"), style: .default, handler: { (_) in
                 withTryLuck?()
             }))

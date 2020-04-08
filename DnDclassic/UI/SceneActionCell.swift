@@ -30,7 +30,7 @@ class SceneActionCell: UITableViewCell {
         if let _fight = action as? FightAction, (_fight.isOver || GameData.shared.player == nil || GameData.shared.player.isDead) {
             backgroundColor = UIColor.darkGray
         }
-        else if GameData.shared.player == nil || GameData.shared.player.luckCurrent <= 0 {
+        else if GameData.shared.player == nil || GameData.shared.player.luck <= 0 {
             backgroundColor = UIColor.darkGray
         }
     }

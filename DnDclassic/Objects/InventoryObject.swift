@@ -17,31 +17,24 @@ class InventoryObject: InventoryItem {
     let type: InventoryItemType
     let name: String?
     
-    let modifiesPropertyWhenEquipped: CharacterProperty?
-    let modifierValueWhenEquipped: Int?
+    let modifiedProperty: CharacterProperty?
+    let modifierValue: Int?
         
-    let modifiesPropertyWhenUsed: CharacterProperty?
-    let modiferValueWhenUsed: Int?
-
     let identifier: Any?
     
     let amount: Int
     
     init(type: InventoryItemType, name: String,
-         modifiesPropertyWhenEquipped: CharacterProperty? = nil, modifierValueWhenEquipped: Int? = 0,
-         modifiesPropertyWhenUsed: CharacterProperty? = nil, modiferValueWhenUsed: Int? = 0,
+         modifiedProperty: CharacterProperty? = nil, modifierValue: Int? = 0,         
          identifier: Any? = nil
     ) {
         
         self.type = type
         self.name = name
         
-        self.modifiesPropertyWhenEquipped = modifiesPropertyWhenEquipped
-        self.modifierValueWhenEquipped = modifierValueWhenEquipped ?? 0
-        
-        self.modifiesPropertyWhenUsed = modifiesPropertyWhenUsed
-        self.modiferValueWhenUsed = modiferValueWhenUsed ?? 0
-        
+        self.modifiedProperty = modifiedProperty
+        self.modifierValue = modifierValue ?? 0
+                
         self.identifier = identifier
         self.amount = 1
     }
@@ -57,8 +50,8 @@ class InventoryObject: InventoryItem {
     struct JSONKeys {
         static let amount           = "amount"
         static let type             = "type"
-        static let modifiesWhenUsed = "modifiesWhenUsed"
-        static let modifierWhenUsed = "modifierWhenUsed"
+        static let modifiedProperty = "modifiedProperty"
+        static let modifierValue    = "modifierValue"
         static let id               = "id"
         static let name             = "name"
     }

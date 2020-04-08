@@ -8,21 +8,65 @@
 
 import Foundation
 
+class InventoryWrapper: Equatable {
+    
+    let item: InventoryItem
+    var equipped = false
+    
+    let identifier = UUID().uuidString
+    
+    init(item: InventoryItem, equipped: Bool = false) {
+        self.item = item
+        self.equipped = equipped
+    }
+
+    static func == (lhs: InventoryWrapper, rhs: InventoryWrapper) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}
+
 class Character: Deserializable, Equatable {
     
     let name: String
     let isPlayer: Bool
     
     let dexterityStarting: Int
-    private(set) var dexterityCurrent: Int = 0
+    private var dexterityCurrent: Int = 0
+    var dexterity: Int {
+        var result = dexterityCurrent
+        for item in inventory {
+            if item.equipped, let type = item.item.modifiedProperty, type == .dexterity, let value = item.item.modifierValue {
+                result += value
+            }
+        }
+        return result
+    }
     
     let healthStarting: Int
-    private(set)var healthCurrent: Int  = 0
+    private var healthCurrent: Int  = 0
+    var health: Int {
+        var result = healthCurrent
+        for item in inventory {
+            if item.equipped, let type = item.item.modifiedProperty, type == .health, let value = item.item.modifierValue {
+                result += value
+            }
+        }
+        return result
+    }
     
     private(set) var luckStarting: Int
-    private(set) var luckCurrent: Int = 0
-        
-    private(set) var inventory = [InventoryItem]()
+    private var luckCurrent: Int = 0
+    var luck: Int {
+        var result = luckCurrent
+        for item in inventory {
+            if item.equipped, let type = item.item.modifiedProperty, type == .luck, let value = item.item.modifierValue {
+                result += value
+            }
+        }
+        return result
+    }
+            
+    private(set) var inventory = [InventoryWrapper]()
     
     let id = UUID().uuidString
     
@@ -39,7 +83,7 @@ class Character: Deserializable, Equatable {
     
     var changed: (() -> ())?
     
-    init(isPlayer: Bool, name: String, dexterity: Int, health: Int, luck: Int, inventory: [InventoryItem]? = nil) {
+    init(isPlayer: Bool, name: String, dexterity: Int, health: Int, luck: Int, inventory: [InventoryWrapper]? = nil) {
         
         self.isPlayer = isPlayer
         self.name = name
@@ -88,8 +132,8 @@ class Character: Deserializable, Equatable {
     func eat() {
         
         guard let food = inventory.first(where: { (item) -> Bool in
-            return item.type == .food
-        }) as? Food else {return}
+            return item.item.type == .food
+        })?.item as? Food else {return}
         
         guard food.amount > 0 else {return}
         
@@ -97,7 +141,7 @@ class Character: Deserializable, Equatable {
         food.eat()
         
         inventory.removeAll { (item) -> Bool in
-            return item.type == .food && item.amount < 1
+            return item.item.type == .food && item.item.amount < 1
         }
         
         changed?()
@@ -107,7 +151,7 @@ class Character: Deserializable, Equatable {
     
     func drink(potion: Potion) {
                         
-        guard let potionType = potion.modifiesPropertyWhenUsed, potion.amount > 0 else {return}
+        guard let potionType = potion.modifiedProperty, potion.amount > 0 else {return}
         
         potion.use(amount: 1)
         
@@ -123,7 +167,7 @@ class Character: Deserializable, Equatable {
         
         inventory.removeAll { (item) -> Bool in
             
-            if potion.amount <= 0, let potionId = potion.identifier as? String, let itemId = item.identifier as? String, potionId == itemId {
+            if potion.amount <= 0, let potionId = potion.identifier as? String, let itemId = item.item.identifier as? String, potionId == itemId {
                 return true
             }
             return false
@@ -143,7 +187,7 @@ class Character: Deserializable, Equatable {
         log(event: .damage(value: points))
     }
     
-    static var startInventory: [InventoryItem] {
+    static var startInventory: [InventoryWrapper] {
      
         let sword = InventoryObject(type: .weapon, name: NSLocalizedString("Long sword", comment: "Long sword name"), identifier: "longsword_default")
         let armor = InventoryObject(type: .armor, name: NSLocalizedString("Leather Armor", comment: "Leather armor name"), identifier: "leatherarmor_default")
@@ -151,7 +195,13 @@ class Character: Deserializable, Equatable {
         let money = Money(amount: 0)
         let food = Food(amount: 10)
         
-        return [sword, armor, lamp, money, food]
+        return [
+            InventoryWrapper(item: sword, equipped: true),
+            InventoryWrapper(item: armor, equipped: true),
+            InventoryWrapper(item: lamp),
+            InventoryWrapper(item: money),
+            InventoryWrapper(item: food)
+        ]
     }
     
     func advance(to scene: Scene) {
@@ -220,7 +270,7 @@ class Character: Deserializable, Equatable {
     func hasInventoryItem(of type: InventoryItemType) -> Bool {
         
         let item = inventory.first { (_item) -> Bool in
-            return _item.type == type
+            return _item.item.type == type
         }
         return item != nil
     }
@@ -229,15 +279,30 @@ class Character: Deserializable, Equatable {
         
         if inventoryItem.type == .food || inventoryItem.type == .money {
             for item in inventory {
-                if item.type == inventoryItem.type {
-                    item.add(amount: inventoryItem.amount)
+                if item.item.type == inventoryItem.type {
+                    item.item.add(amount: inventoryItem.amount)
                     changed?()
                     return
                 }
             }
         }
         
-        inventory.append(inventoryItem)
+        inventory.append(InventoryWrapper(item: inventoryItem))
+        changed?()
+    }
+    
+    func equip(item: InventoryWrapper) {
+        
+        guard item.item.type.equippable else {return}
+        
+        item.equipped = true
+        
+        for _item in inventory {
+            if item != _item, _item.item.type.equippable, !item.item.type.canEquipWithOther(type: _item.item.type) {
+                _item.equipped = false
+            }
+        }
+        
         changed?()
     }
     

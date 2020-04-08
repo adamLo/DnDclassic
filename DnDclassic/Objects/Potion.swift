@@ -16,21 +16,19 @@ class Potion: InventoryItem {
     
     let type: InventoryItemType = .potion
     
-    let modifiesPropertyWhenEquipped: CharacterProperty? = nil
-    let modifierValueWhenEquipped: Int? = 0
-    let modifiesPropertyWhenUsed: CharacterProperty?
-    let modiferValueWhenUsed: Int? = nil
+    let modifiedProperty: CharacterProperty?
+    let modifierValue: Int? = 0
     let name: String? = nil
     
     var description: String {
-        return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiesPropertyWhenUsed?.rawValue ?? "N/A", amount)
+        return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiedProperty?.rawValue ?? "N/A", amount)
     }
     
     private(set) var amount: Int = 2
     
     init(type: CharacterProperty) {
         
-        self.modifiesPropertyWhenUsed = type
+        self.modifiedProperty = type
     }
     
     func use(amount: Int) {

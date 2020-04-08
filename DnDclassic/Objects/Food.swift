@@ -12,10 +12,8 @@ class Food: InventoryItem {
     
     let identifier: Any? = "food"
     let type: InventoryItemType = .food
-    let modifiesPropertyWhenEquipped: CharacterProperty? = nil
-    let modifierValueWhenEquipped: Int? = nil
-    let modifiesPropertyWhenUsed: CharacterProperty? = nil
-    let modiferValueWhenUsed: Int? = nil
+    let modifiedProperty: CharacterProperty? = nil
+    let modifierValue: Int? = nil
     let name: String? = nil
         
     var amount: Int

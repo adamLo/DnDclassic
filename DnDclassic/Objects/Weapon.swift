@@ -12,12 +12,10 @@ struct Weapon: InventoryItem, Deserializable {
     
     let identifier: Any?
     let type: InventoryItemType = .weapon
-    let modifiesPropertyWhenUsed: CharacterProperty?
-    let modiferValueWhenUsed: Int?
     let amount = 1
     let name: String?
-    let modifiesPropertyWhenEquipped: CharacterProperty? = nil
-    let modifierValueWhenEquipped: Int? = nil
+    let modifiedProperty: CharacterProperty?
+    let modifierValue: Int?
         
     var description: String {
         return name?.nilIfEmpty ?? identifier as? String ?? NSLocalizedString("Weapon", comment: "Weapon title")
@@ -29,13 +27,13 @@ struct Weapon: InventoryItem, Deserializable {
         
         identifier = json[InventoryObject.JSONKeys.id]
         
-        if let propertyString = json[InventoryObject.JSONKeys.modifiesWhenUsed] as? String, let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString), let _value = json[InventoryObject.JSONKeys.modifierWhenUsed] as? Int {
-            modifiesPropertyWhenUsed = _property
-            modiferValueWhenUsed = _value
+        if let propertyString = json[InventoryObject.JSONKeys.modifiedProperty] as? String, let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString), let _value = json[InventoryObject.JSONKeys.modifierValue] as? Int {
+            modifiedProperty = _property
+            modifierValue = _value
         }
         else {
-            modifiesPropertyWhenUsed = nil
-            modiferValueWhenUsed = 0
+            modifiedProperty = nil
+            modifierValue = nil
         }
         
         name = json[InventoryObject.JSONKeys.name] as? String

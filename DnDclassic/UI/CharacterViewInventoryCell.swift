@@ -20,9 +20,9 @@ class CharacterViewInventoryCell: UITableViewCell {
         
     }
 
-    func setup(item: InventoryItem) {
+    func setup(item: InventoryWrapper) {
         
-        nameLabel.text = item.description
+        nameLabel.text = (item.item.description) + (item.equipped ? " [\(NSLocalizedString("Equipped", comment: "Title when inventory item equipped"))]" : "")
     }
 
 }

@@ -571,8 +571,8 @@
                 {
                     "type": "weapon",
                     "name": "Varázskard",
-                    "modifiesWhenUsed": "dexterity",
-                    "modifierWhenUsed": 2,
+                    "modifiedProperty": "dexterity",
+                    "modifierValue": 2,
                     "id": "magic_sword_27"
                 }
             ]

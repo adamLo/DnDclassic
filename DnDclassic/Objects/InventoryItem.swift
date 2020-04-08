@@ -11,6 +11,22 @@ import Foundation
 enum InventoryItemType: String {
     
     case weapon, armor, key, lighting, money, food, potion, silverWeapon
+    
+    var equippable: Bool {
+        return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon].contains(self)
+    }
+    
+    func canEquipWithOther(type: InventoryItemType) -> Bool {
+        
+        if self == .weapon && [InventoryItemType.weapon, InventoryItemType.silverWeapon].contains(type) {
+            return false
+        }
+        if self == .armor, type == .armor {
+            return false
+        }
+        
+        return true
+    }
 }
 
 protocol InventoryItem: CustomStringConvertible {
@@ -19,11 +35,8 @@ protocol InventoryItem: CustomStringConvertible {
     
     var type: InventoryItemType {get}
     
-    var modifiesPropertyWhenEquipped: CharacterProperty? {get}
-    var modifierValueWhenEquipped: Int? {get}
-    
-    var modifiesPropertyWhenUsed: CharacterProperty? {get}
-    var modiferValueWhenUsed: Int? {get}
+    var modifiedProperty: CharacterProperty? {get}
+    var modifierValue: Int? {get}
     
     var amount: Int {get}
     

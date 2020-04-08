@@ -130,13 +130,15 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let item = GameData.shared.player.inventory[indexPath.row]
         
-        if item.type == .food, let food = item as? Food {
+        if item.item.type == .food, let food = item.item as? Food {
             showOptions(food: food)
         }
-        else if item.type == .potion, let potion = item as? Potion {
+        else if item.item.type == .potion, let potion = item.item as? Potion {
             showOptions(potion: potion)
         }
-        
+        else if item.item.type.equippable, !item.equipped {
+            showOptions(equippable: item)
+        }
     }
     
     // MARK: - Inventory item functions
@@ -157,7 +159,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private func showOptions(potion: Potion) {
         
-        guard GameData.shared.player != nil, let property = potion.modifiesPropertyWhenUsed else {return}
+        guard GameData.shared.player != nil, let property = potion.modifiedProperty else {return}
         
         var message: String!
         
@@ -177,6 +179,20 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             self.characterTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showOptions(equippable: InventoryWrapper) {
+        
+        guard GameData.shared.player != nil, equippable.item.type.equippable, !equippable.equipped else {return}
+        
+        let alert = UIAlertController(title: NSLocalizedString("Equip item?", comment: "Equip item alert title"), message: equippable.item.description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Equip", comment: "Equip option title"), style: .default, handler: { (_) in
+            GameData.shared.player.equip(item: equippable)
+            self.characterTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)
     }

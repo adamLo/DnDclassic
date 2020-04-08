@@ -16,24 +16,18 @@ class FightOpponentCell: UITableViewCell {
     @IBOutlet var dexterityLabel: UILabel!    
 
     static let reuseId = "opponentCell"
-    
-    override func awakeFromNib() {
-        
-        super.awakeFromNib()
-        
-    }
 
     func setup(opponent: Opponent) {
         
         nameLabel.text = opponent.name
         
-        let healthStatus = Double(opponent.healthCurrent) / Double(max(opponent.healthStarting, 1)) * 100
-        healthLabel.text = NSLocalizedString("Health", comment: "Health title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.healthCurrent, opponent.healthStarting, healthStatus)
+        let healthStatus = Double(opponent.health) / Double(max(opponent.healthStarting, 1)) * 100
+        healthLabel.text = NSLocalizedString("Health", comment: "Health title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.health, opponent.healthStarting, healthStatus)
         
-        let dexterityStatus = Double(opponent.dexterityCurrent) / Double(max(opponent.dexterityStarting, 1)) * 100
-        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.dexterityCurrent, opponent.dexterityStarting, dexterityStatus)
+        let dexterityStatus = Double(opponent.dexterity) / Double(max(opponent.dexterityStarting, 1)) * 100
+        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.dexterity, opponent.dexterityStarting, dexterityStatus)
         
-        backgroundColor = opponent.healthCurrent > 0 ? UIColor.white : UIColor.darkGray
+        backgroundColor = opponent.health > 0 ? UIColor.white : UIColor.darkGray
     }
 
 }

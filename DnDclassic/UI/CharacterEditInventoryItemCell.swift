@@ -21,9 +21,9 @@ class CharacterEditInventoryItemCell: UITableViewCell {
         selectionStyle = .none
     }
 
-    func setup(item: InventoryItem) {
+    func setup(item: InventoryWrapper) {
         
-        itemNameLabel.text = item.description
+        itemNameLabel.text = item.item.description
     }
 
 }

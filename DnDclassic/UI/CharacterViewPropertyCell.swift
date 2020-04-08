@@ -31,13 +31,13 @@ class CharacterViewPropertyCell: UITableViewCell {
         
         switch property {
         case .dexterity:
-            currentValue = character.dexterityCurrent
+            currentValue = character.dexterity
             startValue = character.dexterityStarting
         case .health:
-            currentValue = character.healthCurrent
+            currentValue = character.health
             startValue = character.healthStarting
         case .luck:
-            currentValue = character.luckCurrent
+            currentValue = character.luck
             startValue = character.luckStarting
         }
         
