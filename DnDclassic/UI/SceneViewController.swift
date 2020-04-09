@@ -395,6 +395,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You just died :(", comment: "Alert message when user gone KIA"), title: NSLocalizedString("Sorry", comment: "Alert title when user gone KIA")) {
             // FIXME: Proceed to dead screen
         }
+        present(alert, animated: true, completion: nil)
     }
     
     private func rest(_ action: RestAction) {

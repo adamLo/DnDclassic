@@ -19,7 +19,7 @@ class Scene: Deserializable {
     private(set) var inventory: [InventoryItem]?
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
-    let visitBonus: Bonus?
+    let visitBonus: [Bonus]?
         
     required init?(json: JSON) {
         
@@ -95,8 +95,15 @@ class Scene: Deserializable {
         }
         returnWaypoints = _returns.isEmpty ? nil :_returns
         
-        if let bonusObject = json[JSONKeys.visitBonus] as? JSON, let _bonus = Bonus(json: bonusObject) {
-            visitBonus = _bonus
+        var _visitBonus = [Bonus]()
+        if let bonusArray = json[JSONKeys.visitBonus] as? JSONArray {
+            for bonusObject in bonusArray {
+                guard let bonus = Bonus(json: bonusObject) else {return nil}
+                _visitBonus.append(bonus)
+            }
+        }
+        if !_visitBonus.isEmpty {
+            visitBonus = _visitBonus
         }
         else {
             visitBonus = nil

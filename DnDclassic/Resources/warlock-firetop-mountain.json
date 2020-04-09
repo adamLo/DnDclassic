@@ -479,10 +479,12 @@
 		{
 			"id": 24,
 			"story": "Miután harmadszor is megsebesültél, érzed, hogy erőd fogytán van. Elvesztettél 1 ÜGYESSÉG pontot. Rádöbbensz, hogy ennek az ocsmány szörnyetegnek ez is a varázserejéhez tartozik, és érzed, amint végigfut a hátadon a hideg. Folytatod a harcot, vagy menekülsz? Ha Menekülni akarsz, fizesd meg a büntetést gyávaságodért, és rohanj az északi ajtón át. Ha maradsz, a küzdelem folytatódik. De mostantól számítva minden harmadik sebesülés, amit a bestiától kapsz, levon tőled 1 ÜGYESSÉG pontot. Ha legyőzted ellenfeledet, lapozz a 135-re.",
-			"visitBonus": {
-				"property": "dexterity",
-				"gain": -1
-			},
+			"visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ],
 			"actions": [
 				{
 					"type": "escape",
@@ -537,10 +539,12 @@
 					"direction": "north"
 				}
 			],
-			"visitBonus": {
-				"property": "dexterity",
-				"gain": -1
-			}
+			"visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ]
 		},
         {
             "id": 26,
@@ -563,10 +567,12 @@
                     "destination": 319
                 }
             ],
-            "visitBonus": {
-                "property": "luck",
-                "gain": 2
-            },
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
             "inventory": [
                 {
                     "type": "weapon",
@@ -574,6 +580,26 @@
                     "modifiedProperty": "dexterity",
                     "modifierValue": 2,
                     "id": "magic_sword_27"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "story": "A félelmetes Ogre holtan fekszik! Átkutatod a barlangját, de alig találsz valami használhatót, bár az övébe rejtett erszényben nyolc aranyat lelsz. Egy kicsit aggódsz ugyan a másik szék miatt, vajon kié lehet? Úgy döntesz, ugyanazon az úton hagyod el a barlangot, mint amin jöttél. Lapozz a 351-re. Győzelmedért 2 ÜGYESSÉG és 2 Szerencse pontot kapsz.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 8
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": 2
+                },
+                {
+                    "property": "luck",
+                    "gain": 2
                 }
             ]
         },
@@ -753,10 +779,12 @@
 		{
 			"id": 135,
 			"story": "A Wight (rossz szellem) a szoba sarkában roskad össze. Odamész az asztalhoz, és kinyitod a ládikát. Tizennyolc aranypénz van benne. Magaddal viheted, ha akarod, de vezesd rá a Kalandlapra. Adj 2-t Szerencse pontjaidhoz, mivel legyőzted ezt a teremtményt is. Pihenj egy kicsit, és egyél valamit. Ha készen vagy, az északi ajtón keresztül elhagyhatod a szobát.",
-			"visitBonus": {
-				"property": "luck",
-				"gain": 2
-			},
+			"visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
 			"inventory": [
 				{
 					"type": "money",

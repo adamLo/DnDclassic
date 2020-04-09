@@ -218,8 +218,10 @@ class Character: Deserializable, Equatable {
         
         log(event: .advance(sceneId: scene.id))
         
-        if let bonus = scene.visitBonus {
-            apply(bonus: bonus)
+        if let bonuses = scene.visitBonus {
+            for bonus in bonuses {
+                apply(bonus: bonus)
+            }
         }
     }
     
@@ -255,6 +257,8 @@ class Character: Deserializable, Equatable {
         case .health: healthCurrent = min(healthCurrent + bonus.gain, healthStarting)
         case .luck: luckCurrent = min(luckCurrent + bonus.gain, luckStarting)
         }
+        
+        changed?()
         
         log(event: .bonus(property: bonus.property, gain: bonus.gain))
     }
