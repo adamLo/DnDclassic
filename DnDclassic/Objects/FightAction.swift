@@ -18,6 +18,7 @@ class FightAction: Action {
     let opponents: [Opponent]
     let escape: WayPoint?
     let win: WayPoint?
+    let escapeDamage: Int?
     
     required init?(json: JSON) {
 
@@ -50,6 +51,8 @@ class FightAction: Action {
         }
         opponents = _opponents
         
+        escapeDamage = json[JSONKeys.escapeDamage] as? Int
+        
         super.init(json: json)
     }
     
@@ -58,6 +61,7 @@ class FightAction: Action {
         static let escape       = "escape"
         static let win          = "win"
         static let order        = "order"
+        static let escapeDamage = "escapeDamage"
     }
     
     var isOver: Bool {

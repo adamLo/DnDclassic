@@ -252,12 +252,12 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let alert = FightViewController.excapeDialog(withTryLuck: {
             let luck = GameData.shared.player.tryLuck()
-            GameData.shared.player.escape(goodLuck: luck.success)
+            GameData.shared.player.escape(goodLuck: luck.success, escapeDamage: self.action.escapeDamage)
             self.dismiss(animated: true) {
                 self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
             }
         }) {
-            GameData.shared.player.escape()
+            GameData.shared.player.escape(escapeDamage: self.action.escapeDamage)
             self.dismiss(animated: true) {
                 self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
             }
@@ -270,7 +270,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         let alert = UIAlertController.simpleMessageAlert(message: String(format: NSLocalizedString("You're being taken to %@", comment: "Alert title when opponent damage event triggered"), waypoint.caption), title: NSLocalizedString("You made a damage to your opponent!", comment: "Alert title when opponent damage event triggered")) {
             self.dismiss(animated: true) {
                 self.figthOver?(waypoint)
-            }            
+            }
         }
         present(alert, animated: true, completion: nil)
     }

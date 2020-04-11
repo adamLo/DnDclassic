@@ -1227,6 +1227,46 @@
 				}
 			]
 		},
+        
+        {
+            "id": 211,
+            "story": "A Wighteket (rossz szellemeket) csak színtiszta ezüstből készített fegyverrel lehet megsebezni. Ha az általad használt fegyver nem ilyen, csapjatok össze még egy Fordulóban! Ne feledd, hogy minden seb, amit rajtad ejt, az számít, de te nem tudod megsebezni, még mindig teljes erőben lesz, kivéve azt az esetet, ha ezüstből készített fegyvert választottál.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Ha van ezüstfegyvered, jobb, ha most előveszed",
+                    "destination": 173,
+                    "condition": {
+                        "inventoryItemtype": "silverWeapon",
+                        "amount": 1
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Wight",
+                            "dexterity": 9,
+                            "health": 6,
+                            "damagedBy": "silverWeapon"
+                        }
+                    ],
+                    "escape": {
+                        "direction": "north",
+                        "destination": 301,
+                        "caption": "Elfutsz az északi ajtón keresztül",
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 135,
+                        "caption": "Legyőzted"
+                    },
+                    "escapeDamage": 1
+                }
+            ]
+        },
 
 		{
 			"id": 217,

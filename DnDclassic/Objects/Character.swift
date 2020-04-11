@@ -229,12 +229,14 @@ class Character: Deserializable, Equatable {
         return healthCurrent <= 0
     }
     
-    func escape(goodLuck: Bool? = nil) {
+    func escape(goodLuck: Bool? = nil, escapeDamage: Int? = 0) {
         
         var damage = 2
         if let _luck = goodLuck {
             damage = _luck ? 1 : 3
         }
+        
+        damage += (escapeDamage ?? 0)
         
         hitDamage(points: damage)
         
