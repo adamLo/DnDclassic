@@ -585,7 +585,7 @@
         },
         {
             "id": 28,
-            "story": "A félelmetes Ogre holtan fekszik! Átkutatod a barlangját, de alig találsz valami használhatót, bár az övébe rejtett erszényben nyolc aranyat lelsz. Egy kicsit aggódsz ugyan a másik szék miatt, vajon kié lehet? Úgy döntesz, ugyanazon az úton hagyod el a barlangot, mint amin jöttél. Lapozz a 351-re. Győzelmedért 2 ÜGYESSÉG és 2 Szerencse pontot kapsz.",
+            "story": "A félelmetes Ogre holtan fekszik! Átkutatod a barlangját, de alig találsz valami használhatót, bár az övébe rejtett erszényben nyolc aranyat lelsz. Egy kicsit aggódsz ugyan a másik szék miatt, vajon kié lehet? Úgy döntesz, ugyanazon az úton hagyod el a barlangot, mint amin jöttél. Győzelmedért 2 ÜGYESSÉG és 2 Szerencse pontot kapsz.",
             "inventory": [
                 {
                     "type": "money",
@@ -601,9 +601,76 @@
                     "property": "luck",
                     "gain": 2
                 }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Elhagyod a barlangot",
+                    "destination": 351
+                }
             ]
         },
-
+        {
+            "id": 29,
+            "story": "A csizmáktól eltekintve, melyekre nincs szükséged, úgy tűnik, nincs semmi értékes a barlangban. Úgy határozol, visszafordulsz arra, amerről jöttél.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Visszafordulsz",
+                    "destination": 375
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "story": "Egy meglazult kődarab elmozdul, ás láthatóvá tesz egy kötelet, mely a szikláról lóg le. Ha úgy érzed, okosabb nem hozzányúlni, visszafordulhatsz a keresztúthoz.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszafordulsz a keresztúthoz",
+                    "destination": 267
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Meghúzod a kötelet",
+                    "destination": 67
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "story": "Ha már megszerezted az ékkövet a Küklopsz szeméből, a Varázsló elé tartod. Félelmetes tekintete megváltozik, fájdalmat sugároz. Nyilvánvalóan érzi az ékkő hatalmát. Hirtelen a szemei elfehérednek, arckifejezése elgyengül. Megnő az önbizalmad, amint rádöbbensz, megnyerted az első igazi, komoly csatát. 2 ÜGYESSÉG pontot szereztél. Tedd az ékkövet a hátizsákodba, és hagyd el a szobát az északi ajtón keresztül.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Elhagyod a szobát",
+                    "destination": 90
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": 2
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "story": "Áthajítod a sajtot a szobán a Patkányok közé, és azok tülekedni kezdenek érte. Tépik, marják egymást az élelemért. A figyelmüket így elterelve keresztülmész a szobán, és kilépsz az északi falon lévő ajtón. Jó szerencséd miatt adjál magadnak 2 Szerencse pontot.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Kilépsz az északi falon lévő ajtón",
+                    "destination": 124
+                }
+            ]
+        },
 		{
 			"id": 33,
 			"story": "Az alvó teremtmény riadtan felébred. Felugrik és rád ront, de fegyvertelen. Kardoddal le tudnád győzni, de éles fogai gonoszul villognak.",
@@ -638,6 +705,101 @@
 				}
 			]
 		},
+        {
+            "id": 34,
+            "story": "Átvizsgálod a szerszámokat, amelyeket találtál: egy fakalapács keményfa fejjel és egy színtiszta ezüstből készült véső. Megtarthatod bármelyiket, ha hajlandó vagy jelenlegi felszerelésed egy darabját itt hagyni helyette. Ha így döntesz, vezesd be a megfelelő változásokat a Felszerelési tárgyak rovatába. A zaj az északi ajtó felől egyre hangosabbá válik, te felpattansz, hogy kiderítsd, mi az.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Lapozz",
+                    "destination": 96
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "hammer",
+                    "name": "Fakalapács keményfa fejjel",
+                    "id": "wooden_hammer"
+                },
+                {
+                    "type": "silverWeapon",
+                    "name": "Ezüst véső",
+                    "id": "silver_chisel"
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "story": "Amint belépsz a szobába, az ajtó becsapódik mögötted. Ahogy becsukódik, egy kattanás és sziszegés hallatszik. A mennyezet közepéből gázsugár csap ki, és a szobát fojtogató köd lepi el. Belélegzed, és köhögni kezdesz. Az ajtóra pillantasz, aztán a kulcsra.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Visszamész az ajtóhoz, és gyorsan Elmenekülsz",
+                    "destination": 136
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Visszatartod lélegzeted, és elrohansz a kulcsért",
+                    "destination": 361
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "story": "Feltöröd a bezárt ajtót, és émelyítő bűz csapja meg az orrodat. A szobában a padlót csontok, rothadó növényzet és nyálkás iszap fedi. Egy rongyokba burkolózott, torzonborz hajú öregember rohan feléd rikoltozva. A szakálla hosszú és ősz, kezében egy régi, fából készült széklábat lóbál. Lehet, hogy őrült, de az is lehet, hogy ez valamiféle csapda!",
+            "cover": "scene_036.png",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Rákiáltasz és megpróbálod lecsillapítani",
+                    "destination": 263
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz és nekitámadsz",
+                    "destination": 353
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "story": "Az útkereszteződésnél állva elindulhatsz észak, nyugat vagy dél felé.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak indulsz",
+                    "destination": 366
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak indulsz",
+                    "destination": 11
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek indulsz",
+                    "destination": 277
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "story": "Kinyitod az ajtót, és rábukkansz a Farkasember éléskamrájára. Mindenféle csontok és rothadó húscafatok hevernek szanaszét. A szag émelyítő, de egy korsóban ecetben eltett tojásokat találsz, ami szinte ínyencségnek mondható. Ha magaddal viszed, két étkezésre elegendő lesz, és az Élelmiszerkészlethez plusz 2 pontot adhatsz hozzá és távozz a déli ajtón át.",
+            "inventory": [
+                {
+                    "type": "food",
+                    "amount": 2,
+                    "name": "Ecetben eltett tojás"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Távozol a déli ajtón át",
+                    "destination": 66
+                }
+            ]
+        },
 
 		{
 			"id": 42,

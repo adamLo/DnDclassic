@@ -40,6 +40,7 @@
 		19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */; };
 		19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */; };
 		196EC2D72430ADFA004732A7 /* EscapeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EC2D62430ADFA004732A7 /* EscapeAction.swift */; };
+		19825BC42441D15500488525 /* scene_036.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BC32441D15500488525 /* scene_036.png */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -132,6 +133,7 @@
 		19497D7F2406B2440072CFD0 /* CharacterEditPotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditPotionCell.swift; sourceTree = "<group>"; };
 		19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditInventoryItemCell.swift; sourceTree = "<group>"; };
 		196EC2D62430ADFA004732A7 /* EscapeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeAction.swift; sourceTree = "<group>"; };
+		19825BC32441D15500488525 /* scene_036.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_036.png; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825BC32441D15500488525 /* scene_036.png */,
 				19497D6C2405930C0072CFD0 /* warlock-firetop-mountain.json */,
 				1930158C24031CD800E7B815 /* scene_001.png */,
 				19FCFA9924157A1800199175 /* scene_009.png */,
@@ -539,6 +542,7 @@
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
 				19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
+				19825BC42441D15500488525 /* scene_036.png in Resources */,
 				1930158B240318DE00E7B815 /* cover.png in Resources */,
 				19FCFA9C24157A1900199175 /* scene_071.png in Resources */,
 				19FCFA9B24157A1900199175 /* scene_009.png in Resources */,

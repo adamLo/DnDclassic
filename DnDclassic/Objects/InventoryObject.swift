@@ -8,7 +8,7 @@
 
 import Foundation
 
-class InventoryObject: InventoryItem {
+class InventoryObject: InventoryItem, Deserializable {
     
     var description: String {
         return "\(name ?? "N/A") (\(type.rawValue))"
@@ -45,6 +45,27 @@ class InventoryObject: InventoryItem {
     func add(amount: Int) {
     }
     
+    required init?(json: JSON) {
+        
+        guard let _typeString = json[InventoryObject.JSONKeys.type] as? String, let _type = InventoryItemType(rawValue: _typeString) else {return nil}
+        type = _type
+        
+        name = json[JSONKeys.name] as? String
+        
+        if let propertyString = json[InventoryObject.JSONKeys.modifiedProperty] as? String, let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString), let _value = json[InventoryObject.JSONKeys.modifierValue] as? Int {
+            modifiedProperty = _property
+            modifierValue = _value
+        }
+        else {
+            modifiedProperty = nil
+            modifierValue = nil
+        }
+        
+        identifier = json[JSONKeys.id]
+        
+        amount = json[InventoryObject.JSONKeys.amount] as? Int ?? 1
+    }
+    
     // MARK: - JSON
         
     struct JSONKeys {
@@ -66,7 +87,7 @@ class InventoryItemFactory {
         switch type {
         case .money: return Money(json: json)
         case .weapon: return Weapon(json: json)
-        default: return nil
+        default: return InventoryObject(json: json)
         }
     }
 }
