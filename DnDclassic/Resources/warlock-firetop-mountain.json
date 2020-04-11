@@ -800,6 +800,59 @@
                 }
             ]
         },
+        {
+            "id": 39,
+            "story": "Ellenfeled megdöbbenve veszi észre, hogy eltűntél előle, de azért szeméhez emeli kezét, és pillantásával alaposan átkutatja a szobát. Érzi jelenlétedet, de nem tudja megállapítani, pontosan hol vagy. Kihúzod kardod, és rátámadsz. Elrántja a fejét, és beleszimatol a levegőbe. Távolról kell megküzdened vele, mert ha kezét rád teszi, láthatatlanságod már nem jelent tovább előnyt. Amíg láthatatlan maradsz, 2 pontot adhatsz hozzá kockával vetett Támadóerődhöz. Minden sikeres támadásod 3 pontnyit pusztít a Varázsló Életerejéből, mivel ő nem láthat téged, és így nem tudja magát megfelelően védeni. Minden alkalommal, ha sebet ejt rajtad, dobj egy kockával. Ha a szám páratlan, „átlagos sebesülés” ért, ha sikerült 6-ost dobnod, kivédted a csapást, és nem sebesültél meg, ha 2-t vagy 4-et dobsz, csak 1 pont értékű sebesülés ért.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Elhatározod, hogy megküzdesz vele",
+                    "opponents": [
+                        {
+                            "name": "Varázsló",
+                            "dexterity": 11,
+                            "health": 18,
+                            "playerRollBonus": 2,
+                            "hitDamage": 3,
+                            "playerDamageRoll": {
+                                "dice": 1,
+                                "choices": [
+                                    {
+                                        "roll": 1,
+                                        "damage": 2
+                                    },
+                                    {
+                                        "roll": 2,
+                                        "damage": 1
+                                    },
+                                    {
+                                        "roll": 3,
+                                        "damage": 2
+                                    },
+                                    {
+                                        "roll": 4,
+                                        "damage": 1
+                                    },
+                                    {
+                                        "roll": 5,
+                                        "damage": 2
+                                    },
+                                    {
+                                        "roll": 6,
+                                        "damage": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 396,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 42,
@@ -1135,6 +1188,23 @@
 				}
 			]
 		},
+        
+        {
+            "id": 242,
+            "story": "Az ajtó kinyílik, és egy kicsi, homályos kamra tárul a szemed elé. A falakon arany- és ezüstcsipkékkel gondosan díszített függönyök lógnak. Az egyik sarokban magányos lángnyelv lobog, fényét a középen álló alacsony asztalra veti, amin hatalmas láda fekszik. Odalépsz, hogy megvizsgáld, de váratlanul, köröskörül, mindenfelől (de mégsem meghatározható helyről) titokzatos hang csap fel, és betölti a szobát. Olyan, mint a gyülekező viharfelhők között felharsanó mennydörgés. Megközelíted a ládát, és látod, hogy három zár tartja szorosan lezárva. Ahogy közelítesz, a hang egyre erősödik. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardoddal rácsapsz a ládára, és megpróbálod széthasítani, hogy kinyíljon",
+                    "destination": 379
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a felszerelésedet, hátha találsz olyan kulcsokat, melyek nyitják a zárakat",
+                    "destination": 139
+                }
+            ]
+        },
 
 		{
 			"id": 248,
@@ -1395,7 +1465,31 @@
 					"destination": 42
 				}
 			]
-		}
+		},
+        
+        {
+            "id": 396,
+            "story": "Legyőzted a Varázslót, már közel vagy célodhoz. Az ajtóhoz lépsz, amin két lakat lóg. Kulcsok nincsenek sehol. Ha nincsenek kulcsaid, megkísérelheted betörni az ajtót, de ez fel fogja emészteni szinte teljes Életerődet.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Visszamész a hátizsákodhoz két kulcsért és a lakatokba illeszted őket. Elfordulnak, kinyitod az ajtót, és körülpillantasz.",
+                    "destination": 242,
+                    "condition": {
+                        "inventoryItemtype": "key",
+                        "amount": 2
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "force",
+                    "damage": 5,
+                    "destination": 242,
+                    "caption": "Megkísérled betörni az ajtót"
+                }
+            ]
+        }
 
 	]
 }

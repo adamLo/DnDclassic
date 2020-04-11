@@ -41,6 +41,9 @@
 		19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */; };
 		196EC2D72430ADFA004732A7 /* EscapeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196EC2D62430ADFA004732A7 /* EscapeAction.swift */; };
 		19825BC42441D15500488525 /* scene_036.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BC32441D15500488525 /* scene_036.png */; };
+		19825BC72441DEEE00488525 /* DamageRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BC62441DEEE00488525 /* DamageRoll.swift */; };
+		19825BC92441EDE000488525 /* ForceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BC82441EDE000488525 /* ForceAction.swift */; };
+		19825BCB2441F10D00488525 /* WaypointCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCA2441F10D00488525 /* WaypointCondition.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -134,6 +137,9 @@
 		19497D812406B2570072CFD0 /* CharacterEditInventoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEditInventoryItemCell.swift; sourceTree = "<group>"; };
 		196EC2D62430ADFA004732A7 /* EscapeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeAction.swift; sourceTree = "<group>"; };
 		19825BC32441D15500488525 /* scene_036.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_036.png; sourceTree = "<group>"; };
+		19825BC62441DEEE00488525 /* DamageRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageRoll.swift; sourceTree = "<group>"; };
+		19825BC82441EDE000488525 /* ForceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceAction.swift; sourceTree = "<group>"; };
+		19825BCA2441F10D00488525 /* WaypointCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCondition.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -256,8 +262,7 @@
 				19497D67240587500072CFD0 /* Definitions */,
 				193015732402C0B700E7B815 /* Dice.swift */,
 				19D29566243113C8003713E5 /* Inventory */,
-				193015792402CAC600E7B815 /* Fight.swift */,
-				19D295622430D713003713E5 /* HitBonus.swift */,
+				19825BC52441DED200488525 /* Fight */,
 				19FC5400242FBEF200988644 /* Bonus.swift */,
 				19FC540C2430A04D00988644 /* Scene */,
 				19301587240316D700E7B815 /* Game.swift */,
@@ -323,6 +328,16 @@
 			name = Character;
 			sourceTree = "<group>";
 		};
+		19825BC52441DED200488525 /* Fight */ = {
+			isa = PBXGroup;
+			children = (
+				193015792402CAC600E7B815 /* Fight.swift */,
+				19D295622430D713003713E5 /* HitBonus.swift */,
+				19825BC62441DEEE00488525 /* DamageRoll.swift */,
+			);
+			name = Fight;
+			sourceTree = "<group>";
+		};
 		19A85597240AB6D4007174C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +390,7 @@
 				19E193CE242BBB9000334B0F /* RollAction.swift */,
 				19E193D1242BBD6000334B0F /* RollChoice.swift */,
 				196EC2D62430ADFA004732A7 /* EscapeAction.swift */,
+				19825BC82441EDE000488525 /* ForceAction.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -406,6 +422,7 @@
 				193015832403118A00E7B815 /* Direction.swift */,
 				193015852403120700E7B815 /* WayPoint.swift */,
 				19D2956424311244003713E5 /* Loot.swift */,
+				19825BCA2441F10D00488525 /* WaypointCondition.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -574,12 +591,14 @@
 				19497D6B240587A00072CFD0 /* ObjectDefinitions.swift in Sources */,
 				19497D692405876A0072CFD0 /* Deserializable.swift in Sources */,
 				19A855A0240ACC0B007174C8 /* Money.swift in Sources */,
+				19825BC72441DEEE00488525 /* DamageRoll.swift in Sources */,
 				19301588240316D700E7B815 /* Game.swift in Sources */,
 				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */,
 				19A85599240AB6E6007174C8 /* Strings.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
+				19825BCB2441F10D00488525 /* WaypointCondition.swift in Sources */,
 				19A855A2240ACE58007174C8 /* InventoryObject.swift in Sources */,
 				19FCFAA024157CF100199175 /* TryLuckAction.swift in Sources */,
 				1930158F24031E4400E7B815 /* Action.swift in Sources */,
@@ -590,6 +609,7 @@
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
+				19825BC92441EDE000488525 /* ForceAction.swift in Sources */,
 				19D2956824312017003713E5 /* SceneInventoryCell.swift in Sources */,
 				19FC5406242FCFEF00988644 /* Date.swift in Sources */,
 				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,

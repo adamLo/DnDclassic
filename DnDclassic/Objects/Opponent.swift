@@ -14,13 +14,19 @@ class Opponent: Character {
     let killBonus: Bonus?
     let damagedBy: InventoryItemType?
     let hitBonus: HitBonus?
+    let playerRollBonus: Int?
+    let hitDamage: Int?
+    let playerDamageRoll: DamageRoll?
     
-    init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil) {
+    init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil, playerRollBonus: Int? = nil) {
         
         self.order = order
         self.killBonus = killBonus
         self.damagedBy = nil
         self.hitBonus = nil
+        self.playerRollBonus = playerRollBonus
+        self.hitDamage = nil
+        self.playerDamageRoll = nil
         
         super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
     }
@@ -50,13 +56,26 @@ class Opponent: Character {
             hitBonus = nil
         }
         
+        playerRollBonus = json[JSONkeys.playerRollBonus] as? Int
+        hitDamage = json[JSONkeys.hitDamage] as? Int
+        
+        if let _playerDamageRollObject = json[JSONkeys.playerDamageRoll] as? JSON, let _playerDamageRoll = DamageRoll(json: _playerDamageRollObject) {
+            playerDamageRoll = _playerDamageRoll
+        }
+        else {
+            playerDamageRoll = nil
+        }
+        
         super.init(json: json)
     }
     
     private struct JSONkeys {
-        static let order        = "order"
-        static let killBonus    = "killBonus"
-        static let damagedBy    = "damagedBy"
-        static let hitBonus     = "hitBonus"
+        static let order            = "order"
+        static let killBonus        = "killBonus"
+        static let damagedBy        = "damagedBy"
+        static let hitBonus         = "hitBonus"
+        static let playerRollBonus  = "playerRollBonus"
+        static let hitDamage        = "hitDamage"
+        static let playerDamageRoll = "playerDamageRoll"
     }
 }

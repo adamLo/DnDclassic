@@ -310,6 +310,19 @@ class Character: Deserializable, Equatable {
         changed?()
     }
     
+    func isFulfilled(condition: WaypointCondition) -> Bool {
+        
+        var count = 0
+        
+        for item in inventory {
+            if item.item.type == condition.inventoryItemType {
+                count += item.item.amount
+            }
+        }
+        
+        return count == condition.inventoryItemAmount
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {

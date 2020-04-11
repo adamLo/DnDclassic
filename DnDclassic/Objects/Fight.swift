@@ -29,7 +29,7 @@ class Fight {
         rounds += 1
         
         let opponentAttack = (opponentRoll ?? Dice(number: 2).roll()) + opponent.dexterity
-        var playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterity
+        var playerAttack = (playerRoll ?? Dice(number: 2).roll()) + player.dexterity + (opponent.playerRollBonus ?? 0)
         
         if let _damagedBy = opponent.damagedBy, !player.hasInventoryItem(of: _damagedBy) {
             // When opponent can be damaged only by specific type of item and player doesn't own any of it
@@ -41,7 +41,11 @@ class Fight {
         player.log(event: .fight(opponent: opponent.name, playerAttack: playerAttack, opponentAttack: opponentAttack))
                         
         if playerAttack > opponentAttack {
-            if let _luck = withLuck {
+            
+            if let _damage = opponent.hitDamage {
+                damage = _damage
+            }
+            else if let _luck = withLuck {
                 damage += _luck ? 2 : -1
             }
             opponent.hitDamage(points: damage)
@@ -58,7 +62,12 @@ class Fight {
         }
         else if opponentAttack > playerAttack {
             
-            if let _luck = withLuck {
+            if let damageRoll = opponent.playerDamageRoll {
+                let roll = Dice(number: damageRoll.dice).roll()
+                player.log(event: .roll(value: roll))
+                damage = damageRoll.choices[roll] ?? 0
+            }
+            else if let _luck = withLuck {
                 damage += _luck ? 1 : -1
             }
             player.hitDamage(points: damage)
@@ -98,5 +107,13 @@ class Fight {
     var hasUserWon: Bool {
         guard isFinished else {return false}
         return player.health > opponent.health
+    }
+    
+    var canTryLuck: Bool {
+        
+        if opponent.playerRollBonus != nil || opponent.playerDamageRoll != nil {
+            return false
+        }
+        return true
     }
 }

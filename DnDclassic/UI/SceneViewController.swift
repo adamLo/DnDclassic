@@ -253,6 +253,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .escape, let _action = action as? EscapeAction {
             escape(_action)
         }
+        else if action.type == .force, let _action = action as? ForceAction {
+            force(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -284,8 +287,28 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func advance(to wayPoint: WayPoint) {
         
-        guard let _scene = GameData.shared.game.scene(id: wayPoint.destination) else {return}
+        // FIXME: This is a test confition fulfillment for scene 396, remove in production!
+//        if scene.id == 396 {
+//            let key1 = InventoryObject(type: .key, name: "key1")
+//            let key2 = InventoryObject(type: .key, name: "key2")
+//            GameData.shared.player.add(inventoryItem: key1)
+//            GameData.shared.player.add(inventoryItem: key2)
+//        }
         
+        if let condition = wayPoint.condition, !GameData.shared.player.isFulfilled(condition: condition) {
+            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choos this way!", comment: "Message when waypoint condition is not fulfilled"))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        advance(to: wayPoint.destination)
+    }
+    
+    private func advance(to sceneId: Int) {
+        
+        guard let _scene = GameData.shared.game.scene(id: sceneId) else {return}
+        guard GameData.shared.player != nil, !GameData.shared.player.isDead else {return}
+                
         GameData.shared.advance(player: GameData.shared.player, scene: _scene)
         GameData.shared.completed(scene: scene)
         
@@ -347,6 +370,20 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func force(_ action: ForceAction) {
+        
+        guard GameData.shared.player != nil, !GameData.shared.player.isDead else {return}
+        
+        GameData.shared.player.hitDamage(points: action.damage)
+        
+        if GameData.shared.player.isDead {
+            playerDied()
+        }
+        else {
+            advance(to: action.destination)
+        }
     }
     
     private func grab(inventory index: Int) {

@@ -178,7 +178,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else if section == .opponents, fights != nil, indexPath.row < fights.count {
             
-            var fight = fights[indexPath.row]
+            let fight = fights[indexPath.row]
             
             guard fight.opponent.health > 0 else {return}
             
@@ -192,7 +192,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             
             var luck: Bool?
-            if useLuckSwitch.isOn {
+            if fight.canTryLuck, useLuckSwitch.isOn {
                 let _luck = fight.player.tryLuck()
                 luck = _luck.success
             }

@@ -13,6 +13,7 @@ struct WayPoint: Deserializable {
     let direction: Direction
     let destination: Int
     let caption: String
+    let condition: WaypointCondition?
     
     init?(json: JSON) {
         
@@ -23,6 +24,13 @@ struct WayPoint: Deserializable {
         direction = _direction
         destination = _destination
         caption = _caption
+        
+        if let _conditionObject = json[JSONKeys.condition] as? JSON, let _condition = WaypointCondition(json: _conditionObject) {
+            condition = _condition
+        }
+        else {
+            condition = nil
+        }
     }
     
     init(direction: Direction, destination: Int, caption: String) {
@@ -30,11 +38,13 @@ struct WayPoint: Deserializable {
         self.direction = direction
         self.destination = destination
         self.caption = caption
+        condition = nil
     }
     
     private struct JSONKeys {
         static let direction    = "direction"
         static let destination  = "destination"
         static let caption      = "caption"
+        static let condition    = "condition"
     }
 }
