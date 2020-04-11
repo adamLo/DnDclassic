@@ -17,6 +17,7 @@ class Opponent: Character {
     let playerRollBonus: Int?
     let hitDamage: Int?
     let playerDamageRoll: DamageRoll?
+    let damageEvent: DamageEvent?
     
     init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil, playerRollBonus: Int? = nil) {
         
@@ -27,6 +28,7 @@ class Opponent: Character {
         self.playerRollBonus = playerRollBonus
         self.hitDamage = nil
         self.playerDamageRoll = nil
+        self.damageEvent = nil
         
         super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
     }
@@ -66,6 +68,13 @@ class Opponent: Character {
             playerDamageRoll = nil
         }
         
+        if let _damageObject = json[JSONkeys.damageEvent] as? JSON, let _damageEvent = DamageEvent(json: _damageObject) {
+            damageEvent = _damageEvent
+        }
+        else {
+            damageEvent = nil
+        }
+        
         super.init(json: json)
     }
     
@@ -77,5 +86,6 @@ class Opponent: Character {
         static let playerRollBonus  = "playerRollBonus"
         static let hitDamage        = "hitDamage"
         static let playerDamageRoll = "playerDamageRoll"
+        static let damageEvent      = "damageEvent"
     }
 }

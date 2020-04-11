@@ -853,7 +853,58 @@
                 }
             ]
         },
-
+        {
+            "id": 40,
+            "story": "A fülhasító zaj egyre erősebb és erősebb. A fájdalom elviselhetetlen. Ügyességedet a gyötrelmek 1 ponttal csökkentik. A sötétben tapogatózva egy falat keresel. Merre mész?",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugati irányba",
+                    "destination": 355
+                },
+                {
+                    "direction": "north",
+                    "caption": "Északi irányba",
+                    "destination": 265
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keleti irányba",
+                    "destination": 181
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "story": "Ő aztán valóban félelmetes ellenség. Egy hatalmas, ördögien erős Wight (rossz szellem) az.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "A küzdelem elkezdődik",
+                    "opponents": [
+                        {
+                            "name": "Wight",
+                            "dexterity": 9,
+                            "health": 6,
+                            "damageEvent": {
+                                "round": 1,
+                                "waypoint": {
+                                    "direction": "unknown",
+                                    "caption": "Sikerült sebet ejtened rajta",
+                                    "destination": 310
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
 		{
 			"id": 42,
 			"story": "Végül a folyosó egy hármas elágazásba torkollik.",
@@ -1312,6 +1363,18 @@
 				}
 			]
 		},
+        
+        {
+            "id": 310,
+            "story": "Itt valami nincs rendben. Jókora csapást mértél rá, de úgy látszik, fel sem veszi a sérülést. Rájössz, ez is egy Örökéltű Lény, akit közönséges fegyverrel nem lehet megsebezni.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Választhatsz másik fegyvert, s ezzel vagy régi fegyvereddel a kezedben lapozz",
+                    "destination": 211
+                }
+            ]
+        },
 
 		{
 			"id": 320,

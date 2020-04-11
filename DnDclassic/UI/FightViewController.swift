@@ -34,6 +34,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
                 for opponent in orderedOpponents {
                     let fight = Fight(player: GameData.shared.player, opponent: opponent)
+                    fight.opponentDamageEvent = {[weak self] waypoint in self?.opponentDamageTriggered(waypoint: waypoint)}
                     fights.append(fight)
                 }
             }
@@ -260,6 +261,16 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.dismiss(animated: true) {
                 self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
             }
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func opponentDamageTriggered(waypoint: WayPoint) {
+        
+        let alert = UIAlertController.simpleMessageAlert(message: String(format: NSLocalizedString("You're being taken to %@", comment: "Alert title when opponent damage event triggered"), waypoint.caption), title: NSLocalizedString("You made a damage to your opponent!", comment: "Alert title when opponent damage event triggered")) {
+            self.dismiss(animated: true) {
+                self.figthOver?(waypoint)
+            }            
         }
         present(alert, animated: true, completion: nil)
     }

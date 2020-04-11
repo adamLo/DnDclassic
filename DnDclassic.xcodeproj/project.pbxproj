@@ -44,6 +44,7 @@
 		19825BC72441DEEE00488525 /* DamageRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BC62441DEEE00488525 /* DamageRoll.swift */; };
 		19825BC92441EDE000488525 /* ForceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BC82441EDE000488525 /* ForceAction.swift */; };
 		19825BCB2441F10D00488525 /* WaypointCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCA2441F10D00488525 /* WaypointCondition.swift */; };
+		19825BCD244219E700488525 /* DamageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCC244219E700488525 /* DamageEvent.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -140,6 +141,7 @@
 		19825BC62441DEEE00488525 /* DamageRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageRoll.swift; sourceTree = "<group>"; };
 		19825BC82441EDE000488525 /* ForceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceAction.swift; sourceTree = "<group>"; };
 		19825BCA2441F10D00488525 /* WaypointCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCondition.swift; sourceTree = "<group>"; };
+		19825BCC244219E700488525 /* DamageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageEvent.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				193015792402CAC600E7B815 /* Fight.swift */,
 				19D295622430D713003713E5 /* HitBonus.swift */,
 				19825BC62441DEEE00488525 /* DamageRoll.swift */,
+				19825BCC244219E700488525 /* DamageEvent.swift */,
 			);
 			name = Fight;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
 				19825BC92441EDE000488525 /* ForceAction.swift in Sources */,
+				19825BCD244219E700488525 /* DamageEvent.swift in Sources */,
 				19D2956824312017003713E5 /* SceneInventoryCell.swift in Sources */,
 				19FC5406242FCFEF00988644 /* Date.swift in Sources */,
 				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,
