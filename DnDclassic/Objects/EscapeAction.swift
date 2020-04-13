@@ -15,8 +15,8 @@ class EscapeAction: Action {
     
     required init?(json: JSON) {
         
-        guard let _directionString = json[JSONKeys.direction] as? String, let _direction = Direction(rawValue: _directionString) else {return nil}
-        guard let _destination = json[JSONKeys.destination] as? Int else {return nil}
+        guard let _directionString = json[JSONkeys.direction] as? String, let _direction = Direction(rawValue: _directionString) else {return nil}
+        guard let _destination = json[JSONkeys.destination] as? Int else {return nil}
         
         direction = _direction
         destination = _destination
@@ -24,7 +24,7 @@ class EscapeAction: Action {
         super.init(json: json)
     }
         
-    private struct JSONKeys {
+    private struct JSONkeys {
         static let direction    = "direction"
         static let destination  = "destination"
     }

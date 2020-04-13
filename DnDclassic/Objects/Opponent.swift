@@ -19,6 +19,7 @@ class Opponent: Character {
     let playerDamageRoll: DamageRoll?
     let damageEvent: DamageEvent?
     let playerDamageEvent: DamageEvent?
+    let event: FightEvent?
     
     init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil, playerRollBonus: Int? = nil) {
         
@@ -31,6 +32,7 @@ class Opponent: Character {
         self.playerDamageRoll = nil
         self.damageEvent = nil
         self.playerDamageEvent = nil
+        self.event = nil
         
         super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
     }
@@ -90,6 +92,14 @@ class Opponent: Character {
             playerDamageEvent = nil
         }
         
+        if let _eventObject = json[JSONkeys.event] as? JSON {
+            guard let _event = FightEvent(json: _eventObject) else {return nil}
+            event = _event
+        }
+        else {
+            event = nil
+        }
+        
         super.init(json: json)
     }
     
@@ -103,5 +113,6 @@ class Opponent: Character {
         static let playerDamageRoll     = "playerDamageRoll"
         static let damageEvent          = "damageEvent"
         static let playerDamageEvent    = "playerDamageEvent"
+        static let event                = "event"
     }
 }

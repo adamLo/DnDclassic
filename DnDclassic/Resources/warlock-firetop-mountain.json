@@ -119,7 +119,7 @@
 			"story": "Egy sebesen áramló folyó északi partján vagy, egy hatalmas föld alatti barlangban.",
 			"waypoints": [
 				{
-					"direction": "unknown",
+					"direction": "north",
 					"destination": 214,
 					"caption": "Lapozz"
 				}
@@ -921,6 +921,120 @@
 				}
 			]
 		},
+        {
+            "id": 43,
+            "story": "Egy észak-dél irányú elágazásnál vagy.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Észak mész",
+                    "destination": 354
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek mész",
+                    "destination": 52
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "story": "A csata után levegőért kapkodsz, leülsz, hogy valamennyire összeszedd magad, és végre befejezd az evést, amit elkezdtél. Végül összecsomagolod a hátizsákodat, és átgázolsz a folyón",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 399
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "story": "A sajt eltalálja a portrét a falon, és lepattan róla. Gonosz kacagás hallatszik a falak mögül, és rájössz, hogy a Varázsló gúnyolódik veled.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Úgy döntesz, hogy az északi ajtón át elhagyod a szobát.",
+                    "destination": 90
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "story": "Egy rövid kelet-nyugat irányú elágazásnál állsz, kelet felé egy ajtó zárja el az utat. Nyugat felé néhány méter után déli irányba kanyarodik az út.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Átmész az ajtón",
+                    "destination": 206
+                },
+                {
+                    "direction": "west",
+                    "caption": "A kanyar felé veszed utadat",
+                    "destination": 4
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "story": "A folyó közepén a híd elkezd ide-oda hintázni, le akar vetni magáról. Amint a korlátnak támaszkodsz, az azon nyomban eltörik.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat, és továbbhaladsz",
+                            "destination": 298,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat, és továbbhaladsz",
+                            "destination": 298,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat, és továbbhaladsz",
+                            "destination": 298,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat, és továbbhaladsz",
+                            "destination": 298,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat, és továbbhaladsz",
+                            "destination": 298,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Belezuhansz az alattad kavargó folyóba",
+                            "destination": 158,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
 
 		{
 			"id": 71,
@@ -991,6 +1105,41 @@
 				}
 			]
 		},
+        
+        {
+            "id": 86,
+            "story": "Egy hatalmas állkapocs tárul ki előtted. Mérete alapján Krokodil az, ami felé úszol. A bestia hatalmasat csap a farkával, és feléd siklik. Két Fordulóban kell megküzdened vele. Már korábban észrevetted, hogy nem messze tőletek kavarog, buzog a víz. Most ez az örvénylés közeledni kezd felétek. A szemed sarkából látod csak ezt, és határoznod kell, mitévő légy. Ha úgy érzed, a Krokodil már a végét járja, és folytatni akarod a harcot, küzdj tovább. Máskülönben továbbra is le kell kötnöd a bestia figyelmét, és csak az a halvány reményed marad, hogy az örvénylést okozó titokzatos lény segíteni fog rajtad valamiképp. Csapj össze még egy Fordulóban a Krokodillal!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Krokodil",
+                            "dexterity": 7,
+                            "health": 6,
+                            "event": {
+                                "round": 2,
+                                "waypoint": {
+                                    "direction": "unknown",
+                                    "caption": "Megérkezett a titokzatos lény",
+                                    "destination": 350
+                                }
+                            }
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 259,
+                        "caption": "Győztél"
+                    },
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 259,
+                        "caption": "Elmenekültél"
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 90,
@@ -1088,6 +1237,39 @@
 			]
 		},
 
+        {
+            "id": 158,
+            "story": "A víz szinte buzog körülötted, mintha egy láthatatlan kéz láthatatlan kavicsokat dobálna bele. Nagyot nyelsz - ezek bizony Piranhák, és már érzed is, amint éles fogaik a testedbe hasítanak. A lábaddal rugdalod őket, közéjük suhintasz a kardoddal, hogy távol tartsd őket, míg a déli partra nem érsz. (A piranhákat tekintsd külön teremtménynek!)",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg velük!",
+                    "opponents": [
+                        {
+                            "name": "Piranhák",
+                            "dexterity": 5,
+                            "health": 3
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 1581,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1581,
+            "story": "győztél, sikerül kievickélni a vízből, partra rogysz pihenni. Elfogyaszthatod élelmiszerkészleted egy részét is.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 218
+                }
+            ]
+        },
 		{
 			"id": 159,
 			"story": "Az ajtó egy hatalmas terembe nyílik, a terem valószínűleg a már előbb látott bibircsókos arcú teremtmények ebédlője. A nagy asztal körül öt Ork ül, iszogatnak, és tányérjukból patkánybendőből készült levest szürcsölgetnek. Hevesen vitatkoznak azon, hogy ki szopogathatja majd le a hatalmas üstben benn hagyott patkánycsontokat, így nem vesznek észre, amint belépsz. Ha elég merész vagy, megtámadhatod őket, ha nem látod túl biztatónak ezt, megpróbálhatsz elmenekülni.",
@@ -1385,6 +1567,28 @@
 				}
 			]
 		},
+        
+        {
+            "id": 259,
+            "story": "Miközben a partra úszol a Krokodil elől, visszanézel, és látod, hogy a rejtélyes örvénylés eléri a hüllő testét, őrjöngésbe csap át, és amikor abbamarad, már nyoma sincs az állatnak. Hálát adva, amiért nem te voltál ott, és nem neked kellett megtudnod, mi az, kimászol a vízből az északi parton. Adj magadnak 1 ÜGYESSÉG és 2 Szerencse pontot.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": 1
+                },
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 7
+                }
+            ]
+        },
 
 		{
 			"id": 282,
@@ -1436,6 +1640,67 @@
 				}
 			]
 		},
+        
+        {
+            "id": 298,
+            "story": "A híd síkos a felcsapódó hullámoktól. Egy helyen megcsúszol egy csomó nedves mohán, ami a gerendákat borítja.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "visszanyered egyensúlyodat, és sikeresen átjutsz az északi partra",
+                            "destination": 7,
+                            "direction": "north"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "visszanyered egyensúlyodat, és sikeresen átjutsz az északi partra",
+                            "destination": 7,
+                            "direction": "north"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "visszanyered egyensúlyodat, és sikeresen átjutsz az északi partra",
+                            "destination": 7,
+                            "direction": "north"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "visszanyered egyensúlyodat, és sikeresen átjutsz az északi partra",
+                            "destination": 7,
+                            "direction": "north"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "visszanyered egyensúlyodat, és sikeresen átjutsz az északi partra",
+                            "destination": 7,
+                            "direction": "north"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "A hídról a vízbe csúszol, és már úszhatsz is a legközelebbi part felé",
+                            "destination": 86,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
 
 		{
 			"id": 301,
@@ -1504,6 +1769,187 @@
 				}
 			]
 		},
+        
+        {
+            "id": 350,
+            "story": "Ahogy a kavargó, örvénylő víz körülvesz, érzed, rengeteg kicsiny hal támad rád. Gonosz harapásaikkal szinte szétmarják, -szabdalják a testedet, és ekkor ráébredsz, életveszélyes Piranhák vesznek körül. Ha a Krokodillal vívott küzdelem során megsebezted a hüllőt, szerencséd van, mert a halak többsége a vérző állatra támad. Ha nem sebesítetted meg a Krokodilt, a halak bármelyiketekre támadhatnak. Dobj egy kockával. Ha 1-est vagy 2-est dobsz, a Piranhák többsége rád támad. Ha ennél nagyobbat dobsz, a halak többsége a Krokodilra ront. Vedd úgy, mintha egy teremtménnyel kellene megküzdened.",
+            "actions": [
+                {
+                    "type": "roll",
+                    "dice": 1,
+                    "choices": [
+                        {
+                            "roll": 1,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A halak többsége rád támad",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 5,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        },
+                        {
+                            "roll": 2,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A halak többsége rád támad",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 5,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        },
+                        {
+                            "roll": 3,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A többség a Krokodillal van elfoglalva",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 1,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        },
+                        {
+                            "roll": 4,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A többség a Krokodillal van elfoglalva",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 1,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        },
+                        {
+                            "roll": 5,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A többség a Krokodillal van elfoglalva",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 1,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        },
+                        {
+                            "roll": 6,
+                            "action": {
+                                "type": "fight",
+                                "caption": "A többség a Krokodillal van elfoglalva",
+                                "opponents": [
+                                    {
+                                        "name": "Piranhák",
+                                        "dexterity": 5,
+                                        "health": 1,
+                                        "killBonus": {
+                                            "property": "luck",
+                                            "gain": 1
+                                        }
+                                    }
+                                ],
+                                "escape": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": "Elmenekülsz"
+                                },
+                                "win": {
+                                    "direction": "unknown",
+                                    "destination": 7,
+                                    "caption": " Győztél"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
 
 		{
 			"id": 360,

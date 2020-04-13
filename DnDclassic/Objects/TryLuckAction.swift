@@ -15,8 +15,8 @@ class TryLuckAction: Action {
     
     required init?(json: JSON) {
 
-        guard let _goodLuckJson = json[JSONKeys.goodLuck] as? JSON, let _goodLuck = WayPoint(json: _goodLuckJson) else {return nil}
-        guard let _badLuckJson = json[JSONKeys.badLuck] as? JSON, let _badLuck = WayPoint(json: _badLuckJson) else {return nil}
+        guard let _goodLuckJson = json[JSONkeys.goodLuck] as? JSON, let _goodLuck = WayPoint(json: _goodLuckJson) else {return nil}
+        guard let _badLuckJson = json[JSONkeys.badLuck] as? JSON, let _badLuck = WayPoint(json: _badLuckJson) else {return nil}
         
         goodLuck = _goodLuck
         badLuck = _badLuck
@@ -24,7 +24,7 @@ class TryLuckAction: Action {
         super.init(json: json)
     }
     
-    private struct JSONKeys {
+    private struct JSONkeys {
         static let goodLuck = "goodLuck"
         static let badLuck  = "badLuck"
     }

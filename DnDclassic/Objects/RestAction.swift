@@ -16,23 +16,22 @@ class RestAction: Action {
     
     required init?(json: JSON) {
         
-        guard let _finishedObjects = json[JSONKeys.finished] as? JSONArray else {return nil}
+        guard let _finishedObjects = json[JSONkeys.finished] as? JSONArray else {return nil}
         var _finished = [WayPoint]()
         for object in _finishedObjects {
-            if let waypoint = WayPoint(json: object) {
-                _finished.append(waypoint)
-            }
+            guard let waypoint = WayPoint(json: object) else {return nil}
+            _finished.append(waypoint)
         }
         guard !_finished.isEmpty else {return nil}
         finished = _finished
                 
-        health = json[JSONKeys.health] as? Int
-        dexterity = json[JSONKeys.dexterity] as? Int
+        health = json[JSONkeys.health] as? Int
+        dexterity = json[JSONkeys.dexterity] as? Int
         
         super.init(json: json)
     }
     
-    private struct JSONKeys {
+    private struct JSONkeys {
         
         static let health       = "health"
         static let dexterity    = "dexterity"

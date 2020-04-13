@@ -45,6 +45,7 @@
 		19825BC92441EDE000488525 /* ForceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BC82441EDE000488525 /* ForceAction.swift */; };
 		19825BCB2441F10D00488525 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCA2441F10D00488525 /* Condition.swift */; };
 		19825BCD244219E700488525 /* DamageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCC244219E700488525 /* DamageEvent.swift */; };
+		19825BCF2444A3ED00488525 /* FightEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCE2444A3ED00488525 /* FightEvent.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -141,6 +142,7 @@
 		19825BC82441EDE000488525 /* ForceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceAction.swift; sourceTree = "<group>"; };
 		19825BCA2441F10D00488525 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		19825BCC244219E700488525 /* DamageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageEvent.swift; sourceTree = "<group>"; };
+		19825BCE2444A3ED00488525 /* FightEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightEvent.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				19D295622430D713003713E5 /* HitBonus.swift */,
 				19825BC62441DEEE00488525 /* DamageRoll.swift */,
 				19825BCC244219E700488525 /* DamageEvent.swift */,
+				19825BCE2444A3ED00488525 /* FightEvent.swift */,
 			);
 			name = Fight;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				19FCFA9E24157BA000199175 /* SceneActionCell.swift in Sources */,
 				19C9151E243B9184002E0102 /* Weapon.swift in Sources */,
 				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
+				19825BCF2444A3ED00488525 /* FightEvent.swift in Sources */,
 				19E193B9242627CC00334B0F /* FightAction.swift in Sources */,
 				19FC5409242FD12700988644 /* LogViewController.swift in Sources */,
 				19FCFA942412F98700199175 /* CharacterViewNameCell.swift in Sources */,

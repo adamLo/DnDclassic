@@ -343,10 +343,18 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var actions = [UIAlertAction]()
         for choice in action.choices {
             if choice.roll == roll {
-                let _action = UIAlertAction(title: choice.action.caption, style: .default) { (_) in
-                    self.perform(action: choice.action)
+                if let choiceAction = choice.action {
+                    let _action = UIAlertAction(title: choiceAction.caption, style: .default) { (_) in
+                        self.perform(action: choiceAction)
+                    }
+                    actions.append(_action)
                 }
-                actions.append(_action)
+                else if let choiceWaypoint = choice.waypoint {
+                    let _action = UIAlertAction(title: choiceWaypoint.caption, style: .default) { (_) in
+                        self.advance(to: choiceWaypoint)
+                    }
+                    actions.append(_action)
+                }
             }
         }
         if actions.isEmpty {

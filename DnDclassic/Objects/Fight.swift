@@ -19,6 +19,7 @@ class Fight {
     
     var opponentDamageEvent: ((_ waypoint: WayPoint) -> ())?
     var playerDamageEvent: ((_ waypoint: WayPoint) -> ())?
+    var eventOccured: ((_ waypoint: WayPoint) -> ())?
     
     init(player: Character, opponent: Opponent) {
         
@@ -27,7 +28,7 @@ class Fight {
     }
     
     @discardableResult
-    func performRound(playerRoll: Int? = nil, opponentRoll: Int? = nil, withLuck: Bool? = nil) -> (playerHit: Int, opponentHit: Int) {
+    func performRound(playerRoll: Int? = nil, opponentRoll: Int? = nil, withLuck: Bool? = nil) -> (playerDamage: Int, opponentDamage: Int) {
         
         guard player.health > 0, opponent.health > 0 else {return (0,0)}
         
@@ -42,6 +43,8 @@ class Fight {
         }
         
         var damage = 2
+        var playerDamage = 0
+        var opponentDamage = 0
         
         player.log(event: .fight(opponent: opponent.name, playerAttack: playerAttack, opponentAttack: opponentAttack))
                         
@@ -69,7 +72,7 @@ class Fight {
                 }
             }
             
-            return (damage, 0)
+            opponentDamage = damage
         }
         else if opponentAttack > playerAttack {
             
@@ -98,11 +101,14 @@ class Fight {
                 }
             }
             
-            return (0, damage)
+            playerDamage = damage
         }
-        else {
-            return (0,0)
+        
+        if !player.isDead, !opponent.isDead, let event = opponent.event, event.round == rounds {
+            eventOccured?(event.waypoint)
         }
+        
+        return (playerDamage, opponentDamage)
     }
     
     @discardableResult

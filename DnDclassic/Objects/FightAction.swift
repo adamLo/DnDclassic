@@ -18,32 +18,32 @@ class FightAction: Action {
     let opponents: [Opponent]
     let escape: WayPoint?
     let win: WayPoint?
-    let escapeDamage: Int?
+    let escapeDamage: Int?    
     
     required init?(json: JSON) {
 
-        if let _orderString = json[JSONKeys.order] as? String, let _order = FightOrder(rawValue: _orderString) {
+        if let _orderString = json[JSONkeys.order] as? String, let _order = FightOrder(rawValue: _orderString) {
             order = _order
         }
         else {
             order = .random
         }
         
-        if let _winObject = json[JSONKeys.win] as? JSON, let _win = WayPoint(json: _winObject) {
+        if let _winObject = json[JSONkeys.win] as? JSON, let _win = WayPoint(json: _winObject) {
             win = _win
         }
         else {
             win = nil
         }
         
-        if let _escapeObject = json[JSONKeys.escape] as? JSON, let _escape = WayPoint(json: _escapeObject) {
+        if let _escapeObject = json[JSONkeys.escape] as? JSON, let _escape = WayPoint(json: _escapeObject) {
             escape = _escape
         }
         else {
             escape = nil
         }
         
-        guard let _opponentObjects = json[JSONKeys.opponents] as? JSONArray else {return nil}
+        guard let _opponentObjects = json[JSONkeys.opponents] as? JSONArray else {return nil}
         var _opponents = [Opponent]()
         for object in _opponentObjects {
             guard let opponent = Opponent(json: object) else {return nil}
@@ -51,17 +51,17 @@ class FightAction: Action {
         }
         opponents = _opponents
         
-        escapeDamage = json[JSONKeys.escapeDamage] as? Int
+        escapeDamage = json[JSONkeys.escapeDamage] as? Int
         
         super.init(json: json)
     }
     
-    private struct JSONKeys {
+    private struct JSONkeys {
         static let opponents    = "opponents"
         static let escape       = "escape"
         static let win          = "win"
         static let order        = "order"
-        static let escapeDamage = "escapeDamage"
+        static let escapeDamage = "escapeDamage"        
     }
     
     var isOver: Bool {
