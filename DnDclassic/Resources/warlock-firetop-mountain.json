@@ -1035,6 +1035,105 @@
                 }
             ]
         },
+        {
+            "id": 48,
+            "story": "Egy kelet-nyugat irányú folyosón vagy. Ha keletre indulsz, a következő saroknál észak felé kell fordulnod.",
+            "waypoints": [
+                {
+                    "caption": "Keletnek mész",
+                    "destination": 391,
+                    "direction": "east"
+                },
+                {
+                    "caption": "Nyugatnak mész",
+                    "destination": 60,
+                    "direction": "west"
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "story": "Az ajtó csikorogva nyílik a rozsdás sarokvasakon. A szoba sötét, szemed lassan megszokja a félhomályt, amint becsukod magad mögött az ajtót. Csoszogó hangot hallasz, de még mielőtt cselekedni tudnál, egy a fejedre mért csapástól elveszíted az eszméletedet. 2 ÉLETERŐ ponttal szegényebb lettél.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ],
+            "waypoints": [
+                {
+                    "caption": "Lapozz",
+                    "destination": 122,
+                    "direction": "unknown"
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "story": "A leütött teremtmény nagy zajjal a földre zuhan. Átkutatod az öltözetét, de nem találsz mást, csak egy kicsiny zacskót a nyakában. Ebben egy apró bronzkulcsot, melybe a 9-es számot nyomták. A kulcsot magaddal viheted, ha akarod. A barlangban semmi más érték nincs, így hát távozol.",
+            "inventory": [
+                {
+                    "type": "key",
+                    "id": "key_9",
+                    "name": "Bronzkulcs (9)"
+                }
+            ],
+            "waypoints": [
+                {
+                    "caption": "Visszamész az elágazáshoz",
+                    "destination": 269,
+                    "direction": "unknown"
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "story": "Felhajtod az Italt, és látod, amint a Troll arcán végigfut a döbbenet. Közeledik feléd, meg akar ragadni, de te oldalt lépsz, mire ő eredménytelenül a levegőbe markol. Kétségbeesetten csapkod, hogy a karmai közé kaparintson, de te könnyedén el tudod kerülni őt. Végül feladja a küzdelmet, és visszatér a kamrájába. Épp idejében, mivel már érzed, hogy kezdesz újra láthatóvá válni. Adj 2-t Szerencse pontjaidhoz!",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "caption": "Mehetsz tovább előre a folyosón észak felé",
+                    "destination": 287,
+                    "direction": "north"
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "story": "A keletre vezető folyosó végén egy észak-dél irányú elágazásnál állsz.",
+            "waypoints": [
+                {
+                    "caption": "Mehetsz délnek",
+                    "destination": 391,
+                    "direction": "south"
+                },
+                {
+                    "caption": "Kereshetsz titkos átjárókat ugyanezen a déli úton",
+                    "destination": 362,
+                    "direction": "south"
+                },
+                {
+                    "caption": "Választhatod az északra menő utat",
+                    "destination": 354,
+                    "direction": "north"
+                },
+                {
+                    "caption": "Kutathatsz a titkos átjárók után az északi úton",
+                    "destination": 234,
+                    "direction": "north"
+                },
+                {
+                    "caption": "De tarthatsz keletnek is",
+                    "destination": 291,
+                    "direction": "east"
+                }
+            ]
+        },
 
 		{
 			"id": 71,
