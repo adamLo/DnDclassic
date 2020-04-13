@@ -359,6 +359,15 @@ class Character: Deserializable, Equatable {
         changed?()
     }
     
+    func value(of property: CharacterProperty) -> Int {
+        
+        switch property {
+        case .dexterity: return dexterity
+        case .health: return health
+        case .luck: return luck
+        }
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {

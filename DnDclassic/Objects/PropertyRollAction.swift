@@ -35,25 +35,6 @@ class PropertyRollAction: Action {
         
         super.init(json: json)
     }
-    
-    func roll(character: Character) -> (roll: Int, waypoint: WayPoint) {
-        
-        var base: Int!
-        switch property {
-        case .dexterity: base = character.dexterity
-        case .health: base = character.health
-        case .luck: base = character.luck
-        }
-        
-        let roll = Dice(number: dice).roll()
-        
-        if roll <= base {
-            return (roll, equalOrLess)
-        }
-        else {
-            return (roll, greater)
-        }
-    }
         
     private struct JSONkeys {
         static let property     = "property"

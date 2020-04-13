@@ -1378,6 +1378,7 @@
         {
             "id": 155,
             "story": "Az ajtó hosszában kettészakad, szétfeszegeted a léceket, hogy bejuss. Az egyik falon egy fáklya ég, és egy kis fegyverraktárat világít meg lángja. A raktárban kardok, pajzsok, sisakok, tőrök, mellvértek és hasonlók hevernek. Átvizsgálod a fegyverzetet, de semmi olyat sem találsz, ami felül tudná múlni saját kardodat. De azért egy kör alakú vaspajzson megakad a tekinteted, talán a közepén lévő arany félhold miatt. Felemeled, kipróbálod, hogyan áll a kezedben. Ha magaddal akarod vinni, megteheted, segítségedre lehet a csatában, ki tudja védeni azokat a sebeket, amelyeket különféle lények ejtenek rajtad. A továbbiakban, ha egy teremtmény megsebez - miközben ezt a pajzsot használod -‚ dobhatsz egy kockával. Ha 6-ost dobsz, a lény a szokásos 2 pont helyett csak 1 pontnyi sebet ejtett rajtad. Ha valami egyéb ok miatt az ellenfeled csak 1 pontos sebet okoz neked, szerencsés 6-os dobásod ezt semlegesíti, nem sérültél meg. Mivelazonban a pajzs nehéz, Felszerelésed egy tárgyát itt kell hagynod helyette.",
+            "cover": "scene_155.png",
             "inventory": [
                 {
                     "type": "shield",
