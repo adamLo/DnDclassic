@@ -20,7 +20,8 @@ enum LogEvent {
     escape(damage: Int),
     damage(value: Int),
     roll(value: Int),
-    died
+    died,
+    use(item: InventoryItem, amount: Int)
 }
 
 struct LogItem: CustomStringConvertible {
@@ -64,6 +65,8 @@ struct LogItem: CustomStringConvertible {
             text = String(format: NSLocalizedString("Tryed luck. Rolled %d = %@", comment: "Try luck event description format"), roll, success ? NSLocalizedString("Good luck", comment: "Good luck title") : NSLocalizedString("Bad luck", comment: "Bad luck title"))
         case .died:
             text = NSLocalizedString("Died", comment: "Die event description")
+        case .use(let item, let amount):
+            text = String(format: NSLocalizedString("Used %d amount of %@", comment: "Use invetory item event description format"), amount, item.description)
         }
         
         let formatter = DateFormatter()

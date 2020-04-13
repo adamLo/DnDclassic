@@ -10,13 +10,15 @@ import Foundation
 
 class Food: InventoryItem {
     
-    let identifier: Any? = "food"
+    let identifier: String? = "food"
     let type: InventoryItemType = .food
     let modifiedProperty: CharacterProperty? = nil
     let modifierValue: Int? = nil
     let name: String? = nil
         
-    var amount: Int
+    private(set) var amount: Int
+    
+    let consumeWhenUsed: Bool? = true
     
     init(amount: Int) {
         self.amount = amount

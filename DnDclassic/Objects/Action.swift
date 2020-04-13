@@ -16,6 +16,7 @@ enum ActionType: String {
 class Action: Deserializable {
         
     let type: ActionType
+    let condition: Condition?
     
     private let _caption: String?
     var caption: String {
@@ -37,11 +38,20 @@ class Action: Deserializable {
         guard let _typeString = json[JSONKeys.type] as? String, let _type = ActionType(rawValue: _typeString) else {return nil}
         self.type = _type
         self._caption = json[JSONKeys.caption] as? String
+        
+        if let _conditionObject = json[JSONKeys.condition] as? JSON {
+            guard let _condition = Condition(json: _conditionObject) else {return nil}
+            self.condition = _condition
+        }
+        else {
+            self.condition = nil
+        }
     }
     
     struct JSONKeys {
-        static let type     = "type"
-        static let caption  = "caption"
+        static let type         = "type"
+        static let caption      = "caption"
+        static let condition    = "condition"
     }
 }
 

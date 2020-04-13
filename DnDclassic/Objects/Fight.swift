@@ -15,8 +15,10 @@ class Fight {
     
     private(set) var rounds = 0
     private var opponentDamageRoundCount = 0
+    private var playerDamageRoundCount = 0
     
     var opponentDamageEvent: ((_ waypoint: WayPoint) -> ())?
+    var playerDamageEvent: ((_ waypoint: WayPoint) -> ())?
     
     init(player: Character, opponent: Opponent) {
         
@@ -87,6 +89,13 @@ class Fight {
             
             if player.isDead {
                 player.log(event: .died)
+            }
+            else {
+                
+                playerDamageRoundCount += 1
+                if let damageEvent = opponent.playerDamageEvent, playerDamageRoundCount == damageEvent.round {
+                    playerDamageEvent?(damageEvent.waypoint)
+                }
             }
             
             return (0, damage)

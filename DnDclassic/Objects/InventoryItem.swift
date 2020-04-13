@@ -31,7 +31,7 @@ enum InventoryItemType: String {
 
 protocol InventoryItem: CustomStringConvertible {
     
-    var identifier: Any? {get}
+    var identifier: String? {get}
     
     var type: InventoryItemType {get}
     
@@ -44,5 +44,7 @@ protocol InventoryItem: CustomStringConvertible {
     func add(amount: Int)
     
     var name: String? {get}
+    
+    var consumeWhenUsed: Bool? {get}
 }
 

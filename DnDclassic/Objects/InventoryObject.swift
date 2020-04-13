@@ -11,7 +11,7 @@ import Foundation
 class InventoryObject: InventoryItem, Deserializable {
     
     var description: String {
-        return "\(name ?? "N/A") (\(type.rawValue))"
+        return "\(self.name ?? "N/A") (\(self.type.rawValue))"
     }
         
     let type: InventoryItemType
@@ -20,13 +20,15 @@ class InventoryObject: InventoryItem, Deserializable {
     let modifiedProperty: CharacterProperty?
     let modifierValue: Int?
         
-    let identifier: Any?
+    let identifier: String?
     
-    let amount: Int
+    private(set) var amount: Int = 1
     
+    let consumeWhenUsed: Bool?
+        
     init(type: InventoryItemType, name: String,
          modifiedProperty: CharacterProperty? = nil, modifierValue: Int? = 0,         
-         identifier: Any? = nil
+         identifier: String? = nil, consumeWhenUsed: Bool? = nil
     ) {
         
         self.type = type
@@ -36,13 +38,20 @@ class InventoryObject: InventoryItem, Deserializable {
         self.modifierValue = modifierValue ?? 0
                 
         self.identifier = identifier
-        self.amount = 1
+        
+        self.consumeWhenUsed = consumeWhenUsed
     }
     
     func use(amount: Int) {
+        
+        if consumeWhenUsed ?? false {
+            self.amount = max(self.amount - amount, 0)
+        }
     }
     
     func add(amount: Int) {
+        
+        self.amount += amount
     }
     
     required init?(json: JSON) {
@@ -61,9 +70,11 @@ class InventoryObject: InventoryItem, Deserializable {
             modifierValue = nil
         }
         
-        identifier = json[JSONKeys.id]
+        identifier = json[JSONKeys.id] as? String
         
         amount = json[InventoryObject.JSONKeys.amount] as? Int ?? 1
+        
+        consumeWhenUsed = json[InventoryObject.JSONKeys.consumeWhenUsed] as? Bool
     }
     
     // MARK: - JSON
@@ -75,6 +86,7 @@ class InventoryObject: InventoryItem, Deserializable {
         static let modifierValue    = "modifierValue"
         static let id               = "id"
         static let name             = "name"
+        static let consumeWhenUsed  = "consumeWhenUsed"
     }
 }
 

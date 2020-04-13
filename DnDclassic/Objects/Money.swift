@@ -10,13 +10,15 @@ import Foundation
 
 class Money: InventoryItem, Deserializable {
 
-    let identifier: Any? = "money"
+    let identifier: String? = "money"
     let type: InventoryItemType = .money
     let modifiedProperty: CharacterProperty? = nil
     let modifierValue: Int? = nil
     let name: String? = nil
     
     private(set) var amount: Int
+    
+    let consumeWhenUsed: Bool? = true
     
     init(amount: Int) {
         self.amount = amount

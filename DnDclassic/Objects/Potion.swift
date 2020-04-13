@@ -10,7 +10,7 @@ import Foundation
 
 class Potion: InventoryItem {
     
-    var identifier: Any? {
+    var identifier: String? {
         return "potion_\(type)"
     }
     
@@ -19,12 +19,14 @@ class Potion: InventoryItem {
     let modifiedProperty: CharacterProperty?
     let modifierValue: Int? = 0
     let name: String? = nil
-    
+        
     var description: String {
         return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiedProperty?.rawValue ?? "N/A", amount)
     }
     
     private(set) var amount: Int = 2
+    
+    let consumeWhenUsed: Bool? = true
     
     init(type: CharacterProperty) {
         

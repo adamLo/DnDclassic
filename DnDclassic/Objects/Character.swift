@@ -167,7 +167,7 @@ class Character: Deserializable, Equatable {
         
         inventory.removeAll { (item) -> Bool in
             
-            if potion.amount <= 0, let potionId = potion.identifier as? String, let itemId = item.item.identifier as? String, potionId == itemId {
+            if potion.amount <= 0, let potionId = potion.identifier, let itemId = item.item.identifier, potionId == itemId {
                 return true
             }
             return false
@@ -311,18 +311,52 @@ class Character: Deserializable, Equatable {
         
         changed?()
     }
-    
-    func isFulfilled(condition: WaypointCondition) -> Bool {
+        
+    func isFulfilled(condition: Condition) -> Bool {
         
         var count = 0
         
         for item in inventory {
-            if item.item.type == condition.inventoryItemType {
+            if let requiredType = condition.inventoryItemType, item.item.type == requiredType, item.item.amount > 0 {
                 count += item.item.amount
+            }
+            else if let requiredId = condition.inventoryItemId, item.item.identifier == requiredId, item.item.amount > 0 {
+                count += 1
             }
         }
         
         return count == condition.inventoryItemAmount
+    }
+    
+    func use(itemIn condition: Condition) {
+        
+        var usedAmount = 0
+        
+        for item in inventory {
+            
+            let amount = item.item.amount < condition.inventoryItemAmount - usedAmount ? item.item.amount : condition.inventoryItemAmount - usedAmount
+            
+            if let requiredType = condition.inventoryItemType, item.item.type == requiredType, item.item.amount > 0 {
+                item.item.use(amount: amount)
+                usedAmount += amount
+                log(event: .use(item: item.item, amount: amount))
+            }
+            else if let requiredId = condition.inventoryItemId, item.item.identifier == requiredId, item.item.amount > 0 {
+                item.item.use(amount: amount)
+                usedAmount += amount
+                log(event: .use(item: item.item, amount: amount))
+            }
+            
+            if usedAmount >= condition.inventoryItemAmount {
+                break
+            }
+        }
+        
+        inventory.removeAll { (item) -> Bool in
+            return item.item.amount <= 0
+        }
+        
+        changed?()
     }
     
     // MARK: - JSON

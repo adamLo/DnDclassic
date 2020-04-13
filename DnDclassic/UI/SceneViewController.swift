@@ -238,6 +238,24 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func perform(action: Action) {
         
+        // FIXME: Remove in production!
+//        if scene.id == 173 {
+//            let item = InventoryObject(type: .weapon, name: "Örök Álmot Adó Nyílvessző", identifier: "arrow_of_everlasting_dream", consumeWhenUsed: true)
+//            GameData.shared.player.add(inventoryItem: item)
+//        }
+        
+        if let condition = action.condition {
+            
+            if !GameData.shared.player.isFulfilled(condition: condition) {
+                let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choos this way!", comment: "Message when waypoint condition is not fulfilled"))
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            else {
+                GameData.shared.player.use(itemIn: condition)
+            }
+        }
+        
         if action.type == .tryLuck, let _action = action as? TryLuckAction {
             tryLuck(_action)
         }

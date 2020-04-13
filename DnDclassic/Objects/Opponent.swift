@@ -18,6 +18,7 @@ class Opponent: Character {
     let hitDamage: Int?
     let playerDamageRoll: DamageRoll?
     let damageEvent: DamageEvent?
+    let playerDamageEvent: DamageEvent?
     
     init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil, playerRollBonus: Int? = nil) {
         
@@ -29,6 +30,7 @@ class Opponent: Character {
         self.hitDamage = nil
         self.playerDamageRoll = nil
         self.damageEvent = nil
+        self.playerDamageEvent = nil
         
         super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
     }
@@ -37,21 +39,24 @@ class Opponent: Character {
         
         order = json[JSONkeys.order] as? Int ?? 0
         
-        if let _bonusObject = json[JSONkeys.killBonus] as? JSON, let _killBonus = Bonus(json: _bonusObject) {
+        if let _bonusObject = json[JSONkeys.killBonus] as? JSON {
+            guard let _killBonus = Bonus(json: _bonusObject) else {return nil}
             killBonus = _killBonus
         }
         else {
             killBonus = nil
         }
         
-        if let _damageString = json[JSONkeys.damagedBy] as? String, let _type = InventoryItemType(rawValue: _damageString) {
+        if let _damageString = json[JSONkeys.damagedBy] as? String {
+            guard let _type = InventoryItemType(rawValue: _damageString) else {return nil}
             damagedBy = _type
         }
         else {
             damagedBy = nil
         }
         
-        if let _bonusObject = json[JSONkeys.hitBonus] as? JSON, let _bonus = HitBonus(json: _bonusObject) {
+        if let _bonusObject = json[JSONkeys.hitBonus] as? JSON {
+            guard let _bonus = HitBonus(json: _bonusObject) else {return nil}
             hitBonus = _bonus
         }
         else {
@@ -61,31 +66,42 @@ class Opponent: Character {
         playerRollBonus = json[JSONkeys.playerRollBonus] as? Int
         hitDamage = json[JSONkeys.hitDamage] as? Int
         
-        if let _playerDamageRollObject = json[JSONkeys.playerDamageRoll] as? JSON, let _playerDamageRoll = DamageRoll(json: _playerDamageRollObject) {
+        if let _playerDamageRollObject = json[JSONkeys.playerDamageRoll] as? JSON {
+            guard let _playerDamageRoll = DamageRoll(json: _playerDamageRollObject) else {return nil}
             playerDamageRoll = _playerDamageRoll
         }
         else {
             playerDamageRoll = nil
         }
         
-        if let _damageObject = json[JSONkeys.damageEvent] as? JSON, let _damageEvent = DamageEvent(json: _damageObject) {
+        if let _damageObject = json[JSONkeys.damageEvent] as? JSON {
+            guard let _damageEvent = DamageEvent(json: _damageObject) else {return nil}
             damageEvent = _damageEvent
         }
         else {
             damageEvent = nil
         }
         
+        if let _damageObject = json[JSONkeys.playerDamageEvent] as? JSON {
+            guard let _damageEvent = DamageEvent(json: _damageObject) else {return nil}
+            playerDamageEvent = _damageEvent
+        }
+        else {
+            playerDamageEvent = nil
+        }
+        
         super.init(json: json)
     }
     
     private struct JSONkeys {
-        static let order            = "order"
-        static let killBonus        = "killBonus"
-        static let damagedBy        = "damagedBy"
-        static let hitBonus         = "hitBonus"
-        static let playerRollBonus  = "playerRollBonus"
-        static let hitDamage        = "hitDamage"
-        static let playerDamageRoll = "playerDamageRoll"
-        static let damageEvent      = "damageEvent"
+        static let order                = "order"
+        static let killBonus            = "killBonus"
+        static let damagedBy            = "damagedBy"
+        static let hitBonus             = "hitBonus"
+        static let playerRollBonus      = "playerRollBonus"
+        static let hitDamage            = "hitDamage"
+        static let playerDamageRoll     = "playerDamageRoll"
+        static let damageEvent          = "damageEvent"
+        static let playerDamageEvent    = "playerDamageEvent"
     }
 }
