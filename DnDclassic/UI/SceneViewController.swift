@@ -274,6 +274,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .force, let _action = action as? ForceAction {
             force(_action)
         }
+        else if action.type == .propertyRoll, let _action = action as? PropertyRollAction {
+            propertyRoll(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -421,6 +424,22 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         scene.grabbed(inventory: index)
         distributeGame()
         sceneTableView.reloadData()
+    }
+    
+    private func propertyRoll(_ action: PropertyRollAction) {
+        
+        let roll = action.roll(character: GameData.shared.player)
+        
+        let alert = UIAlertController(title: NSLocalizedString("Roll", comment: "Roll action dialog title"), message: String(format: NSLocalizedString("You rolled %d", comment: "Roll value format"), roll.roll), preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: roll.waypoint.caption, style: .default, handler: { (_) in
+            self.advance(to: roll.waypoint)
+        }))
+        GameData.shared.player.log(event: .roll(value: roll.roll))
+        
+        present(alert, animated: true) {
+            GameData.shared.completed(scene: self.scene)
+        }
     }
     
     // MARK: - Navigation

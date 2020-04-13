@@ -46,6 +46,7 @@
 		19825BCB2441F10D00488525 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCA2441F10D00488525 /* Condition.swift */; };
 		19825BCD244219E700488525 /* DamageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCC244219E700488525 /* DamageEvent.swift */; };
 		19825BCF2444A3ED00488525 /* FightEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BCE2444A3ED00488525 /* FightEvent.swift */; };
+		19825BD12444C85000488525 /* PropertyRollAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BD02444C85000488525 /* PropertyRollAction.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -143,6 +144,7 @@
 		19825BCA2441F10D00488525 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		19825BCC244219E700488525 /* DamageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageEvent.swift; sourceTree = "<group>"; };
 		19825BCE2444A3ED00488525 /* FightEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightEvent.swift; sourceTree = "<group>"; };
+		19825BD02444C85000488525 /* PropertyRollAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyRollAction.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				19E193D1242BBD6000334B0F /* RollChoice.swift */,
 				196EC2D62430ADFA004732A7 /* EscapeAction.swift */,
 				19825BC82441EDE000488525 /* ForceAction.swift */,
+				19825BD02444C85000488525 /* PropertyRollAction.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				193015862403120700E7B815 /* WayPoint.swift in Sources */,
 				19FC5401242FBEF200988644 /* Bonus.swift in Sources */,
 				19301582240310F400E7B815 /* Scene.swift in Sources */,
+				19825BD12444C85000488525 /* PropertyRollAction.swift in Sources */,
 				19A8559C240AC6B6007174C8 /* GameData.swift in Sources */,
 				19497D732405AF0A0072CFD0 /* IntroViewController.swift in Sources */,
 				19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */,

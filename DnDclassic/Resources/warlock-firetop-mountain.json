@@ -1134,6 +1134,45 @@
                 }
             ]
         },
+        {
+            "id": 53,
+            "story": "Nekirontasz az ajtónak, és megpróbálod válladdal betaszítani.",
+            "actions": [
+                {
+                    "caption": "Dobj két kockával!",
+                    "type": "propertyRoll",
+                    "dice": 2,
+                    "property": "dexterity",
+                    "equalOrLess": {
+                        "caption": "Az ajtó kinyílik",
+                        "destination": 155,
+                        "direction": "unknown"
+                    },
+                    "greater": {
+                        "caption": "Az ajtó megremeg, de nem mozdul",
+                        "destination": 5301,
+                        "direction": "unknown"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 5301,
+            "story": "az ajtó megremeg, de nem mozdul, te viszont fájdalmadban öszszegörnyedsz, mert az ajtó nagyon kemény. Elveszítesz 1 ÉLETERŐ pontot.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "caption": "menj tovább a folyosón",
+                    "destination": 300,
+                    "direction": "unknown"
+                }
+            ]
+        },
 
 		{
 			"id": 71,
@@ -1335,6 +1374,25 @@
 				}				
 			]
 		},
+        
+        {
+            "id": 155,
+            "story": "Az ajtó hosszában kettészakad, szétfeszegeted a léceket, hogy bejuss. Az egyik falon egy fáklya ég, és egy kis fegyverraktárat világít meg lángja. A raktárban kardok, pajzsok, sisakok, tőrök, mellvértek és hasonlók hevernek. Átvizsgálod a fegyverzetet, de semmi olyat sem találsz, ami felül tudná múlni saját kardodat. De azért egy kör alakú vaspajzson megakad a tekinteted, talán a közepén lévő arany félhold miatt. Felemeled, kipróbálod, hogyan áll a kezedben. Ha magaddal akarod vinni, megteheted, segítségedre lehet a csatában, ki tudja védeni azokat a sebeket, amelyeket különféle lények ejtenek rajtad. A továbbiakban, ha egy teremtmény megsebez - miközben ezt a pajzsot használod -‚ dobhatsz egy kockával. Ha 6-ost dobsz, a lény a szokásos 2 pont helyett csak 1 pontnyi sebet ejtett rajtad. Ha valami egyéb ok miatt az ellenfeled csak 1 pontos sebet okoz neked, szerencsés 6-os dobásod ezt semlegesíti, nem sérültél meg. Mivelazonban a pajzs nehéz, Felszerelésed egy tárgyát itt kell hagynod helyette.",
+            "inventory": [
+                {
+                    "type": "shield",
+                    "name": "Vaspajzs arany félhoddal",
+                    "id": "shield_golden_crescent"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Távozol a szobából, és továbbhaladsz a folyosón",
+                    "destination": 300
+                }
+            ]
+        },
 
         {
             "id": 158,
