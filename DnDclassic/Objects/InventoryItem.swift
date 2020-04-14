@@ -13,7 +13,7 @@ enum InventoryItemType: String {
     case weapon, armor, key, lighting, money, food, potion, silverWeapon, hammer, shield
     
     var equippable: Bool {
-        return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon].contains(self)
+        return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon, InventoryItemType.shield].contains(self)
     }
     
     func canEquipWithOther(type: InventoryItemType) -> Bool {
@@ -22,6 +22,9 @@ enum InventoryItemType: String {
             return false
         }
         if self == .armor, type == .armor {
+            return false
+        }
+        if self == .shield, type == .shield {
             return false
         }
         

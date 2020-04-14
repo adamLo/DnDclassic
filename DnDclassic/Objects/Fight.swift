@@ -49,7 +49,7 @@ class Fight {
         player.log(event: .fight(opponent: opponent.name, playerAttack: playerAttack, opponentAttack: opponentAttack))
                         
         if playerAttack > opponentAttack {
-            
+            // Player damages opponent since made higher attack than opponent
             if let _damage = opponent.hitDamage {
                 damage = _damage
             }
@@ -75,7 +75,7 @@ class Fight {
             opponentDamage = damage
         }
         else if opponentAttack > playerAttack {
-            
+            // Player takes damage due lower attack than opponent
             if let damageRoll = opponent.playerDamageRoll {
                 let roll = Dice(number: damageRoll.dice).roll()
                 player.log(event: .roll(value: roll))
@@ -84,6 +84,16 @@ class Fight {
             else if let _luck = withLuck {
                 damage += _luck ? 1 : -1
             }
+            
+            // Custom shields and armors can modify damage when equipped
+            for item in player.inventory {
+                if item.equipped, item.item.type == .shield, let shield = item.item as? Shield {
+                    let newDamage = shield.modifedDamage(damage)
+                    player.log(event: .damageModified(original: damage, new: newDamage, modifierName: shield.name))
+                    damage = newDamage
+                }
+            }
+            
             player.hitDamage(points: damage)
             
             if let _bonus = opponent.hitBonus, (rounds % _bonus.round == 0) {

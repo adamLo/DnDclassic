@@ -283,6 +283,8 @@ class Character: Deserializable, Equatable {
     
     func add(inventoryItem: InventoryItem) {
         
+        log(event: .addInventory(item: inventoryItem))
+        
         if inventoryItem.type == .food || inventoryItem.type == .money {
             for item in inventory {
                 if item.item.type == inventoryItem.type {
@@ -297,15 +299,28 @@ class Character: Deserializable, Equatable {
         changed?()
     }
     
-    func equip(item: InventoryWrapper) {
+    func drop(inventoryItem: InventoryWrapper) {
+        
+        inventory.removeAll { (item) -> Bool in
+            return item == inventoryItem
+        }
+        
+        changed?()
+        log(event: .dropInventory(item: inventoryItem.item))
+    }
+    
+    func equip(item: InventoryWrapper, equipped: Bool) {
         
         guard item.item.type.equippable else {return}
         
-        item.equipped = true
+        item.equipped = equipped
         
-        for _item in inventory {
-            if item != _item, _item.item.type.equippable, !item.item.type.canEquipWithOther(type: _item.item.type) {
-                _item.equipped = false
+        if equipped {
+            // Check for mutual exclusivity
+            for _item in inventory {
+                if item != _item, _item.item.type.equippable, !item.item.type.canEquipWithOther(type: _item.item.type) {
+                    _item.equipped = false
+                }
             }
         }
         

@@ -16,10 +16,16 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var sceneTitleLabel: UILabel!
     
     var scene: Scene! {
+        willSet {
+            if scene != nil {
+                scene.changed = nil
+            }
+        }
         didSet {
             if scene != nil {
                 waypoints = scene.wayPoints
                 actions = scene.actions
+                scene.changed = {[weak self] in self?.sceneChanged()}
             }
         }
     }
@@ -110,6 +116,11 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 sceneTableView.reloadData()
             }
         }
+    }
+    
+    private func sceneChanged() {
+        
+        distributeGame()
     }
 
     // MARK: - TableView

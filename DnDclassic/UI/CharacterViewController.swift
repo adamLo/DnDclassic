@@ -136,8 +136,8 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         else if item.item.type == .potion, let potion = item.item as? Potion {
             showOptions(potion: potion)
         }
-        else if item.item.type.equippable, !item.equipped {
-            showOptions(equippable: item)
+        else {
+            showOptions(inventoryItem: item)
         }
     }
     
@@ -183,15 +183,35 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         present(alert, animated: true, completion: nil)
     }
     
-    private func showOptions(equippable: InventoryWrapper) {
+    private func showOptions(inventoryItem: InventoryWrapper) {
         
-        guard GameData.shared.player != nil, equippable.item.type.equippable, !equippable.equipped else {return}
+        guard GameData.shared.player != nil else {return}
         
-        let alert = UIAlertController(title: NSLocalizedString("Equip item?", comment: "Equip item alert title"), message: equippable.item.description, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Equip", comment: "Equip option title"), style: .default, handler: { (_) in
-            GameData.shared.player.equip(item: equippable)
+        let alert = UIAlertController(title: nil, message: String(format: NSLocalizedString("What would you like to do with %@?", comment: "Inventory item manipulation dialog message format"), inventoryItem.item.description), preferredStyle: .alert)
+        
+        if inventoryItem.item.type.equippable {
+            if inventoryItem.equipped {
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Back to inventory", comment: "Un-equip option title"), style: .default, handler: { (_) in
+                    GameData.shared.player.equip(item: inventoryItem, equipped: false)
+                    self.characterTableView.reloadData()
+                }))
+            }
+            else {
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Equip", comment: "Equip option title"), style: .default, handler: { (_) in
+                    GameData.shared.player.equip(item: inventoryItem, equipped: true)
+                    self.characterTableView.reloadData()
+                }))
+            }
+        }
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Drop item", comment: "Drop inventory item option title"), style: .destructive, handler: { (_) in
+            GameData.shared.player.drop(inventoryItem: inventoryItem)
+            if GameData.shared.game != nil, let scene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) {
+                scene.dropped(inventoryItem: inventoryItem.item)
+            }
             self.characterTableView.reloadData()
         }))
+        
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
         
         present(alert, animated: true, completion: nil)

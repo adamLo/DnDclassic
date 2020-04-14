@@ -20,6 +20,8 @@ class Scene: Deserializable {
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
     let visitBonus: [Bonus]?
+    
+    var changed: (() -> ())?
         
     required init?(json: JSON) {
         
@@ -116,6 +118,13 @@ class Scene: Deserializable {
         inventory?.removeAll(where: { (item) -> Bool in
             item.amount <= 0
         })
+        changed?()
+    }
+    
+    func dropped(inventoryItem: InventoryItem) {
+        
+        inventory?.append(inventoryItem)
+        changed?()
     }
     
     private struct JSONKeys {

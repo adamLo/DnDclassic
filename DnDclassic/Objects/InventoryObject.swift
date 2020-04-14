@@ -99,6 +99,7 @@ class InventoryItemFactory {
         switch type {
         case .money: return Money(json: json)
         case .weapon: return Weapon(json: json)
+        case .shield: return Shield(json: json)
         default: return InventoryObject(json: json)
         }
     }
