@@ -438,17 +438,15 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func propertyRoll(_ action: PropertyRollAction) {
+                
+        let roll = PropertyRoll(character: GameData.shared.player, action: action).roll()
         
-        let value = GameData.shared.player.value(of: action.property)
-        let roll = Dice(number: action.dice).roll()
-        let waypoint = roll <= value ? action.equalOrLess : action.greater
+        let alert = UIAlertController(title: NSLocalizedString("Roll", comment: "Roll action dialog title"), message: String(format: NSLocalizedString("You rolled %d", comment: "Roll value format"), roll.roll), preferredStyle: .alert)
         
-        let alert = UIAlertController(title: NSLocalizedString("Roll", comment: "Roll action dialog title"), message: String(format: NSLocalizedString("You rolled %d", comment: "Roll value format"), roll), preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: waypoint.caption, style: .default, handler: { (_) in
-            self.advance(to: waypoint)
+        alert.addAction(UIAlertAction(title: roll.waypoint.caption, style: .default, handler: { (_) in
+            self.advance(to: roll.waypoint)
         }))
-        GameData.shared.player.log(event: .roll(value: roll))
+        GameData.shared.player.log(event: .roll(value: roll.roll))
         
         present(alert, animated: true) {
             GameData.shared.completed(scene: self.scene)

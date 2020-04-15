@@ -10,7 +10,7 @@ import Foundation
 
 class PropertyRollAction: Action {
     
-    let property: CharacterProperty
+    let properties: [CharacterProperty]
     let equalOrLess: WayPoint
     let greater: WayPoint
     let dice: Int
@@ -24,8 +24,14 @@ class PropertyRollAction: Action {
             dice = 1
         }
         
-        guard let __propertyString = json[JSONkeys.property] as? String, let _propertyString = __propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString) else {return nil}
-        property = _property
+        var _properties = [CharacterProperty]()
+        guard let _proprtiesArray = json[JSONkeys.properties] as? [String] else {return nil}
+        for propertyString in _proprtiesArray {
+            guard let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString) else {return nil}
+            _properties.append(_property)
+        }
+        guard !_properties.isEmpty else {return nil}
+        properties = _properties
         
         guard let _greaterObject = json[JSONkeys.greater] as? JSON, let _greater = WayPoint(json: _greaterObject) else {return nil}
         greater = _greater
@@ -37,7 +43,7 @@ class PropertyRollAction: Action {
     }
         
     private struct JSONkeys {
-        static let property     = "property"
+        static let properties   = "properties"
         static let equalOrLess  = "equalOrLess"
         static let greater      = "greater"
         static let dice         = "dice"

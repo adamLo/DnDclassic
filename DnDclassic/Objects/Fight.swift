@@ -89,8 +89,10 @@ class Fight {
             for item in player.inventory {
                 if item.equipped, item.item.type == .shield, let shield = item.item as? Shield {
                     let newDamage = shield.modifedDamage(damage)
-                    player.log(event: .damageModified(original: damage, new: newDamage, modifierName: shield.name))
-                    damage = newDamage
+                    if newDamage != damage {
+                        player.log(event: .damageModified(original: damage, new: newDamage, modifierName: shield.name))
+                        damage = newDamage
+                    }
                 }
             }
             

@@ -1142,7 +1142,7 @@
                     "caption": "Dobj két kockával!",
                     "type": "propertyRoll",
                     "dice": 2,
-                    "property": "dexterity",
+                    "properties": ["dexterity"],
                     "equalOrLess": {
                         "caption": "Az ajtó kinyílik",
                         "destination": 155,
@@ -1170,6 +1170,44 @@
                     "caption": "menj tovább a folyosón",
                     "destination": 300,
                     "direction": "unknown"
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "story": "Egy észak-déli irányú átjáró északi végénél állsz egy ajtó előtt.",
+            "waypoints": [
+                {
+                    "caption": "Bemész rajta",
+                    "destination": 179,
+                    "direction": "north"
+                },
+                {
+                    "caption": "Délnek indulsz",
+                    "destination": 308,
+                    "direction": "south"
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "story": "",
+            "actions": [
+                {
+                    "caption": "Dobj két kockával!",
+                    "type": "propertyRoll",
+                    "dice": 2,
+                    "properties": ["luck", "health"],
+                    "equalOrLess": {
+                        "caption": "sikerül kitartanod és a tutajt átirányítanod az északi partra. Biztonságosan megérkezel, de amint kilépsz a partra, a tutaj elsodródik, és átúszik a folyó déli partjára.",
+                        "destination": 7,
+                        "direction": "unknown"
+                    },
+                    "greater": {
+                        "caption": "Felborulsz a tutajjal, és kezdhetsz visszaúszni a déli partra.",
+                        "destination": 166,
+                        "direction": "unknown"
+                    }
                 }
             ]
         },
