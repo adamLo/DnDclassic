@@ -402,7 +402,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.sceneTableView.reloadData()
         }
         
-        let alert = FightViewController.excapeDialog(withTryLuck: {
+        let alert = FightViewController.escapeDialog(withTryLuck: {
             let luck = GameData.shared.player.tryLuck()
             advanceBlock(scene, luck.success)
         }) {

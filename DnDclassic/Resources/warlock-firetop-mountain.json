@@ -1211,6 +1211,104 @@
                 }
             ]
         },
+        {
+            "id": 56,
+            "story": "Amint kardod beleesik a vízbe, egy bugyborékoló hang azt mondja: „Köszönöm!” Most már csak egyetlen dolgot tehetsz - le kell úsznod a folyó sodrával kelet felé.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Beleveted magad a vízbe.",
+                    "destination": 399
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "story": "Amint belépsz a barlangba, hangos lépéseket hallasz a hátad mögött. A lépések erősen csikorognak a sziklás talajon. Meglapulsz a bejárat mellett egy sziklahasadékban. A lépések egyre hangosabbak, és egy Óriás Ogre-t pillantasz meg, amint belép a barlangba. Már a magassága is fenyegető, nagyobb két méternél, valami bőrből szabott szedett-vedett öltözéket visel. Rettenetes fabunkót tart magánál.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megtámadod, amint belép.",
+                    "destination": 16
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz kisurranni a barlangból úgy, hogy ne vegyen észre.",
+                    "destination": 2
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megkísérled elvonni a figyelmét azzal, hogy valamit a barlang távoli sarkába hajítasz.",
+                    "destination": 119
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "story": "Óvatosan mászol tovább az átjárón. Egy kis idő múltán az út élesen északnak kanyarodik. A fordulónál egy fatörzsből készült ülőke áll, felette egy tábla ezzel a felirattal: „Fáradt vándor, pihend itt ki magad!”",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megállsz és elfogyasztod Élelmiszerkészleted egy részét.",
+                    "destination": 15
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod utadat.",
+                    "destination": 367
+                }
+            ],
+            "cover": "scene_058.png"
+        },
+        {
+            "id": 59,
+            "story": "Már jó ideje nyugat felé haladsz, aztán az út észak felé tesz egy hajtűkanyart, majd egyenesen déli irányba tart, végül egy háromirányú elágazáshoz ér.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 150
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "story": "Továbbmész a folyosón, de hamar észreveszed, hogy az út nyugat felé hatalmas vasráccsal van lezárva.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Vissza kell menned oda, ahonnan jöttél.",
+                    "destination": 48
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "story": "Amint épp átvizsgálod a barlangot, apró, rohanó léptek neszét hallod a hátad mögül. Megfordulsz, és szemben találod magad az Óriás Pók furcsa, fekete alakjával, ahogy épp feléd lopódzik. A Pók teste legalább egy méter átmérőjű, úgyhogy gyorsan kardot rántasz.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Óriás Pók",
+                            "dexterity": 7,
+                            "health": 8
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 29,
+                        "caption": "Győztél a küzdelem során"
+                    },
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 375,
+                        "caption": "Elmenekülsz az átjárón keresztül, ahonnan egy elágazáshoz érsz",
+                        "availableRound": 2
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 71,
@@ -2261,6 +2359,18 @@
 				}
 			]
 		},
+        
+        {
+            "id": 375,
+            "story": "Visszajutsz az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Ez alkalommal észak félé indulsz.",
+                    "destination": 5
+                }
+            ]
+        },
         
         {
             "id": 396,

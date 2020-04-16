@@ -43,6 +43,8 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    private var fightRounds = 0
+    
     // MARK: - Controller lifecycle
     
     override func viewDidLoad() {
@@ -202,6 +204,8 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             fight.performRound(withLuck: luck)
             
+            fightRounds += 1
+            
             distributeCharacterData()
             
             tableView.beginUpdates()
@@ -252,16 +256,22 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func escape() {
         
-        let alert = FightViewController.excapeDialog(withTryLuck: {
+        if let _availableRound = action.escapeAvailableInRound, _availableRound > fightRounds {
+            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can't escape just yet!", comment: "Alert message when escapeing from fight s not available"))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let alert = FightViewController.escapeDialog(withTryLuck: {
             let luck = GameData.shared.player.tryLuck()
             GameData.shared.player.escape(goodLuck: luck.success, escapeDamage: self.action.escapeDamage)
             self.dismiss(animated: true) {
-                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.escape ?? self.action.win)
             }
         }) {
             GameData.shared.player.escape(escapeDamage: self.action.escapeDamage)
             self.dismiss(animated: true) {
-                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
+                self.figthOver?(GameData.shared.player.isDead ? nil : self.action.escape ?? self.action.win)
             }
         }
         present(alert, animated: true, completion: nil)
@@ -271,7 +281,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let title = onPlayer ? NSLocalizedString("You suffered a bad damage from your opponent!", comment: "Alert title when player damage event triggered") : NSLocalizedString("You made a damage to your opponent!", comment: "Alert title when opponent damage event triggered")
         
-        let alert = UIAlertController.simpleMessageAlert(message: String(format: NSLocalizedString("You're being taken to %@", comment: "Alert title when damage event triggered"), waypoint.caption), title: title) {
+        let alert = UIAlertController.simpleMessageAlert(message: String(format: NSLocalizedString("You're being taken to %@", comment: "Alert MESSAGE when damage event triggered"), waypoint.caption), title: title) {
             self.dismiss(animated: true) {
                 self.figthOver?(waypoint)
             }
@@ -289,7 +299,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         present(alert, animated: true, completion: nil)
     }
     
-    static func excapeDialog(withTryLuck: (() -> ())?, escape: (() -> ())?) -> UIAlertController {
+    static func escapeDialog(withTryLuck: (() -> ())?, escape: (() -> ())?) -> UIAlertController {
         
         let alert = UIAlertController(title: NSLocalizedString("Escape", comment: "Escape alert title"), message: NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message"), preferredStyle: .alert)
         

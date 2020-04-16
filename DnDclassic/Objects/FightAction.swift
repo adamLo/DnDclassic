@@ -18,7 +18,8 @@ class FightAction: Action {
     let opponents: [Opponent]
     let escape: WayPoint?
     let win: WayPoint?
-    let escapeDamage: Int?    
+    let escapeDamage: Int?
+    let escapeAvailableInRound: Int?
     
     required init?(json: JSON) {
 
@@ -38,9 +39,11 @@ class FightAction: Action {
         
         if let _escapeObject = json[JSONkeys.escape] as? JSON, let _escape = WayPoint(json: _escapeObject) {
             escape = _escape
+            escapeAvailableInRound = _escapeObject[JSONkeys.availableRound] as? Int
         }
         else {
             escape = nil
+            escapeAvailableInRound = nil
         }
         
         guard let _opponentObjects = json[JSONkeys.opponents] as? JSONArray else {return nil}
@@ -57,11 +60,12 @@ class FightAction: Action {
     }
     
     private struct JSONkeys {
-        static let opponents    = "opponents"
-        static let escape       = "escape"
-        static let win          = "win"
-        static let order        = "order"
-        static let escapeDamage = "escapeDamage"        
+        static let opponents        = "opponents"
+        static let escape           = "escape"
+        static let win              = "win"
+        static let order            = "order"
+        static let escapeDamage     = "escapeDamage"
+        static let availableRound   = "availableRound"
     }
     
     var isOver: Bool {
