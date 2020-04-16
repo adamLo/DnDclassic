@@ -10,7 +10,7 @@ import Foundation
 
 enum InventoryItemType: String {
     
-    case weapon, armor, key, lighting, money, food, potion, silverWeapon, hammer, shield
+    case weapon, armor, key, lighting, money, food, potion, silverWeapon, hammer, shield, misc, book
     
     var equippable: Bool {
         return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon, InventoryItemType.shield].contains(self)

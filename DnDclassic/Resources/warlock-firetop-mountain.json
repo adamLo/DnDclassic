@@ -301,7 +301,7 @@
 		},
 		{
 			"id": 17,
-			"story": "A cövek és a fakalapács segítségével (ha nincs nálad, ideiglenesen összetákolsz valamit) keresztet formálsz, azzal mész tovább a Vámpír felé, és sarokba kényszeríted. Sziszeg rád, és kapkod feléd, de nem jöhet közel hozzád. Mindazonáltal elég bonyolultnak látszik a feladat, hogy a cövekkel döfjed szíven. Amint haladsz előre, megbotlasz és előrezuhansz. Szerencsére a cövek a kezedből egyenesen a Vámpír felé repül, és belehasít a sikoltozó szörnyeteg testébe. Tedd próbára Szerencséd! Ha szerencsés vagy, a cövek pontosan átütötte a Vámpír Szívét. Ha nincs szerencséd, csak súrolta a szörnyeteget (a sebesüléssel 3 pontot vesztett Életerejéből), dühösen rád támad, keresztülzavar a szobán a nyugati ajtó felé.",
+			"story": "A cövek és a fakalapács segítségével (ha nincs nálad, ideiglenesen összetákolsz valamit) keresztet formálsz, azzal mész tovább a Vámpír felé, és sarokba kényszeríted. Sziszeg rád, és kapkod feléd, de nem jöhet közel hozzád. Mindazonáltal elég bonyolultnak látszik a feladat, hogy a cövekkel döfjed szíven. Amint haladsz előre, megbotlasz és előrezuhansz. Szerencsére a cövek a kezedből egyenesen a Vámpír felé repül, és belehasít a sikoltozó szörnyeteg testébe.",
 			"actions": [
 				{
 					"type": "tryLuck",
@@ -313,11 +313,11 @@
 					},
 					"badLuck": {
 						"type": "waypoint",
-						"direction": "east", 
-						"destination": 16, 
-						"caption": "Az Ogre meghallotta a zajt"
+						"direction": "west",
+						"destination": 17001,
+						"caption": "Csak súrolta a szörnyeteget, dühösen rád támad, keresztülzavar a szobán a nyugati ajtó felé."
 					}       
-				}				
+				}
 			]
 		},
 		{
@@ -328,13 +328,16 @@
 					"direction": "unknown",
 					"caption": "Tovább küzdesz vele",
 					"destination": 144
-				},
-				{
-					"direction": "unknown",
-					"caption": "Elmenekülsz az ajtón át",
-					"destination": 380
 				}
-			]
+			],
+            "actions": [
+                {
+                    "type": "escape",
+                    "caption": "Elmenekülsz az ajtón át",
+                    "destination": 380,
+                    "direction": "west"
+                }
+            ]
 		},
 		{
 			"id": 18,
@@ -1346,7 +1349,90 @@
             "story": "A Ghoul vidáman körültáncolja a testedet, majd a földön heverők mellé fektet. Hasra fordít, és fogait a hátsó feledbe mélyeszti. Ritkán kap táplálékul friss húst. Kalandod itt véget ért.",
             "playerDied": true
         },
-
+        {
+            "id": 65,
+            "story": "Amint rátámadsz az Ork Törzsfőnökre, szolgája felragad egy nehéz fabunkót, és beleveti magát a verekedésbe. De legnagyobb megdöbbenésedre rád támad! A hálátlan, hitvány féreg!",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod a küzdelmet",
+                    "destination": 372
+                }
+            ],
+            "actions": [
+                {
+                    "type": "escape",
+                    "destination": 293,
+                    "direction": "back",
+                    "caption": "Látva ezt, visszamenekülsz a folyosóra"
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "story": "Az ajtó kinyílik, és egy olyan úton találod magad, mely újra visszavezet a folyópartra. Tehát ismét a folyónál vagy.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálkozol átjutni azon az ajtón, mely a kőből faragott arc közepén nyílik",
+                    "destination": 104
+                },
+                {
+                    "direction": "east",
+                    "caption": "Elindulsz lefelé azon az úton, amely a parton halad kelet felé",
+                    "destination": 99
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "story": "Meghúzod a kötelet, erre kinyílik egy csapóajtó, és láthatóvá tesz egy utat, amely az észak-déli folyosóhoz vezet.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszafordulsz a keresztúthoz",
+                    "destination": 267
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átmész a titkos ajtón",
+                    "destination": 177
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "story": "A két Goblin kínzómester egymásra pillant, majd rád néz. Valamit karattyolnak egymás között, mutatják neked, hogy várj egy kicsit, míg ők elmennek a következő Törpéért, akire még nagyobb kínzás vár. Eltűnnek a szobából, és te levágod köteleiről a Törpét, aki, mint sejtetted, már meghalt.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Úgy döntesz, legjobb, ha távozol, és folytatod utadat észak felé, felfelé.",
+                    "destination": 303
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "story": "Az átjárótól nem messze a folyosó észak felé kanyarodik, és te egészen addig mész így, amíg egy újabb kereszteződéshez nem érsz. Ennél az elágazásnál egy sziklába vésett nyilat veszel észre, amely észak felé mutat, s elhatározod, megpróbálkozol ezzel az iránnyal.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Megpróbálkozol ezzel az iránnyal.",
+                    "destination": 244
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "story": "Követed a nagy macskakövekkel bontott folyosót keletnek, azután északnak, majd újra keletnek, végül északnak fordulsz, míg végre egy elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 267
+                }
+            ]
+        },
 		{
 			"id": 71,
 			"story": "Jobbra egy benyíló van az észak felé vezető úton. Óvatosan megközelíted a sarkon lévő őrhelyet, belesel, és egy különös, Goblin-szerű teremtményt pillantasz meg. amint bőrruhájában őrhelyén szunyókál. Megpróbálsz lábujjhegyen elsurranni mellette. ",
@@ -1369,6 +1455,50 @@
 			],
 			"cover": "scene_071.png"
 		},
+        {
+            "id": 72,
+            "story": "Most már új páncélzatod is van, a tieddel nagyjából egyenértékű. Döntsd el, hogy a kettő közül melyiket tartod meg, a másikat dobd el!",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 319
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "story": "Az üt előtted északi irányba halad. A sziklás talaj kezd homokossá válni, míg végül vastag homokrétegen lépdelsz. Észreveszed, hogy az út egyre szélesedik, és előtted egy folyó zúgását hallod. Addig gyalogolsz, míg egy hatalmas barlangban találod magad, amin egy folyó hömpölyög keresztül.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 218
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "story": "",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Tedd próbára Szerencséd!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 279,
+                        "caption": "Meg tudod törni a rád szegeződő tekintetet, és felkészülsz a támadásra"
+                    },
+                    "badLuck": {
+                        "type": "A hatalma alá kerülsz, és a parancsára eldobod a kardodat",
+                        "direction": "unknown",
+                        "destination": 118,
+                        "caption": "Balszerencsés vagy"
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 78,
@@ -1528,7 +1658,7 @@
 
 		{
 			"id": 144,
-			"story": "A lény rád mered. Pillantásával elkapja tekinteted, és érzed, hogy mostantól fogva képtelen vagy bármit is csinálni. Hívólag int a fejével. Lassan közeledsz feléje. Rád parancsol, hogy dobd el a cöveket. Amint lenézel a cövekre, hirtelen hatalmas akaraterőt érzel magadban. Közvetlen közelről a szörny felé hajítod a cöveket. Tedd próbára Szerencséd! Ha szerencsés vagy, lapozz a 101-re, ha balszerencse üldöz, lapozz a 217- re!",
+			"story": "A lény rád mered. Pillantásával elkapja tekinteted, és érzed, hogy mostantól fogva képtelen vagy bármit is csinálni. Hívólag int a fejével. Lassan közeledsz feléje. Rád parancsol, hogy dobd el a cöveket. Amint lenézel a cövekre, hirtelen hatalmas akaraterőt érzel magadban. Közvetlen közelről a szörny felé hajítod a cöveket.",
 			"actions": [
 				{
 					"type": "tryLuck",
@@ -1920,6 +2050,31 @@
                 }
             ]
         },
+        
+        {
+            "id": 279,
+            "story": "A teremtmény, akivel szemben állsz, egy Vámpír! Különféle módon támadhatod meg. A kard alig fog rajta. Kereszttel sakkban tudod tartani, de el nem pusztíthatod.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Van nálad kard vagy kereszt, elérheted a nyugati ajtót",
+                    "destination": 380,
+                    "condition": {
+                        "inventoryItemId": "cross_against_wampire"
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Elhatároztad, hogy megölöd a Vámpírt, fölébe kell kerülnöd, és egy facöveket kell a szívébe döfnöd",
+                    "destination": 17
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Csak kard van nálad, rántsd ki",
+                    "destination": 333
+                }
+            ]
+        },
 
 		{
 			"id": 282,
@@ -1971,6 +2126,18 @@
 				}
 			]
 		},
+        
+        {
+            "id": 293,
+            "story": "Visszaérkezel az útelágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Mész egyenesen tovább kelet felé",
+                    "destination": 113
+                }
+            ]
+        },
         
         {
             "id": 298,
@@ -2073,6 +2240,40 @@
 				}
 			]
 		},
+        
+        {
+            "id": 327,
+            "story": "A földön heverő test a szemed láttára kezd el öregedni. Az arca ötvennek látszik, azután kilencvennek, majd száznál is jóval idősebbnek. Bőre szétfoszlik, szeme kifejezéstelenné válik. Valami megmozdul a teremtmény mellkasán. Ahogy a Vámpír maradványai elenyésznek, egy kicsi fekete arc tör ki a mellkasából. Olyan, mint egy apró, sötét cickány, de amint kiszabadítja magát és szétnyitja szárnyait, rájössz, hogy denevér. Rásuhintasz, de elrebben, és belevész a sötétségbe. Gyorsan átkutatod az egész termet (ne feledd, van még néhány koporsó itt). Találsz harminc aranypénzt, egy könyvet és egy Y alakú fapálcikát. Magaddal viheted ezeket a tárgyakat (vezesd rá a Kalandlapra), ha jelenlegi Felszerelésedből itt hagysz egy tárgyat. A nyugati ajtón át távozhatsz. Ha éhes vagy, egyél Élelmiszerkészletedből, s adj 3-at Szerencse pontjaidhoz a Vámpír legyőzése miatt.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "A nyugati ajtón át távozol.",
+                    "destination": 380
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 30
+                },
+                {
+                    "type": "book",
+                    "name": "A vámpír könyve",
+                    "id": "book_of_vamipre"
+                },
+                {
+                    "type": "misc",
+                    "name": "Y-alakú fapálcika",
+                    "id": "y_shaped_wooden_stick"
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 3
+                }
+            ]
+        },
 
 		{
 			"id": 340,
@@ -2396,7 +2597,85 @@
 				}
 			]
 		},
-        
+        {
+            "id": 371,
+            "story": "Jelenleg biztonságban vagy, átvizsgálod a barlangot, és találsz egy utat, amely továbbmegy nyugat felé. Ehetsz és pihenhetsz is, mielőtt folytatnád utadat. 3 Szerencse pontot kapsz a Sárkány legyőzéséért.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 3
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Folytatod az utad",
+                    "destination": 274
+                }
+            ]
+        },
+        {
+            "id": 372,
+            "story": "A csata elkezdődik!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "order": "single",
+                    "opponents": [
+                        {
+                            "name": "Ork törzsfőnök",
+                            "dexterity": 7,
+                            "health": 6,
+                            "order": 0
+                        },
+                        {
+                            "name": "Szolga",
+                            "dexterity": 7,
+                            "health": 3,
+                            "order": 1
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 21,
+                        "caption": "Elmenekülsz"
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 21,
+                        "caption": "Legyőzted [ket"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 373,
+            "story": "Egy észak-déli átjáró déli végénél vagy egy zsákutcában. Ha elindulsz észak felé, egy útkereszteződéshez fogsz érni.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Elindulsz észak felé.",
+                    "destination": 85
+                }
+            ]
+        },
+        {
+            "id": 374,
+            "story": "A Csontvázak nem vesznek észre, és eltűnnek a Csónakházba vezető ajtó mögött. Megkönnyebbülten felsóhajtasz, és elindulsz a folyosó északi végén lévő ajtóhoz. Mielőtt útra kelsz, ehetsz, ha akarsz, s adj 2 pontot Szerencsédhez, amiért elkerülted a Csontvázakat.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Elindulsz a folyosó északi végén lévő ajtóhoz.",
+                    "destination": 207
+                }
+            ]
+        },
         {
             "id": 375,
             "story": "Visszajutsz az elágazáshoz.",
@@ -2405,6 +2684,18 @@
                     "direction": "north",
                     "caption": "Ez alkalommal észak félé indulsz.",
                     "destination": 5
+                }
+            ]
+        },
+        
+        {
+            "id": 380,
+            "story": "Egy szűk, kelet-nyugati folyosón állsz.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé nézve egy útkereszteződést látsz, és odamész.",
+                    "destination": 37
                 }
             ]
         },
