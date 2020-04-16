@@ -1755,7 +1755,44 @@
                 }
             ]
         },
-
+        {
+            "id": 87,
+            "story": "Visszaérkeztél az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "destination": 262,
+                    "caption": "Ez alkalommal északi irányba indulsz."
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "story": "Újabb kicsiny kamrába lépsz be, amelynek közepén egy szökőkút van. A szökőkút maga nem túl különleges, egy kis kőből faragott hal, melynek a szájából vízsugár spriccel. Fából készült lapocska lóg rajta, egy üzenettel, amit a Goblinok nyelvén írtak, és amelyen te alig-alig beszélsz. Az első szót nem is érted, utána meg csak ennyi olvasható: „… nem sz… inni”. De te rettenetesen megszomjaztál.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 216,
+                    "caption": "Iszol a vízből."
+                },
+                {
+                    "direction": "north",
+                    "destination": 384,
+                    "caption": "Nem iszol, és távozol a kamrából az északi falon lévő ajtón át"
+                }
+            ]
+        },
+        {
+            "id": 89,
+            "story": "Átmászol a nyíláson, és egy lefelé vezető szűk lépcsősor tetejénél találod magad.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 286,
+                    "caption": "Óvatosan leereszkedsz a lépcsőkön."
+                }
+            ]
+        },
 		{
 			"id": 90,
 			"story": "Az ajtó egy keskeny alagútba vezet, amely északi irányba halad. Néhány méter után az út előbb keletnek, utána északnak kanyarodik. A második kanyarnál egy kis bemélyedés van a sziklafalon. Megfelelő búvóhelynek látszik, az egyik szikla még kényelmes üléssel is szolgál. Itt elfogyaszthatod Élelmiszerkészleted egy részét. Pihenés után haladj tovább észak felé.",
