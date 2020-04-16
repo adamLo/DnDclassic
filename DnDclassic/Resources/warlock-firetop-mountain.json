@@ -1499,7 +1499,61 @@
                 }
             ]
         },
-
+        {
+            "id": 75,
+            "story": "Visszaülsz, és pihensz egy kicsit a kimerítő küzdelem után. Elfogyaszthatod Élelmiszerkészleted egy részét is itt. Letéped az ékkövet a mozdulatlan szoborról. Jó súlyos, legalább ötven aranyat ér. Beleteszed a hátizsákodba. Amint átkutatod a szobát és a szobrot, észreveszed, hogy mellvértjének egyik darabja lötyög. Elfordítod, és egy kicsiny kulcsot találsz benne. Megvizsgálod, és észreveszed, hogy egy szám, a 111-es van rajta. Elmosolyodsz, a kulcsot is az ékkő mellé teszed a hátizsákba. Visszaindulsz az elágazáshoz. Minthogy igazán értékes leletre bukkantál, adj 3-at Szerencse pontjaidhoz",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 3
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "gem",
+                    "name": "50 arany értékű ékkő"
+                },
+                {
+                    "type": "key",
+                    "id": "key_111",
+                    "name": "Kicsiny kulcs 111-es számmal"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 93
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "story": "Újabb elágazáshoz érkeztél.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Egy nyíl a falon északi irányba mutat, és te úgy döntesz, követed.",
+                    "destination": 244
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "story": "Néhány métert haladsz felfelé az átjárón, és egy elágazáshoz érkezel, ahol keleti és nyugati irányba egyaránt fordulhatsz. Az északi fal sziklái között van egy kis beszögellés, lepihenhetsz, és elfogyaszthatod Élelmiszerkészleted egy részét anélkül, hogy bárki észrevenne. Ha enni akarsz, egyél.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Elindulsz keletnek",
+                    "destination": 345
+                },
+                {
+                    "direction": "west",
+                    "caption": "Elindulsz nyugatnak",
+                    "destination": 18
+                }
+            ]
+        },
 		{
 			"id": 78,
 			"story": "Az út egy sarokvasakon függő tömör faajtónál ér véget. Ennél hallgatózva furcsa mormogást és konyhai edények zörgését hallod. Egy biztos: az ajtó mögött többen vannak.",
@@ -1516,7 +1570,59 @@
 				}
 			]
 		},
-
+        {
+            "id": 79,
+            "story": "A folyosó előtted zsákutcába torkollik.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz titkos átjárókat keresni",
+                    "destination": 137
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszamész az elágazáshoz",
+                    "destination": 267
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "story": "A kulcs pontosan beleillik a zárba, és nyitja az ajtót. Egy hatalmas csónaktárolóban találod magad. Különféle csónakok félig vagy teljesen elkészülve hevernek körös-körül. A mögötted lévő ajtón kívül van még egy bejárat az északi falban. Amint belépsz, a Csontvázak abbahagyják munkájukat, felemelik csontos nyakukon ülő fejüket, és rád tekintenek. Fapallókat és kalapácsokat kapnak fel, és feléd nyomulnak. Összesen öten vannak. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Idegesen mosolyogva visszahátrálsz a folyosóra",
+                    "destination": 129
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Azt mondod, hogy csónakot vásárolni jöttél",
+                    "destination": 123
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Azt állítod, te vagy az új főnökük, és visszaparancsolod őket munkájukhoz",
+                    "destination": 195
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kirántod kardod, és felkészülsz a küzdelemre?",
+                    "destination": 140
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "story": "Zaj riaszt fel, és arra int, hogy sürgősen hagyd el a szobát.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Az északi ajtóhoz mész, hogy megvizsgáljad.",
+                    "destination": 205
+                }
+            ]
+        },
 		{
 			"id": 82,
 			"story": "Az ajtó kinyílik, és egy kicsi, büdös odú tárul a szemed elé. A szoba közepén egy roskatag faasztal éli, rajta égő gyertya, alatta egy kicsi faládika. A szoba egyik távoli sarkában egy szalmamatracon egy alacsony, zömök, csúnya bibircsókos arcú teremtmény alszik. Ugyanabból a fajtából való, akit alva találtál az őrhelyen. Nyilván ő az éjszakai szolgálatban lévő őr.",
@@ -1546,7 +1652,75 @@
 				}
 			]
 		},
-        
+        {
+            "id": 83,
+            "story": "",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Tedd próbára Szerencséd!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "north",
+                        "destination": 360,
+                        "caption": "Ki tudsz jutni az északi ajtón keresztül"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 154,
+                        "caption": "Balszerencséd volt"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "story": "Az ajtó egy kicsi, kényelmesen berendezett szobába nyílik. Egy asztal, néhány szék és egy egész falat betöltő könyvespolc van benne. Az asztal mellett egy hosszú ősz szakállú öregember ül. Vállán egy kicsi szárnyas állat kuporog, nem nagyobb hat centiméternél. Két karja és két lába van, a bőre hamuszürke. Éles, pici fehér fogai vannak, szárnyait összefonja a háta mögött. Az Öreg nem szól semmit, amikor belépsz az ajtón, de azután int, hogy üljél le az asztalhoz. Két apró, fehér tárgyat dobál a kezei között. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Leülsz, ahogy mutatta",
+                    "destination": 204
+                },
+                {
+                    "direction": "back",
+                    "caption": "Otthagyod a szobát, és visszafordulsz az elágazáshoz",
+                    "destination": 280
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kirántod a kardod, és megrohamozod",
+                    "destination": 377
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "story": "Keresztúthoz érkeztél.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak mész",
+                    "destination": 106
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek mész",
+                    "destination": 373
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek mész",
+                    "destination": 318
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak mész",
+                    "destination": 59
+                }
+            ]
+        },
         {
             "id": 86,
             "story": "Egy hatalmas állkapocs tárul ki előtted. Mérete alapján Krokodil az, ami felé úszol. A bestia hatalmasat csap a farkával, és feléd siklik. Két Fordulóban kell megküzdened vele. Már korábban észrevetted, hogy nem messze tőletek kavarog, buzog a víz. Most ez az örvénylés közeledni kezd felétek. A szemed sarkából látod csak ezt, és határoznod kell, mitévő légy. Ha úgy érzed, a Krokodil már a végét járja, és folytatni akarod a harcot, küzdj tovább. Máskülönben továbbra is le kell kötnöd a bestia figyelmét, és csak az a halvány reményed marad, hogy az örvénylést okozó titokzatos lény segíteni fog rajtad valamiképp. Csapj össze még egy Fordulóban a Krokodillal!",
