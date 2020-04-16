@@ -35,7 +35,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private enum Section: Int, CaseIterable {
         
-        case story = 0, waypoints, actions, inventory
+        case story = 0, waypoints, actions, inventory, restart
     }
     
     private struct Segues {
@@ -97,6 +97,11 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         coverImageView.image = scene.image
         
         sceneTableView.contentInset = UIEdgeInsets(top: scene.image != nil ? coverImageView.bounds.size.height - 50 : 0, left: 0, bottom: 0, right: 0)
+        
+        if scene.playerDied, !GameData.shared.player.isDead {
+            GameData.shared.player.die()
+            sceneTableView.reloadData()
+        }
     }
     
     func checkSceneCompleted() {
@@ -143,6 +148,8 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return actions?.count ?? 0
         case .inventory:
             return scene.inventory?.count ?? 0
+        case .restart:
+            return GameData.shared.player == nil || GameData.shared.player.isDead ? 1 : 0
         }
     }
     
@@ -188,6 +195,12 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     cell.setup(item: item)
                     return cell
                 }
+            case .restart:
+                if GameData.shared.player != nil && GameData.shared.player.isDead {
+                    let cell = UITableViewCell(style: .default, reuseIdentifier: "restartCell")
+                    cell.textLabel?.text = NSLocalizedString("Restart game", comment: "Restart game title when game finished")
+                    return cell
+                }
             }
         }
         
@@ -230,7 +243,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.sceneTableView.reloadData()
                     }
                 }))
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction.cancelAction())
                 present(alert, animated: true, completion: nil)
             }
         }
@@ -242,6 +255,10 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if section == .inventory, let _inventory = scene.inventory, indexPath.row < _inventory.count {
          
             grab(inventory: indexPath.row)
+        }
+        else if section == .restart {
+            
+            restartGame()
         }
     }
     
@@ -451,6 +468,27 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true) {
             GameData.shared.completed(scene: self.scene)
         }
+    }
+    
+    private func restartGame() {
+        
+        guard GameData.shared.player != nil, GameData.shared.player.isDead else {return}
+        guard GameData.shared.game != nil, let firstSceneId = GameData.shared.game.firstScene?.id else {return}
+        
+        let alert = UIAlertController(title: NSLocalizedString("Finished", comment: "Alert title when game finished"), message: NSLocalizedString("Your journey has come to an end.", comment: "Alert message when game finished"), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Restart with the same character", comment: "Option title to restart game with the same character"), style: .default, handler: { (_) in
+            GameData.shared.reset()
+            GameData.shared.player.reset()
+            self.advance(to: firstSceneId)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Restart with new character", comment: "Option title to restart game with new character"), style: .destructive, handler: { (_) in
+            GameData.shared.reset()
+            GameData.shared.player = nil
+            self.navigationController?.popToRootViewController(animated: false)
+        }))
+        alert.addAction(UIAlertAction.cancelAction())
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

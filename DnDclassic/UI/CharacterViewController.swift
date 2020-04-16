@@ -152,7 +152,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             GameData.shared.player.eat()
             self.characterTableView.reloadData()
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.cancelAction())
         
         present(alert, animated: true, completion: nil)
     }
@@ -178,7 +178,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             GameData.shared.player.drink(potion: potion)
             self.characterTableView.reloadData()
         }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.cancelAction())
         
         present(alert, animated: true, completion: nil)
     }
@@ -212,7 +212,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             self.characterTableView.reloadData()
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.cancelAction())
         
         present(alert, animated: true, completion: nil)
     }

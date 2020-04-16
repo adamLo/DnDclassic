@@ -227,7 +227,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.cancelAction())
         
         present(alert, animated: true, completion: nil)
     }

@@ -315,7 +315,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             }))
         }
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel button title"), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.cancelAction())
         
         return alert
     }

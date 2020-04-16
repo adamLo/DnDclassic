@@ -33,4 +33,10 @@ class GameData {
             completedScenes.append(scene.id)
         }
     }
+    
+    func reset() {
+        
+        currentSceneId = 0
+        completedScenes.removeAll()
+    }
 }

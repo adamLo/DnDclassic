@@ -1309,6 +1309,43 @@
                 }
             ]
         },
+        {
+            "id": 62,
+            "story": "Folytatod az utadat kelet felé. Vagy harminc méter megtétele után az út délnek kanyarodik. Követed a kanyarulatot, s végül egy hatalmas páncélozott ajtó állja utadat.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Kinyitod az ajtót",
+                    "destination": 9
+                },
+                {
+                    "direction": "back",
+                    "caption": "Átbújsz a szűk hasadékon és visszamész a folyosóra.",
+                    "destination": 89
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "story": "Ahogy haladsz előre, észreveszed, hogy a folyosó egyre szűkebb, egyre keskenyebb lesz. Egyszer csak megállsz, és abban a pillanatban mély, zengő kacagás harsan fel körülötted.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Továbbmész",
+                    "destination": 281
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszafordulsz",
+                    "destination": 10
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "story": "A Ghoul vidáman körültáncolja a testedet, majd a földön heverők mellé fektet. Hasra fordít, és fogait a hátsó feledbe mélyeszti. Ritkán kap táplálékul friss húst. Kalandod itt véget ért.",
+            "playerDied": true
+        },
 
 		{
 			"id": 71,

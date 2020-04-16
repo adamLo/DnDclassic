@@ -20,6 +20,7 @@ class Scene: Deserializable {
     let actions: [Action]?
     let returnWaypoints: [WayPoint]?
     let visitBonus: [Bonus]?
+    let playerDied: Bool
     
     var changed: (() -> ())?
         
@@ -110,6 +111,9 @@ class Scene: Deserializable {
         else {
             visitBonus = nil
         }
+        
+        // Player died
+        playerDied = json[JSONKeys.playerDied] as? Bool ?? false
     }
     
     func grabbed(inventory index: Int) {
@@ -136,5 +140,6 @@ class Scene: Deserializable {
         static let returnWps    = "return"
         static let visitBonus   = "visitBonus"
         static let inventory    = "inventory"
+        static let playerDied   = "playerDied"
     }
 }

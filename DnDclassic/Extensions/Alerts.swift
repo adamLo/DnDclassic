@@ -21,3 +21,15 @@ extension UIAlertController {
         return alert
     }
 }
+
+extension UIAlertAction {
+    
+    class func cancelAction(title: String? = nil, selected: (() -> ())? = nil) -> UIAlertAction {
+        
+        let action = UIAlertAction(title: title ?? NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel) { (_) in
+            selected?()
+        }
+        
+        return action
+    }
+}

@@ -383,6 +383,32 @@ class Character: Deserializable, Equatable {
         }
     }
     
+    func die() {
+        
+        healthCurrent = 0
+        luckCurrent = 0
+        dexterityCurrent = 0
+        
+        for item in inventory {
+            if item.equipped {
+                equip(item: item, equipped: false)
+            }
+        }
+    }
+    
+    func reset() {
+        
+        healthCurrent = healthStarting
+        luckCurrent = luckStarting
+        dexterityCurrent = dexterityStarting
+        
+        inventory.removeAll()
+        inventory = Character.startInventory
+        
+        log.removeAll()
+        journey.removeAll()        
+    }
+    
     // MARK: - JSON
     
     required init?(json: JSON) {
