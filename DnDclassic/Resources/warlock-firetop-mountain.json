@@ -2147,7 +2147,54 @@
                 }
             ]
         },
-
+        {
+            "id": 110,
+            "story": "8 aranypénzzel lettél gazdagabb. További 2 aranyat találsz a csizmákban, amelyeket végszükségre tett félre.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 319
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 8
+                },
+                {
+                    "type": "money",
+                    "amount": 2
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "story": "Nem tudod megbékíteni. Amint szorongva átvágsz a szobán, odakiált a kutyájának",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 249
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "story": "Semmit sem látsz a szobában, ami a küzdelem során a hasznodra lehetne. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kirántod a kardodat, és fogcsikorgatva támadásba lendülsz",
+                    "destination": 142
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a hátizsákodat valami használható fegyverért",
+                    "destination": 105
+                }
+            ]
+        },
 		{
 			"id": 113,
 			"story": "A folyosó újabb elágazáshoz érkezett.",
