@@ -1827,6 +1827,55 @@
                 }
             ]
         },
+        {
+            "id": 92,
+            "story": "Visszaértél a folyosón az elágazáshoz. Balra nézel, hogy meglásd a távoli homályba vesző barlangbejáratot, és egyenesen továbbmész.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 71,
+                    "caption": "Továbbmész"
+                }
+            ]
+        },
+        {
+            "id": 93,
+            "story": "Visszajutottál a kereszteződéshez.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "destination": 8,
+                    "caption": "Ez alkalommal északi irányba indulsz."
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "story": "Mész tovább a folyosón, amely egyenesen délnek tart, azután nyugatnak kanyarodik. Néhány méter után egy hármas elágazáshoz érkezel.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 260,
+                    "caption": "Útközben megpróbálkozol titkos átjárók keresésével."
+                },
+                {
+                    "direction": "unknown",
+                    "destination": 329,
+                    "caption": "Egyenesen a kereszteződés felé haladsz."
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "story": "A fegyverek között semmi figyelemre méltót nem találsz, valójában egyik sem látszik jobbnak a kardodnál. Amint kutatsz a törmelékek között, északi irányból tompa puffanást hallasz, melyet egy olyan sikoly követ, hogy a hideg végigszalad tőle a hátadon.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "destination": 205,
+                    "caption": "Az északi ajtóhoz rohansz, hogy kiderítsd, mi az."
+                }
+            ]
+        },
 
 		{
 			"id": 101,
