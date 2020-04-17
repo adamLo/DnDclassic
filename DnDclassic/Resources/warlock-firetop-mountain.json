@@ -2277,8 +2277,23 @@
                 }
             ]
         },
-
-		{
+        {
+            "id": 117,
+            "story": "Egy kelet-nyugat irányú átjáróban vagy.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Keletnek fordulsz.",
+                    "destination": 354
+                },
+                {
+                    "direction": "west",
+                    "caption": "Inkább nyugatnak mész.",
+                    "destination": 308
+                }
+            ]
+        },
+        {
 			"id": 118,
 			"story": "Ahogy megközelíted, felemelkedik koporsójából, szétnyitja köpenyét, és alávon. Életed utolsó emlékeként éles fájdalom hasít beléd, amint hegyes fogait a nyakadba mélyeszti. Soha nem lett volna szabad a Vámpír szemébe nézned...",
 			"status": {
