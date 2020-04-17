@@ -11,20 +11,24 @@ import Foundation
 class Bonus: Deserializable {
     
     let property: CharacterProperty
-    let gain: Int
+    let gain: Int?
+    let resetDelta: Int?
     
     required init?(json: JSON) {
         
         guard let propertyString = json[JSONkeys.property] as? String, let _propertyString = propertyString.nilIfEmpty, let _property = CharacterProperty(rawValue: _propertyString) else {return nil}
         property = _property
         
-        guard let _gain = json[JSONkeys.gain] as? Int else {return nil}
-        gain = _gain
+        gain = json[JSONkeys.gain] as? Int
+        resetDelta = json[JSONkeys.reset] as? Int
+        
+        guard !(gain == nil && resetDelta == nil) else {return nil}
     }
     
     private struct JSONkeys {
         static let property = "property"
         static let gain     = "gain"
+        static let reset    = "reset"
     }
     
 }

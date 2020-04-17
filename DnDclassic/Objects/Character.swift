@@ -255,15 +255,46 @@ class Character: Deserializable, Equatable {
     
     func apply(bonus: Bonus) {
         
+        var gain = 0
+        var newValue = 0
+        
         switch bonus.property {
-        case .dexterity: dexterityCurrent = min(dexterityCurrent + bonus.gain, dexterityStarting)
-        case .health: healthCurrent = min(healthCurrent + bonus.gain, healthStarting)
-        case .luck: luckCurrent = min(luckCurrent + bonus.gain, luckStarting)
+            
+        case .dexterity:
+            if let _gain = bonus.gain {
+                newValue = min(dexterityCurrent + _gain, dexterityStarting)
+            }
+            else if let _delta = bonus.resetDelta {
+                newValue = max(dexterityCurrent, dexterityStarting + _delta)
+            }
+            gain = dexterityCurrent - newValue
+            dexterityCurrent = newValue
+            
+        case .health:
+            if let _gain = bonus.gain {
+                newValue = min(healthCurrent + _gain, healthStarting)
+            }
+            else if let _delta = bonus.resetDelta {
+                newValue = max(healthCurrent, healthStarting + _delta)
+            }
+            gain = healthCurrent - newValue
+            healthCurrent = newValue
+            
+        case .luck:
+            if let _gain = bonus.gain {
+                newValue = min(luckCurrent + _gain, luckStarting)
+            }
+            else if let _delta = bonus.resetDelta {
+                newValue = max(luckCurrent, luckStarting + _delta)
+            }
+            gain = max(luckCurrent - newValue, 0)
+            luckCurrent = newValue
         }
         
-        changed?()
-        
-        log(event: .bonus(property: bonus.property, gain: bonus.gain))
+        if gain != 0 {
+            changed?()
+            log(event: .bonus(property: bonus.property, gain: gain))
+        }
     }
     
     func log(event: LogEvent) {

@@ -51,6 +51,8 @@
 		19825BD5244616DD00488525 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BD4244616DD00488525 /* Shield.swift */; };
 		19825BD724476D4100488525 /* PropertyRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BD624476D4100488525 /* PropertyRoll.swift */; };
 		19825BD9244862AA00488525 /* scene_058.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BD8244862AA00488525 /* scene_058.png */; };
+		19825BDD244A0E4A00488525 /* scene_097.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BDC244A0E4A00488525 /* scene_097.png */; };
+		19825BDF244A132600488525 /* scene_106.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BDE244A132600488525 /* scene_106.png */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -153,6 +155,8 @@
 		19825BD4244616DD00488525 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
 		19825BD624476D4100488525 /* PropertyRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyRoll.swift; sourceTree = "<group>"; };
 		19825BD8244862AA00488525 /* scene_058.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_058.png; sourceTree = "<group>"; };
+		19825BDC244A0E4A00488525 /* scene_097.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_097.png; sourceTree = "<group>"; };
+		19825BDE244A132600488525 /* scene_106.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_106.png; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825BDE244A132600488525 /* scene_106.png */,
+				19825BDC244A0E4A00488525 /* scene_097.png */,
 				19825BD8244862AA00488525 /* scene_058.png */,
 				19825BD22444D59D00488525 /* scene_155.png */,
 				19825BC32441D15500488525 /* scene_036.png */,
@@ -574,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1930154B2402BD5200E7B815 /* LaunchScreen.storyboard in Resources */,
+				19825BDD244A0E4A00488525 /* scene_097.png in Resources */,
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
 				19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
@@ -581,6 +588,7 @@
 				1930158B240318DE00E7B815 /* cover.png in Resources */,
 				19825BD32444D59D00488525 /* scene_155.png in Resources */,
 				19FCFA9C24157A1900199175 /* scene_071.png in Resources */,
+				19825BDF244A132600488525 /* scene_106.png in Resources */,
 				19FCFA9B24157A1900199175 /* scene_009.png in Resources */,
 				1930158D24031CD800E7B815 /* scene_001.png in Resources */,
 				19825BD9244862AA00488525 /* scene_058.png in Resources */,

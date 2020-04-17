@@ -1876,7 +1876,77 @@
                 }
             ]
         },
-
+        {
+            "id": 96,
+            "story": "Az ajtó egy rövid, talán tizenöt méter hosszú folyosóra nyílik. Mindkét végén egy-egy ajtó van. Rájössz, mi is volt a zaj. Újabb Csontvázak érkeznek. Karddal a kezében négy Csontváz rohan feléd. Úgy tűnik, még nem vettek észre, s te megpillantasz egy kis bemélyedést a falban, mely remek búvóhelynek látszik.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 374,
+                    "caption": "Megpróbálsz elrejtőzni."
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "story": "Lépj be - hív egy hang belülről, s te besétálsz egy kicsi szobába, melynek bútorzatán (egy asztal, egy szék, polcok, szekrények stb.) látszik, hogy valaha jobb napokat is láttak. Tányérok, tálak, csészék és Öreg könyvek százai töltik meg a polcokat. Az egész rendetlenség közepén egy öregember üldögél, piszkos hálóköntösben, előre-hátra hintázik egy hintaszékben, miközben vidáman dünnyög valamit magában. Végigmér, de látszik rajta, tökéletesen meg van békélve a világgal. Rád köszön: - Jó napot! Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 334,
+                    "caption": "Megállsz elbeszélgetni az öreggel."
+                },
+                {
+                    "direction": "unknown",
+                    "destination": 247,
+                    "caption": "Kardot rántasz, és rátámadsz."
+                },
+                {
+                    "direction": "north",
+                    "destination": 292,
+                    "caption": "Úgy döntesz, nem vesztegeted rá az idődet, otthagyod, és mész tovább észak felé."
+                }
+            ],
+            "cover": "scene_097.png"
+        },
+        {
+            "id": 98,
+            "story": "Amint bekúszol a szobába, egy hang dörren rád: - Légy üdvözölve, bajnok! Már vártam rád. Megállsz, körülnézel és feltápászkodsz. A kis öregember teljesen megváltozott. Már nem olyan öreg, egyáltalán nem ősz, és tiszteletet parancsoló magasságúra nőtt. A szeme álnok és fekete, tekintete könyörtelen.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 358,
+                    "caption": "Lapozz"
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "story": "Az út továbbhalad kelet felé. Valamivel előtted egy erősnek látszó ajtó zárja le a folyosót.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "destination": 383,
+                    "caption": "Odalépsz, hogy megvizsgáld."
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "story": "Tétovázás nélkül beleegyeznek, hogy beszállj a játékba. Amint kártyáztok és beszélgettek, egészen feloldódnak, végül mindannyian nagyokat nevettek, miközben az egyik történet követi a másikat. Teljesen ártalmatlannak látszanak.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "destination": 346,
+                    "caption": "Tisztességesen akarsz játszani."
+                },
+                {
+                    "direction": "unknown",
+                    "destination": 91,
+                    "caption": "Megpróbálsz csalni."
+                }
+            ]
+        },
 		{
 			"id": 101,
 			"story": "Szerencsés hajításod váratlanul éri a Vámpírt, aki sikoltozik fájdalmában, ahogy a facövek átveri a szívét. Odaugrasz, és még mélyebbre nyomod testébe a cöveket. Halálsikolya egyre gyengül, élettelen teste a földre omlik.",
@@ -1888,6 +1958,195 @@
 				}
 			]
 		},
+        {
+            "id": 102,
+            "story": "Az ajtó kinyílik, nem volt bezárva. Az előtted lévő helyiség egy kis kínzókamrának látszik, a falakon körben különféle kínzóeszközök lógnak. A kamra közepén két apró, púpos hátú teremtmény pokoli módon kínoz egy Törpét, akit a csuklóinál fogva egy, a mennyezetből kiálló horogra akasztottak. A két púpos gonoszul döfködi, szurkálja kardjával a Törpét. Az áldozat még egy utolsót sikít, majd elhallgat, szemei lecsukódnak. Kínzói elégedetlenül morognak, és mérgesen rád pillantanak, mintha a te hibád lenne, hogy a Törpe kiszenvedett. Gyorsan kell cselekedned. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Hirtelen becsapod az ajtót, és folytatod utadat a folyosón",
+                    "destination": 303
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz, és megküzdesz velük.",
+                    "destination": 19
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A Törpéhez lépsz, és kardoddal te is beledöfsz a testébe, miközben, hogy becsapd a púpos kínzómestereket, gonoszul felkacagsz",
+                    "destination": 68
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "story": "Érzed, amint egy kő megmozdul, és mögötte egy fogantyút találsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Meghúzod a kart.",
+                    "destination": 252
+                },
+                {
+                    "direction": "back",
+                    "caption": "Inkább visszamész a keresztúthoz.",
+                    "destination": 359
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "story": "Egy rövid, szűk átjáróban találod magad, észak felé egy ajtó van előtted.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Próbálkozz meg vele.",
+                    "destination": 49
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "story": "Átkutatod a hátizsákodat. Mi is van benne? Megpróbálhatod felhasználni a következő tárgyakat, de csak akkor, ha szerepelnek Felszerelési Tárgyaid között.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "A Láthatatlanság Itala.",
+                    "destination": 39,
+                    "condition": {
+                        "inventoryItemId": "potion_of_invisibility",
+                        "amount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A Küklopsz Szeme.",
+                    "destination": 382,
+                    "condition": {
+                        "inventoryItemId": "eye_of_cyclops",
+                        "amount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Egy darab sajt.",
+                    "destination": 368,
+                    "condition": {
+                        "inventoryItemType": "cheese",
+                        "amount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Egy íj ezüstnyíllal.",
+                    "destination": 194,
+                    "condition": {
+                        "inventoryItemId": "bow_with_silver_arrow",
+                        "amount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Egy Y alakú fapálcika.",
+                    "destination": 215,
+                    "condition": {
+                        "inventoryItemId": "y_shaped_wooden_stick",
+                        "amount": 1
+                    }
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "story": "A folyosó már jó ideje észak felé halad. Ha akarod, megpihenhetsz útközben, s elfogyaszthatod Élelmiszerkészleted egy adagját. Az út később nyugatra kanyarodik és szűkülni kezd. Egy kis sziklaboltívhez érsz, le kell görnyedned, hogy átférj alatta. A boltív másik oldalán megállsz, és körülnézel. Hatalmas barlangba jutottál, a vége távoli homályba vész. A barlang egy részét természetes fény világítja meg, mely egy, a tetején lévő lyukon sugárzik be. Semerre sem látsz kijáratot. Amint körülvilágítasz lámpásoddal, morajlást hallasz. Fakó fény parázslik fel a sötétségben. Hirtelen egy lángcsóva csap fel a barlang mélyéből, hajszálnyira kerül el téged, és leperzseli a falon burjánzó mohákat. Földre veted magad, és felpillantasz. Egy hatalmas Sárkány oson a sötétségből feléd. Orrcimpáiból füst gomolyog. Pikkelyes vörös bőre olajosan fénylik. A bestia lehet vagy tizenöt méter hosszú! Hogyan akarod megtámadni a Sárkányt?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz, és felkészülsz a támadásra.",
+                    "destination": 152
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Hirtelen végiggondolod, mi mást is tehetnél a Sárkány ellen?",
+                    "destination": 126
+                }
+            ],
+            "cover": "scene_106.png"
+        },
+        {
+            "id": 107,
+            "story": "Lábujjhegyen végiglopódzol a szobán, aztán fel egy szűk lépcsőn. Ez egy folyosóra vezet. Na, ezt könynyen megúsztam! - gondolod, majd töprengeni kezdesz, nem lett volna-e érdemes átkutatni a testeket.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszamehetsz, hogy ezt megtedd - kezdd a harmadikkal.",
+                    "destination": 148
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Továbbindulsz.",
+                    "destination": 197
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "story": "Amikor a lábad hozzáér az első kéz formájú csempéhez, érzed, hogy a bokádat szinte satuba szorították, s ahogy letekintesz, megpillantasz egy kísértetiesen fehér kezet, amely megmarkolta a lábad. Küzdesz, hogy visszanyerjed egyensúlyodat, erőfeszítésedet végül is siker koronázza. Legnagyobb rémületedre a padlón rengeteg kéz formájú csempe van. Az ajtóhoz vezető úton a padlóból mindenütt szellemkezek nyúlnak feléd, kapkodnak a levegőbe. Kardot rántasz, és a kezekre sújtasz.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Vívd meg a csatádat!",
+                    "opponents": [
+                        {
+                            "name": "Kéz",
+                            "dexterity": 6,
+                            "health": 4
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 185,
+                        "caption": "Győztél"
+                    },
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 185,
+                        "caption": "Elmenekültél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "story": "Sima, ízetlen folyadék, de amint iszod, szinte izzani kezdesz tőle. Fantasztikusan jól érzed magad, s közben mintha egy kicsit becsípnél. Önbizalmad megnő, kimerültséged pedig eltűnik. Az üveg Szentelt Vizet tartalmaz, melyet Kaynlesh-Ma főpap áldott meg. Visszaállította Életerődet, majdnem teljesen. ÉLETERŐ pontjaidat növeld meg annyival, hogy kezdeti ÉLETERŐ pontszámodnál 2-vel legyen kevesebb. (Ha jelenlegi pontszámod ennél magasabb, hagyd úgy, hisz így is elég erős vagy Adj mostani ÜGYESSÉG pontjaidhoz annyit, hogy a kezdetinél csak 1 ponttal legyen kevesebb. Ezért az igazán szerencsés leletért Szerencse pontjaidhoz is hozzáadhatsz 4-et.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 4
+                },
+                {
+                    "property": "health",
+                    "reset": -2
+                },
+                {
+                    "property": "dexterity",
+                    "reset": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Már elolvastad a pergament, vagy az egyáltalán nem érdekel, elhagyod a szobát északi irányban",
+                    "destination": 120
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Még nem láttad, és meg akarod vizsgálni",
+                    "destination": 212
+                }
+            ]
+        },
 
 		{
 			"id": 113,
