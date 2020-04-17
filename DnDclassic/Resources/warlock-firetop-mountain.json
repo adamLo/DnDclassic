@@ -2211,6 +2211,72 @@
 				}
 			]
 		},
+        {
+            "id": 114,
+            "story": "Az út dél felé halad, azután keletnek fordul, végül egy kereszteződésnél véget ér.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 359
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "story": "A két szegény ördög, akiknek a holtteste a lábad előtt hever, szinte megkönnyebbültnek látszik, hogy letehette végre az élet terhét. Amint letekintesz rájuk, úgy érzed, nem te vagy az egyetlen, aki tud a halálukról. Körülnézel a szobában.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megvizsgálod a szerteszét heverő fegyvereket",
+                    "destination": 95
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Odamész az északkeleti sarokban heverő holttesthez",
+                    "destination": 313
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átvizsgálod a hordókat",
+                    "destination": 330
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "story": "Két részeg Orkkal nézel szembe. Belépéseddel nyilvánvalóan felriasztottad őket, s amilyen gyorsan csak tudnak, a fegyverük után kapnak. Egymás után kell rájuk támadnod. Amikor kockavetéssel meghatározod Támadóerődet, részegségük miatt minden Fordulóban hozzáadhatsz 1-1 pontot a dobott számhoz.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Első ork",
+                            "dexterity": 5,
+                            "health": 4,
+                            "playerAttackModifier": 1
+                        },
+                        {
+                            "name": "Második ork",
+                            "dexterity": 5,
+                            "health": 5,
+                            "playerAttackModifier": 1
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 42,
+                        "caption": "Elmenekülsz"
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 378,
+                        "caption": "Győztél"
+                    },
+                    "escapeDamage": 1
+                }
+            ]
+        },
 
 		{
 			"id": 118,

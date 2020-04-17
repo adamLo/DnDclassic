@@ -24,7 +24,8 @@ enum LogEvent {
     use(item: InventoryItem, amount: Int),
     damageModified(original: Int, new: Int, modifierName: String?),
     addInventory(item: InventoryItem),
-    dropInventory(item: InventoryItem)
+    dropInventory(item: InventoryItem),
+    attackModified(value: Int)
 }
 
 struct LogItem: CustomStringConvertible {
@@ -76,6 +77,8 @@ struct LogItem: CustomStringConvertible {
             text = String(format: NSLocalizedString("Added %@ to inventory", comment: "Add inventory item event description format"), item.description)
         case .dropInventory(let item):
             text = String(format: NSLocalizedString("Dropped %@", comment: "Drop inventory item event description format"), item.description)
+        case .attackModified(let value):
+            text = String(format: NSLocalizedString("Attack modified by %d", comment: "Attack modified even description format"), value)
         }
         
         let formatter = DateFormatter()

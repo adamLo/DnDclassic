@@ -47,6 +47,11 @@ class Fight {
         var opponentDamage = 0
         
         player.log(event: .fight(opponent: opponent.name, playerAttack: playerAttack, opponentAttack: opponentAttack))
+        
+        if let _playerAttackModifier = opponent.playerAttackModifier, _playerAttackModifier != 0 {
+            playerAttack += _playerAttackModifier
+            player.log(event: .attackModified(value: _playerAttackModifier))
+        }
                         
         if playerAttack > opponentAttack {
             // Player damages opponent since made higher attack than opponent

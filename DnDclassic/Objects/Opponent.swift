@@ -20,6 +20,7 @@ class Opponent: Character {
     let damageEvent: DamageEvent?
     let playerDamageEvent: DamageEvent?
     let event: FightEvent?
+    let playerAttackModifier: Int?
     
     init(name: String, dexterity: Int, health: Int, luck: Int, order: Int, killBonus: Bonus? = nil, playerRollBonus: Int? = nil) {
         
@@ -33,6 +34,7 @@ class Opponent: Character {
         self.damageEvent = nil
         self.playerDamageEvent = nil
         self.event = nil
+        self.playerAttackModifier = nil
         
         super.init(isPlayer: false, name: name, dexterity: dexterity, health: health, luck: luck)
     }
@@ -100,6 +102,8 @@ class Opponent: Character {
             event = nil
         }
         
+        playerAttackModifier = json[JSONkeys.playerAttackModifier] as? Int
+        
         super.init(json: json)
     }
     
@@ -114,5 +118,6 @@ class Opponent: Character {
         static let damageEvent          = "damageEvent"
         static let playerDamageEvent    = "playerDamageEvent"
         static let event                = "event"
+        static let playerAttackModifier = "playerAttackModifier"
     }
 }
