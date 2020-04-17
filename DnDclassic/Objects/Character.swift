@@ -124,12 +124,12 @@ class Character: Deserializable, Equatable {
         
         changed?()
         
-        log(event: .tryLuck(roll: _rolled, success: result))
+        log(event: .tryLuck(roll: _rolled, success: result))        
         
         return (_rolled, result)
     }
     
-    func eat() {
+    func eat(gainModifier: Int?) {
         
         guard let food = inventory.first(where: { (item) -> Bool in
             return item.item.type == .food
@@ -137,7 +137,8 @@ class Character: Deserializable, Equatable {
         
         guard food.amount > 0 else {return}
         
-        healthCurrent = min(healthCurrent + 4, healthStarting)
+        let gain = max((gainModifier ?? 0) + 4, 0)
+        healthCurrent = min(healthCurrent + gain, healthStarting)
         food.eat()
         
         inventory.removeAll { (item) -> Bool in
@@ -146,7 +147,7 @@ class Character: Deserializable, Equatable {
         
         changed?()
         
-        log(event: .eat)
+        log(event: .eat(healthGained: gain))
     }
     
     func drink(potion: Potion) {

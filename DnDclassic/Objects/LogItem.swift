@@ -13,7 +13,7 @@ enum LogEvent {
     kill(opponent: String),
     bonus(property: CharacterProperty, gain: Int),
     tryLuck(roll: Int, success: Bool),
-    eat,
+    eat(healthGained: Int),
     rest(healthGain: Int?, dexterityGain: Int?),
     fight(opponent: String, playerAttack: Int, opponentAttack: Int),
     drink(type: CharacterProperty),
@@ -52,8 +52,8 @@ struct LogItem: CustomStringConvertible {
             text = String(format: NSLocalizedString("Damaga taken: %d", comment: "Damage event description format"), value)
         case .drink(let type):
             text = String(format: NSLocalizedString("Drank potion of %@", comment: "Drink event description format"), type.description)
-        case .eat:
-            text = String(format: NSLocalizedString("Eat", comment: "Eat event description"))
+        case .eat(let gained):
+            text = String(format: NSLocalizedString("Ate a portion of food, gained %d health", comment: "Eat event description"), gained)
         case .escape(let damage):
             text = String(format: NSLocalizedString("Lost %d health while escaping fight", comment: "Escape event description format"), damage)
         case .fight(let opponent, let playerAttack, let opponentAttack):

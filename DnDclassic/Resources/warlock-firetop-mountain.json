@@ -1804,6 +1804,29 @@
 				}
 			]		
 		},
+        {
+            "id": 91,
+            "story": "Ha szerencsés vagy, nem derül ki, hogy csaltál. Tedd próbára Szerencséd - kedvező esetben elmehetsz a zsákmányoddal.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Dobj két kockával, hogy megtudd, mennyi aranyat nyertél.",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 131,
+                        "caption": "A nyereményed",
+                        "rollGainsMoney": true
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 20,
+                        "caption": "A négy Törpe észreveszi, amint a kártyapakli aljáról osztasz, felkapják a szék mögé támasztott bárdjukat, és rád rontanak."
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 101,
@@ -1842,6 +1865,19 @@
 				"win": false
 			}			
 		},
+        
+        {
+            "id": 131,
+            "story": "Különféle dolgokról beszélgettek, és úgy tűnik, igyekeznek nagyon barátságosak lenni veled. Magányosan élnek a labirintusban a sok gonosz teremtmény között, és örülnek, ha olyan valakivel beszélgethetnek, aki a törvényes külvilágból érkezik. Közlik, hogy Zagor Útvesztőjében vagy, és az egyetlen kiút, ha továbbmész, egyre mélyebbre a Labirintusban. Azt mondják, a legbiztosabb út, amint elhagyod a szobát, ha jobbra fordulsz, azután megint jobbra, balra, azután egyenesen, azután... És itt egy kicsit elbizonytalanodva bevallják, hogy nem teljesen biztosak a dologban. Ha akarod, elfogyaszthatsz itt egy adagnyit Élelmiszerkészletedből, de ebben az esetben meg kell osztanod velük táplálékodat, és így a szokásos ÉLETERŐ pontoknak csak a felét kapod.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Végül elköszönsz tőlük, és távozol.",
+                    "destination": 291
+                }
+            ],
+            "restGainModifier": -2
+        },
 
 		{
 			"id": 135,

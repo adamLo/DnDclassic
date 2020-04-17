@@ -12,6 +12,8 @@ class TryLuckAction: Action {
     
     let goodLuck: WayPoint
     let badLuck: WayPoint
+    /// If true, roll is a win of money
+    let rollGainsMoney: Bool
     
     required init?(json: JSON) {
 
@@ -20,12 +22,14 @@ class TryLuckAction: Action {
         
         goodLuck = _goodLuck
         badLuck = _badLuck
+        rollGainsMoney = _goodLuckJson[JSONkeys.rollGainsMoney] as? Bool ?? false
         
         super.init(json: json)
     }
     
     private struct JSONkeys {
-        static let goodLuck = "goodLuck"
-        static let badLuck  = "badLuck"
+        static let goodLuck         = "goodLuck"
+        static let badLuck          = "badLuck"
+        static let rollGainsMoney   = "rollGainsMoney"
     }
 }

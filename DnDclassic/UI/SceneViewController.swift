@@ -223,9 +223,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         guard GameData.shared.game != nil, scene != nil, let section = Section(rawValue: indexPath.section) else {return}
         
-        if section == .waypoints, let waypoints = waypoints  {
+        if section == .waypoints {
             
-            if indexPath.row < waypoints.count {
+            if let waypoints = waypoints, indexPath.row < waypoints.count {
                 let wayPoint = waypoints[indexPath.row]
                 advance(to: wayPoint)
             }
@@ -311,7 +311,15 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
         let luck = GameData.shared.player.tryLuck()
         
-        let alert = UIAlertController(title: NSLocalizedString("You tried your luck", comment: "Try luck action result title"), message: String(format: NSLocalizedString("You rolled %d, %@", comment: "Try luck action result message format"), luck.rolled, luck.success ? NSLocalizedString("Good luck!", comment: "Good luck result title") : NSLocalizedString("Bad luck :(", comment: "Bad luck result title")), preferredStyle: .alert)
+        var message = String(format: NSLocalizedString("You rolled %d, %@", comment: "Try luck action result message format"), luck.rolled, luck.success ? NSLocalizedString("Good luck!", comment: "Good luck result title") : NSLocalizedString("Bad luck :(", comment: "Bad luck result title"))
+        
+        if action.rollGainsMoney, luck.success {
+            let money = Money(amount: luck.rolled)
+            GameData.shared.player.add(inventoryItem: money)
+            message = String(format: NSLocalizedString("Good luck, you just gained %d gold!", comment: "Good luck dialog message when money is earned"), luck.rolled)
+        }
+                
+        let alert = UIAlertController(title: NSLocalizedString("You tried your luck", comment: "Try luck action result title"), message: message, preferredStyle: .alert)
         
         if luck.success {
             alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in

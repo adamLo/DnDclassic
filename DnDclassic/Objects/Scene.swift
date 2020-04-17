@@ -21,6 +21,7 @@ class Scene: Deserializable {
     let returnWaypoints: [WayPoint]?
     let visitBonus: [Bonus]?
     let playerDied: Bool
+    let restGainModifier: Int?
     
     var changed: (() -> ())?
         
@@ -114,6 +115,9 @@ class Scene: Deserializable {
         
         // Player died
         playerDied = json[JSONKeys.playerDied] as? Bool ?? false
+        
+        // Rest gain modifier
+        restGainModifier = json[JSONKeys.restGainModifier] as? Int
     }
     
     func grabbed(inventory index: Int) {
@@ -132,14 +136,15 @@ class Scene: Deserializable {
     }
     
     private struct JSONKeys {
-        static let id           = "id"
-        static let story        = "story"
-        static let waypoints    = "waypoints"
-        static let actions      = "actions"
-        static let cover        = "cover"
-        static let returnWps    = "return"
-        static let visitBonus   = "visitBonus"
-        static let inventory    = "inventory"
-        static let playerDied   = "playerDied"
+        static let id               = "id"
+        static let story            = "story"
+        static let waypoints        = "waypoints"
+        static let actions          = "actions"
+        static let cover            = "cover"
+        static let returnWps        = "return"
+        static let visitBonus       = "visitBonus"
+        static let inventory        = "inventory"
+        static let playerDied       = "playerDied"
+        static let restGainModifier = "restGainModifier"
     }
 }

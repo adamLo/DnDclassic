@@ -145,11 +145,11 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     
     private func showOptions(food: Food) {
         
-        guard GameData.shared.player != nil else {return}
+        guard GameData.shared.player != nil, GameData.shared.game != nil, let currentScene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) else {return}
 
         let alert = UIAlertController(title: NSLocalizedString("Eat", comment: "Eat alert sheet title"), message: NSLocalizedString("Would you like to eat?\nIt increases your health by 4 points and takes one portion of your food rations", comment: "Eat alert sheet message"), preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Eat", comment: "Eat option title"), style: .default, handler: { (_) in
-            GameData.shared.player.eat()
+            GameData.shared.player.eat(gainModifier: currentScene.restGainModifier)
             self.characterTableView.reloadData()
         }))
         alert.addAction(UIAlertAction.cancelAction())
