@@ -2547,6 +2547,22 @@
                 }
             ]
         },
+        {
+            "id": 126,
+            "story": "„Farrigo Di Maggio” neve jelent valamit a számodra?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Ha nem, meg kell küzdened a Sárkánnyal",
+                    "destination": 152
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Ha igen, lapozz",
+                    "destination": 26
+                }
+            ]
+        },
         
         {
             "id": 131,
