@@ -1468,7 +1468,7 @@
         },
         {
             "id": 73,
-            "story": "Az üt előtted északi irányba halad. A sziklás talaj kezd homokossá válni, míg végül vastag homokrétegen lépdelsz. Észreveszed, hogy az út egyre szélesedik, és előtted egy folyó zúgását hallod. Addig gyalogolsz, míg egy hatalmas barlangban találod magad, amin egy folyó hömpölyög keresztül.",
+            "story": "Az út előtted északi irányba halad. A sziklás talaj kezd homokossá válni, míg végül vastag homokrétegen lépdelsz. Észreveszed, hogy az út egyre szélesedik, és előtted egy folyó zúgását hallod. Addig gyalogolsz, míg egy hatalmas barlangban találod magad, amin egy folyó hömpölyög keresztül.",
             "waypoints": [
                 {
                     "direction": "unknown",
@@ -2447,6 +2447,103 @@
                     "direction": "unknown",
                     "caption": "Lapozz",
                     "destination": 164
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "story": "Az ajtó egy széles folyosóra nyílik, amelyet követve nemsokára egy elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Észanak mész",
+                    "destination": 138
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek mész",
+                    "destination": 76
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "story": "Felemeled a kötelet. Egyszerű, közönséges kötélnek látszik. Úgy tűnik, még hasznát veheted. Kinyitod a hátizsákodat, hogy betedd, amikor hirtelen életre kel a kezedben. Felfelé kígyózik a karodon, megpróbál rátekeredni a nyakadra. Igyekszel elvágni a kardoddal, mielőtt rászorulna a gégédre.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 73,
+                        "caption": "El tudod vágni a kötelet, amely a földre hullik"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1251,
+                        "caption": "A hurok megszorul a nyakadon"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1251,
+            "story": "Balszerencsés vagy, a hurok megszorul a nyakadon, 1 ÉLETERŐ pontot elveszítesz.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Próbáld meg ismét elvágni a kötelet!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 73,
+                        "caption": "El tudod vágni a kötelet, amely a földre hullik"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1252,
+                        "caption": "A hurok megszorul a nyakadon"
+                    }
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ]
+        },
+        {
+            "id": 1252,
+            "story": "Kudarcot vallasz, elveszítesz 1 ÉLETERŐ és 1 SZERENCSE pontot.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Próbáld meg ismét elvágni a kötelet!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 73,
+                        "caption": "El tudod vágni a kötelet, amely a földre hullik"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1252,
+                        "caption": "A hurok megszorul a nyakadon"
+                    }
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                },
+                {
+                    "property": "luck",
+                    "gain": -1
                 }
             ]
         },
