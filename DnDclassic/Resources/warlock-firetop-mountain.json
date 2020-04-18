@@ -2301,6 +2301,155 @@
 				"win": false
 			}			
 		},
+        {
+            "id": 119,
+            "story": "Kinyitod a hálózsákodat, és átkutatod, hátha találsz valamit, amit átdobhatsz a barlang túlsó oldalára. Nézd végig a Felszerelési Tárgyaidat, válassz ki valamit közülük, amit átdobsz, és húzd ki a listáról. Ha más nincs, egy aranypénzt kell áthajítanod. Átdobod a kiválasztott tárgyat, ami nagyot csattanva földet ér. Az Ogre a zaj felé pillant, majd odamegy és körülnéz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Közben ki tudsz mászni, le a folyosóra, vissza az elágazáshoz.",
+                    "destination": 269
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "story": "Elhagyod a termet, lesétálsz egy rövid szakaszon, odaérsz egy felfelé kanyarodó lépcsőhöz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megmászod a lépcsőket, és egy átjáróhoz érkezel.",
+                    "destination": 197
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "story": "A folyosó néhány méteren keresztül keletnek tart, azután délnek kanyarodik, majd újra keletnek, és hirtelen véget ér.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átvizsgálod a zsákutcát, ahova kerültél.",
+                    "destination": 103
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszamész az elágazáshoz.",
+                    "destination": 359
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "story": "Fájdalomtól lüktető fejjel térsz magadhoz, és körülnézel. A szoba körülbelül nyolc négyzetméteres, déli és északi oldalán egy-egy ajtó van. A szoba délnyugati sarkában heversz. A szoba közepén négy férfi áll mozdulatlanul. Legalábbis férfiaknak tűnnek. Bőrük zöldesszürke. Ruhájuk cafatokra tépve lóg, és mindnyájan kifejezéstelen arccal a mennyezetet bámulják. Az első egy dorongot, a második egy kaszát, a harmadik egy bárdot, a negyedik egy csákányt tart a kezében. Egyáltalán nem vesznek tudomást rólad. A szobában körös-körül különféle mezei munkához használatos szerszám (vasvillák, cséphadarók, kihegyezett karók stb.), egy-két pajzs és néhány hordó található. Az északkeleti sarokban egy emberi test hever, egyik kezében kard, a másikban pajzs. Megtapogatod a fejedet, sebeket keresve, de rájössz, egyetlen sebből sem vérzel. De amint a kezedet megmozdítod, a szoba közepén álldogáló különös teremtmények feléd fordítják a tekintetüket. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz beszélni velük.",
+                    "destination": 268
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Talpra ugrasz, és kardoddal rájuk támadsz.",
+                    "destination": 282
+                },
+                {
+                    "direction": "south",
+                    "caption": "Kúszva menekülsz a déli ajtón keresztül.",
+                    "destination": 13
+                }
+            ],
+            "cover": "scene_122.png"
+        },
+        {
+            "id": 123,
+            "story": "Elhiszik-e neked, hogy valóban csónakot akarsz vásárolni?",
+            "actions": [
+                {
+                "type": "roll",
+                "caption": "A Csontvázak meglehetősen együgyűek, úgyhogy dobj egy kockával.",
+                "dice": 1,
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Hisznek neked",
+                            "destination": 1231,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Hisznek neked",
+                            "destination": 1231,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Hisznek neked",
+                            "destination": 1231,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Nem bizonyosak a dologban",
+                            "destination": 1232,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Nem bizonyosak a dologban",
+                            "destination": 1232,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Egyáltalán nem hisznek neked, és egyre közelednek feléd.",
+                            "destination": 140,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
+        {
+            "id": 1231,
+            "story": "Hisznek neked, és mindannyian kirohannak az északi ajtón keresztül, egyedül hagyva téged a Csónakházban. Adj 2-t a Szerencse pontjaidhoz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 184
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ]
+        },
+        {
+            "id": 1232,
+            "story": "Nem bizonyosak a dologban. Maguk közül kettőt elküldenek (az északi ajtón át távoznak), de a másik három kezdetleges fegyverével a kezében éberen figyel.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 164
+                }
+            ]
+        },
         
         {
             "id": 131,
@@ -2338,6 +2487,50 @@
 				}
 			]
 		},
+        
+        {
+            "id": 140,
+            "story": "A Csontvázak közelednek, és te visszahátrálsz az ajtóhoz. A Vezér halad elöl, mögötte ketten, utánuk megint ketten jönnek. Úgy döntesz, megküzdesz velük. Először a Vezérrel kell összecsapnod. Ha győztél, megmérkőzhetsz a párokkal is. Ezek tagjai külön-külön támadnak rád, és neked kell eldöntened, melyikkel mérkőzöl meg előbb. A kiválasztott Csontvázzal a szokott módon csapsz össze. A másodikkal szemben dobókockával a szokásos módon meghatározod a Támadóerődet. Ha a tied a nagyobb, még akkor sem tudod megsebesíteni, egyszerűen vedd úgy, hogy kivédted a csapását. Ha az ő Támadóereje a nagyobb, akkor természetesen megsebzett téged.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg velük!",
+                    "order": "single",
+                    "opponents": [
+                        {
+                            "name": "A Csontvázak Vezére",
+                            "dexterity": 7,
+                            "health": 5
+                        },
+                        {
+                            "name": "Első Páros / Csontváz A",
+                            "dexterity": 6,
+                            "health": 5
+                        },
+                        {
+                            "name": "Első Páros / Csontváz B",
+                            "dexterity": 6,
+                            "health": 6
+                        },
+                        {
+                            "name": "Második Páros / Csontváz A",
+                            "dexterity": 5,
+                            "health": 6
+                        },
+                        {
+                            "name": "Második Páros / Csontváz B",
+                            "dexterity": 5,
+                            "health": 5
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 395,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
 
 		{
 			"id": 144,
