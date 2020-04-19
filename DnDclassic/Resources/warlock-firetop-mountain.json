@@ -2563,6 +2563,22 @@
                 }
             ]
         },
+        {
+            "id": 127,
+            "story": "Nem veszi félvállról fenyegetéseidet. Amint alkudoztok, egyre mérgesebb lesz, észreveszed, hogy kezd átalakulni. Szemed előtt egyenesedik fel, és egész testi mivoltában nőni kezd. Az arcán és a karján nőni kezd a szőr. Fogai élessé és hegyessé válnak. Gyorsan kell döntened.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Felkínálsz neki öt aranyat, hogy lecsillapítsd",
+                    "destination": 272
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Felkészülsz a támadásra",
+                    "destination": 188
+                }
+            ]
+        },
         
         {
             "id": 131,
@@ -3038,6 +3054,19 @@
                     "destination": 7
                 }
             ]
+        },
+        
+        {
+            "id": 272,
+            "story": "Lehiggad, elveszi tőled az aranyat (vond le a Kalandlapról), és átevez veled az északi partra. Miután kikötötte a csónakot, elballag egy lefelé vezető ösvényen.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 7
+                }
+            ],
+            "payOnVisit": 5
         },
         
         {

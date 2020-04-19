@@ -22,6 +22,7 @@ class Scene: Deserializable {
     let visitBonus: [Bonus]?
     let playerDied: Bool
     let restGainModifier: Int?
+    private(set) var payOnVisit: Int?
     
     var changed: (() -> ())?
         
@@ -118,6 +119,9 @@ class Scene: Deserializable {
         
         // Rest gain modifier
         restGainModifier = json[JSONKeys.restGainModifier] as? Int
+        
+        // Pay
+        payOnVisit = json[JSONKeys.payOnVisit] as? Int
     }
     
     func grabbed(inventory index: Int) {
@@ -135,6 +139,14 @@ class Scene: Deserializable {
         changed?()
     }
     
+    func payed(amount: Int) {
+        
+        if var _amount = payOnVisit {
+            _amount = max(_amount - amount, 0)
+            payOnVisit = _amount
+        }
+    }
+    
     private struct JSONKeys {
         static let id               = "id"
         static let story            = "story"
@@ -146,5 +158,6 @@ class Scene: Deserializable {
         static let inventory        = "inventory"
         static let playerDied       = "playerDied"
         static let restGainModifier = "restGainModifier"
+        static let payOnVisit       = "payOnVisit"
     }
 }

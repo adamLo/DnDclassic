@@ -117,11 +117,13 @@ class IntroViewController: UIViewController {
                     _self.game = __game
                     GameData.shared.game = __game
                     
-                    /// FIXME: Remove in production!
+                    // FIXME: Remove in production!
                     var inventory = Character.startInventory
                     inventory.append(InventoryWrapper(item: Potion(type: .luck)))
+                    inventory.append(InventoryWrapper(item: Money(amount: 50)))
                     let player = Character(isPlayer: true, name: "Adam Test", dexterity: Character.generate(property: .dexterity), health: Character.generate(property: .health), luck: Character.generate(property: .luck), inventory: inventory )
                     GameData.shared.player = player
+                    player.changed?()
                     
                     _self.displayGame()
                 }

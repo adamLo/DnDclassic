@@ -224,6 +224,10 @@ class Character: Deserializable, Equatable {
                 apply(bonus: bonus)
             }
         }
+        
+        if let toPay = scene.payOnVisit, toPay > 0 {
+            scene.payed(amount: pay(amount: toPay))
+        }
     }
     
     var isDead: Bool {
@@ -340,7 +344,7 @@ class Character: Deserializable, Equatable {
         changed?()
         log(event: .dropInventory(item: inventoryItem.item))
     }
-    
+        
     func equip(item: InventoryWrapper, equipped: Bool) {
         
         guard item.item.type.equippable else {return}
@@ -357,6 +361,32 @@ class Character: Deserializable, Equatable {
         }
         
         changed?()
+    }
+    
+    func pay(amount: Int) -> Int {
+        
+        var payed = 0
+        for _item in inventory {
+            if _item.item.type == .money, _item.item.amount > 0 {
+                let _toPay = amount - payed
+                if _toPay <= 0 {
+                    break
+                }
+                let _payed = min(_toPay, _item.item.amount)
+                _item.item.use(amount: _payed)
+                payed += _payed
+                if payed >= amount {
+                    break
+                }
+            }
+        }
+        
+        inventory.removeAll { (_item) -> Bool in
+            return _item.item.amount <= 0
+        }
+        
+        changed?()
+        return payed
     }
         
     func isFulfilled(condition: Condition) -> Bool {
