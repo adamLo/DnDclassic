@@ -17,6 +17,9 @@ class Weapon: InventoryItem, Deserializable {
     let modifiedProperty: CharacterProperty?
     let modifierValue: Int?
     let consumeWhenUsed: Bool?
+    let canUnEquip: Bool?
+    let attackBonus: Int?
+    let autoEquip: Bool?
         
     var description: String {
         return name?.nilIfEmpty ?? identifier ?? NSLocalizedString("Weapon", comment: "Weapon title")
@@ -42,6 +45,9 @@ class Weapon: InventoryItem, Deserializable {
         amount = json[InventoryObject.JSONKeys.amount] as? Int ?? 1
         
         consumeWhenUsed = json[InventoryObject.JSONKeys.consumeWhenUsed] as? Bool
+        canUnEquip = json[InventoryObject.JSONKeys.canUnEquip] as? Bool ?? true
+        attackBonus = json[InventoryObject.JSONKeys.attackBonus] as? Int
+        autoEquip = json[InventoryObject.JSONKeys.autoEquip] as? Bool
     }
     
     func use(amount: Int) {

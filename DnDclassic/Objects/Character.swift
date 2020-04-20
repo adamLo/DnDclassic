@@ -228,6 +228,26 @@ class Character: Deserializable, Equatable {
         if let toPay = scene.payOnVisit, toPay > 0 {
             scene.payed(amount: pay(amount: toPay))
         }
+        
+        if let _inventory = scene.inventory {
+            
+            var indexesToRemove = [Int]()
+            
+            for index in 0..<_inventory.count {
+                let item = _inventory[index]
+                if item.autoEquip ?? false {
+                    if let wrapper = add(inventoryItem: item) {
+                        equip(item: wrapper, equipped: true)
+                    }
+                    indexesToRemove.append(index)
+                    changed?()
+                }
+            }
+            
+            for index in indexesToRemove {
+                scene.grabbed(inventory: index)
+            }
+        }
     }
     
     var isDead: Bool {
@@ -317,7 +337,7 @@ class Character: Deserializable, Equatable {
         return item != nil
     }
     
-    func add(inventoryItem: InventoryItem) {
+    func add(inventoryItem: InventoryItem) -> InventoryWrapper? {
         
         log(event: .addInventory(item: inventoryItem))
         
@@ -327,19 +347,21 @@ class Character: Deserializable, Equatable {
                     if let money = item.item as? Money {
                         money.add(amount: inventoryItem.amount)
                         changed?()
-                        return
+                        return nil
                     }
                     else if let food = item.item as? Food {
                         food.add(amount: inventoryItem.amount)
                         changed?()
-                        return
+                        return nil
                     }
                 }
             }
         }
         
-        inventory.append(InventoryWrapper(item: inventoryItem))
+        let wrapper = InventoryWrapper(item: inventoryItem)
+        inventory.append(wrapper)
         changed?()
+        return wrapper
     }
     
     func drop(inventoryItem: InventoryWrapper) {
@@ -351,10 +373,27 @@ class Character: Deserializable, Equatable {
         changed?()
         log(event: .dropInventory(item: inventoryItem.item))
     }
+    
+    func canEquip(item: InventoryItem) -> Bool {
         
-    func equip(item: InventoryWrapper, equipped: Bool) {
+        guard item.type.equippable else {return false}
         
-        guard item.item.type.equippable else {return}
+        for _item in inventory {
+            if _item.equipped, !_item.item.type.canEquipWithOther(type: item.type) {
+                if !(_item.item.canUnEquip ?? true) {
+                    return false
+                }
+            }
+        }
+        
+        return true
+    }
+
+    @discardableResult
+    func equip(item: InventoryWrapper, equipped: Bool) -> Bool {
+        
+        guard item.item.type.equippable else {return false}
+        guard canEquip(item: item.item) else {return false}
         
         item.equipped = equipped
         
@@ -368,6 +407,8 @@ class Character: Deserializable, Equatable {
         }
         
         changed?()
+        
+        return true
     }
     
     @discardableResult

@@ -25,6 +25,10 @@ class InventoryObject: InventoryItem, Deserializable {
     private(set) var amount: Int = 1
     
     let consumeWhenUsed: Bool?
+    
+    let canUnEquip: Bool?
+    let attackBonus: Int?
+    let autoEquip: Bool?
         
     init(type: InventoryItemType, name: String,
          modifiedProperty: CharacterProperty? = nil, modifierValue: Int? = 0,         
@@ -40,6 +44,10 @@ class InventoryObject: InventoryItem, Deserializable {
         self.identifier = identifier
         
         self.consumeWhenUsed = consumeWhenUsed
+        
+        canUnEquip = true
+        attackBonus = nil
+        autoEquip = nil
     }
     
     func use(amount: Int) {
@@ -72,9 +80,13 @@ class InventoryObject: InventoryItem, Deserializable {
         
         identifier = json[JSONKeys.id] as? String
         
-        amount = json[InventoryObject.JSONKeys.amount] as? Int ?? 1
+        amount = json[JSONKeys.amount] as? Int ?? 1
         
-        consumeWhenUsed = json[InventoryObject.JSONKeys.consumeWhenUsed] as? Bool
+        consumeWhenUsed = json[JSONKeys.consumeWhenUsed] as? Bool
+        
+        canUnEquip = json[JSONKeys.canUnEquip] as? Bool ?? true
+        attackBonus = json[JSONKeys.attackBonus] as? Int
+        autoEquip = json[JSONKeys.autoEquip] as? Bool
     }
     
     // MARK: - JSON
@@ -87,6 +99,9 @@ class InventoryObject: InventoryItem, Deserializable {
         static let id               = "id"
         static let name             = "name"
         static let consumeWhenUsed  = "consumeWhenUsed"
+        static let autoEquip        = "autoEquip"
+        static let canUnEquip       = "canUnEquip"
+        static let attackBonus      = "attackBonus"
     }
 }
 
@@ -100,6 +115,7 @@ class InventoryItemFactory {
         case .money: return Money(json: json)
         case .weapon: return Weapon(json: json)
         case .shield: return Shield(json: json)
+        case .helmet: return Helmet(json: json)
         default: return InventoryObject(json: json)
         }
     }

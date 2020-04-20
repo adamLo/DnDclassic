@@ -56,6 +56,8 @@
 		19825BE1244B7A4C00488525 /* scene_122.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BE0244B7A4B00488525 /* scene_122.png */; };
 		19825BE3244C61A700488525 /* GambleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BE2244C61A700488525 /* GambleAction.swift */; };
 		19825BE5244C650700488525 /* Gamble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BE4244C650700488525 /* Gamble.swift */; };
+		19825BE7244DAC1300488525 /* scene_134.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BE6244DAC1200488525 /* scene_134.png */; };
+		19825BE9244DAFA500488525 /* Helmet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BE8244DAFA500488525 /* Helmet.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -163,6 +165,8 @@
 		19825BE0244B7A4B00488525 /* scene_122.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_122.png; sourceTree = "<group>"; };
 		19825BE2244C61A700488525 /* GambleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GambleAction.swift; sourceTree = "<group>"; };
 		19825BE4244C650700488525 /* Gamble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamble.swift; sourceTree = "<group>"; };
+		19825BE6244DAC1200488525 /* scene_134.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_134.png; sourceTree = "<group>"; };
+		19825BE8244DAFA500488525 /* Helmet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helmet.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825BE6244DAC1200488525 /* scene_134.png */,
 				19825BE0244B7A4B00488525 /* scene_122.png */,
 				19825BDE244A132600488525 /* scene_106.png */,
 				19825BDC244A0E4A00488525 /* scene_097.png */,
@@ -398,6 +403,7 @@
 				19A8559F240ACC0B007174C8 /* Money.swift */,
 				19C9151D243B9183002E0102 /* Weapon.swift */,
 				19825BD4244616DD00488525 /* Shield.swift */,
+				19825BE8244DAFA500488525 /* Helmet.swift */,
 			);
 			name = Inventory;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				19FCFA9B24157A1900199175 /* scene_009.png in Resources */,
 				1930158D24031CD800E7B815 /* scene_001.png in Resources */,
 				19825BE1244B7A4C00488525 /* scene_122.png in Resources */,
+				19825BE7244DAC1300488525 /* scene_134.png in Resources */,
 				19825BD9244862AA00488525 /* scene_058.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +688,7 @@
 				19825BD5244616DD00488525 /* Shield.swift in Sources */,
 				19825BE3244C61A700488525 /* GambleAction.swift in Sources */,
 				19FC5404242FC77300988644 /* LogItem.swift in Sources */,
+				19825BE9244DAFA500488525 /* Helmet.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
 				19FCFA9E24157BA000199175 /* SceneActionCell.swift in Sources */,
 				19825BD724476D4100488525 /* PropertyRoll.swift in Sources */,

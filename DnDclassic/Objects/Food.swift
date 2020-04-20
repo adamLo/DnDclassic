@@ -15,6 +15,9 @@ class Food: InventoryItem {
     let modifiedProperty: CharacterProperty? = nil
     let modifierValue: Int? = nil
     let name: String? = nil
+    let canUnEquip: Bool? = true
+    let attackBonus: Int? = nil
+    let autoEquip: Bool? = false
         
     private(set) var amount: Int
     

@@ -187,9 +187,17 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         guard GameData.shared.player != nil else {return}
         
+        if inventoryItem.equipped, !(inventoryItem.item.canUnEquip ?? true) {
+            
+            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not remove this item", comment: "Alert message when cannot unequip inventory item"))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let alert = UIAlertController(title: nil, message: String(format: NSLocalizedString("What would you like to do with %@?", comment: "Inventory item manipulation dialog message format"), inventoryItem.item.description), preferredStyle: .alert)
         
         if inventoryItem.item.type.equippable {
+            
             if inventoryItem.equipped {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Back to inventory", comment: "Un-equip option title"), style: .default, handler: { (_) in
                     GameData.shared.player.equip(item: inventoryItem, equipped: false)
@@ -198,13 +206,21 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             else {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Equip", comment: "Equip option title"), style: .default, handler: { (_) in
-                    GameData.shared.player.equip(item: inventoryItem, equipped: true)
-                    self.characterTableView.reloadData()
+                    if GameData.shared.player.equip(item: inventoryItem, equipped: true) {
+                        self.characterTableView.reloadData()
+                    }
+                    else {
+                        let errorAlert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not equip this item", comment: "Error message when failed to equip inventory item"))
+                        alert.dismiss(animated: true) {
+                            self.present(errorAlert, animated: true, completion: nil)
+                        }
+                    }
                 }))
             }
         }
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Drop item", comment: "Drop inventory item option title"), style: .destructive, handler: { (_) in
+            
             GameData.shared.player.drop(inventoryItem: inventoryItem)
             if GameData.shared.game != nil, let scene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) {
                 scene.dropped(inventoryItem: inventoryItem.item)

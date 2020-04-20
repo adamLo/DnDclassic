@@ -19,6 +19,9 @@ class Potion: InventoryItem {
     let modifiedProperty: CharacterProperty?
     let modifierValue: Int? = 0
     let name: String? = nil
+    let canUnEquip: Bool? = true
+    let attackBonus: Int? = nil
+    let autoEquip: Bool? = false
         
     var description: String {
         return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiedProperty?.rawValue ?? "N/A", amount)

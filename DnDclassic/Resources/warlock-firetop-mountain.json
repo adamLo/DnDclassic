@@ -2648,7 +2648,57 @@
             ],
             "restGainModifier": -2
         },
-
+        {
+            "id": 132,
+            "story": "Egyszerű, fából készített pajzs. Ha akarod, megtarthatod, ha nem, dobd el.",
+            "inventory": [
+                {
+                    "type": "shield",
+                    "name": "Egyszerű, fából készített pajzs",
+                    "amount": 1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 319
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "story": "Egy észak-dél irányú folyosón vagy, amely zsákutcában végződik. Épp a sziklafalat tanulmányozod, hogy van-e rajta valami érdekes, amikor egy meglazult szikladarab felülről a fejedre zuhan. Bár az ütés nem volt különösebben erős, érzed, hogy szédülsz. Igyekszel az öntudatodnál maradni, de képtelen vagy rá. A földre zuhansz. Amikor kinyitod a szemedet, egy elágazásnál találod magad.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 52
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "story": "A szoba lakatlan, és úgy tűnik, nincs másik kijárata. A padló közepén egy asztal áll, rajta két sisak hever. Az egyik bronzból van, a másik vasból. Mindkettő körülbelül a te méreted. Felpróbálod, vagy inkább nem vállalod a kockázatot?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Felpróbálod a bronzsisakot",
+                    "destination": 202
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Felpróbálod a vassisakot",
+                    "destination": 325
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 87
+                }
+            ],
+            "cover": "scene_134.png"
+        },
 		{
 			"id": 135,
 			"story": "A Wight (rossz szellem) a szoba sarkában roskad össze. Odamész az asztalhoz, és kinyitod a ládikát. Tizennyolc aranypénz van benne. Magaddal viheted, ha akarod, de vezesd rá a Kalandlapra. Adj 2-t Szerencse pontjaidhoz, mivel legyőzted ezt a teremtményt is. Pihenj egy kicsit, és egyél valamit. Ha készen vagy, az északi ajtón keresztül elhagyhatod a szobát.",
@@ -2981,6 +3031,22 @@
                 }
 			]
 		},
+        
+        {
+            "id": 202,
+            "story": "Felpróbálod a sisakot. Pont jó a fejedre. Hirtelen égető fájdalom sugárzik át homlokodon. Nem tudsz világosan gondolkozni. Ez egy elátkozott sisak, és akárhogy szeretnéd, nem bírod levenni. 1 ÜGYESSÉG pontot veszítesz. A fájdalom hamarosan alábbhagy, de a sisaktól nem tudsz megszabadulni. Visszatámolyogsz az elágazásig, miközben kétségbeesetten próbálod összeszedni magad.",
+            "inventory": [
+                {
+                    "type": "helmet",
+                    "name": "Elátkozott sisak",
+                    "id": "helmet_202",
+                    "autoEquip": true,
+                    "modifiedProperty": "dexterity",
+                    "modifierValue": -1,
+                    "canUnEquip": false
+                }
+            ]
+        },
         
         {
             "id": 211,
@@ -3335,6 +3401,27 @@
 				}
 			]
 		},
+        
+        {
+            "id": 325,
+            "story": "Fejedre helyezed a sisakot. Éppen jó rá. Valami elkezd izzani benned, és ez az izzás elárasztja egész testedet. Úgy érzed, olyan erős és mindenekelőtt olyan magabiztos vagy, mint még soha. A sisak varázserővel van megáldva, s ezentúl, amikor kockavetéssel meghatározod Támadóerődet, 1 ponttal mindig többet számolj, egészen addig, amíg a sisak a fejeden van.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Lapozz",
+                    "destination": 87
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "helmet",
+                    "name": "Varázserejű sisak",
+                    "id": "helmet_325",
+                    "attackBonus": 1,
+                    "autoEquip": true
+                }
+            ]
+        },
         
         {
             "id": 327,
