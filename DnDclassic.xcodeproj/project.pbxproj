@@ -58,6 +58,8 @@
 		19825BE5244C650700488525 /* Gamble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BE4244C650700488525 /* Gamble.swift */; };
 		19825BE7244DAC1300488525 /* scene_134.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BE6244DAC1200488525 /* scene_134.png */; };
 		19825BE9244DAFA500488525 /* Helmet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BE8244DAFA500488525 /* Helmet.swift */; };
+		19825BEB244DD4CB00488525 /* QueryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BEA244DD4CB00488525 /* QueryAction.swift */; };
+		19825BED244DDA1700488525 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BEC244DDA1700488525 /* Query.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -167,6 +169,8 @@
 		19825BE4244C650700488525 /* Gamble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamble.swift; sourceTree = "<group>"; };
 		19825BE6244DAC1200488525 /* scene_134.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_134.png; sourceTree = "<group>"; };
 		19825BE8244DAFA500488525 /* Helmet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helmet.swift; sourceTree = "<group>"; };
+		19825BEA244DD4CB00488525 /* QueryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryAction.swift; sourceTree = "<group>"; };
+		19825BEC244DDA1700488525 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				19301587240316D700E7B815 /* Game.swift */,
 				19E193D0242BBBA100334B0F /* Actions */,
 				19825BE4244C650700488525 /* Gamble.swift */,
+				19825BEC244DDA1700488525 /* Query.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -421,7 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				1930158E24031E4400E7B815 /* Action.swift */,
-				19FCFA9F24157CF100199175 /* TryLuckAction.swift */,
 				19E193B8242627CC00334B0F /* FightAction.swift */,
 				19E193C82427E71F00334B0F /* RestAction.swift */,
 				19E193CE242BBB9000334B0F /* RollAction.swift */,
@@ -430,7 +434,9 @@
 				19825BC82441EDE000488525 /* ForceAction.swift */,
 				19825BD02444C85000488525 /* PropertyRollAction.swift */,
 				19825BD624476D4100488525 /* PropertyRoll.swift */,
+				19FCFA9F24157CF100199175 /* TryLuckAction.swift */,
 				19825BE2244C61A700488525 /* GambleAction.swift */,
+				19825BEA244DD4CB00488525 /* QueryAction.swift */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				19497D692405876A0072CFD0 /* Deserializable.swift in Sources */,
 				19A855A0240ACC0B007174C8 /* Money.swift in Sources */,
 				19825BC72441DEEE00488525 /* DamageRoll.swift in Sources */,
+				19825BEB244DD4CB00488525 /* QueryAction.swift in Sources */,
 				19301588240316D700E7B815 /* Game.swift in Sources */,
 				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
@@ -650,6 +657,7 @@
 				19E193C52427A1E900334B0F /* Alerts.swift in Sources */,
 				19E193C92427E71F00334B0F /* RestAction.swift in Sources */,
 				19E193C32427990400334B0F /* Opponent.swift in Sources */,
+				19825BED244DDA1700488525 /* Query.swift in Sources */,
 				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,

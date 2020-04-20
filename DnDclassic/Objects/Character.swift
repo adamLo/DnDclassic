@@ -337,6 +337,7 @@ class Character: Deserializable, Equatable {
         return item != nil
     }
     
+    @discardableResult
     func add(inventoryItem: InventoryItem) -> InventoryWrapper? {
         
         log(event: .addInventory(item: inventoryItem))

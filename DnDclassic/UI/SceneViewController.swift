@@ -308,6 +308,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .gamble, let _action = action as? GambleAction {
             gamble(_action)
         }
+        else if action.type == .query, let _action = action as? QueryAction {
+            query(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -479,6 +482,45 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true) {
             GameData.shared.completed(scene: self.scene)
         }
+    }
+    
+    private func query(_ action: QueryAction) {
+        
+        guard GameData.shared.player != nil else {return}
+        
+        let query = Query(action: action)
+        queryAnswer(for: query)
+    }
+    
+    private func queryAnswer(for query: Query) {
+        
+        guard GameData.shared.player != nil else {return}
+        
+        let alert = UIAlertController(title: query.action.caption, message: nil, preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = NSLocalizedString("Enter your answer", comment: "Placeholder for query action textfield title")
+        }
+        alert.addAction(UIAlertAction.OKAction(title: nil, selected: {
+            if let answer = alert.textFields?.first?.text?.nilIfEmpty {
+                if query.check(answer: answer), let sceneId = Int(answer), let _ = GameData.shared.game.scene(id: sceneId) {
+                    GameData.shared.player.log(event: .answered(question: query.action.caption, answer: answer, correct: true))
+                    self.advance(to: sceneId)
+                }
+                else {
+                    GameData.shared.player.log(event: .answered(question: query.action.caption, answer: answer, correct: false))
+                    self.queryAnswer(for: query)
+                }
+            }
+            else {
+                GameData.shared.player.log(event: .answered(question: query.action.caption, answer: "\"\"", correct: false))
+                self.queryAnswer(for: query)
+            }
+        }))
+        alert.addAction(UIAlertAction.cancelAction(title: nil, selected: {
+            self.advance(to: query.action.cancel)
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     private func restartGame() {

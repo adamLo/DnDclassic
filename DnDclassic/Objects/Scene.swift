@@ -23,6 +23,7 @@ class Scene: Deserializable {
     let playerDied: Bool
     let restGainModifier: Int?
     private(set) var payOnVisit: Int?
+    let gameFinished: Bool?
     
     var changed: (() -> ())?
         
@@ -42,7 +43,7 @@ class Scene: Deserializable {
             image = nil
         }
         
-        if _id == 130 {
+        if _id == 198 {
             print("Gotcha!")
         }
         
@@ -122,6 +123,8 @@ class Scene: Deserializable {
         
         // Pay
         payOnVisit = json[JSONKeys.payOnVisit] as? Int
+        
+        gameFinished = json[JSONKeys.gameFinished] as? Bool
     }
     
     func grabbed(inventory index: Int) {
@@ -159,5 +162,6 @@ class Scene: Deserializable {
         static let playerDied       = "playerDied"
         static let restGainModifier = "restGainModifier"
         static let payOnVisit       = "payOnVisit"
+        static let gameFinished     = "gameFinished"
     }
 }

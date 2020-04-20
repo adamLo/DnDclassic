@@ -32,4 +32,13 @@ extension UIAlertAction {
         
         return action
     }
+    
+    class func OKAction(title: String? = nil, selected: (() -> ())? = nil) -> UIAlertAction {
+        
+        let action = UIAlertAction(title: title ?? NSLocalizedString("OK", comment: "OK button title"), style: .default) { (_) in
+            selected?()
+        }
+        
+        return action
+    }
 }

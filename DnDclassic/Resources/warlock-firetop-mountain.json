@@ -2722,6 +2722,65 @@
 				}
 			]
 		},
+        {
+            "id": 136,
+            "story": "Odaérsz az ajtóhoz, megbirkózol a zárral, és kitárod az ajtót. Felkiáltasz, becsapod magad mögött, és nagyokat lélegezve visszafordulsz az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Lapozz",
+                    "destination": 229
+                }
+            ]
+        },
+        {
+            "id": 137,
+            "story": "Nem találsz egyetlen titkos átjárót sem, de amint megnyomod a falat, egy kattanást hallasz. Szédelegni kezdesz, és a földre zuhansz. Amikor magadhoz térsz, ismeretlen helyen találod magad.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 354
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "story": "A folyosó szélesedni kezd, és észreveszed, hogy egy hatalmas barlang felé közeledsz. Hangok szűrődnek feléd, úgyhogy óvatosan haladsz tovább. Amint közeledsz, egyszer csak egy óriási alakot pillantasz meg a távolban. Elfog a félelem, amint ráébredsz, hogy ez a túlméretezett emberszerűség legalább három méter magas! Bőrből készült tunikát visel, és pillanatnyilag teljesen lefoglalja az asztalon lévő vacsorája. A barlang legalább 100 méter átmérőjű, nyilván ez az Óriás otthona. Az egyik falnál hatalmas asztal éli, mellette két szék, az egyiken ül a monstrum. Szemmel láthatólag annyira leköti az étkezés (egy hatalmas malac), hogy aligha vesz észre. A barlang másik végében megpillantod a szalmazsákját, meg egy nagy, szőrös állatbőrt (nyilván a takarója) és egy hatalmas kőfejű kalapácsot, amelyet valószínűleg meg sem bírnál mozdítani. A barlang egyik sarkában tűz lobog, felette a mennyezeten rés tátong. Úgy tűnik, nincs más kiút a barlangból.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megküzdesz ezzel a kegyetlen Óriással",
+                    "destination": 163
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 351
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "story": "Kalandozásod során különféle kulcsokra akadtál, néhányat magadhoz vettél belőlük. Most három kulcsot is kipróbálhatsz, hogy nyitják-e a ládán lévő zárakat. Mindegyik kulcs számmal van ellátva. Hogy megtudd, nálad vannak-e az igazi kulcsok, add össze a rajtuk lévő számokat.",
+            "actions": [
+                {
+                    "type": "query",
+                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "caption": "Add össze a kulcsokon lévő számokat",
+                    "cancel": {
+                        "direction": "unknown",
+                        "caption": "Nincs nálad három megszámozott kulcs",
+                        "destination": 1391
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1391,
+            "story": "Nincs nálad három megszámozott kulcs, kalandod itt véget ér. Leülsz a ládára, és sírva fakadsz, hogy újra át kell kutatnod az egész hegyet a kulcsokért.",
+            "gameFinished": true
+        },
         
         {
             "id": 140,
@@ -2968,6 +3027,18 @@
 				}
 			]
 		},
+        
+        {
+            "id": 169,
+            "story": "Az összes kulcsot, az egyiket a másik után bedugod a zárakba, és amint elfordítod őket, halk kattanást hallasz. Valamennyit jól helyezted be! Amint az utolsó kulcs is megfordul, engedni kezd a láda fedele, és felemelheted.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Hogy meglásd, mi van benne, lapozz",
+                    "destination": 400
+                }
+            ]
+        },
 
 		{
 			"id": 173,
@@ -3031,6 +3102,123 @@
                 }
 			]
 		},
+        {
+            "id": 174,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
+        
+        {
+            "id": 182,
+            "story": "Két kulcs pontosan beleillik a zárakba, de a harmadik nem. Alig tudsz félreugrani, amikor a ládából áttetsző folyadék lövell ki. Alig hibázott el, de még így is veszítesz 2 ÉLETERŐ pontot, mivel a folyadék mérges gőzt bocsát ki magából, amitől köhögsz és fulladozol. Visszalépsz a ládához, és egy másik hármas kulcskombinációval próbálkozol meg. Add össze a kulcsokon lévő számokat, és ettől a fejezetszámtól folytasd!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ],
+            "actions": [
+                {
+                    "type": "query",
+                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "caption": "Add össze a kulcsokon lévő számokat",
+                    "cancel": {
+                        "direction": "unknown",
+                        "caption": "Nincs több kulcsod",
+                        "destination": 1281
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1821,
+            "story": "Nincs több kulcsod, amit kipróbálhatnál, kimerülten leroskadsz. Kétségbeesetten gondolsz rá, hogy milyen közel voltál már a célhoz. Ha legközelebb bemerészkedsz a Labirintusba, ne feledd el, kulcsokat kell keresned!",
+            "gameFinished": true
+        },
+        
+        {
+            "id": 186,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
+        
+        {
+            "id": 198,
+            "story": "Az egyik kulcs nyitja a zárat, a másik kettőt viszont nem tudod elfordítani. Amint erőlködsz, kétszer halkan kattan valami, azután sivító hang hallatszik, és a láda két kis dárdát lő ki rád. Hátraugrasz, hogy elkerüljed őket, de bevered a fejed a mögötted lévő falba és öntudatlanul a földre zuhansz.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1981,
+                        "caption": "A hajítódárdák elkerülnek"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1982,
+                        "caption": "A dárdák eltalálnak"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1981,
+            "story": "Szerencsés vagy, a hajítódárdák elkerülnek, és zúgó fejjel magadhoz térsz, de 2 ÉLETERŐ pontot vesztesz.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ],
+            "actions": [
+                {
+                    "type": "query",
+                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "caption": "Add össze a kulcsokon lévő számokat",
+                    "cancel": {
+                        "direction": "unknown",
+                        "caption": "Nincs nálad három megszámozott kulcs",
+                        "destination": 1983
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1982,
+            "story": "Balszerencsés vagy, a dárdák eltalálnak, és sohasem nyered vissza eszméletedet.",
+            "playerDied": true
+        },
+        {
+            "id": 1983,
+            "story": "Már kipróbáltad az összes nálad lévő kulcsot, kezedbe temeted arcod, és sírva fakadsz. Már oly közel voltál célod eléréséhez, és most elölről kell kezdened mindent. Indulj neki újra a Labirintusnak, és ne feledd, útközben kulcsokat kell keresned!",
+            "gameFinished": true
+        },
+        
+        {
+            "id": 200,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 387
+                }
+            ]
+        },
         
         {
             "id": 202,
@@ -3101,6 +3289,30 @@
 		},
         
         {
+            "id": 219,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
+        
+        {
+            "id": 233,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
+        
+        {
             "id": 242,
             "story": "Az ajtó kinyílik, és egy kicsi, homályos kamra tárul a szemed elé. A falakon arany- és ezüstcsipkékkel gondosan díszített függönyök lógnak. Az egyik sarokban magányos lángnyelv lobog, fényét a középen álló alacsony asztalra veti, amin hatalmas láda fekszik. Odalépsz, hogy megvizsgáld, de váratlanul, köröskörül, mindenfelől (de mégsem meghatározható helyről) titokzatos hang csap fel, és betölti a szobát. Olyan, mint a gyülekező viharfelhők között felharsanó mennydörgés. Megközelíted a ládát, és látod, hogy három zár tartja szorosan lezárva. Ahogy közelítesz, a hang egyre erősödik. Mit teszel?",
             "waypoints": [
@@ -3113,6 +3325,18 @@
                     "direction": "unknown",
                     "caption": "Átkutatod a felszerelésedet, hátha találsz olyan kulcsokat, melyek nyitják a zárakat",
                     "destination": 139
+                }
+            ]
+        },
+        
+        {
+            "id": 245,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
                 }
             ]
         },
@@ -3189,6 +3413,18 @@
                 }
             ],
             "payOnVisit": 5
+        },
+        
+        {
+            "id": 276,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 182
+                }
+            ]
         },
         
         {
@@ -3289,6 +3525,30 @@
 		},
         
         {
+            "id": 288,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 182
+                }
+            ]
+        },
+        
+        {
+            "id": 290,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
+        
+        {
             "id": 293,
             "story": "Visszaérkezel az útelágazáshoz.",
             "waypoints": [
@@ -3377,6 +3637,17 @@
 				}
 			]
 		},
+        {
+            "id": 302,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 198
+                }
+            ]
+        },
         
         {
             "id": 310,
@@ -3456,6 +3727,18 @@
                 }
             ]
         },
+        
+        {
+            "id": 335,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 182
+                }
+            ]
+        },
 
 		{
 			"id": 340,
@@ -3483,6 +3766,18 @@
 				}
 			]
 		},
+        
+        {
+            "id": 347,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 182
+                }
+            ]
+        },
         
         {
             "id": 350,
@@ -3880,6 +4175,12 @@
                     "destination": 37
                 }
             ]
+        },
+        
+        {
+            "id": 387,
+            "story": "Kipróbálod a kulcsokat, de egyik sem fordul el. Épp a harmadikkal kísérletezel, amikor kis csappantyúk kattannak, és utolsó emléked, amit észlelsz, hogy fájdalom hasít a testedbe. Három apró hajítódárda fúródik beléd. Gyorsan ható méreg van mindegyik hegyén. Kalandod itt véget ért. Nehogy még egyszer ezt a kulcskombinációt használd, ha legközelebb erre tévedsz!",
+            "playerDied": true
         },
         
         {

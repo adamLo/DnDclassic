@@ -10,7 +10,7 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck, fight, rest, roll, escape, force, propertyRoll, gamble
+    case tryLuck, fight, rest, roll, escape, force, propertyRoll, gamble, query
 }
 
 class Action: Deserializable {
@@ -38,6 +38,8 @@ class Action: Deserializable {
             return NSLocalizedString("Force!", comment: "Force action default caption")
         case .gamble:
             return NSLocalizedString("Gamble!", comment: "Gamble action default caption")
+        case .query:
+            return NSLocalizedString("You have to answer a question", comment: "Query action default caption")
         }
     }
     
@@ -78,6 +80,7 @@ class ActionFactory {
         case .force:    return ForceAction(json: json)
         case .propertyRoll: return PropertyRollAction(json: json)
         case .gamble:   return GambleAction(json: json)
+        case .query:    return QueryAction(json: json)
         }
     }
 }
