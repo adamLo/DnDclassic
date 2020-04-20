@@ -324,9 +324,16 @@ class Character: Deserializable, Equatable {
         if inventoryItem.type == .food || inventoryItem.type == .money {
             for item in inventory {
                 if item.item.type == inventoryItem.type {
-                    item.item.add(amount: inventoryItem.amount)
-                    changed?()
-                    return
+                    if let money = item.item as? Money {
+                        money.add(amount: inventoryItem.amount)
+                        changed?()
+                        return
+                    }
+                    else if let food = item.item as? Food {
+                        food.add(amount: inventoryItem.amount)
+                        changed?()
+                        return
+                    }
                 }
             }
         }
@@ -363,6 +370,7 @@ class Character: Deserializable, Equatable {
         changed?()
     }
     
+    @discardableResult
     func pay(amount: Int) -> Int {
         
         var payed = 0
@@ -469,6 +477,19 @@ class Character: Deserializable, Equatable {
         
         log.removeAll()
         journey.removeAll()        
+    }
+    
+    var money: Int {
+        
+        var result = 0
+        
+        for item in inventory {
+            if item.item.type == .money {
+                result += item.item.amount
+            }
+        }
+        
+        return result
     }
     
     // MARK: - JSON

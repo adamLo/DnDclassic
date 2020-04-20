@@ -305,6 +305,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .propertyRoll, let _action = action as? PropertyRollAction {
             propertyRoll(_action)
         }
+        else if action.type == .gamble, let _action = action as? GambleAction {
+            gamble(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -495,6 +498,89 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.navigationController?.popToRootViewController(animated: false)
         }))
         alert.addAction(UIAlertAction.cancelAction())
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func gamble(_ action: GambleAction) {
+        
+        guard GameData.shared.player != nil else {return}
+        
+        let gamble = Gamble(action: action, player: GameData.shared.player)
+        
+        queryBetAmount { (bet) in
+            
+            if bet > 0 {
+                self.roll(gamble: gamble, bet: bet)
+            }
+            else {
+                self.advance(to: action.finish)
+            }
+        }
+    }
+    
+    private func queryBetAmount(completion: @escaping ((_ amount: Int) ->())) {
+        
+        let alert = UIAlertController(title: NSLocalizedString("How much do you bet?", comment: "Alert title to request bet"), message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Place your bet"
+        }
+        alert.addAction(UIAlertAction(title: "Gamble", style: .default, handler: { (_) in
+            if let _textField = alert.textFields?.first, let _betString = _textField.text?.nilIfEmpty, let bet = Int(_betString), bet > 0, bet <= GameData.shared.player.money {
+                completion(bet)
+            }
+            else {
+                self.queryBetAmount(completion: completion)
+            }
+        }))
+        alert.addAction(UIAlertAction.cancelAction(selected: {
+            completion(0)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func roll(gamble: Gamble, bet: Int) {
+        
+        let roll = gamble.roll()
+        
+        if roll.win {
+            
+            let money = Money(amount: bet)
+            GameData.shared.player.add(inventoryItem: money)
+            
+            if gamble.rounds == 1, let _bonuses = gamble.action.winBonus {
+                for bonus in _bonuses {
+                    GameData.shared.player.apply(bonus: bonus)
+                }
+            }
+        }
+        else {
+            GameData.shared.player.pay(amount: bet)
+        }
+        
+        let title = roll.win ? NSLocalizedString("You won!", comment: "Alert title when player won gambling") : NSLocalizedString("You lost", comment: "Alert title when player lost gambling")
+        var message = String(format: NSLocalizedString("You rolled %d, they rolled %d", comment: "Alert message format when rolled in gambling"), roll.playerRoll, roll.opponentRoll)
+        message += "\n"
+        message += String(format: (roll.win ? NSLocalizedString("You won %d gold", comment: "Alert message format when user won gambling") : NSLocalizedString("You lost %d gold", comment: "Alert message format when user lost gambling")), bet)
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if GameData.shared.player.money > 0 {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Another round", comment: "Alert option title to gamble another round"), style: .default, handler: { (_) in
+                alert.dismiss(animated: true) {
+                    self.queryBetAmount { (bet) in
+                        if bet > 0 {
+                            self.roll(gamble: gamble, bet: bet)
+                        }
+                        else {
+                            self.advance(to: gamble.action.finish)
+                        }
+                    }
+                }
+            }))
+        }
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Finished", comment: "Finished option title"), style: .cancel, handler: { (_) in
+            self.advance(to: gamble.action.finish)
+        }))
         
         present(alert, animated: true, completion: nil)
     }

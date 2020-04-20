@@ -10,7 +10,7 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck, fight, rest, roll, escape, force, propertyRoll
+    case tryLuck, fight, rest, roll, escape, force, propertyRoll, gamble
 }
 
 class Action: Deserializable {
@@ -24,12 +24,20 @@ class Action: Deserializable {
             return __caption
         }
         switch type {
-        case .tryLuck: return NSLocalizedString("Try your luck!", comment: "Try luck action default caption")
-        case .fight: return NSLocalizedString("Fight!", comment: "Fight action default caption")
-        case .rest: return NSLocalizedString("Get some rest!", comment: "Rest action default caption")
-        case .roll, .propertyRoll: return NSLocalizedString("Roll!", comment: "Roll action default caption")
-        case .escape: return NSLocalizedString("Escape!", comment: "Escape action default caption")
-        case .force: return NSLocalizedString("Force!", comment: "Force action default caption")
+        case .tryLuck:
+            return NSLocalizedString("Try your luck!", comment: "Try luck action default caption")
+        case .fight:
+            return NSLocalizedString("Fight!", comment: "Fight action default caption")
+        case .rest:
+            return NSLocalizedString("Get some rest!", comment: "Rest action default caption")
+        case .roll, .propertyRoll:
+            return NSLocalizedString("Roll!", comment: "Roll action default caption")
+        case .escape:
+            return NSLocalizedString("Escape!", comment: "Escape action default caption")
+        case .force:
+            return NSLocalizedString("Force!", comment: "Force action default caption")
+        case .gamble:
+            return NSLocalizedString("Gamble!", comment: "Gamble action default caption")
         }
     }
     
@@ -69,6 +77,7 @@ class ActionFactory {
         case .escape:   return EscapeAction(json: json)
         case .force:    return ForceAction(json: json)
         case .propertyRoll: return PropertyRollAction(json: json)
+        case .gamble:   return GambleAction(json: json)
         }
     }
 }
