@@ -3706,7 +3706,70 @@
                 }
             ]
         },
-        
+        {
+            "id": 175,
+            "story": "Egy szűk folyosón vagy. Mögötted egy rejtekajtó nyílik keletre. Előtted útkereszteződés.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Belépsz az ajtón",
+                    "destination": 177
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A keresztúthoz mész",
+                    "destination": 267
+                }
+            ]
+        },
+        {
+            "id": 176,
+            "story": "Mész tovább az úton, mely egy idő után szélesedni kezd, végül egy zord sziklabarlang bejáratához érsz. A barlang legalább harminc méter mély, és nem látsz semmiféle kijáratot.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Bemész a barlangba",
+                    "destination": 270
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 375
+                }
+            ]
+        },
+        {
+            "id": 177,
+            "story": "Egy észak-dél irányú úton állsz. Észak felé tekintesz, messze egy keletnek vezető út látszik. A délre menő út egy idő múlva nyugatnak kanyarodik. A nyugati falon éppen előtted egy rejtekajtót pillantasz meg.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod",
+                    "destination": 52
+                },
+                {
+                    "direction": "south",
+                    "caption": "Elmész ennek az útnak a déli végéig",
+                    "destination": 391
+                },
+                {
+                    "direction": "west",
+                    "caption": "Benyitsz a rejtekajtón",
+                    "destination": 175
+                }
+            ]
+        },
+        {
+            "id": 178,
+            "story": "Bizonytalan léptekkel átvágsz a szobán az északi falban lévő ajtó felé.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Kinyitod, és áthaladsz rajta",
+                    "destination": 162
+                }
+            ]
+        },
         {
             "id": 179,
             "story": "Egy hatalmas, négyszög alakú terembe jutottál. A földön szanaszéjjel törött cserépdarabok hevernek. Egy nagyméretű agyagedény azonban érintetlen és tiszta, átlátszó folyadék van benne. Egy teli tál aranypénz van mellette. Miután beléptél, az ajtó becsapódik mögötted, sarkon fordulsz, és egy különös, félig ember, félig bika alakú teremtményt pillantasz meg, amint rád bámul. Egy Minotaurusz közeledik óvatosan feléd! Lehajtja fejét, szarvaival célba veszi a mellkasodat, és rohamra lendül.",
@@ -3742,7 +3805,43 @@
                 }
             ]
         },
-        
+        {
+            "id": 180,
+            "story": "Az út előbb nyugatnak tart, azután délnek fordul. Végül meg kell állnod, zsákutcába kerültél.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Visszamész a hármas elágazáshoz és keletnek indulsz",
+                    "destination": 70
+                },
+                {
+                    "direction": "north",
+                    "caption": "Visszamész a hármas elágazáshoz és északnak indulsz",
+                    "destination": 329
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a zsákutcát",
+                    "destination": 22
+                }
+            ]
+        },
+        {
+            "id": 181,
+            "story": "Rohansz tovább a fal mellett, egy ajtót keresve, de egyet sem találsz. Dobhártyád szinte szétrobban a zajtól. 1 ÜGYESSÉG pontot vesztettél.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Megpróbálkozol a nyugati fallal",
+                    "destination": 355
+                },
+                {
+                    "direction": "north",
+                    "caption": "Megpróbálkozol az északi fallal",
+                    "destination": 265
+                }
+            ]
+        },
         {
             "id": 182,
             "story": "Két kulcs pontosan beleillik a zárakba, de a harmadik nem. Alig tudsz félreugrani, amikor a ládából áttetsző folyadék lövell ki. Alig hibázott el, de még így is veszítesz 2 ÉLETERŐ pontot, mivel a folyadék mérges gőzt bocsát ki magából, amitől köhögsz és fulladozol. Visszalépsz a ládához, és egy másik hármas kulcskombinációval próbálkozol meg. Add össze a kulcsokon lévő számokat, és ettől a fejezetszámtól folytasd!",

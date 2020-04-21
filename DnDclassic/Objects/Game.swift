@@ -59,6 +59,8 @@ struct Game: Deserializable {
         }
         guard !_scenes.isEmpty else {return nil}
         scenes = _scenes
+        
+        print("*** loaded \(_scenes.filter({$0.id <= 400}).count) scenes ***")
     }
     
     var firstScene: Scene? {
