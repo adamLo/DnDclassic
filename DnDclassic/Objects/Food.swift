@@ -48,4 +48,9 @@ class Food: InventoryItem {
         
         self.amount += amount
     }
+    
+    func drop(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
+    }
 }

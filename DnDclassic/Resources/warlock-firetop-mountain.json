@@ -2825,7 +2825,91 @@
                 }
             ]
         },
-
+        {
+            "id": 141,
+            "story": "Amint az Öreg megtudja, hogy a kincset keresed, mérges lesz, és azt mondja, távozz tőle, neki semmi köze kincsvadászokhoz. Kutyája is érzi dühét, és fenyegetően vicsorog rád.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Elmosolyodsz, elköszönsz tőle, és távozol a déli ajtón keresztül",
+                    "destination": 66
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Ott maradsz és megpróbálod lecsillapítani",
+                    "destination": 111
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "story": "Zúgó hangon felkiált: - Szegény bolond! Valóban azt hitted, hogy hitvány fegyvereddel szembeszegülhetsz az én erőmmel? (Te közben eltökélten támadsz.) Ha verekedni akarsz, hát verekedjünk meg, Idegen, de számodra ez lesz az utolsó küzdelem! - és ezekkel a szavakkal eltűnik, majd megjelenik a hátad mögött. Megperdülsz, hogy szembekerülj vele, és a harc elkezdődik. De ez a csata élethalálharc. Most nem lehet elmenekülni.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Ez a csata élethalálharc",
+                    "opponents": [
+                        {
+                            "name": "Varázsló",
+                            "dexterity": 11,
+                            "health": 18
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 396,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "story": "Letelepszel a parti homokra. Amint az elemózsiád készíted, néhány méterre balra tőled valami megmozdul a homokban. A homok mozgása fokozódik, felpattansz, kardod már a markodban. Hirtelen egy hatalmas, cső alakú fej bújik ki a felszínre, tekergőzik néhányat a levegőben, és megérzi a szagodat. Az Óriás Homokhernyó puha, szelvényekre osztott teste felágaskodik és feléd hajlik. Amint lecsap rád, ott, ahol valószínűleg a feje van, egy nyílás tárul fel, tele rövid, tüskeszerű fogakkal.",
+            "cover": "scene_143.png",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Meg kell küzdened ezzel a lénynyel is.",
+                    "opponents": [
+                        {
+                            "name": "Óriás Homokhernyó",
+                            "dexterity": 7,
+                            "health": 7
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 44,
+                        "caption": "Győztél"
+                    },
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 1431,
+                        "caption": "A folyóba veted magad",
+                        "availableRound": 3
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1431,
+            "story": "folyóba veted magad, és úszol lefele az árral. Elveszítettél egy adag Élelmet, amit éppen meg akartál enni.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Úszol lefele az árral",
+                    "destination": 399
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "food",
+                    "amount": -1,
+                    "autoAdd": true
+                }
+            ]
+        },
 		{
 			"id": 144,
 			"story": "A lény rád mered. Pillantásával elkapja tekinteted, és érzed, hogy mostantól fogva képtelen vagy bármit is csinálni. Hívólag int a fejével. Lassan közeledsz feléje. Rád parancsol, hogy dobd el a cöveket. Amint lenézel a cövekre, hirtelen hatalmas akaraterőt érzel magadban. Közvetlen közelről a szörny felé hajítod a cöveket.",

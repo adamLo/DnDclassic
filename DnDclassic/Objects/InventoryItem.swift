@@ -48,6 +48,7 @@ protocol InventoryItem: CustomStringConvertible {
     
     func use(amount: Int)
     func add(amount: Int)
+    func drop(amount: Int)
     
     var name: String? {get}
     

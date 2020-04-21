@@ -242,6 +242,10 @@ class Character: Deserializable, Equatable {
                     indexesToRemove.append(index)
                     changed?()
                 }
+                else if item.amount < 0 {
+                    drop(item: item, amount: abs(item.amount))
+                    indexesToRemove.append(index)
+                }
             }
             
             for index in indexesToRemove {
@@ -337,6 +341,13 @@ class Character: Deserializable, Equatable {
         return item != nil
     }
     
+    private func clearInventory() {
+        
+        inventory.removeAll { (item) -> Bool in
+            return item.item.amount <= 0
+        }
+    }
+    
     @discardableResult
     func add(inventoryItem: InventoryItem) -> InventoryWrapper? {
         
@@ -373,6 +384,36 @@ class Character: Deserializable, Equatable {
         
         changed?()
         log(event: .dropInventory(item: inventoryItem.item))
+    }
+    
+    @discardableResult
+    func drop(item: InventoryItem, amount: Int) -> Int {
+        
+        var droppedAmount = 0
+        
+        for _item in inventory {
+            
+            let toDrop = amount - droppedAmount
+            if toDrop <= 0 {
+                break
+            }
+            
+            if let id1 = _item.item.identifier?.nilIfEmpty, let id2 = item.identifier?.nilIfEmpty, id1 == id2 {
+                let _toDrop = min(_item.item.amount, toDrop)
+                _item.item.drop(amount: _toDrop)
+                droppedAmount += _toDrop
+            }
+            else if _item.item.type == item.type {
+                let _toDrop = min(_item.item.amount, toDrop)
+                _item.item.drop(amount: _toDrop)
+                droppedAmount += _toDrop
+            }
+        }
+        
+        clearInventory()
+        changed?()
+        
+        return droppedAmount
     }
     
     func canEquip(item: InventoryItem) -> Bool {

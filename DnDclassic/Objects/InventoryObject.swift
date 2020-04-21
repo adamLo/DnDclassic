@@ -62,6 +62,11 @@ class InventoryObject: InventoryItem, Deserializable {
         self.amount += amount
     }
     
+    func drop(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
+    }
+    
     required init?(json: JSON) {
         
         guard let _typeString = json[InventoryObject.JSONKeys.type] as? String, let _type = InventoryItemType(rawValue: _typeString) else {return nil}
@@ -102,6 +107,7 @@ class InventoryObject: InventoryItem, Deserializable {
         static let autoEquip        = "autoEquip"
         static let canUnEquip       = "canUnEquip"
         static let attackBonus      = "attackBonus"
+        static let autoAdd          = "autoAdd"
     }
 }
 

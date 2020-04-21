@@ -12,7 +12,7 @@ class Helmet: InventoryItem, Deserializable {
     
     let identifier: String?
     let type: InventoryItemType = .helmet
-    let amount: Int = 1
+    private(set) var amount: Int = 1
     let name: String?
     let modifiedProperty: CharacterProperty?
     let modifierValue: Int?
@@ -53,5 +53,10 @@ class Helmet: InventoryItem, Deserializable {
     }
     
     func add(amount: Int) {
+    }
+    
+    func drop(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
     }
 }

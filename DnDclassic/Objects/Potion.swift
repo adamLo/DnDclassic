@@ -37,9 +37,16 @@ class Potion: InventoryItem {
     }
     
     func use(amount: Int) {
+        
         self.amount = max(self.amount - amount, 0)
     }
         
     func add(amount: Int) {
+        
+    }
+    
+    func drop(amount: Int) {
+        
+        self.amount = max(self.amount - amount, 0)
     }
 }
