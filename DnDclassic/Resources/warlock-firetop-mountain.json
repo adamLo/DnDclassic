@@ -2773,7 +2773,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -3854,7 +3854,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -4016,7 +4016,182 @@
                 }
             ]
         },
-        
+        {
+            "id": 191,
+            "story": "Sikoltozva bújik be az asztal mögé. Rettentően megijedt agresszív viselkedésedtől. Vékony, vinnyogó hangon magyarázza, hogy ő csupán Zagor Labirintusának megbízott felügyelője. Beszélsz hozzá, és újfent megnyugtatod, nem esik bántódása. Végül kimerészkedik a pult mögül. Leül, s amint bizalma visszatér, furcsa dolog történik. Egyre határozottabb és magabiztosabb lesz. Egy könyv felé fordul, ujjával rámutat, s a könyv magától lecsusszan a polcról, odaszáll elé az asztalra. Rá kell ébredned, valamiféle varázslóval van dolgod, még az is lehet, ő a Labirintus Ura, és személyesen jött, hogy felderítse, ki is vagy. Megkérded,merre vezet kifelé az út a Labirintusból. - Menj ki a déli ajtón - mondja -‚ jobb kéz felől van egy ajtó, menj el mellette egészen addig, amíg tudsz. Ott fordulj balra. Haladj át az első útkereszteződésen, majd a következőnél fordulj balra.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "megfogadod a tanácsát, távozol a déli ajtón keresztül, és elmész a második útkereszteződésig",
+                    "destination": 308
+                },
+                {
+                    "direction": "south",
+                    "caption": "A déli ajtón lépsz ki, de utána a saját fejed után mész",
+                    "destination": 392
+                },
+                {
+                    "direction": "west",
+                    "caption": "A nyugati ajtón mész ki",
+                    "destination": 46
+                }
+            ]
+        },
+        {
+            "id": 192,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 169
+                }
+            ]
+        },
+        {
+            "id": 193,
+            "story": "Az ajtó feltárul, és egy apró kamrába lépsz be. Tágra mered a szemed a csodálkozástól, ahogy körülnézel. A szoba falait gondosan megmunkált kőfaragványok borítják. Mozaikok és márványberakású intarziák olyan szépséget kölcsönöznek a szobának, hogy ilyet még életedben nem láttál. Az egyik sarokban egy hatalmas fémszobor áll, egy egyszemű lényt ábrázol. Egyetlen szeme csillogó ékkő. Mivel másik kijárat nincs, vissza kell majd menned az elágazáshoz - de a hatalmas drágakő kísértésbe hoz.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Otthagyod, és visszamész az elágazáshoz",
+                    "destination": 93
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod magaddal vinni",
+                    "destination": 338
+                }
+            ],
+            "cover": "scene_193.png"
+        },
+        {
+            "id": 194,
+            "story": "Meghúzod az íjat, és lősz, de kétségbeesve látod, hogy a nyílvessző, amely egyenesen felé száll, néhány centiméterrel a mellkasa előtt megáll és a padlóra hull. Ellenfeled felnéz, és gonosz, kárörvendő vigyorral pillant rád. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz, és támadásba lendülsz",
+                    "destination": 142
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz hátizsákodból valami más fegyvert választani",
+                    "destination": 105
+                }
+            ]
+        },
+        {
+            "id": 195,
+            "story": "Ez a mese, figyelembe véve, hogy aligha találkozhatnak élő emberrel, elég hihetetlennek tűnik. De a Csontvázak meglehetősen tompa agyúak, te ezt tudod, ezért is próbálkoztál meg vele.",
+            "actions": [
+                {
+                "type": "roll",
+                "caption": "Dobj egy kockával!",
+                "dice": 1,
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Nem hisznek neked, és tovább közelednek",
+                            "destination": 140,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Nem hisznek neked, és tovább közelednek",
+                            "destination": 140,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Nem bizonyosak a dologban, kettőt maguk közül elküldenek, ezek az északi ajtón át távoznak, a többiek sakkban tartanak fegyvereikkel.",
+                            "destination": 164,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Nem bizonyosak a dologban, kettőt maguk közül elküldenek, ezek az északi ajtón át távoznak, a többiek sakkban tartanak fegyvereikkel.",
+                            "destination": 164,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Eléred, hogy bevegyék mesédet",
+                            "destination": 1951,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Eléred, hogy bevegyék mesédet",
+                            "destination": 1951,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
+        {
+            "id": 1951,
+            "story": "Eléred, hogy bevegyék mesédet, és mindnyájan visszatérjenek munkájukhoz. 2 Szerencse pontot nyertél!",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 9
+                }
+            ]
+        },
+        {
+            "id": 196,
+            "story": "Átkutatod a szobát. Bármennyire keresed, nem találod a rejtett kapcsolót, mely a könyvszekrény ajtaját nyitná - az Öreg biztosan belülről zárta be. De egy asztalfiókban öt aranyra bukkansz.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 5
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Úgy döntesz, visszamész déli irányba, az elágazáshoz.",
+                    "destination": 280
+                }
+            ]
+        },
+        {
+            "id": 197,
+            "story": "Felérsz a lépcsősor tetejére, az út élesen kelet felé kanyarodik. Megállsz, hogy tájékozódni tudjál, amikor csikorgó hangot hallasz a mögötted lévő sziklafal felől. Ahhoz még idejében fordulsz meg, hogy lásd: egy nehéz vasrostély zuhan le, és elzárja a visszafelé vezető utat. Már csak előre mehetsz! Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Továbbmész egyenesen előre",
+                    "destination": 48
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Rejtekajtókat keresve megvizsgálod a falakat",
+                    "destination": 295
+                }
+            ]
+        },
         {
             "id": 198,
             "story": "Az egyik kulcs nyitja a zárat, a másik kettőt viszont nem tudod elfordítani. Amint erőlködsz, kétszer halkan kattan valami, azután sivító hang hallatszik, és a láda két kis dárdát lő ki rád. Hátraugrasz, hogy elkerüljed őket, de bevered a fejed a mögötted lévő falba és öntudatlanul a földre zuhansz.",
@@ -4050,7 +4225,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -4070,7 +4245,34 @@
             "story": "Már kipróbáltad az összes nálad lévő kulcsot, kezedbe temeted arcod, és sírva fakadsz. Már oly közel voltál célod eléréséhez, és most elölről kell kezdened mindent. Indulj neki újra a Labirintusnak, és ne feledd, útközben kulcsokat kell keresned!",
             "gameFinished": true
         },
-        
+        {
+            "id": 199,
+            "story": "Az út határozottan szélesedni kezd, majd egy hatalmas barlang tárul fel előtted. Körülvilágítasz benne a lámpásoddal: a földön egyszerű kőfegyverek hevernek, a barlang közepén egy kialvóban lévő tűzrakás parázslik. Másik kijáratot nem találsz. Megfordulsz, hogy a saját nyomaidat követve visszaindulj, ám két Neander-völgyi Ősembert veszel észre, akik elállják a kijáratot. Kardot rántasz, fel kell készülnöd a küzdelemre.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "order": "single",
+                    "caption": "Egyenként csapj össze velük.",
+                    "opponents": [
+                        {
+                            "name": "Első Ősember",
+                            "dexterity": 7,
+                            "health": 6
+                        },
+                        {
+                            "name": "Második Ősember",
+                            "dexterity": 6,
+                            "health": 4
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 283,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
         {
             "id": 200,
             "story": "",
@@ -4082,7 +4284,35 @@
                 }
             ]
         },
-        
+        {
+            "id": 201,
+            "story": "A padlóra hanyatlasz. Kihúzod a dárdát a testedből, és bekötöd a sebet. Ez kissé enyhíti fájdalmadat, de még mindig gyengének érzed magad. Nem törődsz ezzel, és megpróbálod jobban megvizsgálni, mit is rejt a láda. Ha így döntesz, egyél előbb Élelmiszerkészletedből. Huszonöt aranypénzt találsz, és egy üveget, melynek címkéjén ez áll: a Láthatatlanság Itala. Csak egy alkalomra elegendő mennyiség van benne. A kesztyű továbbra is rejtély marad. Bármelyik talált tárgyat, akár az összeset is magaddal viheted hátizsákodban",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 25
+                },
+                {
+                    "type": "potion",
+                    "id": "potion_of_invisibility_201",
+                    "name": "Láthatatlanság Itala",
+                    "amount": 1,
+                    "consumeWhenUsed": true
+                },
+                {
+                    "type": "glove",
+                    "name": "Ismeretlen kesztyű",
+                    "id": "unknown_glove_201"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 293
+                }
+            ]
+        },
         {
             "id": 202,
             "story": "Felpróbálod a sisakot. Pont jó a fejedre. Hirtelen égető fájdalom sugárzik át homlokodon. Nem tudsz világosan gondolkozni. Ez egy elátkozott sisak, és akárhogy szeretnéd, nem bírod levenni. 1 ÜGYESSÉG pontot veszítesz. A fájdalom hamarosan alábbhagy, de a sisaktól nem tudsz megszabadulni. Visszatámolyogsz az elágazásig, miközben kétségbeesetten próbálod összeszedni magad.",
@@ -4651,6 +4881,34 @@
             ]
         },
 
+        {
+            "id": 338,
+            "story": "Óvatosan megközelíted a szobrot. Valami elsurran a hátad mögött, hirtelen megfordulsz... de csak egy patkány. Megfogod az ékkövet, de az szilárdan ül a helyén. Megpróbálod a kardoddal kipiszkálni, de egyszer csak baljóslatú csikorgást hallasz. Rémülten látod, hogy a szobor mozogni kezd. Leugrasz, és kirántod a kardod. A Vas Küklopsz felemeli és feléd fordítja a fejét, majd lelép a talapzatról!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Meg kell küzdened vele!",
+                    "opponents": [
+                        {
+                            "name": "Vas Küklopsz",
+                            "dexterity": 10,
+                            "health": 10
+                        }
+                    ],
+                    "escape": {
+                        "direction": "back",
+                        "destination": 93,
+                        "caption": "Az ajtón keresztül visszarohanhatsz az elágazásig"
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 75,
+                        "caption": " Győztél"
+                    }
+                }
+            ]
+        },
+        
 		{
 			"id": 340,
 			"story": "Különféle tárgyakkal próbálkozol Felszerelésedből, hogy szembeszegülj a festmény pillantásával, de egyik sem segít.",

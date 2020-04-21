@@ -123,6 +123,7 @@ class InventoryItemFactory {
         case .shield: return Shield(json: json)
         case .helmet: return Helmet(json: json)
         case .sword: return Sword(json: json)
+        case .glove: return Glove(json: json)
         default: return InventoryObject(json: json)
         }
     }
