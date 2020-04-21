@@ -3869,7 +3869,65 @@
             "story": "Nincs több kulcsod, amit kipróbálhatnál, kimerülten leroskadsz. Kétségbeesetten gondolsz rá, hogy milyen közel voltál már a célhoz. Ha legközelebb bemerészkedsz a Labirintusba, ne feledd el, kulcsokat kell keresned!",
             "gameFinished": true
         },
-        
+        {
+            "id": 183,
+            "story": "Átkutatod a halott Orkok testét, de zsebükben csak néhány fogat, körmöt, csontot és kést találsz. Átvizsgálod a szobában lévő szekrényeket, de csak durván megmunkált tányérokat, tálakat és kanalakat lelsz. Egyszer csak egy félméteres, vékony bőrtokra bukkansz. Büszke lehetsz győzelmedre: 1 ÜGYESSÉG és 5 ÉLETERŐ pontot szereztél vele.",
+            "visitBonus": [
+                {
+                    "property": "dextrity",
+                    "gain": 1
+                },
+                {
+                    "property": "health",
+                    "gain": 5
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod a tokot",
+                    "destination": 266
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Itt hagyod és távozol",
+                    "destination": 237
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "story": "Egyedül vagy a Csónakházban, és van némi időd, hogy átkutasd, mielőtt a Csontvázak visszatérnének. Ahogy kutatni kezdesz, zajt hallasz az északi ajtó mögül.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megnézed a fiókokat",
+                    "destination": 322
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átvizsgálod a Csontvázak szerszámait",
+                    "destination": 34
+                }
+            ]
+        },
+        {
+            "id": 185,
+            "story": "A kéz elsorvad, és visszahúzódik a padlóba. Ugyanakkor a többi kéz is elpusztul, lassan elenyésznek, visszabújnak a csempékbe. Elhatározod ezután, hogy csak a csillag alakú csempékre lépsz. Óvatosan átmész a szobán az északi falban lévő ajtóhoz. Az ajtó kinyílik, és te 2 Szerencse pontot kapsz.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 162
+                }
+            ]
+        },
         {
             "id": 186,
             "story": "",
@@ -3878,6 +3936,22 @@
                     "direction": "unknown",
                     "caption": "Lapozz",
                     "destination": 198
+                }
+            ]
+        },
+        {
+            "id": 187,
+            "story": "Egy útkanyarulat közepén állsz. Észak felé zsákutcába jutsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Megvizsgálod",
+                    "destination": 171
+                },
+                {
+                    "direction": "east",
+                    "caption": "Kelet felé mész",
+                    "destination": 308
                 }
             ]
         },
