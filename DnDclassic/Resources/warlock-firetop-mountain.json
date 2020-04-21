@@ -3578,8 +3578,61 @@
                 }
             ]
         },
-        
-
+        {
+            "id": 170,
+            "story": "A kereszt színtiszta ezüst, négy aranypénzt ér.",
+            "inventory": [
+                {
+                    "type": "cross",
+                    "id": "silver_cross_170",
+                    "name": "Ezüst kereszt, 4 aranyat ér"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 319
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "story": "Egy észak-dél irányú rövidke út északi végénél vagy, zsákutcába kerültél.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a falakat",
+                    "destination": 337
+                },
+                {
+                    "direction": "south",
+                    "caption": "Visszamész déli irányba",
+                    "destination": 187
+                }
+            ]
+        },
+        {
+            "id": 172,
+            "story": "Az Öreg ember hirtelen kinyitja a szemét. Meglát, és felkapja a padja mellé támasztott félbetört evezőlapátot. Megmondod, hogy nem akarod bántani, de továbbra is résen áll, gyanakodva méreget. Bár elég ártalmatlannak látszik, a kutyája még veszélyes lehet. Az Öreg cipőfűzői nincsenek befűzve. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kirántott karddal a kutyára támadsz",
+                    "destination": 249
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz néhány kérdést feltenni az Öregnek, amivel megkönnyítheted kutatásodat",
+                    "destination": 141
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megmondod neki, hogy lógnak a cipőfűzői",
+                    "destination": 165
+                }
+            ]
+        },
 		{
 			"id": 173,
 			"story": "Itt csak az ezüstfegyverek segíthetnének.",
@@ -3982,6 +4035,28 @@
 			]
 		},
         
+        {
+            "id": 258,
+            "story": "Átválogatod a törött cserépdarabokat, de semmi érdekes nincs köztük. A folyadék kinézésre, szagra és ízre víznek látszik. Az aranypénzkupacról kiderül, hogy csalás. Nyolc igazi aranyat találsz a halom tetején (ezeket magaddal viheted), de az alatta lévők csupán festett hamisítványok. Ahogy hozzáérsz a vázához, az lecsúszik és eltörik. Egy vörös színű kulcs kerül elő, melyet az edény dupla fenekébe rejtettek. Magaddal viheted a kulcsot, melyre a 111-es számot vésték. Pihenhetsz, és ehetsz elemózsiádból, ha akarsz. 2 Szerencse pontot kapsz, amiért legyőzted a Minotauruszt,",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 8
+                },
+                {
+                    "type": "key",
+                    "id": "key_111",
+                    "name": "Vörös színű kulcs 111-es számmal"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 54
+                }
+            ]
+        },
         {
             "id": 259,
             "story": "Miközben a partra úszol a Krokodil elől, visszanézel, és látod, hogy a rejtélyes örvénylés eléri a hüllő testét, őrjöngésbe csap át, és amikor abbamarad, már nyoma sincs az állatnak. Hálát adva, amiért nem te voltál ott, és nem neked kellett megtudnod, mi az, kimászol a vízből az északi parton. Adj magadnak 1 ÜGYESSÉG és 2 Szerencse pontot.",
