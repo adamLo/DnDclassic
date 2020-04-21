@@ -64,6 +64,7 @@
 		19825BF1244EFD0300488525 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BF0244EFD0300488525 /* Sword.swift */; };
 		19825BF3244F061E00488525 /* scene_218.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BF2244F061E00488525 /* scene_218.png */; };
 		19825BF5244F079800488525 /* scene_179.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BF4244F079700488525 /* scene_179.png */; };
+		19825BF7244F484F00488525 /* scene_188.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BF6244F484E00488525 /* scene_188.png */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -179,6 +180,7 @@
 		19825BF0244EFD0300488525 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		19825BF2244F061E00488525 /* scene_218.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_218.png; sourceTree = "<group>"; };
 		19825BF4244F079700488525 /* scene_179.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_179.png; sourceTree = "<group>"; };
+		19825BF6244F484E00488525 /* scene_188.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_188.png; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825BF6244F484E00488525 /* scene_188.png */,
 				19825BF4244F079700488525 /* scene_179.png */,
 				19825BF2244F061E00488525 /* scene_218.png */,
 				19825BEE244DEE8000488525 /* scene_143.png */,
@@ -617,6 +620,7 @@
 				19825BDD244A0E4A00488525 /* scene_097.png in Resources */,
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
 				19825BF5244F079800488525 /* scene_179.png in Resources */,
+				19825BF7244F484F00488525 /* scene_188.png in Resources */,
 				19497D6D2405930C0072CFD0 /* warlock-firetop-mountain.json in Resources */,
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
 				19825BEF244DEE8100488525 /* scene_143.png in Resources */,

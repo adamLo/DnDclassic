@@ -3955,6 +3955,67 @@
                 }
             ]
         },
+        {
+            "id": 188,
+            "story": "Majdnem két méter magas. Feléd közeledik. A teste szőrös, fogai hegyesek. Szeme fénylik, ujjain a körmök éles karmokká váltak. Orra akár a patkányé. Egy Patkányemberrel állsz szemközt.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg vele.",
+                    "opponents": [
+                        {
+                            "name": "Patkányember",
+                            "dexterity": 8,
+                            "health": 65
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 209,
+                        "caption": "Elmenekülsz, átrohansz a roskadozó hídon"
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 342,
+                        "caption": "Legyőzted"
+                    },
+                    "escapeDamage": 1
+                }
+            ]
+        },
+        {
+            "id": 189,
+            "story": "Az ajtó egy rövid folyosóra nyílik, amely néhány méter után egy újabb ajtónál ér véget. Ugyanolyan, mint az, amin az előbb jöttél át. Hallgatózol, de csend van. Megpróbálkozol az ajtónyitó gombbal, elfordítod. Egy az előbbihez hasonló méretű helyiségbe lépsz, de ez a szoba gyönyörűen fel van díszítve, márványpadlója ragyog, az érdes falakat fehérre festették. Mind a négy falon egy-egy festmény lóg, az északi oldalon még egy ajtó nyílik.",
+            "cover": "scene_188.png",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Egyenesen átmész a szobán",
+                    "destination": 90
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megállsz megnézni a képeket",
+                    "destination": 25
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "story": "Egy észak-dél irányú szűk folyosón vagy. Észak felé az út zsákutcába torkollik.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Megvizsgálod",
+                    "destination": 167
+                },
+                {
+                    "direction": "back",
+                    "caption": "Feladod és visszamész a kereszteződéshez",
+                    "destination": 359
+                }
+            ]
+        },
         
         {
             "id": 198,
