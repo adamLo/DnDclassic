@@ -15,6 +15,7 @@ struct WayPoint: Deserializable {
     let caption: String
     let condition: Condition?
     let onlyWhenNoFights: Bool?
+    let onlyWhenVisited: Bool?
     
     init?(json: JSON) {
         
@@ -35,6 +36,7 @@ struct WayPoint: Deserializable {
         }
         
         onlyWhenNoFights = json[JSONKeys.onlyWhenNoFights] as? Bool
+        onlyWhenVisited = json[JSONKeys.onlyWhenVisited] as? Bool
     }
     
     init(direction: Direction, destination: Int, caption: String) {
@@ -44,6 +46,7 @@ struct WayPoint: Deserializable {
         self.caption = caption
         condition = nil
         onlyWhenNoFights = nil
+        onlyWhenVisited = nil
     }
     
     private struct JSONKeys {
@@ -52,5 +55,6 @@ struct WayPoint: Deserializable {
         static let caption          = "caption"
         static let condition        = "condition"
         static let onlyWhenNoFights = "onlyWhenNoFights"
+        static let onlyWhenVisited  = "onlyWhenVisited"
     }
 }

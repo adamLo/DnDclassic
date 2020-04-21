@@ -4376,7 +4376,148 @@
                 }
             ]
         },
-        
+        {
+            "id": 205,
+            "story": "Az ajtó kinyílik, és valami sötét kriptafélében találod magad. A terem nagyon nagy. Az egyik végében egy oltár magasodik, a földön összevissza különféle koporsók fekszenek. Egy ajtó van mögötted a déli falban és egy másik a nyugatiban.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a szobát",
+                    "destination": 254
+                },
+                {
+                    "direction": "west",
+                    "caption": "Túl félelmetesnek találod, a nyugati ajtón azonnal távozol",
+                    "destination": 380
+                }
+            ],
+            "cover": "scene_205.png"
+        },
+        {
+            "id": 206,
+            "story": "Belépsz egy hatalmas, négyszögletű szobába. Közepén egy ősz hajú Öreg ember üldögél egy íróasztalnál, mely papírokkal és különféle pergamenekkel van borítva. Az Öreg kezében hosszú lúdtoll. A falak a padlótól a mennyezetig be vannak polcozva, rajtuk könyvek ezrei sorakoznak. Belépsz, és az Öreg felpillant. Vajon felismer-e téged?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Már voltál itt",
+                    "destination": 284,
+                    "onlyWhenVisited": true
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Még nem voltál itt",
+                    "destination": 341
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "story": "Amint belépsz az ajtón, egy óriási teremben találod magad. A földön rendetlenül szétszórva mindenféle fadarabok, roncsok hevernek. Még egy ajtót fedezel fel az északi falban. Az egyik sarokban durván ácsolt faasztal áll, rajta egy ládika. Egy másik sarokban valószínűleg alszik valaki (de lehet, hogy holtan hever?), egy borzasztó külsejű, ember nagyságú teremtmény. A bőre bibircsókos, haja borzas, ujjain köröm helyett hosszú karmok.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Megpróbálsz lábujjhegyen átsurranni az északi ajtóhoz",
+                    "destination": 83
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Az asztalhoz lopakodsz a ládikáért",
+                    "destination": 154
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "story": "A nyugati fal mellett haladó úton távolabb meglátsz egy újabb ajtót. Hallgatózol, de nem hallasz semmit.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod kinyitni az ajtót",
+                    "destination": 397
+                },
+                {
+                    "direction": "north",
+                    "caption": "Továbbmész észak felé",
+                    "destination": 393
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "story": "A híd évek óta elhanyagolt állapotban van, gerendái korhadtak, ócskák. Az egyik palló megroppan a lábad alatt.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat",
+                            "destination": 47,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat",
+                            "destination": 47,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat",
+                            "destination": 47,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat",
+                            "destination": 47,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Visszanyered egyensúlyodat",
+                            "destination": 47,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Belezuhansz az alattad kavargó folyóba",
+                            "destination": 158,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "story": "Az út rövidesen egy újabb elágazáshoz érkezik.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Egyenesen továbbmész nyugati irányba",
+                    "destination": 225
+                },
+                {
+                    "direction": "north",
+                    "caption": "Északnak fordulsz",
+                    "destination": 357
+                }
+            ]
+        },
         {
             "id": 211,
             "story": "A Wighteket (rossz szellemeket) csak színtiszta ezüstből készített fegyverrel lehet megsebezni. Ha az általad használt fegyver nem ilyen, csapjatok össze még egy Fordulóban! Ne feledd, hogy minden seb, amit rajtad ejt, az számít, de te nem tudod megsebezni, még mindig teljes erőben lesz, kivéve azt az esetet, ha ezüstből készített fegyvert választottál.",

@@ -68,6 +68,7 @@
 		19825BF9244F52EC00488525 /* scene_193.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BF8244F52EC00488525 /* scene_193.png */; };
 		19825BFB244F59B600488525 /* Glove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BFA244F59B600488525 /* Glove.swift */; };
 		19825BFD244F59DA00488525 /* Armor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BFC244F59DA00488525 /* Armor.swift */; };
+		19825BFF244F70AE00488525 /* scene_205.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BFE244F70AD00488525 /* scene_205.png */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -187,6 +188,7 @@
 		19825BF8244F52EC00488525 /* scene_193.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_193.png; sourceTree = "<group>"; };
 		19825BFA244F59B600488525 /* Glove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glove.swift; sourceTree = "<group>"; };
 		19825BFC244F59DA00488525 /* Armor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armor.swift; sourceTree = "<group>"; };
+		19825BFE244F70AD00488525 /* scene_205.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_205.png; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825BFE244F70AD00488525 /* scene_205.png */,
 				19825BF8244F52EC00488525 /* scene_193.png */,
 				19825BF6244F484E00488525 /* scene_188.png */,
 				19825BF4244F079700488525 /* scene_179.png */,
@@ -634,6 +637,7 @@
 				193015432402BD4C00E7B815 /* Main.storyboard in Resources */,
 				19825BEF244DEE8100488525 /* scene_143.png in Resources */,
 				19825BC42441D15500488525 /* scene_036.png in Resources */,
+				19825BFF244F70AE00488525 /* scene_205.png in Resources */,
 				19825BF9244F52EC00488525 /* scene_193.png in Resources */,
 				1930158B240318DE00E7B815 /* cover.png in Resources */,
 				19825BD32444D59D00488525 /* scene_155.png in Resources */,
