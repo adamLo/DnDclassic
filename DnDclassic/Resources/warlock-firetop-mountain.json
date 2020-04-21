@@ -3138,7 +3138,17 @@
                 }
             ]
         },
-        
+        {
+            "id": 154,
+            "story": "Megmozdulsz, erre a teremtmény szeme rögtön felpattan. Rád bámul, és lassan feltápászkodik. Nagyokat szuszogva feléd lopakodik. Nem kerülheted el a harcot.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 41
+                }
+            ]
+        },
         {
             "id": 155,
             "story": "Az ajtó hosszában kettészakad, szétfeszegeted a léceket, hogy bejuss. Az egyik falon egy fáklya ég, és egy kis fegyverraktárat világít meg lángja. A raktárban kardok, pajzsok, sisakok, tőrök, mellvértek és hasonlók hevernek. Átvizsgálod a fegyverzetet, de semmi olyat sem találsz, ami felül tudná múlni saját kardodat. De azért egy kör alakú vaspajzson megakad a tekinteted, talán a közepén lévő arany félhold miatt. Felemeled, kipróbálod, hogyan áll a kezedben. Ha magaddal akarod vinni, megteheted, segítségedre lehet a csatában, ki tudja védeni azokat a sebeket, amelyeket különféle lények ejtenek rajtad. A továbbiakban, ha egy teremtmény megsebez - miközben ezt a pajzsot használod -‚ dobhatsz egy kockával. Ha 6-ost dobsz, a lény a szokásos 2 pont helyett csak 1 pontnyi sebet ejtett rajtad. Ha valami egyéb ok miatt az ellenfeled csak 1 pontos sebet okoz neked, szerencsés 6-os dobásod ezt semlegesíti, nem sérültél meg. Mivelazonban a pajzs nehéz, Felszerelésed egy tárgyát itt kell hagynod helyette.",
@@ -3158,7 +3168,44 @@
                 }
             ]
         },
-
+        {
+            "id": 156,
+            "story": "Megpróbálod válladdal betaszítani az ajtót.",
+            "actions": [
+                {
+                    "caption": "Dobj két kockával!",
+                    "type": "propertyRoll",
+                    "dice": 2,
+                    "properties": ["dexterity"],
+                    "equalOrLess": {
+                        "caption": "Sikerült betörnöd",
+                        "destination": 343,
+                        "direction": "unknown"
+                    },
+                    "greater": {
+                        "caption": "Megdörzsölöd felhorzsolódott válladat, és úgy döntesz, nem próbálkozol többet.",
+                        "destination": 92,
+                        "direction": "back"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "story": "Az ajtó egy kelet-nyugati irányú átjáróba nyílik, amely néhány méter után észak felé kanyarodik.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Erre indulsz el",
+                    "destination": 4
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Nem akarsz keresztülmenni az ajtón",
+                    "destination": 329
+                }
+            ]
+        },
         {
             "id": 158,
             "story": "A víz szinte buzog körülötted, mintha egy láthatatlan kéz láthatatlan kavicsokat dobálna bele. Nagyot nyelsz - ezek bizony Piranhák, és már érzed is, amint éles fogaik a testedbe hasítanak. A lábaddal rugdalod őket, közéjük suhintasz a kardoddal, hogy távol tartsd őket, míg a déli partra nem érsz. (A piranhákat tekintsd külön teremtménynek!)",
@@ -3221,7 +3268,17 @@
 				}				
 			]
 		},
-
+        {
+            "id": 160,
+            "story": "Egy hosszú, szűk folyosón haladsz előbb délnek, azután keletnek, majd újra délnek, végül egy keresztúthoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 267
+                }
+            ]
+        },
 		{
 			"id": 161,
 			"story": "Titkos átjárót vagy ajtót keresve végigtapogatod, végigkopogtatod a sziklafalat. Az okozott zaj visszaverődik a labirintus falairól. A föld alatti világ számtalan különféle teremtménye kóborol szabadon az útvesztőben, és a szörnyek valamelyike felfigyel a zajra.",
@@ -3318,6 +3375,197 @@
 				}
 			]
 		},
+        {
+            "id": 162,
+            "story": "Az út északi irányba vezet, és addig mész rajta, mígnem egy újabb elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Továbbhaladsz észak felé",
+                    "destination": 23
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak fordulsz",
+                    "destination": 69
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "story": "Kihúzod hüvelyéből kardodat, és belépsz a barlangba. Az Óriás abbahagyja az evést, beleszimatol a levegőbe. Körülnéz, megpillantja, hogy közeledsz. Hangosan felmordul, felkapja a malac gerincét, és hozzád vágja.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Tedd próbára Szerencséd!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1631,
+                        "caption": "Szerencsés vagy, elvétett."
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 1632,
+                        "caption": "Balszerencsés vagy, eltalál."
+                    }
+                }
+            ]
+        },
+        {
+            "id": 1631,
+            "story": "Szerencsés vagy, elvétett. Azután felkapja a kalapácsát, hogy agyoncsapjon vele.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 1633
+                }
+            ]
+        },
+        {
+            "id": 1632,
+            "story": "Balszerencsés vagy, eltalál, erősen megüt a csonttal - 1 ÉLETERŐ pontot veszítesz. Azután felkapja a kalapácsát, hogy agyoncsapjon vele.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 1633
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ]
+        },
+        {
+            "id": 1633,
+            "story": "Küzdj meg az Óriással!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Óriás",
+                            "dexterity": 8,
+                            "health": 9
+                        }
+                    ],
+                    "escape": {
+                        "direction": "back",
+                        "destination": 351,
+                        "caption": "Visszafutsz az átjáróhoz, ahová nem tud követni",
+                        "availableRound": 3
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 28,
+                        "caption": "Legyőzted"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "story": "Rádöbbensz, hogy az előbbi két Csontváz hamarosan visszatér, és kiderül, csak blöfföltél. Gyorsan kell cselekedned.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Sietve visszavonulsz és eltűnsz a hátad mögött lévő ajtón keresztül",
+                    "destination": 129
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz és rárohansz a szobában maradt Csontvázakra",
+                    "destination": 236
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "story": "Az Öreg hálálkodik, és félénken befűzi a cipőit. Közlöd vele, hogy semmiféle veszélyt nem jelentesz számára, lecsillapodik, és visszaparancsolja a kutyáját. Elmondja, hogy ezen a területen át vezet az egyetlen út, amely a belső termek felé visz. Néhány évvel ezelőtt egy különösen nagy tavaszi hóolvadás miatt a folyó felduzzadt, és elvágta őket a külvilágtól. Az itt élők szinte kivétel nélkül éhen pusztultak. Zagor, mivel tudta, hogy védelemre van szüksége a külvilággal szemben, megátkozta a területet. Azok a teremtmények, amelyek túlélték az éhezést, az Örökéltű Lények, most az átjáróknál őrködnek. Elkezd felőled érdeklődni. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Őszinte vagy, és megmondod kutatásod célját",
+                    "destination": 141
+                },
+                {
+                    "direction": "south",
+                    "caption": "Megköszönöd a beszélgetést, és a déli ajtón át távozol",
+                    "destination": 66
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod hirtelen felkapni a kulcsokat, és kirohansz a legközelebbi ajtón",
+                    "destination": 249
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "story": "A víz jéghideg, eszeveszetten úszni kezdesz a déli part irányába. Meghökkenve látod, amint a tutaj a folyó közepén megfordul, és visszaúszik a déli partra. Fokozod gyorsaságod, mivel tudatában vagy, hogy csapkodásod bármelyik pillanatban magára vonhatja valamilyen, a folyóban élő lény figyelmét.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "caption": "Dobj egy kockával!",
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Biztonságban visszajutsz a déli partra",
+                            "destination": 218,
+                            "direction": "south"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Biztonságban visszajutsz a déli partra",
+                            "destination": 218,
+                            "direction": "south"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Biztonságban visszajutsz a déli partra",
+                            "destination": 218,
+                            "direction": "south"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Biztonságban visszajutsz a déli partra",
+                            "destination": 218,
+                            "direction": "south"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 158,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 158,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
         
         {
             "id": 169,
@@ -3330,6 +3578,7 @@
                 }
             ]
         },
+        
 
 		{
 			"id": 173,
@@ -3401,6 +3650,42 @@
                     "direction": "unknown",
                     "caption": "Lapozz",
                     "destination": 198
+                }
+            ]
+        },
+        
+        {
+            "id": 179,
+            "story": "Egy hatalmas, négyszög alakú terembe jutottál. A földön szanaszéjjel törött cserépdarabok hevernek. Egy nagyméretű agyagedény azonban érintetlen és tiszta, átlátszó folyadék van benne. Egy teli tál aranypénz van mellette. Miután beléptél, az ajtó becsapódik mögötted, sarkon fordulsz, és egy különös, félig ember, félig bika alakú teremtményt pillantasz meg, amint rád bámul. Egy Minotaurusz közeledik óvatosan feléd! Lehajtja fejét, szarvaival célba veszi a mellkasodat, és rohamra lendül.",
+            "cover": "scene_179.png",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Minotaurusz",
+                            "dexterity": 9,
+                            "health": 9
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 54,
+                        "caption": "Igyekszel az ajtó közelébe manőverezni, hogy szükség esetén elmenekülhess."
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 258,
+                        "caption": "Megölöd a Minotauruszt"
+                    }
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "kalandod során már jártál ebben a szobában, és már legyőzted, a termet üresen találod.",
+                    "destination": 54,
+                    "onlyWhenNoFights": true
                 }
             ]
         },
@@ -3578,7 +3863,33 @@
 				}
 			]
 		},
-        
+        {
+            "id": 218,
+            "story": "Egy föld alatti folyó déli partján állsz, és a mély, fekete vízre meredsz. Úgy tűnik, négyféleképpen is át lehet kelni a folyón. Tőled balra egy rozsdás harang lóg, rajta felirat: „Kompszolgálat két arany. Kérjük csengetni.” A parton előtted egy kis tutaj, mellette hosszú farúd pihen, azzal átcsáklyázhatnál a vízen. Jobbra roskatag, öreg híd vezet át a folyó fölött. Ha egyikben sem bízol, át is úszhatsz. Melyik lehetőséget választod?",
+            "cover": "scene_218.png",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Meghúzod a harangkötelet",
+                    "destination": 3
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átcsáklyázol a tutajjal",
+                    "destination": 386
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megkockáztatod a hídon való átkelést",
+                    "destination": 209
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átúszol",
+                    "destination": 316
+                }
+            ]
+        },
         {
             "id": 219,
             "story": "",
@@ -3586,7 +3897,7 @@
                 {
                     "direction": "unknown",
                     "caption": "Lapozz",
-                    "destination": 198
+                    "destination": 182
                 }
             ]
         },

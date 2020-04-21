@@ -358,10 +358,40 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //            GameData.shared.player.add(inventoryItem: key2)
 //        }
         
+        // Check conditions
         if let condition = wayPoint.condition, !GameData.shared.player.isFulfilled(condition: condition) {
             let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choos this way!", comment: "Message when waypoint condition is not fulfilled"))
             present(alert, animated: true, completion: nil)
             return
+        }
+        
+        // Check if waypoint is fallback
+        if wayPoint.onlyWhenNoFights ?? false {
+        
+            var pendingFights = false
+            
+            let fights = actions?.filter({ (_action) -> Bool in
+                return _action.type == .fight
+            })
+            
+            if let _fights = fights {
+                for fight in _fights {
+                    if let _fight = fight as? FightAction {
+                        for opponent in _fight.opponents {
+                            if !opponent.isDead {
+                                pendingFights = true
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if pendingFights {
+                let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not choose this way until you fight all your opponents!", comment: "Message when waypoint cannot be selected until pending fights are done"))
+                present(alert, animated: true, completion: nil)
+                return
+            }
         }
         
         advance(to: wayPoint.destination)
