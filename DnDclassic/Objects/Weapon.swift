@@ -11,7 +11,7 @@ import Foundation
 class Weapon: InventoryItem, Deserializable {
     
     let identifier: String?
-    let type: InventoryItemType = .weapon
+    private(set) var type: InventoryItemType = .weapon
     private (set) var amount: Int
     let name: String?
     let modifiedProperty: CharacterProperty?

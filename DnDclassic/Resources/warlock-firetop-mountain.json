@@ -1223,6 +1223,13 @@
                     "caption": "Beleveted magad a vízbe.",
                     "destination": 399
                 }
+            ],
+            "inventory": [
+                {
+                    "type": "sword",
+                    "amount": -1,
+                    "id": "longsword_default"
+                }
             ]
         },
         {
@@ -2931,6 +2938,206 @@
 				}				
 			]
 		},
+        {
+            "id": 145,
+            "story": "Míg a Kígyóval harcoltál, a doboz a földre esett, és egy bronzszínű kulcs hullott ki belőle. A kulcsra a 99- es számot vésték. Magaddal viheted a kulcsot (jegyezd be a Felszerelési Tárgyak rovatba), és indulhatsz tovább. Szerencse pontjaidhoz adjál 1-et",
+            "inventory": [
+                {
+                    "type": "key",
+                    "id": "key_99",
+                    "name": "bronzszínű kulcs 99-es számmal"
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 363
+                }
+            ]
+        },
+        {
+            "id": 146,
+            "story": "Nem találsz titkos átjárókat. Visszamész a kereszteződéshez.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Folytatod utadat vagy északnak",
+                    "destination": 366
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé mész",
+                    "destination": 11
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "story": "Kilépsz a szobából, és a folyosón kinyitod a ládikát. Egyetlen aranypénzt találsz benne, és egy kisegeret, nyilván ez volt ellenfeled kedvenc háziállata. Megtartod az aranyat és szabadon ereszted az egeret, amely apró léptekkel elrohan. 2 Szerencse pontot kaptál.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 1
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 208
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "story": "Átkutatod a testet, és megpróbálsz nem rátekinteni oszlásnak induló, szürke arcára. Hátraugrasz, amint a holttest hirtelen rád mereszti szemét. Épp az utolsó pillanatban kerülöd el a gonosz vágást, amit hosszú, éles körmei hasítottak volna rajtad. Felpattan, és megjelenik arcán a szadisták jellegzetes torz mosolya.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 230
+                }
+            ]
+        },
+        {
+            "id": 149,
+            "story": "Amint az élő freskókat bámulod, nem is figyelsz arra, hogy a gyertya milyen gyorsan ég. Hirtelen lobban egyet, és kialszik. Újra hallod a fülsértő sikolyokat, és a hangok elviselhetetlen magasságig emelkednek. Térdre hullasz, két kézzel befogod füledet, és a fal felé kúszol. Melyikhez?",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "A keleti falhoz",
+                    "destination": 181
+                },
+                {
+                    "direction": "north",
+                    "caption": "Az északi falhoz",
+                    "destination": 265
+                },
+                {
+                    "direction": "west",
+                    "caption": "A nyugati falhoz",
+                    "destination": 355
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "story": "Egy elágazásnál vagy, az út háromfelé vezet.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak fordulsz",
+                    "destination": 222
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek indulsz",
+                    "destination": 297
+                },
+                
+                {
+                    "direction": "south",
+                    "caption": "Délre tartasz",
+                    "destination": 133
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "story": "Az örvénylő vízben végre földet ér a lábad. Néhány méternyire az északi parttól egy hüllő baljóslatú szempárját pillantod meg a víz felszínén. Téged figyel! Te pedig egyenesen arra úszol.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Úgy döntesz, hogy nem akarsz megismerkedni a vészjósló szempár tulajdonosával",
+                    "destination": 1511
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Szembenézel a bestiával",
+                    "destination": 86
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod kikerülni (közelebb sodródsz az örvényléshez)",
+                    "destination": 158
+                }
+            ]
+        },
+        {
+            "id": 1511,
+            "story": "úgy döntesz, hogy nem akarsz megismerkedni a vészjósló szempár tulajdonosával, megfordulsz, és minden erődet összeszedve visszaúszol a déli partra. Kimerülten érkezel, elvesztettél 1 ÉLETERŐ pontot.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 218
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "story": "Küzdjél meg a Sárkánnyal!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Sárkány",
+                            "dexterity": 10,
+                            "health": 12
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 371,
+                        "caption": "Legyőzted"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "story": "Ahogy két kardod az övedbe dugod, az újonnan szerzett megelevenedik, és elkezd külön életet élni. Megvágja a lábadat (1 ÉLETERŐ pontot vesztettél), és amint kihúzod, megpuhul a kezedben. Mivel így már nincs rá szükséged, a folyóba veted. Úgy látszik, nem tehetsz mást, a folyó áramlásával együtt keleti irányba kell úsznod.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "A vízbe veted magad, és úszni kezdesz.",
+                    "destination": 399
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "sword",
+                    "id": "magic_sword_344",
+                    "amount": -1
+                }
+            ]
+        },
         
         {
             "id": 155,
@@ -3850,6 +4057,33 @@
 				}
 			]
 		},
+        
+        {
+            "id": 344,
+            "story": "Hüvelyébe dugod a kardod, és a vízhez mész. Biztonságos-e átúszni rajta? Bár veszélynek közvetlen jelét sem a vízben, sem a parton nem látod, út sincs, ami az északi partra vezetne. Egyszer csak egy csillogó kardot pillantasz meg, néhány lépésnyire hever a folyó medrében. A vízbe gázolsz, hogy kivedd. Könynyű a kezedben, sokkal kevésbé ormótlan, mint a sajátod, és éles a pengéje. Ez a csodálatos fegyver 1 ÜGYESSÉG pontnyi pluszt jelent mindig, ha ezt használod. Jegyezd fel a Kalandlapra. Egy titokzatos hang azt súgja neked, hogy saját kardodat dobd a folyóba.",
+            "inventory": [
+                {
+                    "type": "sword",
+                    "id": "magic_sword_344",
+                    "name": "Mágikus kard",
+                    "modifiedProperty": "dexterity",
+                    "modifierValue": 1,
+                    "autoEquip": true
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megteszed",
+                    "destination": 56
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Mindkét kardot megtartod",
+                    "destination": 153
+                }
+            ]
+        },
         
         {
             "id": 347,

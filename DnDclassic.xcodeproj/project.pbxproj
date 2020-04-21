@@ -61,6 +61,7 @@
 		19825BEB244DD4CB00488525 /* QueryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BEA244DD4CB00488525 /* QueryAction.swift */; };
 		19825BED244DDA1700488525 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BEC244DDA1700488525 /* Query.swift */; };
 		19825BEF244DEE8100488525 /* scene_143.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825BEE244DEE8000488525 /* scene_143.png */; };
+		19825BF1244EFD0300488525 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825BF0244EFD0300488525 /* Sword.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -173,6 +174,7 @@
 		19825BEA244DD4CB00488525 /* QueryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryAction.swift; sourceTree = "<group>"; };
 		19825BEC244DDA1700488525 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		19825BEE244DEE8000488525 /* scene_143.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_143.png; sourceTree = "<group>"; };
+		19825BF0244EFD0300488525 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				19A8559D240ACB5B007174C8 /* Food.swift */,
 				19A8559F240ACC0B007174C8 /* Money.swift */,
 				19C9151D243B9183002E0102 /* Weapon.swift */,
+				19825BF0244EFD0300488525 /* Sword.swift */,
 				19825BD4244616DD00488525 /* Shield.swift */,
 				19825BE8244DAFA500488525 /* Helmet.swift */,
 			);
@@ -704,6 +707,7 @@
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
 				19FCFA9E24157BA000199175 /* SceneActionCell.swift in Sources */,
 				19825BD724476D4100488525 /* PropertyRoll.swift in Sources */,
+				19825BF1244EFD0300488525 /* Sword.swift in Sources */,
 				19C9151E243B9184002E0102 /* Weapon.swift in Sources */,
 				19FCFA982412F9B300199175 /* CharacterViewInventoryCell.swift in Sources */,
 				19825BCF2444A3ED00488525 /* FightEvent.swift in Sources */,

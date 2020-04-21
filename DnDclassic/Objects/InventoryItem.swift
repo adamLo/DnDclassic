@@ -10,10 +10,10 @@ import Foundation
 
 enum InventoryItemType: String {
     
-    case weapon, armor, key, lighting, money, food, potion, silverWeapon, hammer, shield, misc, book, gem, cheese, helmet
+    case weapon, armor, key, lighting, money, food, potion, silverWeapon, hammer, shield, misc, book, gem, cheese, helmet, sword
     
     var equippable: Bool {
-        return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon, InventoryItemType.shield, InventoryItemType.helmet].contains(self)
+        return [InventoryItemType.weapon, InventoryItemType.armor, InventoryItemType.silverWeapon, InventoryItemType.shield, InventoryItemType.helmet, InventoryItemType.sword].contains(self)
     }
     
     func canEquipWithOther(type: InventoryItemType) -> Bool {
@@ -28,6 +28,9 @@ enum InventoryItemType: String {
             return false
         }
         if self == .helmet, type == .helmet {
+            return false
+        }
+        if self == .sword, type == .sword {
             return false
         }
         

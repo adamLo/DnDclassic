@@ -32,6 +32,10 @@ class Scene: Deserializable {
         guard let _id = json[JSONKeys.id] as? Int else {return nil}
         id = _id
         
+        if _id == 344 {
+            print("Gotcha!")
+        }
+        
         guard let _story = json[JSONKeys.story] as? String else {return nil}
         story = _story
         
@@ -41,10 +45,6 @@ class Scene: Deserializable {
         }
         else {
             image = nil
-        }
-        
-        if _id == 198 {
-            print("Gotcha!")
         }
         
         // inventory

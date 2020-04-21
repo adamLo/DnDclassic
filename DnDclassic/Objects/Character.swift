@@ -190,7 +190,7 @@ class Character: Deserializable, Equatable {
     
     static var startInventory: [InventoryWrapper] {
      
-        let sword = InventoryObject(type: .weapon, name: NSLocalizedString("Long sword", comment: "Long sword name"), identifier: "longsword_default")
+        let sword = InventoryObject(type: .sword, name: NSLocalizedString("Long sword", comment: "Long sword name"), identifier: "longsword_default")
         let armor = InventoryObject(type: .armor, name: NSLocalizedString("Leather Armor", comment: "Leather armor name"), identifier: "leatherarmor_default")
         let lamp = InventoryObject(type: .lighting, name: NSLocalizedString("Lamp", comment: "lamp name"), identifier: "lamp_default")
         let money = Money(amount: 0)
@@ -403,7 +403,7 @@ class Character: Deserializable, Equatable {
                 _item.item.drop(amount: _toDrop)
                 droppedAmount += _toDrop
             }
-            else if _item.item.type == item.type {
+            else if item.identifier?.nilIfEmpty == nil, _item.item.identifier?.nilIfEmpty == nil, _item.item.type == item.type {
                 let _toDrop = min(_item.item.amount, toDrop)
                 _item.item.drop(amount: _toDrop)
                 droppedAmount += _toDrop
