@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Helmet: Armor, Deserializable {
+class Helmet: Armor {
     
     override var type: InventoryItemType {
         return .helmet

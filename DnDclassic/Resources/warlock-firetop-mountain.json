@@ -4328,6 +4328,54 @@
                 }
             ]
         },
+        {
+            "id": 203,
+            "story": "Adj magadnak 1 Szerencse pontot, amiért legyőzted a Farkasembert. Megpihenhetsz, és ehetsz valamit, ha akarsz. Körülnézel a szobában, de semmi olyat nem látsz, ami a hasznodra lehetne. Bár egy kulcscsomó érdekesnek látszik, főleg az a kulcs, amelybe a Csónakház feliratot vésték. Egyik kulcs sincs megszámozva. Magaddal viheted a kulcsokat, ha akarod, és már indulhatsz is.",
+            "inventory": [
+                {
+                    "type": "key",
+                    "name": "Kulcs Csónakház felirattal",
+                    "id": "key_charnel_house"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "A nyugati ajtón mész ki",
+                    "destination": 38
+                },
+                {
+                    "direction": "east",
+                    "caption": "A keleti ajtón mész ki",
+                    "destination": 66
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "story": "Az Öreg ember az asztalkánál fel sem tekint, de ördögi kis állatkája gyanakodva mered rád, és vékony, cincogó hangon csivitelni kezd. Az Öreg felmordul, és megkérdezi, nincs-e kedved fogadni vele. (Csak akkor fogadhatsz, ha legalább egy aranypénz van nálad) Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Elfogadod az ajánlatát",
+                    "destination": 130,
+                    "condition": {
+                        "inventoryItemType": "money",
+                        "amount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Visszautasítod és továbbmész",
+                    "destination": 280
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Rátámadsz az Öregre",
+                    "destination": 377
+                }
+            ]
+        },
         
         {
             "id": 211,

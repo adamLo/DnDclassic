@@ -14,21 +14,21 @@ class InventoryObject: InventoryItem, Deserializable {
         return "\(self.name ?? "N/A") (\(self.type.rawValue))"
     }
         
-    let type: InventoryItemType
-    let name: String?
+    private(set) var type: InventoryItemType
+    private(set) var name: String?
     
-    let modifiedProperty: CharacterProperty?
-    let modifierValue: Int?
+    private(set) var modifiedProperty: CharacterProperty?
+    private(set) var modifierValue: Int?
         
-    let identifier: String?
+    private(set) var identifier: String?
     
-    private(set) var amount: Int = 1
+    internal var amount: Int = 1
     
-    let consumeWhenUsed: Bool?
+    private(set) var consumeWhenUsed: Bool?
     
-    let canUnEquip: Bool?
-    let attackBonus: Int?
-    let autoEquip: Bool?
+    private(set) var canUnEquip: Bool?
+    private(set) var attackBonus: Int?
+    private(set) var autoEquip: Bool?
         
     init(type: InventoryItemType, name: String,
          modifiedProperty: CharacterProperty? = nil, modifierValue: Int? = 0,         

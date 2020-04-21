@@ -360,7 +360,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // Check conditions
         if let condition = wayPoint.condition, !GameData.shared.player.isFulfilled(condition: condition) {
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choos this way!", comment: "Message when waypoint condition is not fulfilled"))
+            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choose this way!", comment: "Message when waypoint condition is not fulfilled"))
             present(alert, animated: true, completion: nil)
             return
         }

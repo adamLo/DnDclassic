@@ -8,7 +8,7 @@
 
 import Foundation
 
-class InventoryWrapper: Equatable {
+class InventoryWrapper: Equatable, CustomStringConvertible {
     
     let item: InventoryItem
     var equipped = false
@@ -22,6 +22,10 @@ class InventoryWrapper: Equatable {
 
     static func == (lhs: InventoryWrapper, rhs: InventoryWrapper) -> Bool {
         return lhs.identifier == rhs.identifier
+    }
+    
+    var description: String {
+        return item.description + (equipped ? " [Equipped]" : "") + " \(identifier)"
     }
 }
 
@@ -193,14 +197,12 @@ class Character: Deserializable, Equatable {
         let sword = InventoryObject(type: .sword, name: NSLocalizedString("Long sword", comment: "Long sword name"), identifier: "longsword_default")
         let armor = InventoryObject(type: .armor, name: NSLocalizedString("Leather Armor", comment: "Leather armor name"), identifier: "leatherarmor_default")
         let lamp = InventoryObject(type: .lighting, name: NSLocalizedString("Lamp", comment: "lamp name"), identifier: "lamp_default")
-        let money = Money(amount: 0)
         let food = Food(amount: 10)
         
         return [
             InventoryWrapper(item: sword, equipped: true),
             InventoryWrapper(item: armor, equipped: true),
             InventoryWrapper(item: lamp),
-            InventoryWrapper(item: money),
             InventoryWrapper(item: food)
         ]
     }
@@ -493,7 +495,7 @@ class Character: Deserializable, Equatable {
             }
         }
         
-        return count == condition.inventoryItemAmount
+        return count >= condition.inventoryItemAmount
     }
     
     func use(itemIn condition: Condition) {

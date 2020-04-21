@@ -8,26 +8,28 @@
 
 import Foundation
 
-class Food: InventoryItem {
+class Food: InventoryObject {
     
-    let identifier: String? = "food"
-    let type: InventoryItemType = .food
-    let modifiedProperty: CharacterProperty? = nil
-    let modifierValue: Int? = nil
-    let name: String? = nil
-    let canUnEquip: Bool? = true
-    let attackBonus: Int? = nil
-    let autoEquip: Bool? = false
+    override var type: InventoryItemType {
+        return .food
+    }
         
-    private(set) var amount: Int
-    
-    let consumeWhenUsed: Bool? = true
+    override var consumeWhenUsed: Bool? {
+        return true
+    }
     
     init(amount: Int) {
+        
+        super.init(type: .food, name: NSLocalizedString("Food", comment: "Food title"))
         self.amount = amount
     }
     
-    var description: String {
+    required init?(json: JSON) {
+        
+        super.init(json: json)
+    }
+    
+    override var description: String {
         return String(format: NSLocalizedString("Food (rations: %d)", comment: "Food description format"), amount)
     }
     
@@ -39,18 +41,6 @@ class Food: InventoryItem {
         return true
     }
     
-    func use(amount: Int) {
-        
-        self.amount = max(self.amount - amount, 0)
-    }
-    
-    func add(amount: Int) {
-        
-        self.amount += amount
-    }
-    
-    func drop(amount: Int) {
-        
-        self.amount = max(self.amount - amount, 0)
+    override func use(amount: Int) {
     }
 }
