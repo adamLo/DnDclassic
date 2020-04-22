@@ -484,6 +484,10 @@ class Character: Deserializable, Equatable {
         
     func isFulfilled(condition: Condition) -> Bool {
         
+        if condition.inventoryItemId == nil && (condition.inventoryItemType == nil || (condition.inventoryItemAmount ?? 0) == 0) {
+            return true
+        }
+        
         var count = 0
         
         for item in inventory {
@@ -495,16 +499,20 @@ class Character: Deserializable, Equatable {
             }
         }
         
-        return count >= condition.inventoryItemAmount
+        return count >= (condition.inventoryItemAmount ?? 0)
     }
     
     func use(itemIn condition: Condition) {
+        
+        if condition.inventoryItemId == nil && (condition.inventoryItemType == nil || (condition.inventoryItemAmount ?? 0) == 0) {
+            return
+        }
         
         var usedAmount = 0
         
         for item in inventory {
             
-            let amount = item.item.amount < condition.inventoryItemAmount - usedAmount ? item.item.amount : condition.inventoryItemAmount - usedAmount
+            let amount = item.item.amount < (condition.inventoryItemAmount ?? 0) - usedAmount ? item.item.amount : (condition.inventoryItemAmount ?? 0) - usedAmount
             
             if let requiredType = condition.inventoryItemType, item.item.type == requiredType, item.item.amount > 0 {
                 item.item.use(amount: amount)
@@ -517,7 +525,7 @@ class Character: Deserializable, Equatable {
                 log(event: .use(item: item.item, amount: amount))
             }
             
-            if usedAmount >= condition.inventoryItemAmount {
+            if usedAmount >= condition.inventoryItemAmount ?? 0 {
                 break
             }
         }

@@ -360,13 +360,12 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // Check conditions
         if let condition = wayPoint.condition, !GameData.shared.player.isFulfilled(condition: condition) {
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choose this way!", comment: "Message when waypoint condition is not fulfilled"))
-            present(alert, animated: true, completion: nil)
+            waypointConditionNotfulfilled()
             return
         }
         
         // Check if waypoint is fallback
-        if wayPoint.onlyWhenNoFights ?? false {
+        if wayPoint.condition?.onlyWhenNoFights ?? false {
         
             var pendingFights = false
             
@@ -388,20 +387,30 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
             if pendingFights {
-                let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not choose this way until you fight all your opponents!", comment: "Message when waypoint cannot be selected until pending fights are done"))
-                present(alert, animated: true, completion: nil)
+                waypointConditionNotfulfilled()
                 return
             }
         }
         
-        // Oly when visited before
-        if wayPoint.onlyWhenVisited ?? false, !GameData.shared.isCompleted(scene: scene) {
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choose this way!", comment: "Message when waypoint condition is not fulfilled"))
-            present(alert, animated: true, completion: nil)
+        // Only when visited before
+        if let _sceneId = wayPoint.condition?.onlyWhenVisited, !GameData.shared.isCompleted(sceneId: _sceneId) {
+            waypointConditionNotfulfilled()
+            return
+        }
+        
+        // Only when NOT visited before
+        if let _sceneId = wayPoint.condition?.onlyWhenNotVisited, GameData.shared.isCompleted(sceneId: _sceneId) {
+            waypointConditionNotfulfilled()
             return
         }
         
         advance(to: wayPoint.destination)
+    }
+    
+    private func waypointConditionNotfulfilled() {
+        
+        let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("Sorry, you don't fulfill the condition to choose this way!", comment: "Message when waypoint condition is not fulfilled"))
+        present(alert, animated: true, completion: nil)
     }
     
     private func advance(to sceneId: Int) {

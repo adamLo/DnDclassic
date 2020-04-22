@@ -29,14 +29,20 @@ class Scene: Deserializable {
         
     required init?(json: JSON) {
         
-        guard let _id = json[JSONKeys.id] as? Int else {return nil}
+        guard let _id = json[JSONKeys.id] as? Int else {
+            print("*** Failed to init scene no \"id\" json: \(json)")
+            return nil
+        }
         id = _id
         
         if _id == 344 {
             print("Gotcha!")
         }
         
-        guard let _story = json[JSONKeys.story] as? String else {return nil}
+        guard let _story = json[JSONKeys.story] as? String else {
+            print("*** Failed to init scene \(_id): no \"story\"")
+            return nil
+        }
         story = _story
         
         // Image
@@ -51,7 +57,10 @@ class Scene: Deserializable {
         var _inventory = [InventoryItem]()
         if let _inventoryObjects = json[JSONKeys.inventory] as? JSONArray {
             for _json in _inventoryObjects {
-                guard let _item = InventoryItemFactory.item(json: _json) else {return nil}
+                guard let _item = InventoryItemFactory.item(json: _json) else {
+                    print("*** Failed to init scene \(_id): failed to init \"inventory item\"")
+                    return nil
+                }
                 _inventory.append(_item)
             }
         }
@@ -66,7 +75,10 @@ class Scene: Deserializable {
         var _waypoints = [WayPoint]()
         if let _waypointsArray = json[JSONKeys.waypoints] as? JSONArray {
             for _waypointJson in _waypointsArray {
-                guard let _wayPoint = WayPoint(json: _waypointJson) else {return nil}
+                guard let _wayPoint = WayPoint(json: _waypointJson) else {
+                    print("*** Failed to init scene \(_id): failed to init \"waypoint\"")
+                    return nil
+                }
                 _waypoints.append(_wayPoint)
             }
         }
@@ -81,7 +93,10 @@ class Scene: Deserializable {
         var _actions = [Action]()
         if let _actionsArray = json[JSONKeys.actions] as? JSONArray {
             for _actionJson in _actionsArray {
-                guard let _action = ActionFactory.action(json: _actionJson) else {return nil}
+                guard let _action = ActionFactory.action(json: _actionJson) else {
+                    print("*** Failed to init scene \(_id): failed to init \"action\"")
+                    return nil
+                }
                 _actions.append(_action)
             }
         }
@@ -95,7 +110,10 @@ class Scene: Deserializable {
         var _returns = [WayPoint]()
         if let _returnsArray = json[JSONKeys.returnWps] as? JSONArray {
             for _waypointJson in _returnsArray {
-                guard let _waypoint = WayPoint(json: _waypointJson) else {return nil}
+                guard let _waypoint = WayPoint(json: _waypointJson) else {
+                    print("*** Failed to init scene \(_id): failed to init \"returns\"")
+                    return nil
+                }
                 _returns.append(_waypoint)
             }
         }
@@ -104,7 +122,10 @@ class Scene: Deserializable {
         var _visitBonus = [Bonus]()
         if let bonusArray = json[JSONKeys.visitBonus] as? JSONArray {
             for bonusObject in bonusArray {
-                guard let bonus = Bonus(json: bonusObject) else {return nil}
+                guard let bonus = Bonus(json: bonusObject) else {
+                    print("*** Failed to init scene \(_id): failed to init \"visitbonus\"")
+                    return nil
+                }
                 _visitBonus.append(bonus)
             }
         }

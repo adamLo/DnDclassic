@@ -27,6 +27,10 @@ class GameData {
         return completedScenes.firstIndex(of: scene.id) != nil
     }
     
+    func isCompleted(sceneId: Int) -> Bool {
+        return completedScenes.firstIndex(of: sceneId) != nil
+    }
+    
     func completed(scene: Scene) {
         
         if !isCompleted(scene: scene) {

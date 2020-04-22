@@ -556,7 +556,7 @@
                 {
                     "direction": "unknown",
                     "caption": "Lapozz",
-                    "destnatin": 371
+                    "destination": 371
                 }
             ]
         },
@@ -2023,7 +2023,7 @@
                     "destination": 39,
                     "condition": {
                         "inventoryItemId": "potion_of_invisibility",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -2032,7 +2032,7 @@
                     "destination": 382,
                     "condition": {
                         "inventoryItemId": "eye_of_cyclops",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -2041,7 +2041,7 @@
                     "destination": 368,
                     "condition": {
                         "inventoryItemType": "cheese",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -2050,7 +2050,7 @@
                     "destination": 194,
                     "condition": {
                         "inventoryItemId": "bow_with_silver_arrow",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -2059,7 +2059,7 @@
                     "destination": 215,
                     "condition": {
                         "inventoryItemId": "y_shaped_wooden_stick",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 }
             ]
@@ -3660,7 +3660,7 @@
                     },
                     "condition": {
                         "inventoryItemId": "arrow_of_everlasting_dream",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -3801,7 +3801,9 @@
                     "direction": "unknown",
                     "caption": "kalandod során már jártál ebben a szobában, és már legyőzted, a termet üresen találod.",
                     "destination": 54,
-                    "onlyWhenNoFights": true
+                    "condition": {
+                        "onlyWhenNoFights": true
+                    }
                 }
             ]
         },
@@ -3874,7 +3876,7 @@
             "story": "Átkutatod a halott Orkok testét, de zsebükben csak néhány fogat, körmöt, csontot és kést találsz. Átvizsgálod a szobában lévő szekrényeket, de csak durván megmunkált tányérokat, tálakat és kanalakat lelsz. Egyszer csak egy félméteres, vékony bőrtokra bukkansz. Büszke lehetsz győzelmedre: 1 ÜGYESSÉG és 5 ÉLETERŐ pontot szereztél vele.",
             "visitBonus": [
                 {
-                    "property": "dextrity",
+                    "property": "dexterity",
                     "gain": 1
                 },
                 {
@@ -4361,7 +4363,7 @@
                     "destination": 130,
                     "condition": {
                         "inventoryItemType": "money",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -4401,7 +4403,9 @@
                     "direction": "unknown",
                     "caption": "Már voltál itt",
                     "destination": 284,
-                    "onlyWhenVisited": true
+                    "condition": {
+                        "onlyWhenVisited": 206
+                    }
                 },
                 {
                     "direction": "unknown",
@@ -4528,7 +4532,7 @@
                     "destination": 173,
                     "condition": {
                         "inventoryItemType": "silverWeapon",
-                        "amount": 1
+                        "inventoryItemAmount": 1
                     }
                 }
             ],
@@ -4554,6 +4558,33 @@
                         "caption": "Legyőzted"
                     },
                     "escapeDamage": 1
+                }
+            ]
+        },
+        {
+            "id": 212,
+            "story": "A pergamen meglehetősen kopott, majdnem teljesen olvashatatlan. Valamiféle térkép az, címe szerint Zagor Útvesztője. Aligha veheted hasznát, bár az egyik, északra nyíló szobánál ezt olvashatod „.ESZ.LY”, egy keleti tájolásúnál pedig azt, hogy „K.S ..BE..K”. Összehajtod a térképet, és zsebre vágod.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megkóstolod a folyadékot",
+                    "destination": 369,
+                    "condition": {
+                        "onlyWhenNotVisited": 109
+                    }
+                },
+                {
+                    "direction": "north",
+                    "caption": "Folytatod utadat észak felé",
+                    "destination": 120
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "map",
+                    "id": "map_of_zagors_lair",
+                    "name": "Zagor Útvesztője: egy északra nyíló szobánál „.ESZ.LY”, egy keletinél „K.S ..BE..K”",
+                    "autoAdd": true
                 }
             ]
         },
@@ -4766,7 +4797,8 @@
                     "caption": "Van nálad kard vagy kereszt, elérheted a nyugati ajtót",
                     "destination": 380,
                     "condition": {
-                        "inventoryItemId": "cross_against_wampire"
+                        "inventoryItemId": "cross_against_wampire",
+                        "inventoryItemAmount": 1
                     }
                 },
                 {
@@ -5443,6 +5475,17 @@
 			]
 		},
 
+        {
+            "id": 369,
+            "story": "Lenyelsz egy keveset a folyadékból.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 109
+                }
+            ]
+        },
 		{
 			"id": 370,
 			"story": "Az ajtó kinyílik, és egy kis, rendetlen, piszkos szoba tárul eléd. Az egyik sarokban szalmazsák hever. A helyiség közepén faasztal, rajta gyertya, reszkető fénye bevilágítja a szobát. Az asztal alatt egy apró doboz. Az asztal körül kér bibircsókos bőrű, bőrpáncélt viselő kicsi lény ül. Valami grogfélét iszogatnak. Érkezésedkor feltápászkodnak, de mozgásukon látszik, rettenetesen berúgtak.",
@@ -5578,7 +5621,7 @@
                     "destination": 242,
                     "condition": {
                         "inventoryItemType": "key",
-                        "amount": 2
+                        "inventoryItemAmount": 2
                     }
                 }
             ],
