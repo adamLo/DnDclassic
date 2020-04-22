@@ -4730,7 +4730,221 @@
                 }
             ]
         },
-        
+        {
+            "id": 220,
+            "story": "Felbőszül vidámságod láttán. Két kezét meglengeti a levegőben, néhány különös szótagot mormol, azután rád mutat. Érzed, hogy a fejed kóvályogni kezd, és elveszíted az eszméletedet. Amikor magadhoz térsz, egy zsákutcában vagy.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 171
+                }
+            ]
+        },
+        {
+            "id": 221,
+            "story": "Mik ezek a titokzatos tárgyak, amiket összeszedtél? Melyiket írtad fel először a Felszerelési Tárgyak listájára?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "A páncélt",
+                    "destination": 72
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A pajzsot",
+                    "destination": 132
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A kardot",
+                    "destination": 27
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Az aranyat",
+                    "destination": 110
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A keresztet",
+                    "destination": 170
+                }
+            ]
+        },
+        {
+            "id": 222,
+            "story": "Egy hosszú folyosón haladsz előre, az út éles hajtűkanyarral ér véget. Egy kelet-nyugati irányú folyosó mentén kelet felé egy keresztúthoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 85
+                }
+            ]
+        },
+        {
+            "id": 223,
+            "story": "Az ajtót erősen bezárták.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod erőnek erejével felfeszíteni",
+                    "destination": 53
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod utadat tovább a folyosón",
+                    "destination": 300
+                }
+            ]
+        },
+        {
+            "id": 224,
+            "story": "Szemeddel követed a lény mozdulatait, egyszer csak belepillantasz átható tekintetébe. Nézése megigéz, és amint int, hogy lépj közelebb, érzed, hogy saját akaratod elsorvad.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 118
+                }
+            ]
+        },
+        {
+            "id": 225,
+            "story": "Az út halad tovább nyugati irányba, majd egyenesen északnak fordul. Nemsokára egy elágazáshoz érkezel, ahol egy szűk folyosó vezet nyugatnak.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északi irányba tartasz",
+                    "destination": 77
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak fordulsz",
+                    "destination": 63
+                }
+            ]
+        },
+        {
+            "id": 226,
+            "story": "Csak rövid ideig mész délnek, mert egy keresztúthoz érkezel.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 267
+                }
+            ]
+        },
+        {
+            "id": 227,
+            "story": "Az ajtó kinyílik, és te belépsz egy kicsi, füstös szobába. Bent egy faasztal mellett négy apró emberke üldögél. Talán egy méter magasak, de szemmel láthatóan mindnyájan felnőttek. Bőrük cserzett, szakálluk hosszú és bozontos. Szitkozódnak, nevetgélnek és tréfálkoznak kártyázás közben. Hanyatt dőlnek apró székükben, és hosszú agyagpipából eregetik a füstöt. Az asztalon maréknyi rézpénz és négy korsó sör. Ahogy belépsz, mulatságuk félbeszakad. Résen vannak, de nem látszanak túl veszélyesnek. Egyikük feláll, és megjegyzést tesz hiányos neveltetéseddel kapcsolatban, miszerint még csak nem is kopogtattál az ajtón belépés előtt. A többiek egyetértően bólogatnak. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Beszélgetni kezdesz velük, és elnézed nekik a kioktatást",
+                    "destination": 131
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Magyarázkodsz, meghajolsz és távozol",
+                    "destination": 291
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megkérdezed, beszállhatsz-e kártyázni?",
+                    "destination": 100
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz, és megtámadod vezérüket",
+                    "destination": 20
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Már voltál ebben a szobában, most üresen találod",
+                    "destination": 291,
+                    "condition": {
+                        "onlyWhenVisited": 291
+                    }
+                }
+            ],
+            "cover": "scene_227.png"
+        },
+        {
+            "id": 228,
+            "story": "Nem találsz titkos átjárókat. Óvatos vagy, és nem csapsz túl nagy zajt, nehogy magadra vond valami kóbor lény figyelmét. Megállsz és hallgatózol, de csend van.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz a keresztúthoz.",
+                    "destination": 85
+                }
+            ]
+        },
+        {
+            "id": 229,
+            "story": "Visszajutottál az elágazáshoz, és ez alkalommal jobbra fordulsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 69
+                }
+            ]
+        },
+        {
+            "id": 230,
+            "story": "A lény, akivel szembekerültél, egy foszladozó testű ember. Szemei gyorsan cikáznak ide-oda, téged figyelve. Hosszú nyelve szisszenő hanggal csapódik ki a szájából. Fogai és körmei élesek, és úgy tűnik, egyáltalán nem tart fegyvereidtől. Egy Ghoullal állsz szemben! Még az a képessége is megvan, hogy ha négyszer meg tud sebezni a küzdelem során, megbénít téged. Óvakodj ettől!",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Ghoul",
+                            "dexterity": 8,
+                            "health": 7,
+                            "playerDamageEvent": {
+                                "round": 4,
+                                "waypoint": {
+                                    "direction": "unknown",
+                                    "caption": "A ghoul megbénított",
+                                    "destination": 64
+                                }
+                            }
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 390,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 231,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 182
+                }
+            ]
+        },
+        {
+            "id": 232,
+            "story": "A Pókkal vívott kegyetlen csata után szinte teljesen kimerülten nekilátsz, hogy a kardoddal leszabdald a csizmákat. Végül megszabadulsz tőlük, és távozhatsz a barlangból.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Az úton visszamész az elágazáshoz.",
+                    "destination": 375
+                }
+            ]
+        },
         {
             "id": 233,
             "story": "",
@@ -5701,6 +5915,63 @@
             "id": 387,
             "story": "Kipróbálod a kulcsokat, de egyik sem fordul el. Épp a harmadikkal kísérletezel, amikor kis csappantyúk kattannak, és utolsó emléked, amit észlelsz, hogy fájdalom hasít a testedbe. Három apró hajítódárda fúródik beléd. Gyorsan ható méreg van mindegyik hegyén. Kalandod itt véget ért. Nehogy még egyszer ezt a kulcskombinációt használd, ha legközelebb erre tévedsz!",
             "playerDied": true
+        },
+        
+        {
+            "id": 390,
+            "story": "A Ghoul rángatózva meghal lábaid előtt. Átkutatód a testét de csak jelentéktelen dolgokat lelsz. Többek között egy pár fülbevaló (1 Arany értékű) is van az egyik zsebében. Ezt magaddal viheted. Ha még nem kutattad át az első holttestet, most megteheted. 5 aranyat találsz a zsebében, ez is a tied lehet. Megállhatsz egy kicsit pihenni és enni. 2 Szerencse pontot kapsz, amiért megölted a Ghoult.",
+            "inventory": [
+                {
+                    "type": "jewelry",
+                    "amount": 1,
+                    "name": "egy pár fülbevaló (1 Arany értékű)"
+                },
+                {
+                    "type": "money",
+                    "amoount": 5
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Ezek után továbbmész északnak",
+                    "destination": 120
+                },
+                {
+                    "direction": "north",
+                    "caption": "Átkutatod a második holttestet",
+                    "destination": 393
+                }
+            ]
+        },
+        
+        {
+            "id": 393,
+            "story": "Átkutatod a zsebeit ennek a halottnak is, és 8 aranyat találsz, meg egy folyadékkal teli üveget és egy régi pergamendarabot. Ezeket magaddal viheted.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amoount": 8
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Elolvasod most a pergament",
+                    "destination": 212
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A folyadékkal próbálkozol",
+                    "destination": 369
+                }
+            ]
         },
         
         {
