@@ -106,7 +106,7 @@ class Fight {
             if let _bonus = opponent.hitBonus, (rounds % _bonus.round == 0) {
                 player.apply(bonus: _bonus)
             }
-            
+                        
             if player.isDead {
                 player.log(event: .died)
             }
@@ -119,6 +119,34 @@ class Fight {
             }
             
             playerDamage = damage
+        }
+        
+        if !opponent.isDead, let extraAttack = opponent.extraAttack {
+            // Extra opponent attack
+            let roll = Dice(number: extraAttack.dice).roll()
+            if let _choice = extraAttack.choices.first(where: {$0.roll == roll}) {
+                
+                if let _effects = _choice.effects {
+                    for effect in _effects {
+                        if (effect.gain ?? 0) != 0 {
+                            // This is a damage choice
+                            if !((_choice.canUseLuck ?? false) && (withLuck ?? false)) {
+                                // No luck or cannot use
+                                player.log(event: .extraAttack(damage: effect.gain ?? 0, caption: _choice.caption))
+                                player.apply(bonus: effect)
+                            }
+                            else {
+                                // Luck
+                                player.log(event: .extraAttackAvoided)
+                            }
+                        }
+                        else {
+                            // No damage choice
+                            player.log(event: .extraAttackNoDamage(caption: _choice.caption))
+                        }
+                    }
+                }
+            }
         }
         
         if !player.isDead, !opponent.isDead, let event = opponent.event, event.round == rounds {

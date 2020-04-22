@@ -5219,7 +5219,7 @@
             ]
         },
         {
-            "id": 2431,
+            "id": 2432,
             "story": "A másik kezedet használtad, így a sérülés nem olyan zavaró. 1 ÜGYESSÉG és 2 ÉLETERŐ pontot veszítesz.",
             "visitBonus": [
                 {
@@ -5239,7 +5239,22 @@
                 }
             ]
         },
-        
+        {
+            "id": 244,
+            "story": "Az út észak felé vezet, messziről már hallatszik egy föld alatti folyó csobogásának a zaja. A levegő hűvös és frissítő. Hamarosan odaérsz, ahol a folyópart kiszélesedik, és kétségbeesetten látod, semmilyen módon nem tudsz átkelni a túloldalra. Kelet felé a folyó egy sziklabarlangon folyik keresztül.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Leülsz pihenni és enni",
+                    "destination": 143
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod utad az egyetlen lehetséges módon: a folyóba veted magad, és úszol lefelé az áramlással",
+                    "destination": 399
+                }
+            ]
+        },
         {
             "id": 245,
             "story": "",
@@ -5251,7 +5266,44 @@
                 }
             ]
         },
-
+        {
+            "id": 246,
+            "story": "Elindulsz délnek egy köves út mentén. Nyugatnak kanyarodik, azután délnek, azután megint nyugatnak, és egyszer csak egy hármas útkereszteződésnél találod magad.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak indulsz",
+                    "destination": 329
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé tartasz",
+                    "destination": 180
+                },
+                {
+                    "direction": "east",
+                    "caption": "Visszamész keletre",
+                    "destination": 70
+                }
+            ]
+        },
+        {
+            "id": 247,
+            "story": "Egy kicsit meglepődik hirtelen támadásodtól, de azután egyszerűen csak felemeli a kezét. És amint így tesz, hirtelen erősen beleütközöl valamibe, bár előtted látszólag nincs semmi. A földön üldögélsz döbbenten, és az orrodat dörgölöd. 2 ÉLETERŐ pontot veszítettél. Az Öreg kuncogva mondja: „Szegény bolond. Valóban azt hitted, védtelenül állok itt a gonoszság birodalmában? Megfizetsz ostobaságodért!”",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Felállsz, visszamész az úton, és északnak fordulsz",
+                    "destination": 292
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ]
+        },
 		{
 			"id": 248,
 			"story": "A teremtmény, amit most felébresztettél, egy Ork! Feltápászkodik a földről, és elfordul, hogy megragadjon egy kötelet, mely valószínűleg a riasztóharangot kondítja meg. Gyorsan rá kell támadnod!",
@@ -5278,7 +5330,100 @@
 				}
 			]
 		},
-
+        {
+            "id": 249,
+            "story": "Ahogy megmoccansz, a kutya támadásba lendül. Rettenetes fekete fogai a torkodat célozzák. Kétméternyire lehet, mikor a szájából lángnyelvet fúj, egyenest az arcodba! Még épp idejében hajolsz le, de most már nem kerülheted el a küzdelmet.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Kutya",
+                            "dexterity": 7,
+                            "health": 6,
+                            "extraAttack": {
+                                "dice": 1,
+                                "choices": [
+                                    {
+                                        "roll": 1,
+                                        "caption": "Megperzselődsz",
+                                        "canUseLuck": true,
+                                        "effects": [
+                                            {
+                                                "property": "health",
+                                                "gain": -1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "roll": 2,
+                                        "caption": "Megperzselődsz",
+                                        "canUseLuck": true,
+                                        "effects": [
+                                            {
+                                                "property": "health",
+                                                "gain": -1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "roll": 3,
+                                        "caption": "Kikerülted a lángnyelvet"
+                                    },
+                                    {
+                                        "roll": 4,
+                                        "caption": "Kikerülted a lángnyelvet"
+                                    },
+                                    {
+                                        "roll": 5,
+                                        "caption": "Kikerülted a lángnyelvet"
+                                    },
+                                    {
+                                        "roll": 6,
+                                        "caption": "Kikerülted a lángnyelvet"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "escape": {
+                        "direction": "south",
+                        "destination": 66,
+                        "caption": "Elmenekülni egyedül a déli ajtón keresztül lehet."
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 2491,
+                        "caption": " Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2491,
+            "story": "Az Öreg figyeli a küzdelmet, de nem mozdul, csak akkor, ha legyőzöd a kutyáját. 1 Szerencse pontot mindenképpen nyertél.",
+            "actions": [
+                {
+                    "type": "escape",
+                    "caption": "Elmenekülsz a déli ajtón keresztül. Arra már nincs időd, hogy bármit is magaddal vigyél.",
+                    "destination": 66,
+                    "direction": "south"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Maradsz",
+                    "destination": 304
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ]
+        },
 		{
 			"id": 250,
 			"story": "Egy rövid folyosón vagy, amely néhány méterrel előtted zsákutcába torkollik. Átvizsgálod a sziklafalat, de nem látsz sehol átjárót. Visszamész az útkereszteződéshez, és ez alkalommal egyenesen északnak indulsz.",
