@@ -4588,7 +4588,99 @@
                 }
             ]
         },
-
+        {
+            "id": 213,
+            "story": "Az ajtó zárva van.",
+            "actions": [
+                {
+                    "caption": "Rohamozd meg!",
+                    "type": "propertyRoll",
+                    "dice": 2,
+                    "properties": ["dexterity"],
+                    "equalOrLess": {
+                        "caption": "Feltörted az ajtót",
+                        "destination": 36,
+                        "direction": "unknown"
+                    },
+                    "greater": {
+                        "caption": "Az ajtó zárva marad",
+                        "destination": 2131,
+                        "direction": "unknown"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2131,
+            "story": "az ajtó zárva marad, és 1 ÉLETERŐ pontot veszítettél, mivel felhorzsoltad a vállad",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Tovább kell menned az úton",
+                    "destination": 314
+                }
+            ]
+        },
+        {
+            "id": 214,
+            "story": "A sziklába faragott arc észak felől nézve sima és nedvesen fénylő. Különféle színárnyalatokban mohafélék nőnek rajta. Félelmetes csend van, amit csak az alattad hömpölygő folyó halk csobbanásai törnek meg. Három lehetőséged van:",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Egy út vezet északnyugatnak. Ezt választod.",
+                    "destination": 271
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Egy hatalmas gerendákból ácsolt ajtó áll előtted, pontosan a sziklába faragott arc közepén. Benyitsz rajta.",
+                    "destination": 104
+                },
+                {
+                    "direction": "east",
+                    "caption": "A folyó mentén egy másik út vezet keletnek. Erre indulsz, végigmész a folyóparton.",
+                    "destination": 99
+                }
+            ]
+        },
+        {
+            "id": 215,
+            "story": "Hátizsákodba nyúlsz az Y alakú fáért, és megdöbbenve látod, hogy kettéhasadt, kalandjaid során eltörött. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz és támadásra lendülsz",
+                    "destination": 142
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálsz valami mást keresni a hátizsákban",
+                    "destination": 105
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "story": "A víz felfrissít. Míg iszol belőle, úgy érzed, mintha valamiféle erő áramlana testedbe, mintha az Élet Vizéből ittál volna. 4 ÉLETERŐ pontot nyersz, és Szerencse pontjaidat is a kezdeti értékre állíthatod vissza. Ami számodra az Élet Vize, az a gonosz Goblinoknak nyilván halálos méreg. Ehetsz is itt, ha akarsz.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": 4
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Mikor kipihented magad, keresztülmész az északi ajtón",
+                    "destination": 384
+                }
+            ]
+        },
 		{
 			"id": 217,
 			"story": "A cövek épp csak egy kicsivel suhan el a Vámpír feje mellett. Míg figyeled, célba találsz-e, ismét belenézel a szemébe. Hívogatóan újból közelebb int magához. Akaratodat elveszted.",
