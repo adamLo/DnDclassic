@@ -4993,7 +4993,133 @@
                 }
             ]
         },
-        
+        {
+            "id": 236,
+            "story": "A csata elkezdődik.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "A Csontvázak egyesével tárnádnak rád",
+                    "order": "single",
+                    "opponents": [
+                        {
+                            "name": "Csontváz A",
+                            "dexterity": 6,
+                            "health": 5
+                        },
+                        {
+                            "name": "Csontváz B",
+                            "dexterity": 6,
+                            "health": 6
+                        },
+                        {
+                            "name": "Csontváz C",
+                            "dexterity": 5,
+                            "health": 5
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 395,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "story": "Fürgén leereszkedsz az útra, és visszamész az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Most északi irányba indulsz.",
+                    "destination": 285
+                }
+            ]
+        },
+        {
+            "id": 238,
+            "story": "Hármas útkereszteződéshez érkeztél.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Keletnek tartasz",
+                    "destination": 70
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatra mész",
+                    "destination": 180
+                },
+                {
+                    "direction": "north",
+                    "caption": "Északra indulsz",
+                    "destination": 329
+                }
+            ]
+        },
+        {
+            "id": 239,
+            "story": "Eszedbe jutnak az Öreg ember szavai: „Hamarabb szükséged lehet rá, mintsem gondolnád.\" Hátizsákodba nyúlsz, és előhúzod a gyertyát. Önmagától azonnal világítani kezd. A szörnyű zaj megszűnik, és a szobát kék fény tölti meg a gyertyádtól. A falakon lévő festményeken megmozdulnak az alakok. Hang nélküli sikolyok törnek ki belőlük, mintha egy kétdimenziós pokol foglyai lennének. Adj 1-et Szerencse pontjaidhoz az előrelátásodért! A szemben lévő falon egy újabb ajtót pillantasz meg.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "A szemben lévő falon levő ajtón távozol",
+                    "destination": 88
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Itt maradsz átkutatni a szobát",
+                    "destination": 149
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ]
+        },
+        {
+            "id": 240,
+            "story": "A doboz könnyű, de valami csörög benne. Felemeled a fedelét, és egy kicsi Kígyó pattan ki belőle, egyenest a csuklódnak támad.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Meg kell küzdened vele!",
+                    "opponents": [
+                        {
+                            "name": "Kígyó",
+                            "dexterity": 5,
+                            "health": 2
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 145,
+                        "caption": "Legyőzted az orkot"
+                    }
+                }
+            ],
+            "cover": "scene_240.png"
+        },
+        {
+            "id": 241,
+            "story": "Rátámadsz a facövekkel a festményre, de egyszer csak a csuklódban hasogató fájdalmat érzel. Valami láthatatlan erő arra kényszerít, hogy elejtsd a cöveket. 1 ÜGYESSÉG pontot veszítettél, hogy megtanuld tisztelni a Varázsló erejét.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "A futást választod, és az északi ajtón át rohansz el.",
+                    "destination": 90
+                }
+            ]
+        },
         {
             "id": 242,
             "story": "Az ajtó kinyílik, és egy kicsi, homályos kamra tárul a szemed elé. A falakon arany- és ezüstcsipkékkel gondosan díszített függönyök lógnak. Az egyik sarokban magányos lángnyelv lobog, fényét a középen álló alacsony asztalra veti, amin hatalmas láda fekszik. Odalépsz, hogy megvizsgáld, de váratlanul, köröskörül, mindenfelől (de mégsem meghatározható helyről) titokzatos hang csap fel, és betölti a szobát. Olyan, mint a gyülekező viharfelhők között felharsanó mennydörgés. Megközelíted a ládát, és látod, hogy három zár tartja szorosan lezárva. Ahogy közelítesz, a hang egyre erősödik. Mit teszel?",
@@ -5007,6 +5133,109 @@
                     "direction": "unknown",
                     "caption": "Átkutatod a felszerelésedet, hátha találsz olyan kulcsokat, melyek nyitják a zárakat",
                     "destination": 139
+                }
+            ]
+        },
+        {
+            "id": 243,
+            "story": "Rémülten veszed észre, hogy az az átkozott fogantyú csapda volt. Bár fogantyúnak látszott, valójában egy viasszal bevont kardpenge, ami most kegyetlenül megvágta a kezedet.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "caption": "Jobb vagy bal kézzel nyúltál hozzá?",
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Kardforgató kezeddel értél a pengéhez",
+                            "destination": 2431,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "A másik kezedet használtad",
+                            "destination": 2432,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Kardforgató kezeddel értél a pengéhez",
+                            "destination": 2431,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "A másik kezedet használtad",
+                            "destination": 2432,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Kardforgató kezeddel értél a pengéhez",
+                            "destination": 2431,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "A másik kezedet használtad",
+                            "destination": 2432,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
+        {
+            "id": 2431,
+            "story": "Kardforgató kezeddel értél a pengéhez, harcképességedet a seb alaposan lecsökkenti. 3 ÜGYESSÉG és 1 ÉLETERŐ pontot vesztettél.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -3
+                },
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy döntesz, hogy meghúzod a jobb oldali fogantyút",
+                    "destination": 128
+                }
+            ]
+        },
+        {
+            "id": 2431,
+            "story": "A másik kezedet használtad, így a sérülés nem olyan zavaró. 1 ÜGYESSÉG és 2 ÉLETERŐ pontot veszítesz.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                },
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy döntesz, hogy meghúzod a jobb oldali fogantyút",
+                    "destination": 128
                 }
             ]
         },
