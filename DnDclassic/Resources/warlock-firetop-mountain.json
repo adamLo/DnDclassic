@@ -4956,6 +4956,43 @@
                 }
             ]
         },
+        {
+            "id": 234,
+            "story": "Nem találsz titkos átjárókat, viszont kutatásod zajával felhívtad magadra valami baljóslatú szörny figyelmét.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Küzdj meg a szörnnyel.",
+                    "destination": 161
+                }
+            ],
+            "return": [
+                {
+                    "direction": "unknown",
+                    "destination": 43,
+                    "caption": "Győztél, folytatod az utad",
+                    "condition": {
+                        "onlyWhenNoFights": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": 235,
+            "story": "Követed az utat nyugat felé, mely azután élesen északnak kanyarodik. Néhány méter után találsz egy nyugatra vezető utat is.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak fordulsz",
+                    "destination": 176
+                },
+                {
+                    "direction": "north",
+                    "caption": "Kitartasz továbbra is az északi irány mellett",
+                    "destination": 5
+                }
+            ]
+        },
         
         {
             "id": 242,
