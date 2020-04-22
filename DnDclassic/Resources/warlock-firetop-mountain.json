@@ -5435,6 +5435,71 @@
 				}
 			]
 		},
+        {
+            "id": 251,
+            "story": "Az út élesen északi irányba kanyarodik, és távolról víz csobogását hallod. Végül egy föld alatti folyó déli partjára érsz. A kavicsos folyóparton állva szárnycsapkodást hallasz, és feltekintve három Óriás Denevért pillantasz meg, amint lecsapnak rád.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdjél meg velük, a három Denevért vedd egy lénynek!",
+                    "opponents": [
+                        {
+                            "name": "Denevérek",
+                            "dexterity": 6,
+                            "health": 6
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 399,
+                        "caption": "A folyóba ugorva elmenekülsz."
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 344,
+                        "caption": " Győztél"
+                    }
+                }
+            ],
+            "cover": "scene_251.png"
+        },
+        {
+            "id": 252,
+            "story": "Meghúzod a fogantyút, mire nagy nyikorgással megmozdul előtted a sziklafal és a lábad előtt lévő talaj. Mintha csak egy hatalmas forgóasztalon lennél, megfordulsz tengelyed körül, és végül ott állsz a sziklafal túlsó oldalán egy észak-déli folyosón.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak mész",
+                    "destination": 312
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek mész",
+                    "destination": 226
+                }
+            ]
+        },
+        {
+            "id": 253,
+            "story": "A folyosó ezúttal egy kis faajtónál ér véget, az ajtón csontból faragott fogantyú. Hallgatózol, de belülről semmi sem szüremlik ki. Megpróbálod a fogantyút, az ajtó enged, és benyitsz egy kőpadozatú szobába. Csak nehezen tudsz a kiálló köveken lépkedni. A szoba egyik sarkában nagy kupac törmelék. Főleg kődarabok meg por, de van ott néhány különös formájú fadarab meg egy jó hosszú kötél. Az északi falból egy ajtó nyílik, erre mehetsz tovább. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megvizsgálod a fadarabokat",
+                    "destination": 328
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megnézed a kötéldarabot",
+                    "destination": 125
+                },
+                {
+                    "direction": "north",
+                    "caption": "Távozol az északi ajtón keresztül",
+                    "destination": 73
+                }
+            ]
+        },
         
         {
             "id": 258,
