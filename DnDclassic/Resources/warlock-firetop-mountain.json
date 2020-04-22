@@ -5500,7 +5500,85 @@
                 }
             ]
         },
-        
+        {
+            "id": 254,
+            "story": "Halálos csend van. Amint a koporsók között lopódzol, egy rád hulló vízcsepp megriaszt. Az oltár díszesen faragott, és ékkövekkel van kirakva. Gyönyörűen szőtt drapériák lógnak a falról, bár néhol már foszladoznak. Három koporsó van a szobában. Egy nyikorgó hang arra késztet, hogy megfordulj, lámpásod a legnagyobb koporsóra veti fényét. A koporsó fedele emelkedni kezd! Figyeled, ahogy egy fehér arcú, magas férfi felül benne. Kinyílnak szemei, és rád néz. Nyugodt arckifejezése sötét gyűlöletbe csap át. Kinyitja száját, torkából hátborzongató sziszegés hallatszik. Fogai akár a farkasé. Int, hogy lépj közelebb. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Közelítesz, ahogy kívánja",
+                    "destination": 352
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz, hogy felkészülj a küzdelemre",
+                    "destination": 333
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Hátizsákodba nyúlsz valami más, támadásra alkalmas eszközt keresve",
+                    "destination": 279
+                },
+                {
+                    "direction": "west",
+                    "caption": "Kirohansz a nyugati ajtón",
+                    "destination": 380
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "story": "Az út erős, fából készült ajtónál ér véget.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod kinyitni",
+                    "destination": 193
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszamész az elágazáshoz, hogy másik útvonalat keress",
+                    "destination": 93
+                }
+            ]
+        },
+        {
+            "id": 256,
+            "story": "Egy útkereszteződésnél vagy.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Észak felé mész, bár erre az út hamarosan zsákutcába torkollik",
+                    "destination": 398
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak indulsz",
+                    "destination": 297
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek indulsz",
+                    "destination": 114
+                }
+            ]
+        },
+        {
+            "id": 257,
+            "story": "A folyosó néhány méteren keresztül egyenesen halad, azután egy faajtó zárja le. Hallgatózol az ajtónál, és dühös kiabálást hallasz belülről.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megvizsgálod, mi az",
+                    "destination": 168
+                },
+                {
+                    "direction": "back",
+                    "caption": "Inkább visszafordulsz",
+                    "destination": 293
+                }
+            ]
+        },
         {
             "id": 258,
             "story": "Átválogatod a törött cserépdarabokat, de semmi érdekes nincs köztük. A folyadék kinézésre, szagra és ízre víznek látszik. Az aranypénzkupacról kiderül, hogy csalás. Nyolc igazi aranyat találsz a halom tetején (ezeket magaddal viheted), de az alatta lévők csupán festett hamisítványok. Ahogy hozzáérsz a vázához, az lecsúszik és eltörik. Egy vörös színű kulcs kerül elő, melyet az edény dupla fenekébe rejtettek. Magaddal viheted a kulcsot, melyre a 111-es számot vésték. Pihenhetsz, és ehetsz elemózsiádból, ha akarsz. 2 Szerencse pontot kapsz, amiért legyőzted a Minotauruszt,",
