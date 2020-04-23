@@ -6205,7 +6205,47 @@
                 }
             ]
         },
-        
+        {
+            "id": 291,
+            "story": "Egy kelet-nyugati folyosó közepén állsz. Keletre zsákutca van. Ha akarod, átvizsgálhatod. Nyugatra egy már ismerős útelágazás nyílik. Egy másik, egészen rövidke átjáró észak felé kanyarodik, és egy hatalmas faajtóhoz vezet.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Átvizsgálod a zsákutcát",
+                    "destination": 315
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé indulsz",
+                    "destination": 52
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod az ajtót",
+                    "destination": 227
+                }
+            ]
+        },
+        {
+            "id": 292,
+            "story": "Északi irányban az út egy vastag faajtónál ér véget. Hallgatózol, de nem hallasz semmit. Nincs más választásod, be kell nyitnod az ajtón. Így is teszel. Egy nagy, négyszög alakú szobába lépsz. Körülvillantod lámpásod fényét a szobán, de nem látsz mást, csak a falakon lévő freskókat, amikor lámpásod váratlanul kialszik. Megpróbálod újra meggyújtani, de nem kap lángra. A sötétben félelmetes hangok szólalnak meg egymás után. Vonyítások, sikolyok, kiáltások, jajgatások válnak egyre erősebbé és erősebbé, mígnem annyira elviselhetetlen, olyannyira, hogy be kell fognod a füledet.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Van nálad Kék Gyertya",
+                    "destination": 239,
+                    "condition": {
+                        "inventoryItemId": "blue_candle",
+                        "inventoryAmount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Nincs nálad Kék Syertya",
+                    "destination": 40
+                }
+            ]
+        },
         {
             "id": 293,
             "story": "Visszaérkezel az útelágazáshoz.",
@@ -6217,7 +6257,82 @@
                 }
             ]
         },
-        
+        {
+            "id": 294,
+            "story": "5 aranypénzt találsz a holttest zsebeiben. Vezesd rá a Kalandlapra, a leletért 1 Szerencse pontot kapsz.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 5
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a második holttestet",
+                    "destination": 275
+                },
+                {
+                    "direction": "east",
+                    "caption": "Átkutatod a harmadik holttestet",
+                    "destination": 148
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Mész tovább észak felé, és lábujjhegyen átvágsz a szobán.",
+                    "destination": 107
+                }
+            ]
+        },
+        {
+            "id": 295,
+            "story": "Nem találsz átjárókat, viszont kutatásoddal magadra vontad egy lény figyelmét, hallod, hogy a folyosón valami egyenesen feléd tart.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Miféle kóborló szörnyeteggel hozott össze a sors?",
+                    "destination": 161
+                }
+            ],
+            "return": [
+                {
+                    "direction": "unknown",
+                    "destination": 48,
+                    "caption": "Legyőzted, mehetsz tovább utadon",
+                    "condition": {
+                        "onlyWhenNoFights": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": 296,
+            "story": "győzni. Kiderül, hogy élete utolsó éveiben a szerző ugyan tökéletesítette e varázsigét, de mire elkészült vele, már túl öreg volt ahhoz, hogy hasznát vegye. Így aztán könyvét bezárta egy ládába, és elrejtette a Tűzhegy gyomrában, mivel attól tartott, rossz kezekbe kerül. Az utolsó oldalon ezt olvasod. Lassan, halkan mondod magadnak ezeket a szavakat. Hirtelen az oldalakból fény csap ki, és amint az kihuny, már semmi sincs a lapokon.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Még egyszer elismétled magadban a varázsigét, hogy megtanuld, majd távozol",
+                    "destination": 42
+                }
+            ],
+            "cover": "scene_296.png"
+        },
+        {
+            "id": 297,
+            "story": "Egy kelet-nyugat irányú folyosón vagy, mindkét végén T-alakú elágazás.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé mész",
+                    "destination": 150
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek indulsz",
+                    "destination": 256
+                }
+            ]
+        },
         {
             "id": 298,
             "story": "A híd síkos a felcsapódó hullámoktól. Egy helyen megcsúszol egy csomó nedves mohán, ami a gerendákat borítja.",
@@ -6278,7 +6393,38 @@
                 }
             ]
         },
-
+        {
+            "id": 299,
+            "story": "Az út egy darabig keletnek halad, de azután északnak fordul. Sokáig mész ebben az irányban.",
+            "waypoints": [
+                {
+                    "direction": "unkown",
+                    "caption": "Titkos átjárókat keresel az út mentén",
+                    "destination": 260
+                },
+                {
+                    "direction": "north",
+                    "caption": "Folytatod utad tovább észak felé",
+                    "destination": 359
+                }
+            ]
+        },
+        {
+            "id": 300,
+            "story": "Az út keleti oldalán egy újabb ajtót veszel észre, mely fémből készült. Ennél hallgatózva gyötrelmes sikolyok hangját hallod kiszűrődni.",
+            "waypoints": [
+                {
+                    "direction": "unkown",
+                    "caption": "Megpróbálod kinyitni az ajtót",
+                    "destination": 102
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy döntesz, hogy erről a szobáról tudomást sem veszel, és mész tovább a folyosón",
+                    "destination": 303
+                }
+            ]
+        },
 		{
 			"id": 301,
 			"story": "A folyosó nyugati oldalán, tőled balra egy durván faragott faajtó áll, mely mögül reszelős hang szűrődik ki, olyan, mintha valaki bent hortyogna.",
