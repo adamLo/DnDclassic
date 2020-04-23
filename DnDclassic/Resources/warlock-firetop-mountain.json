@@ -7156,7 +7156,17 @@
                 }
             ]
         },
-        
+        {
+            "id": 334,
+            "story": "Miközben beszélsz, az Öreg felemelkedik. - Ó, te jóisten, egy idegen! - kezdi. - Gyere, gyere csak beljebb, a bolt nyitva van. Mit adhatok neked? Mit szeretnél vásárolni? Mihez lenne kedved? Merre tartasz? Északnak? Nos? Elmeséled az Öregnek a történetedet. Meghallgat, majd így válaszol. - Ó, igen, ebben az esetben kétségkívül szükséged van Kék Gyertyáim egyikére. Húsz arany az ára, de ha nem haragszol, csak készpénzt fogadok el. Persze tudom, hogy drága, de mi nem az manapság? Nemrég még ezeknek a gyertyáknak öt arany volt darabja, de te is tudod, hogy felment a gyertyaviasz ára a Hosszú Sötét Éjszaka után, ó persze, te valószínűleg nem is tudsz erről, nem idevalósi vagy. Ne is törődj vele, még mindig megéri ezt az árat. Lehet, hogy hamarabb lesz szükséged rá, mintsem gondolnád…",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Egy kicsit belefáradtál az állandó locsogásba. Elhagyod a szobát, és továbbmész északnak.",
+                    "destination": 292
+                }
+            ]
+        },
         {
             "id": 335,
             "story": "",
