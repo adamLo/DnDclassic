@@ -6398,7 +6398,7 @@
             "story": "Az út egy darabig keletnek halad, de azután északnak fordul. Sokáig mész ebben az irányban.",
             "waypoints": [
                 {
-                    "direction": "unkown",
+                    "direction": "unknown",
                     "caption": "Titkos átjárókat keresel az út mentén",
                     "destination": 260
                 },
@@ -6414,7 +6414,7 @@
             "story": "Az út keleti oldalán egy újabb ajtót veszel észre, mely fémből készült. Ennél hallgatózva gyötrelmes sikolyok hangját hallod kiszűrődni.",
             "waypoints": [
                 {
-                    "direction": "unkown",
+                    "direction": "unknown",
                     "caption": "Megpróbálod kinyitni az ajtót",
                     "destination": 102
                 },
@@ -6452,7 +6452,209 @@
                 }
             ]
         },
-        
+        {
+            "id": 303,
+            "story": "Az út egy kelet-nyugati átjárónál ér véget. Egy erős vasrács zárja le, úgyhogy nem mehetsz tovább. Nincs olyan erő, amely szét tudná zúzni. A falon, tőled jobbra, két fogantyú van, és úgy tűnik, közük lehet a vasrács mozgatásához. Melyiket húzod meg?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "A jobb oldali kart",
+                    "destination": 128
+                },
+                {
+                    "direction": "north",
+                    "caption": "A bal oldali kart",
+                    "destination": 243
+                }
+            ],
+            "cover": "scene_303.png"
+        },
+        {
+            "id": 304,
+            "story": "Az Öreg megdühödik rád, mert megölted a kutyáját. Szeme elszürkül a haragtól. Lassan felemelkedik ültéből, s ahogy feláll, alakja nőni kezd. Előtted változik át. Arcát és karját szőr lepi el, orra megnyúlik, kutyaszerűvé válik. Fogai tűhegyesek lesznek. Ez egy Farkasember, és feléd közeledik. Elmenekülni csak a mögötted lévő ajtón tudsz, déli irányba.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Meg kell küzdened vele!",
+                    "opponents": [
+                        {
+                            "name": "Farkasember",
+                            "dexterity": 8,
+                            "health": 8
+                        }
+                    ],
+                    "escape": {
+                        "direction": "south",
+                        "destination": 66,
+                        "caption": "Elmenekülsz a mögötted lévő ajtón"
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 203,
+                        "caption": " Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 305,
+            "story": "Tedd próbára Szerencséd! - háromszor egymás után. Ha minden alkalommal szerencsés vagy, eljutsz a szemben lévő ajtóhoz, és távozhatsz.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 3051,
+                        "caption": "Szerencsés vagy"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 108,
+                        "caption": "Rálépsz egy kéz alakú csempére"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3051,
+            "story": "Tedd megint próbára Szerencséd! Ha még két alkalommal szerencsés vagy, eljutsz a szemben lévő ajtóhoz, és távozhatsz.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 3052,
+                        "caption": "Szerencsés vagy"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 108,
+                        "caption": "Rálépsz egy kéz alakú csempére"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3052,
+            "story": "Tedd megint próbára Szerencséd! Ha még egy alkalommal szerencsés vagy, eljutsz a szemben lévő ajtóhoz, és távozhatsz.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 162,
+                        "caption": "Eljutsz a szemben lévő ajtóhoz"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 108,
+                        "caption": "Rálépsz egy kéz alakú csempére"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 306,
+            "story": "Még mindig nem találsz titkos átjárókat. De amint mész tovább lefelé a folyosón, egy lény körvonalait pillantod meg.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Felkészülsz a harcra",
+                    "destination": 161
+                }
+            ],
+            "return": [
+                {
+                    "direction": "unknown",
+                    "destination": 291,
+                    "caption": "Legyőzted a szörnyet, továbbmehetsz",
+                    "condition": {
+                        "onlyWhenNoFights": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": 307,
+            "story": "Az út tekereg, kanyarog, és végül egy tömör vasajtónál ér véget. Hallgatózol, de semmi nesz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod kinyitni az ajtót",
+                    "destination": 134
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszamész az elágazáshoz",
+                    "destination": 87
+                }
+            ]
+        },
+        {
+            "id": 308,
+            "story": "Egy útkereszteződésnél állsz. Az út csak néhány méteren át tart nyugatnak, utána északnak fordul. Északi irányban az utat egy ajtó zárja le. Kelet felé az út továbbhalad, de végül délnek fordul. Déli irányban egyenesen haladhatsz, ameddig a szem ellát. Merre indulsz?",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak",
+                    "destination": 187
+                },
+                {
+                    "direction": "north",
+                    "caption": "Északra",
+                    "destination": 54
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délre",
+                    "destination": 160
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletre",
+                    "destination": 354
+                }
+            ]
+        },
+        {
+            "id": 309,
+            "story": "Kardot rántasz, és várod, hogy a Patkányok rád ugorjanak. Amint vezérük vetődni készül, nagyot üvöltesz, és feléje lendülsz. Kiáltásod elijeszti a másik kettőt, néhány lépésnyit visszairamodnak.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg a Patkányokkal, egyikkel a másik után!",
+                    "order": "single",
+                    "opponents": [
+                        {
+                            "name": "Első Patkány",
+                            "dexterity": 5,
+                            "health": 4
+                        },
+                        {
+                            "name": "Második Patkány",
+                            "dexterity": 6,
+                            "health": 3
+                        },
+                        {
+                            "name": "Harmadik Patkány",
+                            "dexterity": 5,
+                            "health": 5
+                        }
+                    ],
+                    "win": {
+                        "direction": "north",
+                        "destination": 124,
+                        "caption": " Győztél, átmész az északi falban lévő ajtón"
+                    }
+                }
+            ]
+        },
         {
             "id": 310,
             "story": "Itt valami nincs rendben. Jókora csapást mértél rá, de úgy látszik, fel sem veszi a sérülést. Rájössz, ez is egy Örökéltű Lény, akit közönséges fegyverrel nem lehet megsebezni.",
