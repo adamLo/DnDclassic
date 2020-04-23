@@ -35,7 +35,7 @@ class Scene: Deserializable {
         }
         id = _id
         
-        if _id == 264 {
+        if _id == 333 {
             print("Gotcha!")
         }
         

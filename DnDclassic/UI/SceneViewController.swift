@@ -329,12 +329,38 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if luck.success {
             alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in
-                self.advance(to: action.goodLuck)
+                
+                if luck.success, let _choices = action.goodLuckRolls, let choice = _choices.first(where: {$0.roll == luck.rolled}) {
+                    // Special roll action
+                    if let _waypoint = choice.waypoint {
+                        self.advance(to: _waypoint)
+                    }
+                    else if let _action = choice.action {
+                        self.perform(action: _action)
+                    }
+                }
+                else {
+                    // Standard good luck
+                    self.advance(to: action.goodLuck)
+                }
             }))
         }
         else {
             alert.addAction(UIAlertAction(title: action.badLuck.caption, style: .default, handler: { (_) in
-                self.advance(to: action.badLuck)
+                
+                if !luck.success, let _choices = action.badLuckRolls, let choice = _choices.first(where: {$0.roll == luck.rolled}) {
+                    // Special roll action
+                    if let _waypoint = choice.waypoint {
+                        self.advance(to: _waypoint)
+                    }
+                    else if let _action = choice.action {
+                        self.perform(action: _action)
+                    }
+                }
+                else {
+                    // Standard bad luck
+                    self.advance(to: action.badLuck)
+                }
             }))
         }
         

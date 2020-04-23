@@ -2773,7 +2773,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "321", "335", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -3856,7 +3856,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "321", "335", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -4227,7 +4227,7 @@
             "actions": [
                 {
                     "type": "query",
-                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "347"],
+                    "solutions": ["169", "174", "186", "192", "200", "219", "231", "233", "245", "276", "288", "290", "302", "335", "321", "347"],
                     "caption": "Add össze a kulcsokon lévő számokat",
                     "cancel": {
                         "direction": "unknown",
@@ -6854,7 +6854,62 @@
 				}
 			]
 		},
-        
+        {
+            "id": 321,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 169
+                }
+            ]
+        },
+        {
+            "id": 322,
+            "story": "A fiókok szögekkel, szegecsekkel, különféle fúrófejekkel és alkatrészekkel vannak tele. Az egyikben egy rézszínű kulcsot lelsz a 66-os számot vésték bele. Felkelti érdeklődésedet. Megtarthatod, ha Felszerelésed valamelyik darabját itt hagyod helyette. Északról a zaj kezd erősödni.",
+            "inventory": [
+                {
+                    "type": "key",
+                    "name": "Rézszínű kulcs 66-os számmal",
+                    "id": "key_66"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Az északi ajtóhoz lépsz, hogy megtudd, mi az.",
+                    "destination": 96
+                }
+            ]
+        },
+        {
+            "id": 323,
+            "story": "Néhány méter után egy újabb hármas elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak mész",
+                    "destination": 96
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek fordulsz",
+                    "destination": 255
+                }
+            ]
+        },
+        {
+            "id": 324,
+            "story": "Amint berobbansz az ajtón, az Öreg rád néz, de a legkevésbé sem zavartatja magát. Hirtelen eltűnik, majd újra megjelenik. Amint sarkon fordulsz, hogy szemmel tartsd, felkacag, de nem egy öregember reszketeg hangján, ez egy sokkal fiatalabb férfi zengő kacaja. Újfent eltűnik, és egy másik sarokban jelenik meg, rád bámul, és gonosz kacagásával gúnyol téged. Épp idejében fordulsz meg, hogy lásd, újra eltűnik. Ez alkalommal a levegőben jelenik meg feletted, és lassan ereszkedik le rád. Ahogy közeledik, elborzadsz a nézésétől.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 358
+                }
+            ]
+        },
         {
             "id": 325,
             "story": "Fejedre helyezed a sisakot. Éppen jó rá. Valami elkezd izzani benned, és ez az izzás elárasztja egész testedet. Úgy érzed, olyan erős és mindenekelőtt olyan magabiztos vagy, mint még soha. A sisak varázserővel van megáldva, s ezentúl, amikor kockavetéssel meghatározod Támadóerődet, 1 ponttal mindig többet számolj, egészen addig, amíg a sisak a fejeden van.",
@@ -6875,7 +6930,23 @@
                 }
             ]
         },
-        
+        {
+            "id": 326,
+            "story": "Csupasz sziklafallal körülkerített szobába lépsz be. A szemközti falon egy aranykulcs függ. Úgy latod, másik kijárat nincs.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Odamész a kulcsért",
+                    "destination": 35
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 229
+                }
+            ],
+            "cover": "scene_326.png"
+        },
         {
             "id": 327,
             "story": "A földön heverő test a szemed láttára kezd el öregedni. Az arca ötvennek látszik, azután kilencvennek, majd száznál is jóval idősebbnek. Bőre szétfoszlik, szeme kifejezéstelenné válik. Valami megmozdul a teremtmény mellkasán. Ahogy a Vámpír maradványai elenyésznek, egy kicsi fekete arc tör ki a mellkasából. Olyan, mint egy apró, sötét cickány, de amint kiszabadítja magát és szétnyitja szárnyait, rájössz, hogy denevér. Rásuhintasz, de elrebben, és belevész a sötétségbe. Gyorsan átkutatod az egész termet (ne feledd, van még néhány koporsó itt). Találsz harminc aranypénzt, egy könyvet és egy Y alakú fapálcikát. Magaddal viheted ezeket a tárgyakat (vezesd rá a Kalandlapra), ha jelenlegi Felszerelésedből itt hagysz egy tárgyat. A nyugati ajtón át távozhatsz. Ha éhes vagy, egyél Élelmiszerkészletedből, s adj 3-at Szerencse pontjaidhoz a Vámpír legyőzése miatt.",
@@ -6906,6 +6977,182 @@
                 {
                     "property": "luck",
                     "gain": 3
+                }
+            ]
+        },
+        {
+            "id": 328,
+            "story": "Mindkét fadarab Y alakú és puha, mintha a folyó vetette volna partra őket. Ha magaddal viszed a fadarabokat, egy tárgyat a Felszerelésedből itt kell hagynod.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "A zsákodba teszed a fákat és távozol az északi ajtón keresztül",
+                    "destination": 73
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Maradsz, hogy megvizsgáld a kötelet",
+                    "destination": 125
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "misc",
+                    "name": "Y-alakú fadarab",
+                    "amount": 2
+                }
+            ]
+        },
+        {
+            "id": 329,
+            "story": "Nekiindulsz, és egy észak-déli átjáró közepén találod magadat. Az út nyugati falán egy ajtó van, vele szemben egy út keletre vezet. Északra, néhány méternyire egy ajtót veszel észre. Déli irányban egy elágazást látsz. Melyiket választod?",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "A nyugati falban lévő ajtót",
+                    "destination": 157
+                },
+                {
+                    "direction": "north",
+                    "caption": "Az ajtót északi irányban",
+                    "destination": 392
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletre indulsz",
+                    "destination": 299
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délre mész",
+                    "destination": 238
+                }
+            ]
+        },
+        {
+            "id": 330,
+            "story": "A hordók áttetsző barna folyadékot tartalmaznak. Megszagolod. Rumszaga van. Megkóstolod, valóban rum. Két tenyeredet belemeríted, és nagyokat kortyolsz belőle. Eláll a lélegzeted tőle, a kutyafáját, ez aztán jó! Visszanyertél 6 ÉLETERŐ pontot, és 1-et adj hozzá a Szerencsédhez is!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": 6
+                },
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 81
+                }
+            ]
+        },
+        {
+            "id": 331,
+            "story": "A lény ember nagyságú, de hosszú karjai nagyon erősnek látszanak.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg vele!",
+                    "opponents": [
+                        {
+                            "name": "Troll",
+                            "dexterity": 8,
+                            "health": 8
+                        }
+                    ],
+                    "win": {
+                        "direction": "north",
+                        "destination": 287,
+                        "caption": "Győztél, mész tovább északra"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 332,
+            "story": "Egy kelet-nyugat irányú folyosó keleti végénél állsz, utadat egy ajtó zárja el.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Átmész rajta",
+                    "destination": 329
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugat felé nézve az út északnak kanyarodik. Erre indulsz.",
+                    "destination": 4
+                }
+            ]
+        },
+        {
+            "id": 333,
+            "story": "Ahogy a kardoddal a lényre sújtasz, kinyúl, és puszta kézzel megragadja a pengét. Fegyvered majdnem teljesen hatástalan a teremtmény rettenetes erejével szemben. Rádöbbensz erre, és pánikba esel.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Tovább kell küzdened.",
+                    "opponents": [
+                        {
+                            "name": "Vámpír",
+                            "dexterity": 10,
+                            "health": 10
+                        }
+                    ],
+                    "escape": {
+                        "direction": "unknown",
+                        "destination": 3331,
+                        "caption": "Elmenekülsz a nyugati ajtón keresztül",
+                        "availableRound": 6
+                    },
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 327,
+                        "caption": "Legyőzted a Vámpírt"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3331,
+            "story": "Megpróbálsz Elmenekülni (ezt csak akkor teheted meg, ha hat teljes Fordulót kiálltál), még szerencsésnek is kell lenned.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Tedd próbára Szerencséd!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "west",
+                        "destination": 380,
+                        "caption": "Elmenekülsz a nyugati ajtón keresztül"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 333,
+                        "caption": "Folytatnod kell a küzdelmet",
+                        "rolls": [
+                            {
+                                "roll": 11,
+                                "waypoint": {
+                                    "direction": "unknown",
+                                    "destination": 224,
+                                    "caption": "Lapozz"
+                                }
+                            },
+                            {
+                                "roll": 12,
+                                "waypoint": {
+                                    "direction": "unknown",
+                                    "destination": 224,
+                                    "caption": "Lapozz"
+                                }
+                            }
+                        ]
+                    }
                 }
             ]
         },
