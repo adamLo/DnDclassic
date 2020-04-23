@@ -5746,7 +5746,96 @@
             ],
             "cover": "scene_266.png"
         },
-        
+        {
+            "id": 267,
+            "story": "Egy útkereszteződésnél állsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északra tartasz",
+                    "destination": 312
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délre mész",
+                    "destination": 246
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatra indulsz",
+                    "destination": 79
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletre fordulsz",
+                    "destination": 349
+                }
+            ]
+        },
+        {
+            "id": 268,
+            "story": "Szókincsük csupán nyögések és sóhajtások kombinációjára szorítkozik. Egyáltalán nem látszanak intelligenseknek. Ráadásul a beszélgetés pusztán arra volt jó, hogy felhívja rád a figyelmet. Megragadják a fegyverüket, és érzed, meg kell küzdened velük. Bár még az a halvány esélyed megvan, hogy el tudsz jutni addig az ajtóig, amin beléptél.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Megpróbálkozol az ajtóval",
+                    "destination": 13
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Elszánod magad a csatára",
+                    "destination": 282
+                }
+            ]
+        },
+        {
+            "id": 269,
+            "story": "Visszaérsz az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak fordulsz",
+                    "destination": 225
+                }
+            ]
+        },
+        {
+            "id": 270,
+            "story": "Belépsz a barlangba, körülnézel, és gyönyörűen színezett álló és függő cseppkövek tucatjait pillantod meg, amelyek a barlangot övezik. Állandó csepegés hallatszik, de a látvány olyan varázslatos, mintha megtervezték volna. A barlang végében egy pár csizmát találsz, egészen újnak látszik. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Tovább kutatsz a barlangban",
+                    "destination": 61
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Felpróbálod a csizmákat",
+                    "destination": 394
+                },
+                {
+                    "direction": "back",
+                    "caption": "Otthagyod a barlangot, és visszamész az elágazáshoz",
+                    "destination": 375
+                }
+            ]
+        },
+        {
+            "id": 271,
+            "story": "A rövid út szűkülni kezd, és néhány méterrel később egy ajtónyílásnál ér véget.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Bemész az ajtón",
+                    "destination": 336
+                },
+                {
+                    "direction": "back",
+                    "caption": "Úgy döntesz, hogy inkább visszamész a folyóhoz",
+                    "destination": 214
+                }
+            ]
+        },
         {
             "id": 272,
             "story": "Lehiggad, elveszi tőled az aranyat (vond le a Kalandlapról), és átevez veled az északi partra. Miután kikötötte a csónakot, elballag egy lefelé vezető ösvényen.",
@@ -5759,7 +5848,84 @@
             ],
             "payOnVisit": 5
         },
-        
+        {
+            "id": 273,
+            "story": "A szobát átkutatva semmi érdekeset nem találsz, bár egy régi láda az egyik sarokban egy fakalapácsot és öt, egyik végén kihegyezett facöveket rejt magában. Magaddal viheted ezeket, ha akarod.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Keresztülmész az északi falban lévő ajtón",
+                    "destination": 189
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "stake",
+                    "name": "Fakalapács öt kihegyezett facövekkel",
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "id": 274,
+            "story": "Egy hosszú, szűk folyosón át távozol a barlangból. Pár száz méter után egy hatalmas, fából készült ajtóhoz érsz, amely egy kissé nyitva van. Jobban kinyitod, és bedugod a fejed, hogy megtudd, mi is van benn a szobában. Egy apró öregember üldögél egy asztalnál, és egy csomag kártyával játszadozik. Teljesen ártalmatlan, jótét léleknek látszik ősz szakállával és hajával. Mit fogsz csinálni?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántva berontasz az ajtón, hogy meglepjed az Öreget",
+                    "destination": 324
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kopogsz az ajtón, belepsz, és udvariasan üdvözlöd",
+                    "destination": 356
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Négykézlábra ereszkedve megpróbálsz észrevétlenül bemászni a szobába",
+                    "destination": 98
+                }
+            ]
+        },
+        {
+            "id": 275,
+            "story": "Ahogy mész tovább a második testhez, véletlenül megrúgod a földön heverő harmadik holttestet. Szemei felpattannak, gyorsan felül, éles körmével feléd suhint.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "caption": "Tedd próbára Szerencséd!",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 230,
+                        "caption": "A lény elhibázza a csapást"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 2751,
+                        "caption": "Megragad lábadnál"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2751,
+            "story": "Balszerencsés vagy, megragad lábadnál fogva, és 1 ÉLETERŐ pontnyit pusztít rajtad.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 230
+                }
+            ]
+        },
         {
             "id": 276,
             "story": "",
@@ -5771,7 +5937,43 @@
                 }
             ]
         },
-        
+        {
+            "id": 277,
+            "story": "Egy rövidke átjáróban vagy, az út tőled néhány méterre zsákutcába torkollik.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Titkos átjárókat keresel",
+                    "destination": 146
+                },
+                {
+                    "direction": "north",
+                    "caption": "Visszatérsz az útkereszteződéshez, ahol az előtted lévő utat követed észak felé",
+                    "destination": 366
+                },
+                {
+                    "direction": "west",
+                    "caption": "Visszatérsz az útkereszteződéshez, ahol nyugatnak fordulsz",
+                    "destination": 11
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "story": "Az átjáró hamarosan véget ér egy lelakatolt faajtónál. Hallgatózol, de nem hallasz semmit.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod az ajtót erővel betaszítani",
+                    "destination": 156
+                },
+                {
+                    "direction": "back",
+                    "caption": "Megfordulsz és visszamész az elágazáshoz",
+                    "destination": 92
+                }
+            ]
+        },
         {
             "id": 279,
             "story": "A teremtmény, akivel szemben állsz, egy Vámpír! Különféle módon támadhatod meg. A kard alig fog rajta. Kereszttel sakkban tudod tartani, de el nem pusztíthatod.",
@@ -5869,7 +6071,96 @@
 				}
 			]
 		},
-        
+        {
+            "id": 283,
+            "story": "Visszaérkezel az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Haladsz tovább nyugatnak",
+                    "destination": 251
+                }
+            ]
+        },
+        {
+            "id": 284,
+            "story": "Már megint te vagy? - szól az Útvesztő Irányítója, nyilván dühös, amiért háborgatod. - Zavarsz az összpontosításban. Takarodj innen! - Elkezded magyarázni, hogy csupán egy tévedés miatt kerültél újra ide, de ahogy kinyitod a szád, az Öreg egyetlen fagyos pillantása hallgatásra késztet. Úgy döntesz, ráhagyod.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Távozol a nyugati ajtón",
+                    "destination": 46
+                },
+                {
+                    "direction": "south",
+                    "caption": "Távozol a délii ajtón",
+                    "destination": 392
+                }
+            ]
+        },
+        {
+            "id": 285,
+            "story": "Az út jobb oldalán (keletre) egy sokat használt ajtót pillantasz meg. Füledet a kulcslyukra téve hallgatózol, és hallod, hogy egy ember bent segítségért kiáltozik.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Kinyitod az ajtót",
+                    "destination": 213
+                },
+                {
+                    "direction": "north",
+                    "caption": "Továbbmész",
+                    "destination": 314
+                }
+            ]
+        },
+        {
+            "id": 286,
+            "story": "A szűk lépcsősort a sziklába vájták, vagy húsz lépcsőfok vezet lefele. Aljában az út egy hatalmas nyitott terembe vezet. A helyiség rothadó hús szagától bűzlik. A szag olyan rettenetes, hogy legszívesebben visszafordulnál. Átkutathatod a tetemeket, vagy lábujjhegyen átsurranhatsz a termen. Mit fogsz csinálni?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod az első tetemet",
+                    "destination": 294
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a második tetemet",
+                    "destination": 275
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a harmadik tetemet",
+                    "destination": 148
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Lábujjhegyen átosonsz a szobán",
+                    "destination": 107
+                }
+            ]
+        },
+        {
+            "id": 287,
+            "story": "Az út jócskán halad tovább, azután egy sziklába vágott lépcső aljához ér. Felkapaszkodsz rajta, és egy rozsdás sarokvasakon nyugvó faajtóhoz érsz. Fülelni kezdesz, amikor furcsa, kaparászó hangot hallasz. Megpróbálkozol az ajtónyitó gombbal, mire az ajtó csikorogva kitárul. Egy csupasz szobába lépsz, a padlót csontok borítják. A szemben lévő falból is nyílik egy ajtó. A csontokat három Óriás Patkány rágcsálja, s csak azért hagyják abba tevékenységüket, hogy rád bámuljanak belépésedkor. Mindnyájan legalább egy méter hosszúak, tépett bundájukon látszik, harcos természetűek. Meg kell küzdened velük, ha át akarsz menni a szobán, mert nem vitás, szerintük benned ízletes falatra akadtak.",
+            "cover": "scene_287.png",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kalandod során már találtál sajtot",
+                    "destination": 32,
+                    "condition": {
+                        "inventoryItemType": "cheese",
+                        "inventoryItemAmount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Nincs sajtod",
+                    "destination": 309
+                }
+            ]
+        },
         {
             "id": 288,
             "story": "",
@@ -5881,7 +6172,28 @@
                 }
             ]
         },
-        
+        {
+            "id": 289,
+            "story": "Őrjöngve nézel körül a szobában, de semmit sem látsz, ami a segítségedre lehetne. Tekinteted hirtelen megállapodik egy csomag kártyán, amivel az Öreg akkor játszadozott, amikor beléptél. Eszedbe jutnak azok a szóbeszédek és történetek, melyeket a falusiak meséltek neked! A Varázsló ereje, a kártyáiban rejlik. A Varázsló is észreveszi érdeklődésed a pakli kártya iránt, és mindketten az asztal felé rohantok. Te érsz oda előbb. - Hagyd békén azokat! - sikoltja - vagy kivívod magad ellen legsötétebb haragomat! - Te hátralépsz, és lámpásod lángjával meggyújtod az egyik lapot. A Varázsló vadul felkiált, és elkezd könyörögni, hogy ne nyúlj a kártyákhoz. Az egyik lapot a másik után gyújtod meg, miközben a Varázsló alakja fogyni kezd. Amint az utolsó kártya is elhamvadt, egy megtört ember áll előtted. - A könyvem! - hörgi, miközben megpróbálja a szemközti falban lévő ajtót kinyitni. Karddal a kezedben odarohansz, és rátámadsz.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "caption": "Küzdj meg vele!",
+                    "opponents": [
+                        {
+                            "name": "Varázsló",
+                            "dexterity": 7,
+                            "health": 12
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 396,
+                        "caption": " Győztél"
+                    }
+                }
+            ]
+        },
         {
             "id": 290,
             "story": "",
