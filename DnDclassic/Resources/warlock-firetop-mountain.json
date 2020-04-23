@@ -5622,6 +5622,130 @@
                 }
             ]
         },
+        {
+            "id": 260,
+            "story": "Nem találsz titkos átjárót.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Észak felé haladsz",
+                    "destination": 359
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek mész",
+                    "destination": 329
+                }
+            ]
+        },
+        {
+            "id": 261,
+            "story": "Eléred az elágazást.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Mész tovább kelet felé",
+                    "destination": 345
+                }
+            ]
+        },
+        {
+            "id": 262,
+            "story": "Az átjárótól kissé távolabb újabb kereszteződéshez érsz.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Keletnek fordulsz",
+                    "destination": 199
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak fordulsz",
+                    "destination": 251
+                }
+            ]
+        },
+        {
+            "id": 263,
+            "story": "Rákiáltasz, amilyen erősen csak tudsz: Öreg, megszabadultál! Azonnal abbahagyja az üvöltést. Abban a minutában megáll, a padlóra zuhan, és hangosan zokogni kezd. Beszélgetsz vele, mert abban bízol, felfed néhányat a hegy titkaiból. Az Öreg fokozatosan összeszedi magát, és hálálkodni kezd. Belefog történetének elbeszélésébe. Sok évvel ezelőtt, ugyanúgy, mint most te, ő is belevágott a kalandba, a Varázsló kincsének felkutatásába. Az Orkok elfogták, és egy magányos cellába vetették, ahol úgy tartották, mint valamiféle kedvenc háziállatukat. Megkérdezed, nem akar-e társadul szegődni a továbbiakban, de egyetlen vágya, hogy kiszabadulva innen viszontlássa a külső világot. Útmutatást kérsz tőle, de azt mondja, nagyon keveset tud. Azt tanácsolja, tartsd tiszteletben a révészt, s ha az út végét lezáró vaskaput akarod kinyitni, akkor a falon lévő fogantyúk közül a jobb oldalit kell meghúznod. Azt is megtudod tőle, hogy a Csónakház kulcsait egy férfi és egy kutya őrzi. Kezet ráztok, kiléptek, és útjaitok különválnak. 1 Szerencse pontot kapsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 314
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ]
+        },
+        {
+            "id": 264,
+            "story": "Egyszerűen nincs rá mód, hogy erővel felnyisd az ajtót, tömör tölgyfából készült és legalább húsz centi vastag. Kardforgató kezed megsérül a kísérletnél - 1 ÜGYESSÉG pontot veszítesz. Csak akkor juthatsz keresztül az ajtón, ha van kulcsod a Csónakházhoz.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Van kulcsod a Csónakházhoz. Átkozod magad, hogy miért nem használtad azt rögtön.",
+                    "destination": 80,
+                    "condition": {
+                        "inventoryItemId": "key_charnel_house",
+                        "inventoryItemAmount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Nincs kulcsod, vissza kell térned a folyópartra, és újra kell próbálkoznod.",
+                    "destination": 129
+                }
+            ]
+        },
+        {
+            "id": 265,
+            "story": "Tapogatózol a fal mentén, és egy ajtóra bukkansz. Ügyetlenkedsz az ajtónyitogató gombbal, de végre kinyílik!",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 88
+                }
+            ]
+        },
+        {
+            "id": 266,
+            "story": "A tok könnyedén kinyílik, és a belsejében egy pompás íjat és egy ezüst nyílvesszőt találsz. A tokon egy utasítás azt mondja: ... Örök álmot nyújt még azoknak is, akik sohasem... Az íjat és a nyílvesszőt a tokkal együtt a hátizsákodba teszed, és távozol. Ha akarsz, előtte ehetsz is Élelmiszerkészletedből. 1 Szerencse pontot nyertél.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 237
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "arrow",
+                    "id": "arrow_of_everlasting_dream",
+                    "amount": 1,
+                    "name": "Örök Álmot Adó Nyílvessző",
+                    "consumeWhenUsed": true
+                }
+            ],
+            "cover": "scene_266.png"
+        },
         
         {
             "id": 272,
