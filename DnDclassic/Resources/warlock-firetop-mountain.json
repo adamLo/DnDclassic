@@ -6666,7 +6666,183 @@
                 }
             ]
         },
-
+        {
+            "id": 311,
+            "story": "Az út egy ajtónál ér véget. Hallgatózol, de semmit sem hallasz. Megpróbálod elfordítani az ajtónyitó gombot, az ajtó kitárul, és egy nagy, négyszög alakú szobába lépsz. A helyiség teljesen üres, padlóját csempékből kirakott mozaik fedi. Két minta, a kéz és a csillag alakú kimagaslik a padlóból. Továbbmenni csak a szemben lévő ajtón keresztül lehet. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Átmész a szobán az ajtóhoz",
+                    "destination": 305
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Csak a csillag alakú csempékre lépsz",
+                    "destination": 178
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Csak a kéz alakú csempékre lépve közelítesz az ajtóhoz",
+                    "destination": 108
+                }
+            ],
+            "cover": "scene_311.png"
+        },
+        {
+            "id": 312,
+            "story": "Egy hosszú, szűk folyosót követsz, amelyik északnak halad, azután nyugatnak fordul, majd megint északnak, és végül egy útkereszteződésnél találod magad.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 308
+                }
+            ]
+        },
+        {
+            "id": 313,
+            "story": "Megvizsgálod a testet. Szegény ördög úgy járt, akárcsak te, de koponyája gyengébb lévén, összetört a bunkó csapása alatt. Bőrpáncélzatot visel, amely nem jobb a tiednél. Egyik kezében fából készült pajzs, másikban acélpengéjű kard. Zsebeiben 8 aranypénz, nyakában egy láncon ezüstkereszt. A fent felsorolt tárgyak közül kettőt magaddal vihetsz. 1 Szerencse és 1 ÜGYESSÉG pontot nyertél.",
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 1
+                },
+                {
+                    "property": "dexterity",
+                    "gain": 1
+                }
+            ],
+            "inventory": [
+                {
+                    "type": "shield",
+                    "name": "Fából készült pajzs"
+                },
+                {
+                    "type": "sword",
+                    "name": "Acélpengéjű kard"
+                },
+                {
+                    "type": "money",
+                    "amount": 8
+                },
+                {
+                    "type": "cross",
+                    "name": "Ezüstkereszt",
+                    "id": "silver_cross"
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 221
+                }
+            ]
+        },
+        {
+            "id": 314,
+            "story": "Távolabb az úton, a keleti falban egy ajtót veszel észre. Erősen figyelsz, de semmi sem szűrődik ki.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod az ajtót, hogy átkutasd a szobát",
+                    "destination": 223
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod az utadat",
+                    "destination": 300
+                }
+            ]
+        },
+        {
+            "id": 315,
+            "story": "Úgy látszik, a zsákutcában nincsenek titkos átjárók.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Még egyszer ellenőrzöd",
+                    "destination": 306
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Nem akarod újra ellenőrizni",
+                    "destination": 291
+                }
+            ]
+        },
+        {
+            "id": 316,
+            "story": "A víz jéghideg. Úszni kezdesz, és észreveszed, hogy karcsapásaiddal magadra vontad egy örvénylő valami figyelmét. Bírod erővel és kitartással?",
+            "actions": [
+                {
+                    "caption": "Dobj két kockával!",
+                    "type": "propertyRoll",
+                    "dice": 2,
+                    "properties": ["health"],
+                    "equalOrLess": {
+                        "caption": "Azt hiszed, kibírod az északi partig, és vadul úszni kezdesz",
+                        "destination": 151,
+                        "direction": "north"
+                    },
+                    "greater": {
+                        "caption": "Nem kockáztatsz, inkább vissza fordulsz a déli partra",
+                        "destination": 218,
+                        "direction": "back"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 317,
+            "story": "Levágod köteleiről a Törpét. Valóban, ahogy sejtetted, halott. Átkutatod a két Goblin zsebeit, és egy nagy darab, jó illatú sajtra bukkansz. Ha magaddal akarod vinni, tedd a hátizsákodba.",
+            "inventory": [
+                {
+                    "type": "cheese",
+                    "name": "Jó illatú sajt",
+                    "amount": 1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Továbbmész észak felé",
+                    "destination": 303
+                }
+            ]
+        },
+        {
+            "id": 318,
+            "story": "Az átjáró zsákutcában ér véget.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 85
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Titkos átjárókat keresel",
+                    "destination": 228
+                }
+            ]
+        },
+        {
+            "id": 319,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Hogy megtudd a titkát annak a tárgynak, amelyet másodjára találtál, lapozz",
+                    "destination": 221
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Már mindkét tárgyat megvizsgáltad",
+                    "destination": 81
+                }
+            ]
+        },
 		{
 			"id": 320,
 			"story": "Kirohansz a szobából, és becsapod magad mögött az ajtót.",
