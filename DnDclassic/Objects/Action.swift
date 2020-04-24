@@ -10,7 +10,7 @@ import Foundation
 
 enum ActionType: String {
     
-    case tryLuck, fight, rest, roll, escape, force, propertyRoll, gamble, query
+    case tryLuck, fight, rest, roll, escape, force, propertyRoll, gamble, query, trade
 }
 
 class Action: Deserializable {
@@ -40,6 +40,8 @@ class Action: Deserializable {
             return NSLocalizedString("Gamble!", comment: "Gamble action default caption")
         case .query:
             return NSLocalizedString("You have to answer a question", comment: "Query action default caption")
+        case .trade:
+            return NSLocalizedString("Pst! Would you like to buy sumething?", comment: "Trade action default caption")
         }
     }
     
@@ -72,15 +74,16 @@ class ActionFactory {
         guard let _typeString = json[Action.JSONKeys.type] as? String, let type = ActionType(rawValue: _typeString) else {return nil}
         
         switch type {
-        case .tryLuck:  return TryLuckAction(json: json)
-        case .fight:    return FightAction(json: json)
-        case .rest:     return RestAction(json: json)
-        case .roll:     return RollAction(json: json)
-        case .escape:   return EscapeAction(json: json)
-        case .force:    return ForceAction(json: json)
+        case .tryLuck:      return TryLuckAction(json: json)
+        case .fight:        return FightAction(json: json)
+        case .rest:         return RestAction(json: json)
+        case .roll:         return RollAction(json: json)
+        case .escape:       return EscapeAction(json: json)
+        case .force:        return ForceAction(json: json)
         case .propertyRoll: return PropertyRollAction(json: json)
-        case .gamble:   return GambleAction(json: json)
-        case .query:    return QueryAction(json: json)
+        case .gamble:       return GambleAction(json: json)
+        case .query:        return QueryAction(json: json)
+        case .trade:        return TradeAction(json: json)
         }
     }
 }

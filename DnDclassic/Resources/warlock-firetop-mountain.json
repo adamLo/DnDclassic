@@ -7165,9 +7165,11 @@
                     "caption": "Ha veszel gyertyát, fizesd ki",
                     "items": [
                         {
-                            "type": "torch",
-                            "id": "blue_candle",
-                            "name": "Kék Gyertya",
+                            "item": {
+                                "type": "lighting",
+                                "id": "blue_candle",
+                                "name": "Kék Gyertya"
+                            },
                             "price": 20
                         }
                     ]
