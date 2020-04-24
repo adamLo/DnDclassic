@@ -7195,7 +7195,39 @@
                 }
             ]
         },
-
+        {
+            "id": 336,
+            "story": "Egy kicsi, büdös szobában vagy. Két ajtót látsz, az egyik nyugatra vezet, a másik, amin beléptél, délre. A helyiségben szétszórva bútorok, legtöbbjüket régi csónakok deszkáiból tákolták össze. A szobában semmi értékes nincs, kivéve egy a falon függő kulcscsomót. Egy evezős csónak feléből készített padon egy öreg, rongyos ruházatú ember fekszik hanyatt, és hangosan hortyog. Mellette rosszindulatúnak látszó, barna kutya hever. A szemei vörösek, fogai feketék. Belépéseddel felriasztottad, most gyanakodva méreget. Mélyről jövő morgás hallatszik torkából. Választhatsz:",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Kilopakodsz a szobából a déli kijáraton",
+                    "destination": 66
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Hangosan becsapod az ajtót magad mögött, s zavartan köhécselsz, hogy az Öreget felébreszd",
+                    "destination": 172
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Kirántott karddal átszökkensz a szobán, hogy ledöfd a kutyát",
+                    "destination": 249
+                }
+            ],
+            "cover": "scene_336.png"
+        },
+        {
+            "id": 337,
+            "story": "Nem találsz titkos átjárókat, de amint a falakat tapogatod, egy kattanást hallasz. Elszédülsz és a földre rogysz. Amikor magadhoz térsz, a környezet különösnek tűnik.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 267
+                }
+            ]
+        },
         {
             "id": 338,
             "story": "Óvatosan megközelíted a szobrot. Valami elsurran a hátad mögött, hirtelen megfordulsz... de csak egy patkány. Megfogod az ékkövet, de az szilárdan ül a helyén. Megpróbálod a kardoddal kipiszkálni, de egyszer csak baljóslatú csikorgást hallasz. Rémülten látod, hogy a szobor mozogni kezd. Leugrasz, és kirántod a kardod. A Vas Küklopsz felemeli és feléd fordítja a fejét, majd lelép a talapzatról!",
@@ -7223,7 +7255,169 @@
                 }
             ]
         },
-        
+        {
+            "id": 339,
+            "story": "A lakat elröpül, és néhány méternyire ér földet. Felemeled a nehéz fedelet, és szemed tágra nyílik, amint megpillantod, micsoda aranyló ragyogás árad belőle. Jó csomó aranypénz van benne. Az egyik sarkában kicsi, fekete üveg fekszik, valami folyadék van benne. A ládában van még egy selyemkesztyű is. De amint a kincseket bámulod, halk kattanást hallasz, és összerándulsz a fájdalomtól, amint egy kicsi hajítódárda vágódik a gyomrodba.",
+            "actions": [
+                {
+                "type": "roll",
+                "dice": 1,
+                "caption": "Milyen erős volt a méreg a dárda hegyén?",
+                "choices": [
+                    {
+                        "roll": 1,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3391,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 2,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3392,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 3,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3393,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 4,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3394,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 5,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3395,
+                            "direction": "unknown"
+                        }
+                    },
+                    {
+                        "roll": 6,
+                        "waypoint": {
+                            "caption": "Lapozz",
+                            "destination": 3396,
+                            "direction": "unknown"
+                        }
+                    }
+                ]
+                }
+            ]
+        },
+        {
+            "id": 3391,
+            "story": "Elvesztettél 1 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
+        {
+            "id": 3392,
+            "story": "Elvesztettél 2 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
+        {
+            "id": 3393,
+            "story": "Elvesztettél 3 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -3
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
+        {
+            "id": 3394,
+            "story": "Elvesztettél 4 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -4
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
+        {
+            "id": 3395,
+            "story": "Elvesztettél 5 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -5
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
+        {
+            "id": 3396,
+            "story": "Elvesztettél 6 életerő pontot!",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -6
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 201
+                }
+            ]
+        },
 		{
 			"id": 340,
 			"story": "Különféle tárgyakkal próbálkozol Felszerelésedből, hogy szembeszegülj a festmény pillantásával, de egyik sem segít.",
