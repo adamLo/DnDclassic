@@ -7168,7 +7168,8 @@
                             "item": {
                                 "type": "lighting",
                                 "id": "blue_candle",
-                                "name": "Kék Gyertya"
+                                "name": "Kék Gyertya",
+                                "unique": true
                             },
                             "price": 20
                         }

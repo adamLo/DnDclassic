@@ -10,7 +10,7 @@ import Foundation
 
 class TradeAction: Action {
     
-    let items: [TradeItem]
+    private(set) var items: [TradeItem]
     
     required init?(json: JSON) {
         
@@ -29,5 +29,4 @@ class TradeAction: Action {
     private struct JSONkeys {
         static let items = "items"
     }
-    
 }

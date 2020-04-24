@@ -343,6 +343,11 @@ class Character: Deserializable, Equatable {
         return item != nil
     }
     
+    func hasItem(identifier: String) -> Bool {
+        
+        return inventory.firstIndex(where: {$0.item.identifier == identifier}) != nil
+    }
+    
     private func clearInventory() {
         
         inventory.removeAll { (item) -> Bool in

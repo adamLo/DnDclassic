@@ -82,6 +82,8 @@
 		19825C15245204F000488525 /* scene_326.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C14245204EF00488525 /* scene_326.png */; };
 		19825C1724520F1300488525 /* TradeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C1624520F1300488525 /* TradeAction.swift */; };
 		19825C192452CE8600488525 /* TradeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C182452CE8600488525 /* TradeItem.swift */; };
+		19825C1D245315EF00488525 /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C1C245315EF00488525 /* TradeViewController.swift */; };
+		19825C1F245321EF00488525 /* TradeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C1E245321EF00488525 /* TradeItemCell.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -215,6 +217,8 @@
 		19825C14245204EF00488525 /* scene_326.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_326.png; sourceTree = "<group>"; };
 		19825C1624520F1300488525 /* TradeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAction.swift; sourceTree = "<group>"; };
 		19825C182452CE8600488525 /* TradeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeItem.swift; sourceTree = "<group>"; };
+		19825C1C245315EF00488525 /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		19825C1E245321EF00488525 /* TradeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeItemCell.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -334,15 +338,12 @@
 			children = (
 				19FC5402242FC73B00988644 /* Character */,
 				19497D67240587500072CFD0 /* Definitions */,
-				193015732402C0B700E7B815 /* Dice.swift */,
+				19825C1A2453154200488525 /* Controllers */,
 				19D29566243113C8003713E5 /* Inventory */,
 				19825BC52441DED200488525 /* Fight */,
 				19FC5400242FBEF200988644 /* Bonus.swift */,
 				19FC540C2430A04D00988644 /* Scene */,
-				19301587240316D700E7B815 /* Game.swift */,
 				19E193D0242BBBA100334B0F /* Actions */,
-				19825BE4244C650700488525 /* Gamble.swift */,
-				19825BEC244DDA1700488525 /* Query.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -393,6 +394,7 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				19825C1B245315D300488525 /* Trade */,
 				19FC5407242FD11000988644 /* Log */,
 				19E193BA2426404700334B0F /* Fight */,
 				193015412402BD4C00E7B815 /* Main.storyboard */,
@@ -428,7 +430,6 @@
 		19825BC52441DED200488525 /* Fight */ = {
 			isa = PBXGroup;
 			children = (
-				193015792402CAC600E7B815 /* Fight.swift */,
 				19D295622430D713003713E5 /* HitBonus.swift */,
 				19825BC62441DEEE00488525 /* DamageRoll.swift */,
 				19825BCC244219E700488525 /* DamageEvent.swift */,
@@ -437,6 +438,27 @@
 				19825C062450735A00488525 /* ExtraAttackChoice.swift */,
 			);
 			name = Fight;
+			sourceTree = "<group>";
+		};
+		19825C1A2453154200488525 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				193015792402CAC600E7B815 /* Fight.swift */,
+				193015732402C0B700E7B815 /* Dice.swift */,
+				19301587240316D700E7B815 /* Game.swift */,
+				19825BE4244C650700488525 /* Gamble.swift */,
+				19825BEC244DDA1700488525 /* Query.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		19825C1B245315D300488525 /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				19825C1C245315EF00488525 /* TradeViewController.swift */,
+				19825C1E245321EF00488525 /* TradeItemCell.swift */,
+			);
+			name = Trade;
 			sourceTree = "<group>";
 		};
 		19A85597240AB6D4007174C8 /* Extensions */ = {
@@ -729,6 +751,7 @@
 				19497D712405AE400072CFD0 /* SceneViewController.swift in Sources */,
 				193015742402C0B700E7B815 /* Dice.swift in Sources */,
 				19497D802406B2440072CFD0 /* CharacterEditPotionCell.swift in Sources */,
+				19825C1F245321EF00488525 /* TradeItemCell.swift in Sources */,
 				19A85599240AB6E6007174C8 /* Strings.swift in Sources */,
 				19825C052450716500488525 /* ExtraAttack.swift in Sources */,
 				193015782402C5B100E7B815 /* Potion.swift in Sources */,
@@ -753,6 +776,7 @@
 				19825BFB244F59B600488525 /* Glove.swift in Sources */,
 				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,
 				19E193D2242BBD6000334B0F /* RollChoice.swift in Sources */,
+				19825C1D245315EF00488525 /* TradeViewController.swift in Sources */,
 				19497D7A2406AD590072CFD0 /* CharacterEditViewController.swift in Sources */,
 				196EC2D72430ADFA004732A7 /* EscapeAction.swift in Sources */,
 				1930157A2402CAC600E7B815 /* Fight.swift in Sources */,

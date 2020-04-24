@@ -40,6 +40,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private struct Segues {
         static let fight = "fight"
+        static let trade = "trade"
     }
     
     var isFightOver = false
@@ -311,6 +312,9 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         else if action.type == .query, let _action = action as? QueryAction {
             query(_action)
         }
+        else if action.type == .trade, let _action = action as? TradeAction {
+            trade(_action)
+        }
     }
     
     private func tryLuck(_ action: TryLuckAction) {
@@ -372,6 +376,11 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func fight(_ fight: FightAction) {
         
         performSegue(withIdentifier: Segues.fight, sender: fight)
+    }
+    
+    private func trade(_ action: TradeAction) {
+        
+        performSegue(withIdentifier: Segues.trade, sender: action)
     }
     
     private func advance(to wayPoint: WayPoint) {
@@ -704,6 +713,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == Segues.fight, let destination = segue.destination as? FightViewController, let fight = sender as? FightAction {
+            
             destination.action = fight
             destination.figthOver = {[weak self] (wayPoint) in
                 if let _wayPoint = wayPoint {
@@ -726,6 +736,10 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
             GameData.shared.completed(scene: scene)
+        }
+        else if segue.identifier == Segues.trade, let navController = segue.destination as? UINavigationController, let destination = navController.viewControllers.first as? TradeViewController, let trade = sender as? TradeAction {
+            
+            destination.action = trade
         }
     }
     

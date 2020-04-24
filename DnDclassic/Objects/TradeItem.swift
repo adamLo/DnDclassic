@@ -12,6 +12,7 @@ struct TradeItem: Deserializable {
     
     let inventoryItem: InventoryItem
     let price: Int
+    let unique: Bool
     
     init?(json: JSON) {
         
@@ -19,11 +20,14 @@ struct TradeItem: Deserializable {
         inventoryItem = _item
         
         guard let _price = json[JSONkeys.price] as? Int else {return nil}
-        price = _price        
+        price = _price
+        
+        unique = json[JSONkeys.unique] as? Bool ?? false
     }
     
     private struct JSONkeys {
         static let item     = "item"
         static let price    = "price"
+        static let unique   = "unique"
     }
 }

@@ -1,6 +1,6 @@
 //
 //  CharacterViewInventoryCell.swift
-//  DnDclassic
+//  DnDclassicTradeItemCell
 //
 //  Created by Adam Lovastyik on 06/03/2020.
 //  Copyright © 2020 Adam Lovastyik. All rights reserved.
