@@ -7625,7 +7625,22 @@
             ],
             "cover": "scene_348.png"
         },
-        
+        {
+            "id": 349,
+            "story": "Néhány métert lefelé haladsz a folyosón, és zsákutcába kerülsz.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszafordulsz az útkereszteződéshez",
+                    "destination": 267
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átkutatod a zsákutca végét",
+                    "destination": 30
+                }
+            ]
+        },
         {
             "id": 350,
             "story": "Ahogy a kavargó, örvénylő víz körülvesz, érzed, rengeteg kicsiny hal támad rád. Gonosz harapásaikkal szinte szétmarják, -szabdalják a testedet, és ekkor ráébredsz, életveszélyes Piranhák vesznek körül. Ha a Krokodillal vívott küzdelem során megsebezted a hüllőt, szerencséd van, mert a halak többsége a vérző állatra támad. Ha nem sebesítetted meg a Krokodilt, a halak bármelyiketekre támadhatnak. Dobj egy kockával. Ha 1-est vagy 2-est dobsz, a Piranhák többsége rád támad. Ha ennél nagyobbat dobsz, a halak többsége a Krokodilra ront. Vedd úgy, mintha egy teremtménnyel kellene megküzdened.",
@@ -7806,7 +7821,173 @@
                 }
             ]
         },
-
+        {
+            "id": 351,
+            "story": "Visszaértél az elágazáshoz.",
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Keletnek fordulsz",
+                    "destination": 76
+                }
+            ]
+        },
+        {
+            "id": 352,
+            "story": "Közelítesz hozzá, szemét rád mereszti. Tekintetétől gyöngülni kezdesz. 1 ÉLETERŐ pontot veszítesz. Fokozatosan gyengül saját akaratod.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod kihúzni a kardodat, hogy megküzdj vele",
+                    "destination": 74
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A zsákodban keresel valami mást, amivel megtámadhatod",
+                    "destination": 279
+                }
+            ]
+        },
+        {
+            "id": 353,
+            "story": "Hirtelen az Öreg felé szúrsz, ahogy kitárt karokkal feléd ugrik, és kardod átjárja mellét. Káromkodsz, amikor rájössz, nem is akart bántani. Vad izgatottsága pusztán annak tudható be, hogy a hosszú fogság után végre kiszabadult. Most már nem tudhatsz meg tőle semmit azokról a veszélyekről, melyek még rád leselkednek.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Folytatod utadat a folyosón",
+                    "destination": 314
+                }
+            ]
+        },
+        {
+            "id": 354,
+            "story": "Egy útkanyarulatnál állsz, ahonnan nyugatra és délre egyaránt indulhatsz.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugatra indulsz",
+                    "destination": 308
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek tartasz",
+                    "destination": 52
+                },
+                {
+                    "direction": "west",
+                    "caption": "Titkos átjárók után kutatsz a nyugatra vezető úton",
+                    "destination": 14
+                },
+                {
+                    "direction": "south",
+                    "caption": "Titkos átjárókat keresel a délre tartó úton",
+                    "destination": 234
+                }
+            ]
+        },
+        {
+            "id": 355,
+            "story": "A fal mentén tapogatózol, de nincs mód a menekülésre. A zaj már olyan erős, hogy sikoltozol fájdalmadban. Vonj le 1 pontot Ügyességedből.",
+            "visitBonus": [
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "east",
+                    "caption": "Megpróbálkozol a keleti fallal",
+                    "destination": 181
+                },
+                {
+                    "direction": "north",
+                    "caption": "Megpróbálkozol az északi fallal",
+                    "destination": 265
+                }
+            ]
+        },
+        {
+            "id": 356,
+            "story": "Az öregember rád néz, fogadja köszönésedet, és hellyel kínál. Leülsz az asztalhoz, és észreveszed, merőn bámul. Tekintete hipnotikussá válik, de még idejében észleled, és elkapod a szemed róla. Szólásra nyitja száját, és meglepetésedre egy aggastyán hangja helyett egy erőteljes férfihangot visszhangzik a szoba, úgy, mintha maguk a falak szólaltak volna meg. Újra az öregre nézel, és látod) amint a szemed láttára alakul át. Termete megnő, cafatokká szakadt rongyai aranyból és bársonyból készült palásttá válnak. Fekete szemét rád emeli. Már várt rád...",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 358
+                }
+            ],
+            "cover": "scene_356.png"
+        },
+        {
+            "id": 357,
+            "story": "Az út jó darabig északnak halad, azután szélesedni kezd, és egy hatalmas, durva falú barlangba ér. Úgy látod, nem vezet rajta keresztül semmilyen folyosó.",
+            "waypoints": [
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 269
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Belépsz a barlangba",
+                    "destination": 57
+                }
+            ]
+        },
+        {
+            "id": 358,
+            "story": "Ebben a csatában szükséged lesz erőd és ravaszságod minden tartalékára. Ellenfeled eltűnt, és most a szoba túlsó végében bukkan fel egy ajtó előtt, amin két lakat van. Hogyan közelíted meg?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardodat szorosan megmarkolva előrenyomulsz",
+                    "destination": 142
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Átnézed Felszerelésed, valami más fegyvert keresve",
+                    "destination": 105
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Körülnézel a szobában, támadásra vagy védekezésre alkalmas eszközt kutatván",
+                    "destination": 389
+                }
+            ]
+        },
+        {
+            "id": 359,
+            "story": "Útkereszteződésnél állsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északra indulsz",
+                    "destination": 190
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatra mész",
+                    "destination": 385
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délre tartasz",
+                    "destination": 94
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletre fordulsz",
+                    "destination": 121
+                }
+            ]
+        },
 		{
 			"id": 360,
 			"story": "Az ajtó nagyot dörrenve becsapódik mögötted. Egy észak felé vezető folyosón találod magad. Ezen mész egy darabig, azután az út nyugatnak kanyarodik. Kicsit később véletlenül ráakadsz egy kis nyílásra az északi falban, és úgy döntesz, átbújsz rajta.",
@@ -7835,7 +8016,22 @@
 				}
 			]
 		},
-
+        {
+            "id": 364,
+            "story": "Amint megnyomod a gombot, a kicsiny kőajtó kinyílik. Gyorsan kell döntened, mert az ajtó egy percen belül magától becsapódik.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy döntesz, hogy inkább továbbmész az útkereszteződéshez",
+                    "destination": 256
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Bemész az ajtón",
+                    "destination": 373
+                }
+            ]
+        },
 		{
 			"id": 365,
 			"story": "Az Orkok egyesével támadnak rád",
@@ -7904,7 +8100,44 @@
 				}
 			]
 		},
-
+        {
+            "id": 367,
+            "story": "Az út egy újabb elágazáshoz ér.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Nyugatra fordulsz",
+                    "destination": 235
+                },
+                {
+                    "direction": "east",
+                    "caption": "Inkább keletre mész",
+                    "destination": 323
+                }
+            ]
+        },
+        {
+            "id": 368,
+            "story": "A Varázsló kacagása visszhangzik a teremben. - Majd elválik, kettőnk közül ki az egér! - kiáltja, és kezét a levegőbe emeli. Pattint egyet az ujjával, s tenyeréből kék lángcsóva csap le rád. 3 ÉLETERŐ pontot veszítesz. Valami mást kell megpróbálnod.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -3
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kardot rántasz és rátámadsz",
+                    "destination": 142
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Keresel egy alkalmas eszközt a hátizsákodban",
+                    "destination": 105
+                }
+            ]
+        },
         {
             "id": 369,
             "story": "Lenyelsz egy keveset a folyadékból.",
@@ -7930,7 +8163,8 @@
 					"caption": "Gyorsan becsapod az ajtót és visszaszaladsz a folyosóra",
 					"destination": 42
 				}
-			]
+			],
+            "cover": "scene_370.png"
 		},
         {
             "id": 371,
@@ -8022,7 +8256,97 @@
                 }
             ]
         },
-        
+        {
+            "id": 376,
+            "story": "Összeszedheted az asztalon lévő összes rézpénzt. Négy aranyat érnek! Most már nyugodtan távozhatsz. Pihenj és harapj valamit, mielőtt továbbmész, persze csak ha akarod! 3 Szerencse pontot nyertél.",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 4
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 291
+                }
+            ]
+        },
+        {
+            "id": 377,
+            "story": "Amint kirántod a kardod, a Szárnyas Gremlin felröppen és rád támad. Az Öreg a könyvespolchoz rohan, megérint egy könyvet, és elmenekül a kitáruló rejtekajtón keresztül. De kedvenc állatkájával meg kell küzdened.",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Szárnyas Gremlin",
+                            "dexterity": 5,
+                            "health": 7
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 196,
+                        "caption": "Győztél"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 378,
+            "story": "Véres kardodat a matracba törlöd. A zöld vér nyálkás foltot hagy a szalmán. Az asztalhoz mész, és fintorogva lépkedsz át a testeken, ezeknek a lényeknek rém büdös szaguk van. Felkapod a dobozt az asztal alól, hogy megvizsgáld. Durva vasalású kis faládika, fedelén egy réz névtábla, melyre a Farrigo Di Maggio nevet vésték.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod a dobozt",
+                    "destination": 296
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy is döntesz, hogy itt hagyod és távozol",
+                    "destination": 42
+                }
+            ]
+        },
+        {
+            "id": 379,
+            "story": "Nekikészülsz, hogy a ládára sújts, miközben a mennydörgő zaj egyre erősödik. A magasba emeled a kardod, de amint a penge megközelíti a dobozt, egy hangrobbanás süketít meg. A helyiség egyik sarkából villám csap ki, átcikázik a levegőn, egyenest a kardmarkolatnak, s te döbbenten támolyogsz keresztül a szobán.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 3791,
+                        "caption": "Szerencsés vagy"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 3792,
+                        "caption": "Balszerencsés vagy"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3791,
+            "story": "Szerencsés vagy, kardod darabokban hever ugyan a földön, de sikerült elengedned a markolatot, mielőtt a villám belecsapott volna.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Keresel kulcsokat a hátizsákodban",
+                    "destination": 139
+                }
+            ]
+        },
+        {
+            "id": 3792,
+            "story": "balszerencsés vagy, elszenesedett maradványaid egy kis fekete körvonalat képeznek a padlón. Legközelebb meg ne próbálj rácsapni a ládára!",
+            "playerDied": true
+        },
         {
             "id": 380,
             "story": "Egy szűk, kelet-nyugati folyosón állsz.",
