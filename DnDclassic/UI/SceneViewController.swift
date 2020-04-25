@@ -323,10 +323,17 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         var message = String(format: NSLocalizedString("You rolled %d, %@", comment: "Try luck action result message format"), luck.rolled, luck.success ? NSLocalizedString("Good luck!", comment: "Good luck result title") : NSLocalizedString("Bad luck :(", comment: "Bad luck result title"))
         
-        if action.rollGainsMoney, luck.success {
+        if action.rollWinsMoney || action.rollLoseMoney {
+            
             let money = Money(amount: luck.rolled)
-            GameData.shared.player.add(inventoryItem: money)
-            message = String(format: NSLocalizedString("Good luck, you just gained %d gold!", comment: "Good luck dialog message when money is earned"), luck.rolled)
+            if luck.success, action.rollWinsMoney {
+                GameData.shared.player.add(inventoryItem: money)
+                message = String(format: NSLocalizedString("Good luck, you just gained %d gold!", comment: "Good luck dialog message when money is earned"), luck.rolled)
+            }
+            else if !luck.success, action.rollLoseMoney {
+                GameData.shared.player.pay(amount: luck.rolled)
+                message = String(format: NSLocalizedString("Oh no, you just lost %d gold!", comment: "Bad luck dialog message when money is lost"), luck.rolled)
+            }
         }
                 
         let alert = UIAlertController(title: NSLocalizedString("You tried your luck", comment: "Try luck action result title"), message: message, preferredStyle: .alert)

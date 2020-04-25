@@ -1822,15 +1822,15 @@
                         "type": "waypoint",
                         "direction": "unknown",
                         "destination": 131,
-                        "caption": "A nyereményed",
-                        "rollGainsMoney": true
+                        "caption": "A nyereményed"
                     },
                     "badLuck": {
                         "type": "waypoint",
                         "direction": "unknown",
                         "destination": 20,
                         "caption": "A négy Törpe észreveszi, amint a kártyapakli aljáról osztasz, felkapják a szék mögé támasztott bárdjukat, és rád rontanak."
-                    }
+                    },
+                    "rollWinsMoney": true
                 }
             ]
         },
@@ -7444,7 +7444,72 @@
 				}
 			]
 		},
-        
+        {
+            "id": 341,
+            "story": "Belépsz a szobába, és az öregember rád mered.",
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Mentegetőzöl, próbálod elmagyarázni, hogy eltévesztetted az utat, és távozol a nyugati ajtón",
+                    "destination": 46
+                },
+                {
+                    "direction": "south",
+                    "caption": "Vagy a déli ajtón",
+                    "destination": 392
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálkozol udvariasan beszélgetni vele",
+                    "destination": 220
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Követeled, hogy válaszoljon kérdéseidre",
+                    "destination": 191
+                }
+            ]
+        },
+        {
+            "id": 342,
+            "story": "A Farkasember a földre rogy. Átkutatod a testét, és 2 aranypénzt találsz, az volt az utolsó átkelés díja. Megátkozod, amiért tőled többet kért. Jegyezd fel a 2 aranyat a többihez, és evezz át a folyón. 2 Szerencse pontot kaptál. Kikötöd a csónakot az északi parton, és visszanézel a holttestre. De az eltűnt!",
+            "inventory": [
+                {
+                    "type": "money",
+                    "amount": 2
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "luck",
+                    "gain": 2
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 7
+                }
+            ]
+        },
+        {
+            "id": 343,
+            "story": "Az ajtó kiszakad, és te fejjel előre zuhansz be a szobába. A szíved a torkodban kezd el dobogni, amikor észreveszed, nem a padlóra zuhansz, hanem valamiféle kútba. Szerencsére a kút nem különösebben mély, alig kétméternyire talajt érsz. 1 ÉLETERŐ pontot veszítesz a horzsolásaid miatt, de mássz ki és menj nyugat felé.",
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                }
+            ],
+            "waypoints": [
+                {
+                    "direction": "west",
+                    "caption": "Lapozz",
+                    "destination": 92
+                }
+            ]
+        },
         {
             "id": 344,
             "story": "Hüvelyébe dugod a kardod, és a vízhez mész. Biztonságos-e átúszni rajta? Bár veszélynek közvetlen jelét sem a vízben, sem a parton nem látod, út sincs, ami az északi partra vezetne. Egyszer csak egy csillogó kardot pillantasz meg, néhány lépésnyire hever a folyó medrében. A vízbe gázolsz, hogy kivedd. Könynyű a kezedben, sokkal kevésbé ormótlan, mint a sajátod, és éles a pengéje. Ez a csodálatos fegyver 1 ÜGYESSÉG pontnyi pluszt jelent mindig, ha ezt használod. Jegyezd fel a Kalandlapra. Egy titokzatos hang azt súgja neked, hogy saját kardodat dobd a folyóba.",
@@ -7471,7 +7536,56 @@
                 }
             ]
         },
-        
+        {
+            "id": 345,
+            "story": "Keleti irányban követed a folyosót, mely néhány méter után északnak fordul. Hamarosan újabb elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Mész tovább egyenesen",
+                    "destination": 381
+                },
+                {
+                    "direction": "east",
+                    "caption": "Jobbra fordulva kelet felé mész egy úton, mely hamarosan északnak kanyarodik",
+                    "destination": 311
+                }
+            ]
+        },
+        {
+            "id": 346,
+            "story": "A kártyaszerencse lehet veled és ellened is.",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 3461,
+                        "caption": "Lapozz"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 131,
+                        "caption": "Lapozz"
+                    },
+                    "rollWinsMoney": true,
+                    "rollLoseMoney": true
+                }
+            ]
+        },
+        {
+            "id": 3461,
+            "story": "Nyertél, 2 Szerencse pontot kapsz.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 131
+                }
+            ]
+        },
         {
             "id": 347,
             "story": "",
@@ -7482,6 +7596,11 @@
                     "destination": 182
                 }
             ]
+        },
+        {
+            "id": 348,
+            "story": "",
+            
         },
         
         {

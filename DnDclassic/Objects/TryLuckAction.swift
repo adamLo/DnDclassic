@@ -13,18 +13,21 @@ class TryLuckAction: Action {
     let goodLuck: WayPoint
     let badLuck: WayPoint
     /// If true, roll is a win of money
-    let rollGainsMoney: Bool
+    let rollWinsMoney: Bool
+    let rollLoseMoney: Bool
     let badLuckRolls: [RollChoice]?
     let goodLuckRolls: [RollChoice]?
     
     required init?(json: JSON) {
 
         guard let _goodLuckJson = json[JSONkeys.goodLuck] as? JSON, let _goodLuck = WayPoint(json: _goodLuckJson) else {return nil}
-        guard let _badLuckJson = json[JSONkeys.badLuck] as? JSON, let _badLuck = WayPoint(json: _badLuckJson) else {return nil}
-        
         goodLuck = _goodLuck
+        
+        guard let _badLuckJson = json[JSONkeys.badLuck] as? JSON, let _badLuck = WayPoint(json: _badLuckJson) else {return nil}
         badLuck = _badLuck
-        rollGainsMoney = _goodLuckJson[JSONkeys.rollGainsMoney] as? Bool ?? false
+        
+        rollWinsMoney = json[JSONkeys.rollWinsMoney] as? Bool ?? false
+        rollLoseMoney = json[JSONkeys.rollLoseMoney] as? Bool ?? false
         
         if let rollsJson = _badLuckJson[JSONkeys.rolls] as? JSONArray {
             var _choices = [RollChoice]()
@@ -58,7 +61,8 @@ class TryLuckAction: Action {
     private struct JSONkeys {
         static let goodLuck         = "goodLuck"
         static let badLuck          = "badLuck"
-        static let rollGainsMoney   = "rollGainsMoney"
+        static let rollWinsMoney    = "rollWinsMoney"
+        static let rollLoseMoney    = "rollLoseMoney"
         static let rolls            = "rolls"
     }
 }
