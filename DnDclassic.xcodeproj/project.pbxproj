@@ -89,6 +89,7 @@
 		19825C252454600A00488525 /* scene_356.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C242454600900488525 /* scene_356.png */; };
 		19825C27245462C200488525 /* scene_370.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C26245462C100488525 /* scene_370.png */; };
 		19825C292454666400488525 /* scene_383.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C282454666300488525 /* scene_383.png */; };
+		19825C2B24546E5500488525 /* scene_394.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C2A24546E5400488525 /* scene_394.png */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -229,6 +230,7 @@
 		19825C242454600900488525 /* scene_356.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_356.png; sourceTree = "<group>"; };
 		19825C26245462C100488525 /* scene_370.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_370.png; sourceTree = "<group>"; };
 		19825C282454666300488525 /* scene_383.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_383.png; sourceTree = "<group>"; };
+		19825C2A24546E5400488525 /* scene_394.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_394.png; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 		19301589240318DE00E7B815 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19825C2A24546E5400488525 /* scene_394.png */,
 				19825C282454666300488525 /* scene_383.png */,
 				19825C26245462C100488525 /* scene_370.png */,
 				19825C242454600900488525 /* scene_356.png */,
@@ -728,6 +731,7 @@
 				19FCFA9C24157A1900199175 /* scene_071.png in Resources */,
 				19825BDF244A132600488525 /* scene_106.png in Resources */,
 				19825C0D2451AB4000488525 /* scene_287.png in Resources */,
+				19825C2B24546E5500488525 /* scene_394.png in Resources */,
 				19825C132451D59400488525 /* scene_311.png in Resources */,
 				19825C27245462C200488525 /* scene_370.png in Resources */,
 				19FCFA9B24157A1900199175 /* scene_009.png in Resources */,

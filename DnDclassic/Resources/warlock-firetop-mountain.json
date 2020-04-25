@@ -8469,7 +8469,48 @@
             "story": "Kipróbálod a kulcsokat, de egyik sem fordul el. Épp a harmadikkal kísérletezel, amikor kis csappantyúk kattannak, és utolsó emléked, amit észlelsz, hogy fájdalom hasít a testedbe. Három apró hajítódárda fúródik beléd. Gyorsan ható méreg van mindegyik hegyén. Kalandod itt véget ért. Nehogy még egyszer ezt a kulcskombinációt használd, ha legközelebb erre tévedsz!",
             "playerDied": true
         },
-        
+        {
+            "id": 388,
+            "story": "Kardod kiröpül a kezedből, a levegőbe emelkedik, és már félre is kell ugranod, ahogy rád zuhan. Végighorzsolja az arcodat, amint leesik. 1 ÉLETERŐ pontot veszítesz. A Varázslótól való félelmed miatt vonj le 1 ÜGYESSÉG pontot is.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Úgy döntesz, jobban jársz, ha távozol. Felkapod kardodat",
+                    "destination": 90
+                }
+            ],
+            "visitBonus": [
+                {
+                    "property": "health",
+                    "gain": -1
+                },
+                {
+                    "property": "dexterity",
+                    "gain": -1
+                }
+            ]
+        },
+        {
+            "id": 389,
+            "story": "",
+            "actions": [
+                {
+                    "type": "tryLuck",
+                    "goodLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 289,
+                        "caption": "Szerencsés vagy"
+                    },
+                    "badLuck": {
+                        "type": "waypoint",
+                        "direction": "unknown",
+                        "destination": 112,
+                        "caption": "Balszerencsés vagy"
+                    }
+                }
+            ]
+        },
         {
             "id": 390,
             "story": "A Ghoul rángatózva meghal lábaid előtt. Átkutatód a testét de csak jelentéktelen dolgokat lelsz. Többek között egy pár fülbevaló (1 Arany értékű) is van az egyik zsebében. Ezt magaddal viheted. Ha még nem kutattad át az első holttestet, most megteheted. 5 aranyat találsz a zsebében, ez is a tied lehet. Megállhatsz egy kicsit pihenni és enni. 2 Szerencse pontot kapsz, amiért megölted a Ghoult.",
@@ -8503,7 +8544,43 @@
                 }
             ]
         },
-        
+        {
+            "id": 391,
+            "story": "Egy észak-déli folyosó déli végénél vagy. Észak felé nézve egy utat látsz, a keleti falról vezet lefele. Mit teszel?",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Felkapaszkodsz ezen az úton?",
+                    "destination": 52
+                },
+                {
+                    "direction": "north",
+                    "caption": "Útközben észak felé megpróbálsz titkos átjárókat keresni",
+                    "destination": 362
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek indulsz, azután a kanyart követve nyugatra mész",
+                    "destination": 48
+                }
+            ]
+        },
+        {
+            "id": 392,
+            "story": "Egy észak-déli folyosón vagy. Északra az út egy nagy faajtón vezet át.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északra mész",
+                    "destination": 206
+                },
+                {
+                    "direction": "south",
+                    "caption": "Délnek indulsz",
+                    "destination": 329
+                }
+            ]
+        },
         {
             "id": 393,
             "story": "Átkutatod a zsebeit ennek a halottnak is, és 8 aranyat találsz, meg egy folyadékkal teli üveget és egy régi pergamendarabot. Ezeket magaddal viheted.",
@@ -8523,6 +8600,29 @@
                     "direction": "unknown",
                     "caption": "A folyadékkal próbálkozol",
                     "destination": 369
+                }
+            ]
+        },
+        {
+            "id": 394,
+            "story": "A csizmák jól szabottak, mélyvörös színű bőrből készültek. Sokkal tartósabbak, mint a sajátod, és pont illenek a lábadra. Néhány lépést akarsz tenni, de elrettenve észleled, a csizmák egész erősen fogják a lábadat, nem bírsz mozdulni. Küzdesz, hogy kiszabadítsd magad, amikor valami reccsen, és egy, a plafonról lehulló cseppkő szétzúzódik a földön. Felemeled a fejed, szétnézel, és egy nagy fekete valami körvonalait látod meg, amint feléd mászik. Közeledik, és ereidben megfagy a vér. Egy legalább egy méter átmérőjű Óriás Pók araszol feléd tüskés lábain. Idegesen csattogtatja állkapcsát a friss táplálék reményében. Kardot rántasz, hogy megvédd magad. Mivel a csizma miatt lépni nem tudsz, minden kockadobáskor vonj le 2 pontot saját Támadóerődből.",
+            "cover": "scene_394.png",
+            "actions": [
+                {
+                    "type": "fight",
+                    "opponents": [
+                        {
+                            "name": "Óriás Pók",
+                            "dexterity": 7,
+                            "health": 8,
+                            "playerAttackModifier": -2
+                        }
+                    ],
+                    "win": {
+                        "direction": "unknown",
+                        "destination": 232,
+                        "caption": "Legyőzted a Pókot"
+                    }
                 }
             ]
         },
