@@ -24,7 +24,7 @@ enum LogEvent {
     use(item: InventoryItem, amount: Int),
     damageModified(original: Int, new: Int, modifierName: String?),
     addInventory(item: InventoryItem),
-    dropInventory(item: InventoryItem),
+    dropInventory(item: InventoryItem, amount: Int?),
     attackModified(value: Int),
     answered(question: String, answer: String, correct: Bool),
     extraAttack(damage: Int, caption: String?),
@@ -79,8 +79,8 @@ struct LogItem: CustomStringConvertible {
             text = String(format: NSLocalizedString("Damage modified from %d to %d due %@", comment: "Damage modification event description format"), original, new, modifierName ?? "N/A")
         case .addInventory(let item):
             text = String(format: NSLocalizedString("Added %@ to inventory", comment: "Add inventory item event description format"), item.description)
-        case .dropInventory(let item):
-            text = String(format: NSLocalizedString("Dropped %@", comment: "Drop inventory item event description format"), item.description)
+        case .dropInventory(let item, let amount):
+            text = (amount ?? 0) != 0 ? String(format: NSLocalizedString("Dropped %d of %@", comment: "Drop inventory item event description format with amount"), amount ?? 0,  item.description) : String(format: NSLocalizedString("Dropped %@", comment: "Drop inventory item event description format"), item.description)
         case .attackModified(let value):
             text = String(format: NSLocalizedString("Attack modified by %d", comment: "Attack modified event description format"), value)
         case .answered(let question, let answer, let correct):

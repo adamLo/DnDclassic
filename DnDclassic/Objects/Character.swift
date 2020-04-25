@@ -390,7 +390,7 @@ class Character: Deserializable, Equatable {
         }
         
         changed?()
-        log(event: .dropInventory(item: inventoryItem.item))
+        log(event: .dropInventory(item: inventoryItem.item, amount: nil))
     }
     
     @discardableResult
@@ -409,11 +409,13 @@ class Character: Deserializable, Equatable {
                 let _toDrop = min(_item.item.amount, toDrop)
                 _item.item.drop(amount: _toDrop)
                 droppedAmount += _toDrop
+                log(event: .dropInventory(item: _item.item, amount: _toDrop))
             }
             else if item.identifier?.nilIfEmpty == nil, _item.item.identifier?.nilIfEmpty == nil, _item.item.type == item.type {
                 let _toDrop = min(_item.item.amount, toDrop)
                 _item.item.drop(amount: _toDrop)
                 droppedAmount += _toDrop
+                log(event: .dropInventory(item: _item.item, amount: _toDrop))
             }
         }
         

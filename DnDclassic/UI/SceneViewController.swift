@@ -56,7 +56,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         setupUI()
-        distributeGame()
+        distributeScene()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: - Data integration
     
-    private func distributeGame() {
+    private func distributeScene() {
         
         guard scene != nil else {return}
         
@@ -126,7 +126,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func sceneChanged() {
         
-        distributeGame()
+        distributeScene()
     }
 
     // MARK: - TableView
@@ -240,7 +240,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         GameData.shared.advance(player: GameData.shared.player, scene: _scene)
                         GameData.shared.completed(scene: self.scene)
                         self.scene = _scene
-                        self.distributeGame()
+                        self.distributeScene()
                         self.sceneTableView.reloadData()
                     }
                 }))
@@ -464,7 +464,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         GameData.shared.completed(scene: scene)
         
         scene = _scene
-        distributeGame()
+        distributeScene()
         checkSceneCompleted()
         sceneTableView.reloadData()        
     }
@@ -517,7 +517,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             GameData.shared.player.escape(goodLuck: withLuck)
             GameData.shared.advance(player: GameData.shared.player, scene: scene)
             self.scene = scene
-            self.distributeGame()
+            self.distributeScene()
             self.sceneTableView.reloadData()
         }
         
@@ -552,7 +552,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let item = _inventory[index]
         GameData.shared.player.add(inventoryItem: item)
         scene.grabbed(inventory: index)
-        distributeGame()
+        distributeScene()
         sceneTableView.reloadData()
     }
     

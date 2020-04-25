@@ -1104,6 +1104,13 @@
                     "destination": 287,
                     "direction": "north"
                 }
+            ],
+            "inventory": [
+                {
+                    "type": "potion",
+                    "id": "potion_of_invisibility",
+                    "amount": -1
+                }
             ]
         },
         {
@@ -4296,7 +4303,7 @@
                 },
                 {
                     "type": "potion",
-                    "id": "potion_of_invisibility_201",
+                    "id": "potion_of_invisibility",
                     "name": "Láthatatlanság Itala",
                     "amount": 1,
                     "consumeWhenUsed": true
@@ -7599,8 +7606,24 @@
         },
         {
             "id": 348,
-            "story": "",
-            
+            "story": "Egy kútban Vagy, egy kicsit megsérültél, de szerencsére nem súlyosan. Amint lábra tudsz állni, körülnézel, és két átjárót is észreveszel. Délre a rövid út egy kis kamrába vezet, a másik folyosó északnak tart. Kissé aggaszt a zuhanás okozta seb, de még ennél is jobban az a morgás, amely a kamrából hallatszik. Mielőtt még összeszedhetnéd gondolataidat, egy hatalmas ronda fej tűnik fel a sarkon, és egy Troll kapaszkodik ki kamrájából. Bokád kificamodott, nemigen tudsz gyorsan mozogni, de a Troll már harcra kész.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Szembe kell nézned a bestiával",
+                    "destination": 331
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megiszod a Láthatatlanság Italát",
+                    "destination": 51,
+                    "condition": {
+                        "inventoryItemId": "potion_of_invisibility",
+                        "inventoryItemAmount": 1
+                    }
+                }
+            ],
+            "cover": "scene_348.png"
         },
         
         {
