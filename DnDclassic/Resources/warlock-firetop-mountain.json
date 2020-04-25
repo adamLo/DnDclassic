@@ -8358,7 +8358,112 @@
                 }
             ]
         },
-        
+        {
+            "id": 381,
+            "story": "Az út egy vassal szegélyezett faajtónál ér véget. Különböző feliratok díszítik az ajtót, de egyikből sem értesz semmit. Fülelsz, de csend van.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod az ajtót",
+                    "destination": 84
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszatérsz az elágazáshoz",
+                    "destination": 280
+                }
+            ]
+        },
+        {
+            "id": 382,
+            "story": "Felmutatod a Küklopsz Szemét, s a drágakő tompán izzani kezd. Rámutatsz a kővel, mire a Küklopsz sikoltozni kezd. Egy sarokba hátrál, mikor az ékkő egy fénysugarat lövell ki. Ahogy a fény rávetődik ellenfeledre, az a földre hanyatlik, és figyelemre méltó változáson megy keresztül. Zsugorodni kezd, és a szemed láttára öregszik meg. Bőre ráncossá válik, majd megrepedezik, hamarosan csak egy alaktalan kupac marad a testéből. Néhány perc múlva a drágakő izzásaabbamarad. Most már megközelíted az élettelen rongycsomót, mindössze ennyi maradt belőle.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Lapozz",
+                    "destination": 396
+                }
+            ]
+        },
+        {
+            "id": 383,
+            "story": "A bejárat felett felirat: Csónakház. Az ajtó erősen be van zárva, de egy kis rácsos ablakon bepillanthatsz. Egy csomó Csontváz-embert veszel észre, valami csónakszerűséget építenek. Gyors, rángatózó mozdulatokkal dolgoznak, mozgásuk akár egy rovar.",
+            "cover": "scene_383.png",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Van egy Csónakház feliratú kulcsod",
+                    "destination": 80,
+                    "condition": {
+                        "inventoryItemId": "key_charnel_house",
+                        "inventoryItemAmount": 1
+                    }
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Megpróbálod betörni az ajtót",
+                    "destination": 264
+                },
+                {
+                    "direction": "back",
+                    "caption": "Visszafordulsz a folyópartra másik útvonalat keresni",
+                    "destination": 129
+                }
+            ]
+        },
+        {
+            "id": 384,
+            "story": "Az ajtó egy folyosóra nyílik, ezen haladsz észak felé. Rövidesen egy kanyarhoz érsz, és keletre mész tovább. Pár méter után egy elágazáshoz érsz.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Északnak fordulsz",
+                    "destination": 262
+                },
+                {
+                    "direction": "east",
+                    "caption": "Keletnek indulsz",
+                    "destination": 307
+                }
+            ]
+        },
+        {
+            "id": 385,
+            "story": "Néhány lépést teszel nyugat felé, azután az út északnak kanyarodik. Kicsivel odébb egy elágazáshoz érsz. Északi irányban az út hamarosan zsákutcába torkollik.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Dél felé mész",
+                    "destination": 114
+                },
+                {
+                    "direction": "west",
+                    "caption": "Nyugatnak indulsz",
+                    "destination": 297
+                },
+                {
+                    "direction": "north",
+                    "caption": "Bemész a zsákutcába",
+                    "destination": 398
+                }
+            ]
+        },
+        {
+            "id": 386,
+            "story": "Felmászol a tutajra, és megpróbálsz átcsáklyázni a folyón. Nehezen haladsz. A folyó közepén a tutaj mintha megelevenedne, elkezd vészesen hánykolódni. Rádöbbensz, fel akarja borítani saját magát, hogy a vízbe vessen.",
+            "waypoints": [
+                {
+                    "direction": "north",
+                    "caption": "Erődben és szerencsédbe bízva kitartóan tovább csáklyázol az északi part felé",
+                    "destination": 55
+                },
+                {
+                    "direction": "south",
+                    "caption": "Beugrasz a folyóba, és visszaúszol a déli partra",
+                    "destination": 166
+                }
+            ]
+        },
         {
             "id": 387,
             "story": "Kipróbálod a kulcsokat, de egyik sem fordul el. Épp a harmadikkal kísérletezel, amikor kis csappantyúk kattannak, és utolsó emléked, amit észlelsz, hogy fájdalom hasít a testedbe. Három apró hajítódárda fúródik beléd. Gyorsan ható méreg van mindegyik hegyén. Kalandod itt véget ért. Nehogy még egyszer ezt a kulcskombinációt használd, ha legközelebb erre tévedsz!",
