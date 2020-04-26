@@ -54,6 +54,22 @@ class IntroViewController: UIViewController {
         title = NSLocalizedString("Intro", comment: "Intro screen navigation title")
         coverImageView.contentMode = .scaleAspectFill
         beginButton.setTitle(NSLocalizedString("Begin journey", comment: "Begin journey button title"), for: .normal)
+        
+        setupLabels()
+        setupButtons()
+    }
+    
+    private func setupLabels() {
+        
+        titleLabel.font = UIFont.defaultFont(style: .bold, size: .large)
+        authorLabel.font = UIFont.defaultFont(style: .regular, size: .small)
+        copyrightLabel.font = UIFont.defaultFont(style: .regular, size: .small)
+        introTextView.font = UIFont.defaultFont(style: .regular, size: .base)
+    }
+    
+    private func setupButtons() {
+        
+        beginButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .large)
     }
     
     // MARK: - UI manipulations

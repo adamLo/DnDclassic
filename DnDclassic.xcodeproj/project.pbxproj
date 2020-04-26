@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930153B2402BD4C00E7B815 /* AppDelegate.swift */; };
-		1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930153D2402BD4C00E7B815 /* SceneDelegate.swift */; };
 		193015432402BD4C00E7B815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193015412402BD4C00E7B815 /* Main.storyboard */; };
 		193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 193015442402BD4C00E7B815 /* DnDclassic.xcdatamodeld */; };
 		193015482402BD5200E7B815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193015472402BD5200E7B815 /* Assets.xcassets */; };
@@ -93,6 +92,7 @@
 		19825C2D245582E600488525 /* scene_400.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C2C245582E600488525 /* scene_400.png */; };
 		19825C2F2455839E00488525 /* scene_401.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C2E2455839E00488525 /* scene_401.png */; };
 		19825C3124558AE000488525 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C3024558AE000488525 /* intro.png */; };
+		19825C3324558C4300488525 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C3224558C4300488525 /* Fonts.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -147,7 +147,6 @@
 /* Begin PBXFileReference section */
 		193015382402BD4C00E7B815 /* DnDclassic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDclassic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1930153B2402BD4C00E7B815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1930153D2402BD4C00E7B815 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		193015422402BD4C00E7B815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		193015452402BD4C00E7B815 /* DnDclassic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DnDclassic.xcdatamodel; sourceTree = "<group>"; };
 		193015472402BD5200E7B815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,6 +236,7 @@
 		19825C2C245582E600488525 /* scene_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_400.png; sourceTree = "<group>"; };
 		19825C2E2455839E00488525 /* scene_401.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_401.png; sourceTree = "<group>"; };
 		19825C3024558AE000488525 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro.png; sourceTree = "<group>"; };
+		19825C3224558C4300488525 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -492,6 +492,7 @@
 		19A85597240AB6D4007174C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				19825C3224558C4300488525 /* Fonts.swift */,
 				19A85598240AB6E6007174C8 /* Strings.swift */,
 				19E193C42427A1E900334B0F /* Alerts.swift */,
 				19FC5405242FCFEF00988644 /* Date.swift */,
@@ -503,7 +504,6 @@
 			isa = PBXGroup;
 			children = (
 				1930153B2402BD4C00E7B815 /* AppDelegate.swift */,
-				1930153D2402BD4C00E7B815 /* SceneDelegate.swift */,
 				19A8559B240AC6B6007174C8 /* GameData.swift */,
 			);
 			path = Application;
@@ -828,7 +828,6 @@
 				19497D7E2406B22B0072CFD0 /* CharacterEditPropertyCell.swift in Sources */,
 				19D295632430D713003713E5 /* HitBonus.swift in Sources */,
 				19A855A6240BF168007174C8 /* SceneWaypointCell.swift in Sources */,
-				1930153E2402BD4C00E7B815 /* SceneDelegate.swift in Sources */,
 				193015462402BD4C00E7B815 /* DnDclassic.xcdatamodeld in Sources */,
 				193015842403118A00E7B815 /* Direction.swift in Sources */,
 				19E193BC2426462600334B0F /* FightViewController.swift in Sources */,
@@ -841,6 +840,7 @@
 				19497D7C2406B2120072CFD0 /* CharacterEditNameCell.swift in Sources */,
 				19825BD5244616DD00488525 /* Shield.swift in Sources */,
 				19825BE3244C61A700488525 /* GambleAction.swift in Sources */,
+				19825C3324558C4300488525 /* Fonts.swift in Sources */,
 				19FC5404242FC77300988644 /* LogItem.swift in Sources */,
 				19825BE9244DAFA500488525 /* Helmet.swift in Sources */,
 				19497D822406B2570072CFD0 /* CharacterEditInventoryItemCell.swift in Sources */,
@@ -959,7 +959,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1013,7 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1030,6 +1030,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X37H2S679C;
 				INFOPLIST_FILE = DnDclassic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1048,6 +1049,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X37H2S679C;
 				INFOPLIST_FILE = DnDclassic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
