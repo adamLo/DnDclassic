@@ -17,6 +17,7 @@ struct Game: Deserializable {
     let published: Int?
     let intro: String?
     let cover: UIImage?
+    let copyright: String?
     
     let scenes: [Scene]
     
@@ -60,6 +61,8 @@ struct Game: Deserializable {
         guard !_scenes.isEmpty else {return nil}
         scenes = _scenes
         
+        copyright = json[JSONKeys.copyright] as? String
+        
         print("*** loaded \(_scenes.count) scenes ***")
     }
     
@@ -83,5 +86,6 @@ struct Game: Deserializable {
         static let intro        = "intro"
         static let cover        = "cover"
         static let scenes       = "scenes"
+        static let copyright    = "copyright"
     }
 }

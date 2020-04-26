@@ -11,9 +11,13 @@ import UIKit
 class IntroViewController: UIViewController {
 
     @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var introTextView: UITextView!
+        
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var copyrightLabel: UILabel!
+    
+    @IBOutlet weak var introTextView: UITextView!
+    
     @IBOutlet weak var beginButton: UIButton!
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
@@ -86,6 +90,8 @@ class IntroViewController: UIViewController {
         else {
             authorLabel.text = nil
         }
+        
+        copyrightLabel.text = game.copyright?.nilIfEmpty
         
         introTextView.text = game.intro
         introTextView.contentInset = UIEdgeInsets(top: coverImageView.frame.size.height - 30, left: 0, bottom: beginButton.frame.size.height + 10, right: 0)
