@@ -8626,7 +8626,22 @@
                 }
             ]
         },
-        
+        {
+            "id": 395,
+            "story": "Átlépdelsz a földön heverő csontokon, hogy alaposabban is megnézd a Csónakházat. A szerteszét hányódó szerszámok közül felemelsz néhányat, és tanulmányozod. Kalapácsok, szögek, vésők és hasonlók - egészen közönségeseknek látszanak. Robajló hang hallatszik az északi ajtó mögül, de marad annyi időd, hogy valamit átkutass, mielőtt cselekedni kellene.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megnézed a fiókokat és a helyiség zegzugait",
+                    "destination": 322
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Még egyszer, alaposan átvizsgálod a szerszámokat",
+                    "destination": 34
+                }
+            ]
+        },
         {
             "id": 396,
             "story": "Legyőzted a Varázslót, már közel vagy célodhoz. Az ajtóhoz lépsz, amin két lakat lóg. Kulcsok nincsenek sehol. Ha nincsenek kulcsaid, megkísérelheted betörni az ajtót, de ez fel fogja emészteni szinte teljes Életerődet.",
@@ -8649,7 +8664,67 @@
                     "caption": "Megkísérled betörni az ajtót"
                 }
             ]
+        },
+        {
+            "id": 397,
+            "story": "Az ajtó kinyílik, és egy kis szoba tárul eléd. Padlója kőből van, falai mocskosak, a levegő áporodott. A helyiség közepén összetákolt faasztal, rajta egy gyertya világít. Az asztal alatt egy kis doboz. A szemben lévő sarokban egy szalmazsák.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Kinyitod a dobozt",
+                    "destination": 240
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Távozol a szobából",
+                    "destination": 363
+                }
+            ]
+        },
+        {
+            "id": 398,
+            "story": "Körültapogatod a sziklafalat az út végén. Egy kő elmozdul, és egy gomb tűnik elő, rajta egy karika.",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Megnyomod a gombot",
+                    "destination": 364
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "Meghúzod a karikát",
+                    "destination": 12
+                }
+            ]
+        },
+        {
+            "id": 399,
+            "story": "Az áramlás erős, gyorsan sodor magával lefelé. Átúszol egy szűk nyíláson, és egy hatalmas barlangba jutsz, mindkét oldalán homokpadok. Az áramlás a déli partra sodor.",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Lapozz",
+                    "destination": 218
+                }
+            ]
+        },
+        {
+            "id": 400,
+            "story": "",
+            "waypoints": [
+                {
+                    "direction": "south",
+                    "caption": "Lapozz hogy megtudd, mit rejt a varázsló Ládája",
+                    "destination": 401
+                }
+            ],
+            "cover": "scene_400.png"
+        },
+        {
+            "id": 401,
+            "story": "Kincskeresésed véget ért. A Tűzhegy Varázsiója nincs többé, és mostantól tied minden kincse. Legalább ezer arany, ékszerek, gyémántok, rubinok és gyöngyök vannak a ládában. Ezek alá rejtve megleled a Varázsló bűbájos könyvét, és a lapokat forgatva rájössz, ez a kötet egymagában sokkal értékesebb, mint az összes kincs. A Tűzhegy öszszes titka, teremtménye a te uralmad alá került a könyv utasításai szerint. Ez a könyv végtelen hatalmat biztosít számodra, a faluba vezető utad immár biztonságos. De ha akarod, akár itt is maradhatsz a Tűzhegy Új uraként…",
+            "cover": "scene_401.png",
+            "gameFinished": true
         }
-
 	]
 }
