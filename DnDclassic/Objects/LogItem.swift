@@ -84,7 +84,7 @@ struct LogItem: CustomStringConvertible {
         case .attackModified(let value):
             text = String(format: NSLocalizedString("Attack modified by %d", comment: "Attack modified event description format"), value)
         case .answered(let question, let answer, let correct):
-            text = String(format: "%@ answered %@ for %@", correct ? NSLocalizedString("Correctly", comment: "Correct answer") : NSLocalizedString("Wrongly", comment: "Wrong answer"), answer, question)
+            text = String(format: NSLocalizedString("%@ answered %@ for %@", comment: "Query action answer format"), correct ? NSLocalizedString("Correctly", comment: "Correct answer") : NSLocalizedString("Wrongly", comment: "Wrong answer"), answer, question)
         case .extraAttack(let damage, let caption):
             text = caption != nil ? String(format: NSLocalizedString("Extra attack damage taken: %d", comment: "Extra attack damage without caption format"), damage) : String(format: NSLocalizedString("Extra attack damage taken: %d due %@", comment: "Extra attack damage with caption format"), damage, caption ?? "")
         case .extraAttackAvoided:

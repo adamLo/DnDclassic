@@ -93,6 +93,7 @@
 		19825C2F2455839E00488525 /* scene_401.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C2E2455839E00488525 /* scene_401.png */; };
 		19825C3124558AE000488525 /* intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 19825C3024558AE000488525 /* intro.png */; };
 		19825C3324558C4300488525 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C3224558C4300488525 /* Fonts.swift */; };
+		19825C352455954D00488525 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19825C342455954D00488525 /* Localization.swift */; };
 		19A85599240AB6E6007174C8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A85598240AB6E6007174C8 /* Strings.swift */; };
 		19A8559C240AC6B6007174C8 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559B240AC6B6007174C8 /* GameData.swift */; };
 		19A8559E240ACB5B007174C8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A8559D240ACB5B007174C8 /* Food.swift */; };
@@ -237,6 +238,7 @@
 		19825C2E2455839E00488525 /* scene_401.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene_401.png; sourceTree = "<group>"; };
 		19825C3024558AE000488525 /* intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro.png; sourceTree = "<group>"; };
 		19825C3224558C4300488525 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		19825C342455954D00488525 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		19A85598240AB6E6007174C8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		19A8559B240AC6B6007174C8 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		19A8559D240ACB5B007174C8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				19A85598240AB6E6007174C8 /* Strings.swift */,
 				19E193C42427A1E900334B0F /* Alerts.swift */,
 				19FC5405242FCFEF00988644 /* Date.swift */,
+				19825C342455954D00488525 /* Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				19E193C32427990400334B0F /* Opponent.swift in Sources */,
 				19825BED244DDA1700488525 /* Query.swift in Sources */,
 				19A855A4240BEC95007174C8 /* SceneStoryCell.swift in Sources */,
+				19825C352455954D00488525 /* Localization.swift in Sources */,
 				1930153C2402BD4C00E7B815 /* AppDelegate.swift in Sources */,
 				19FCFA962412F99C00199175 /* CharacterViewPropertyCell.swift in Sources */,
 				193015762402C2E500E7B815 /* CharacterProperty.swift in Sources */,
