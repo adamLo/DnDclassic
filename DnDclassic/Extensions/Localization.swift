@@ -73,7 +73,7 @@ struct Localization {
     static let messageLuckNotset                = NSLocalizedString("Please set luck for your character!", comment: "Error message when character luck is not set")
     static let messageCharacterIncomplete       = NSLocalizedString("Your character is not complete!", comment: "Error dialog title when character properties not set")
     
-    static let buttonTitleRoll                  = NSLocalizedString("Roll", comment: "Roll button title")
+    static let roll                             = NSLocalizedString("Roll", comment: "Roll button title")
     static let buttonTitleAdd                   = NSLocalizedString("Add", comment: "Add button title")
     static let buttonTitleChange                = NSLocalizedString("Change", comment: "Change button title")
     
@@ -87,10 +87,10 @@ struct Localization {
     static let badLuck                          = NSLocalizedString("Bad luck :(", comment: "Bad luck result title")
     static let messageFormatGainedGold          = NSLocalizedString("Good luck, you just gained %d gold!", comment: "Good luck dialog message when money is earned")
     static let messageFormatLostGold            = NSLocalizedString("Oh no, you just lost %d gold!", comment: "Bad luck dialog message when money is lost")
-    static let alertTriedLuck                   = NSLocalizedString("You tried your luck", comment: "Try luck action result title")
+    static let titleTriedLuck                   = NSLocalizedString("You tried your luck", comment: "Try luck action result title")
     static let buttonTitleRolAgain              = NSLocalizedString("Roll again", comment: "Roll again option title")
     static let placeholderQueryAnswer           = NSLocalizedString("Enter your answer", comment: "Placeholder for query action textfield title")
-    static let titleGameFinished                = NSLocalizedString("Finished", comment: "Alert title when game finished")
+    static let titleFinished                    = NSLocalizedString("Finished", comment: "Alert title when game finished")
     static let messageGameFinished              = NSLocalizedString("Your journey has come to an end.", comment: "Alert message when game finished")
     static let buttonTitleRestartSameChar       = NSLocalizedString("Restart with the same character", comment: "Option title to restart game with the same character")
     static let buttonTitleRestartNewChar        = NSLocalizedString("Restart with new character", comment: "Option title to restart game with new character")
@@ -98,16 +98,17 @@ struct Localization {
     static let titleBetGamble                   = NSLocalizedString("How much do you bet?", comment: "Alert title to request bet")
     static let titleGambleWon                   = NSLocalizedString("You won!", comment: "Alert title when player won gambling")
     static let titleGableLost                   = NSLocalizedString("You lost", comment: "Alert title when player lost gambling")
+    static let placeholderBet                   = NSLocalizedString("Place your bet", comment: "Bet query placeholder")
+    static let titleGamble                      = NSLocalizedString("Gamble", comment: "Title gamble")
     static let messageFormatGableRoll           = NSLocalizedString("You rolled %d, they rolled %d", comment: "Alert message format when rolled in gambling")
     static let messageFormatGambleWin           = NSLocalizedString("You won %d gold", comment: "Alert message format when user won gambling")
-    static let messageFormatGableLost           = NSLocalizedString("You lost %d gold", comment: "Alert message format when user lost gambling")
+    static let messageFormatGambleLost          = NSLocalizedString("You lost %d gold", comment: "Alert message format when user lost gambling")
     static let buttonTitleAnotherRound          = NSLocalizedString("Another round", comment: "Alert option title to gamble another round")
     static let messagePlayerDied                = NSLocalizedString("You just died :(", comment: "Alert message when user gone KIA")
     static let sorry                            = NSLocalizedString("Sorry", comment: "Sorry")
     static let titleResting                     = NSLocalizedString("Resting", comment: "Resting alert title")
     static let messageResting                   = NSLocalizedString("You feel refreshed after resting. Where would you like to go from here?", comment: "Resting alert message")
     
-    static let navigationTiteTrade              = NSLocalizedString("Trade", comment: "Trade scene navigation title")
     static let sectionTitleStock                = NSLocalizedString("Items in stock", comment: "Trade section title")
     static let sectionTitleInventory            = NSLocalizedString("Your inventory", comment: "Inventory section title")
     
@@ -170,4 +171,6 @@ struct Localization {
     static let actionDescriptionQuery           = NSLocalizedString("You have to answer a question", comment: "Query action default caption")
     static let actionDescriptionTrade           = NSLocalizedString("Pst! Would you like to buy sumething?", comment: "Trade action default caption")
     static let opponent                         = NSLocalizedString("Opponent", comment: "Opponent default title")
+    
+    static let messageFormatRolled              = NSLocalizedString("You rolled %d", comment: "Roll value format")
 }

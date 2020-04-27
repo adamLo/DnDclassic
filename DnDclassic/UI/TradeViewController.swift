@@ -49,7 +49,7 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func setupNavigationBar() {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
-        title = Localization.navigationTiteTrade
+        title = Localization.navigationTitleTrade
     }
     
     // MARK: - UItableView
