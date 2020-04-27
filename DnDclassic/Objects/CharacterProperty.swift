@@ -14,9 +14,9 @@ enum CharacterProperty: String, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .dexterity: return NSLocalizedString("Dexterity", comment: "Dexterity title")
-        case .health: return NSLocalizedString("Health", comment: "Health title")
-        case .luck: return NSLocalizedString("Luck", comment: "Luck title")
+        case .dexterity:    return Localization.dexterity
+        case .health:       return Localization.health
+        case .luck:         return Localization.luck
         }
     }
 }

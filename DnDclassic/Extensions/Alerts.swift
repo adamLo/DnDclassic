@@ -15,7 +15,7 @@ extension UIAlertController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button title"), style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Localization.buttonTitleOk, style: .default, handler: { (_) in
             canceled?()
         }))
         return alert
@@ -26,7 +26,7 @@ extension UIAlertAction {
     
     class func cancelAction(title: String? = nil, selected: (() -> ())? = nil) -> UIAlertAction {
         
-        let action = UIAlertAction(title: title ?? NSLocalizedString("Cancel", comment: "Cancel option title"), style: .cancel) { (_) in
+        let action = UIAlertAction(title: title ?? Localization.buttonTitleCancel, style: .cancel) { (_) in
             selected?()
         }
         
@@ -35,7 +35,7 @@ extension UIAlertAction {
     
     class func OKAction(title: String? = nil, selected: (() -> ())? = nil) -> UIAlertAction {
         
-        let action = UIAlertAction(title: title ?? NSLocalizedString("OK", comment: "OK button title"), style: .default) { (_) in
+        let action = UIAlertAction(title: title ?? Localization.buttonTitleOk, style: .default) { (_) in
             selected?()
         }
         

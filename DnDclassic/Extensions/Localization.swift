@@ -15,16 +15,14 @@ struct Localization {
     static let buttontitleBuy                   = NSLocalizedString("Buy", comment: "Buy option title")
     
     static let navigationTitleTrade             = NSLocalizedString("Trade", comment: "Trade scene navigation title")
-    static let sectionTitleTrade                = NSLocalizedString("Items in stock", comment: "Trade section title")
-    static let sectiontitleInventory            = NSLocalizedString("Your inventory", comment: "Inventory section title")
     static let messageNotEnoghMoney             = NSLocalizedString("You don't have enough money to buy this item", comment: "Message when user does not have enough money to buy an item")
-    static let messageAreadyPurchased           = NSLocalizedString("You already have one of this item", comment: "Message when user already purchased a unique item")
-    static let alertTitePurchase                = NSLocalizedString("Purchase", comment: "Purchase dialog title")
+    static let messageAlreadyPurchased          = NSLocalizedString("You already have one of this item", comment: "Message when user already purchased a unique item")
+    static let titlePurchase                    = NSLocalizedString("Purchase", comment: "Purchase dialog title")
     static let messageFormatPurchase            = NSLocalizedString("Do you want to buy this item:\n%@\n?", comment: "Purchase dialog message format")
     static let gold                             = NSLocalizedString("gold", comment: "Price label in gold")
     
     static let messageFightOver                 = NSLocalizedString("The battle is over", comment: "Alert message when fight is over")
-    static let titleDrinkPotion                 = NSLocalizedString("Drink potion", comment: "Drink potion button title")
+    static let buttonTitleDrinkPotion           = NSLocalizedString("Drink potion", comment: "Drink potion button title")
     static let titleUseLuck                     = NSLocalizedString("use when hit", comment: "Use luck when hittng on opponent label title")
     static let messageFightWrongOrder           = NSLocalizedString("You have to fight your opponents in sequential order!", comment: "Error message when user wants to find an opponent outside of order")
     static let titlePlayerWonFight              = NSLocalizedString("You won again!", comment: "Alert message when opponent was beaten")
@@ -40,7 +38,7 @@ struct Localization {
     static let titleDamageMade                  = NSLocalizedString("You made a damage to your opponent!", comment: "Alert title when opponent damage event triggered")
     static let alertMessageAdvance              = NSLocalizedString("You're being taken to %@", comment: "Alert title when damage event triggered")
     static let titleEscape                      = NSLocalizedString("Escape", comment: "Escape title")
-    static let MessageEscape                    = NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message")
+    static let messageEscape                    = NSLocalizedString("Are you sure you want to escape? It'll cost you 2 healt points!", comment: "Escape alert message")
     static let titleTryLuck                     = NSLocalizedString("Try your luck", comment: "Try luck title")
     
     static let name                             = NSLocalizedString("Name", comment: "Name title")
@@ -54,10 +52,11 @@ struct Localization {
     static let messageFormatLuckPotion          = NSLocalizedString("Restores your luck to start level (%d) and increses starting levelby one", comment: "Luck potoion alert message format")
     static let messageFormatDrinkPotion         = NSLocalizedString("Drink potion of %@?", comment: "Drink potion alert title format")
     static let messageCannotUnequip             = NSLocalizedString("You can not remove this item", comment: "Alert message when cannot unequip inventory item")
+    static let messageCannotEquip               = NSLocalizedString("You can not equip this item", comment: "Error message when failed to equip inventory item")
     static let messageFormatInventoryItem       = NSLocalizedString("What would you like to do with %@?", comment: "Inventory item manipulation dialog message format")
     static let buttonTitleUnequip               = NSLocalizedString("Back to inventory", comment: "Un-equip option title")
     static let buttonTitleEquip                 = NSLocalizedString("Equip", comment: "Equip option title")
-    static let buttontitleDrop                  = NSLocalizedString("Drop item", comment: "Drop inventory item option title")
+    static let titleDropItem                    = NSLocalizedString("Drop item", comment: "Drop inventory item option title")
     static let equipped                         = NSLocalizedString("Equipped", comment: "Title when inventory item equipped")
 
     static let navigationTitleCharacterEdit     = NSLocalizedString("Your character", comment: "Character edit screeen navigation title")
@@ -109,7 +108,7 @@ struct Localization {
     static let messageResting                   = NSLocalizedString("You feel refreshed after resting. Where would you like to go from here?", comment: "Resting alert message")
     
     static let navigationTiteTrade              = NSLocalizedString("Trade", comment: "Trade scene navigation title")
-    static let sectionTiteStock                 = NSLocalizedString("Items in stock", comment: "Trade section title")
+    static let sectionTitleStock                = NSLocalizedString("Items in stock", comment: "Trade section title")
     static let sectionTitleInventory            = NSLocalizedString("Your inventory", comment: "Inventory section title")
     
     static let navigationtTitleIntro            = NSLocalizedString("Intro", comment: "Intro screen navigation title")

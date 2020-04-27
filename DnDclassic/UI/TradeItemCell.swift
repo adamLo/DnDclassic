@@ -25,6 +25,6 @@ class TradeItemCell: UITableViewCell {
     func setup(with item: TradeItem) {
         
         nameLabel.text = item.inventoryItem.description
-        priceLabel.text = String(format: "%d %@", item.price, NSLocalizedString("gold", comment: "Price label in gold"))
+        priceLabel.text = String(format: "%d %@", item.price, Localization.gold)
     }
 }

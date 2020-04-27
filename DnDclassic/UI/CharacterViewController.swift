@@ -116,9 +116,9 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let _section = Section(rawValue: section) else {return nil}
         
         switch _section {
-        case .name: return NSLocalizedString("Name", comment: "Name section title")
-        case .properties: return NSLocalizedString("Properties", comment: "Properties section title")
-        case .inventory: return NSLocalizedString("Inventory", comment: "Inventory section title")
+        case .name:         return Localization.name
+        case .properties:   return Localization.properties
+        case .inventory:    return Localization.inventory
         }
     }
     
@@ -147,8 +147,8 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         guard GameData.shared.player != nil, GameData.shared.game != nil, let currentScene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) else {return}
 
-        let alert = UIAlertController(title: NSLocalizedString("Eat", comment: "Eat alert sheet title"), message: NSLocalizedString("Would you like to eat?\nIt increases your health by 4 points and takes one portion of your food rations", comment: "Eat alert sheet message"), preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Eat", comment: "Eat option title"), style: .default, handler: { (_) in
+        let alert = UIAlertController(title: Localization.titleEat, message: Localization.messageEat, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Localization.titleEat, style: .default, handler: { (_) in
             GameData.shared.player.eat(gainModifier: currentScene.restGainModifier)
             self.characterTableView.reloadData()
         }))
@@ -165,15 +165,15 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch property {
         case .dexterity:
-            message = String(format: NSLocalizedString("Restores your dexerity to start level (%d)", comment: "Dexerity potion option alert message format"), GameData.shared.player.dexterityStarting)
+            message = String(format: Localization.messageFormatDexterityPotion, GameData.shared.player.dexterityStarting)
         case .health:
-            message = String(format: NSLocalizedString("Restores your health to start level (%d)", comment: "Health potion alert message format"), GameData.shared.player.healthStarting)
+            message = String(format: Localization.messageFormatHealthPotion, GameData.shared.player.healthStarting)
         case .luck:
-            message = String(format: NSLocalizedString("Restores your luck to start level (%d) and increses starting levelby one", comment: "Luck potoion alert message format"), GameData.shared.player.luckStarting)
+            message = String(format: Localization.messageFormatLuckPotion, GameData.shared.player.luckStarting)
         }
         
-        let alert = UIAlertController(title: String(format: NSLocalizedString("Drink potion of %@?", comment: "Drink potion alert title format"), property.rawValue), message: message, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Drink", comment: "Drink option title"), style: .default, handler: { (_) in
+        let alert = UIAlertController(title: String(format: Localization.messageFormatDrinkPotion, property.description), message: message, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Localization.buttonTitleDrinkPotion, style: .default, handler: { (_) in
             
             GameData.shared.player.drink(potion: potion)
             self.characterTableView.reloadData()
@@ -189,28 +189,28 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if inventoryItem.equipped, !(inventoryItem.item.canUnEquip ?? true) {
             
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not remove this item", comment: "Alert message when cannot unequip inventory item"))
+            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageCannotUnequip)
             present(alert, animated: true, completion: nil)
             return
         }
         
-        let alert = UIAlertController(title: nil, message: String(format: NSLocalizedString("What would you like to do with %@?", comment: "Inventory item manipulation dialog message format"), inventoryItem.item.description), preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: String(format: Localization.messageFormatInventoryItem, inventoryItem.item.description), preferredStyle: .alert)
         
         if inventoryItem.item.type.equippable {
             
             if inventoryItem.equipped {
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Back to inventory", comment: "Un-equip option title"), style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: Localization.buttonTitleUnequip, style: .default, handler: { (_) in
                     GameData.shared.player.equip(item: inventoryItem, equipped: false)
                     self.characterTableView.reloadData()
                 }))
             }
             else {
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Equip", comment: "Equip option title"), style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: Localization.buttonTitleEquip, style: .default, handler: { (_) in
                     if GameData.shared.player.equip(item: inventoryItem, equipped: true) {
                         self.characterTableView.reloadData()
                     }
                     else {
-                        let errorAlert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You can not equip this item", comment: "Error message when failed to equip inventory item"))
+                        let errorAlert = UIAlertController.simpleMessageAlert(message: Localization.messageCannotEquip)
                         alert.dismiss(animated: true) {
                             self.present(errorAlert, animated: true, completion: nil)
                         }
@@ -219,7 +219,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Drop item", comment: "Drop inventory item option title"), style: .destructive, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Localization.titleDropItem, style: .destructive, handler: { (_) in
             
             GameData.shared.player.drop(inventoryItem: inventoryItem)
             if GameData.shared.game != nil, let scene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) {

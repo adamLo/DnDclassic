@@ -22,10 +22,10 @@ class FightOpponentCell: UITableViewCell {
         nameLabel.text = opponent.name
         
         let healthStatus = Double(opponent.health) / Double(max(opponent.healthStarting, 1)) * 100
-        healthLabel.text = NSLocalizedString("Health", comment: "Health title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.health, opponent.healthStarting, healthStatus)
+        healthLabel.text = Localization.health + ": " + String(format: Localization.displayFormatProperty, opponent.health, opponent.healthStarting, healthStatus)
         
         let dexterityStatus = Double(opponent.dexterity) / Double(max(opponent.dexterityStarting, 1)) * 100
-        dexterityLabel.text = NSLocalizedString("Dexterity", comment: "Dexterity title") + ": " + String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), opponent.dexterity, opponent.dexterityStarting, dexterityStatus)
+        dexterityLabel.text = Localization.dexterity + ": " + String(format: Localization.displayFormatProperty, opponent.dexterity, opponent.dexterityStarting, dexterityStatus)
         
         backgroundColor = opponent.health > 0 ? UIColor.white : UIColor.darkGray
     }

@@ -49,7 +49,7 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func setupNavigationBar() {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
-        title = NSLocalizedString("Trade", comment: "Trade scene navigation title")
+        title = Localization.navigationTiteTrade
     }
     
     // MARK: - UItableView
@@ -115,9 +115,9 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         switch _section {
         case .trade:
-            return NSLocalizedString("Items in stock", comment: "Trade section title")
+            return Localization.sectionTitleStock
         case .inventory:
-            return NSLocalizedString("Your inventory", comment: "Inventory section title")
+            return Localization.sectionTitleInventory
         }
     }
     
@@ -126,19 +126,19 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func buy(item: TradeItem) {
         
         guard item.price <= GameData.shared.player.money else {
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You don't have enough money to buy this item", comment: "Message when user does not have enough money to buy an item"))
+            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageNotEnoghMoney)
             present(alert, animated: true, completion: nil)
             return
         }
         
         if let itemId = item.inventoryItem.identifier?.nilIfEmpty, GameData.shared.player.hasItem(identifier: itemId) {
-            let alert = UIAlertController.simpleMessageAlert(message: NSLocalizedString("You already have one of this item", comment: "Message when user already purchased a unique item"))
+            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageAlreadyPurchased)
             present(alert, animated: true, completion: nil)
             return
         }
         
-        let alert = UIAlertController(title: NSLocalizedString("Purchase", comment: "Purchase dialog title"), message: String(format: NSLocalizedString("Do you want to buy this item:\n%@\n?", comment: "Purchase dialog message format"), item.inventoryItem.description), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Buy", comment: "Buy option title"), style: .default, handler: { (_) in
+        let alert = UIAlertController(title: Localization.titlePurchase, message: String(format: Localization.messageFormatPurchase, item.inventoryItem.description), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Localization.buttontitleBuy, style: .default, handler: { (_) in
             self.purchase(item: item)
             alert.dismiss(animated: true, completion: nil)
         }))
