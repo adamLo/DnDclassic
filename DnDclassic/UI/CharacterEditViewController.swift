@@ -64,7 +64,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func setupNavigationBar() {
         
-        title = NSLocalizedString("Your character", comment: "Character edit screeen navigation title")
+        title = Localization.navigationTitleCharacterEdit
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTopuched(_:)))
     }
     
@@ -161,14 +161,10 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         guard let _section = Section(rawValue: section) else {return nil}
         
         switch _section {
-        case .name:
-            return NSLocalizedString("Name", comment: "Name section title")
-        case .properties:
-            return NSLocalizedString("Properties", comment: "Properties section title")
-        case .potion:
-            return NSLocalizedString("Potion", comment: "Potion section title")
-        case .inventory:
-            return NSLocalizedString("Inventory", comment: "Inventory section title")
+        case .name:         return Localization.name
+        case .properties:   return Localization.properties
+        case .potion:       return Localization.potion
+        case .inventory:    return Localization.inventory
         }
     }
     
@@ -205,24 +201,24 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
             self.characterTableView.endUpdates()
         }
                 
-        let alert = UIAlertController(title: NSLocalizedString("Potion", comment: "Potion selection dialog title"), message: NSLocalizedString("Select potion to help you in your journey", comment: "Potion selection dialog message"), preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Localization.potion, message: Localization.messageSelectPotion, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + NSLocalizedString("Potion of Health", comment: "Potion of Health title"), style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + Localization.titlePotionHealth, style: .default, handler: { (_) in
             self.potion = .health
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: "\(current == .dexterity ? "* " : "")" + NSLocalizedString("Potion of Dexerity", comment: "Potion of Dexerity title"), style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .dexterity ? "* " : "")" + Localization.titlePotionDexterity, style: .default, handler: { (_) in
             self.potion = .dexterity
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + NSLocalizedString("Potion of Luck", comment: "Potion of Luck title"), style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + Localization.titlePotionLuck, style: .default, handler: { (_) in
             self.potion = .luck
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Remove", comment: "Remove title"), style: .destructive, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Localization.buttontTitleRemove, style: .destructive, handler: { (_) in
             self.potion = nil
             reload()
         }))
@@ -237,25 +233,25 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         var errors = [String]()
         
         if name?.nilIfEmpty == nil {
-            errors.append(NSLocalizedString("Please provide name for your character!", comment: "Error message when character name is empty"))
+            errors.append(Localization.messageNameNotSet)
         }
         
         if dexerity ?? 0 <= 0 {
-            errors.append(NSLocalizedString("Please set dexerty for your character!", comment: "Error message when character dexerity is not set"))
+            errors.append(Localization.messageDexterityNotSet)
         }
         
         if health ?? 0 <= 0 {
-            errors.append(NSLocalizedString("Please set health for your character!", comment: "Error message when character health is not set"))
+            errors.append(Localization.messageHealthNotSet)
         }
         
         if luck ?? 0 <= 0 {
-            errors.append(NSLocalizedString("Please set luck for your character!", comment: "Error message when character luck is not set"))
+            errors.append(Localization.messageLuckNotset)
         }
         
         if !errors.isEmpty {
             
-            let alert = UIAlertController(title: NSLocalizedString("Your character is not complete!", comment: "Error dialog title when character properties not set"), message: errors.joined(separator: "\n"), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK button title"), style: .default, handler: nil))
+            let alert = UIAlertController(title: Localization.messageCharacterIncomplete, message: errors.joined(separator: "\n"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Localization.buttonTitleOk, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             
             return nil

@@ -20,7 +20,7 @@ class Money: InventoryObject {
     
     init(amount: Int) {
         
-        super.init(type: .food, name: NSLocalizedString("Food", comment: "Food title"))
+        super.init(type: .money, name: String(format: Localization.itemDescriptionFormatMoney, amount))
         self.amount = amount
     }
     
@@ -30,6 +30,6 @@ class Money: InventoryObject {
     }
     
     override var description: String {
-        return String(format: NSLocalizedString("Coins (%d)", comment: "Money description format"), amount)
+        return String(format: Localization.itemDescriptionFormatMoney, amount)
     }
 }

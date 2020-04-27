@@ -20,7 +20,7 @@ class Armor: InventoryObject {
     }
     
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? NSLocalizedString("Armor", comment: "Armor title")
+        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionArmor
     }
         
     override func use(amount: Int) {

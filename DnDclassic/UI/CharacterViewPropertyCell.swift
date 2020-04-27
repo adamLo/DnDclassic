@@ -45,7 +45,7 @@ class CharacterViewPropertyCell: UITableViewCell {
             status = Double(currentValue) / Double(startValue) * 100
         }
         
-        valueLabel.text = String(format: NSLocalizedString("%d of %d - %0.0f%%", comment: "Character property display format"), currentValue, startValue, status)
+        valueLabel.text = String(format: Localization.displayFormatProperty, currentValue, startValue, status)
     }
 
 }

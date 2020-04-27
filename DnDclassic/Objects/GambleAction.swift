@@ -21,7 +21,7 @@ class GambleAction: Action {
             opponentName = _opponent
         }
         else {
-            opponentName = NSLocalizedString("Opponent", comment: "Opponent default title")
+            opponentName = Localization.opponent
         }
         
         guard let _finishObject = json[JSONkeys.finish] as? JSON, let _finish = WayPoint(json: _finishObject) else {return nil}

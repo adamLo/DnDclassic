@@ -24,24 +24,15 @@ class Action: Deserializable {
             return __caption
         }
         switch type {
-        case .tryLuck:
-            return NSLocalizedString("Try your luck!", comment: "Try luck action default caption")
-        case .fight:
-            return NSLocalizedString("Fight!", comment: "Fight action default caption")
-        case .rest:
-            return NSLocalizedString("Get some rest!", comment: "Rest action default caption")
-        case .roll, .propertyRoll:
-            return NSLocalizedString("Roll!", comment: "Roll action default caption")
-        case .escape:
-            return NSLocalizedString("Escape!", comment: "Escape action default caption")
-        case .force:
-            return NSLocalizedString("Force!", comment: "Force action default caption")
-        case .gamble:
-            return NSLocalizedString("Gamble!", comment: "Gamble action default caption")
-        case .query:
-            return NSLocalizedString("You have to answer a question", comment: "Query action default caption")
-        case .trade:
-            return NSLocalizedString("Pst! Would you like to buy sumething?", comment: "Trade action default caption")
+        case .tryLuck:              return Localization.actionDescriptionTryLuck
+        case .fight:                return Localization.actionDescriptionFight
+        case .rest:                 return Localization.actionDescriptionRest
+        case .roll, .propertyRoll:  return Localization.actionDescriptionRoll
+        case .escape:               return Localization.actionDescriptionEscape
+        case .force:                return Localization.actionDescriptionForce
+        case .gamble:               return Localization.actionDescriptionGamble
+        case .query:                return Localization.actionDescriptionQuery
+        case .trade:                return Localization.actionDescriptionTrade
         }
     }
     

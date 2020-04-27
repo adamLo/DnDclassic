@@ -15,6 +15,6 @@ class Helmet: Armor {
     }
 
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? NSLocalizedString("Helmet", comment: "Helmet title")
+        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionHelmet
     }
 }

@@ -24,7 +24,7 @@ class Potion: InventoryItem {
     let autoEquip: Bool? = false
         
     var description: String {
-        return String(format: NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format"), modifiedProperty?.rawValue ?? "N/A", amount)
+        return String(format: Localization.itemDescriptionFormatPotion, modifiedProperty?.rawValue ?? "N/A", amount)
     }
     
     private(set) var amount: Int = 2

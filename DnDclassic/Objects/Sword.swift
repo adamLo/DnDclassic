@@ -15,7 +15,7 @@ class Sword: Weapon {
     }
     
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? NSLocalizedString("Sword", comment: "Sword title")
+        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionSword
     }
     
     override func add(amount: Int) {

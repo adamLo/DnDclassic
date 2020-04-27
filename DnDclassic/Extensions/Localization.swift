@@ -65,7 +65,7 @@ struct Localization {
     static let titlePotionHealth                = NSLocalizedString("Potion of Health", comment: "Potion of Health title")
     static let titlePotionDexterity             = NSLocalizedString("Potion of Dexterity", comment: "Potion of Dexterity title")
     static let titlePotionLuck                  = NSLocalizedString("Potion of Luck", comment: "Potion of Luck title")
-    static let buttonttitleRemove               = NSLocalizedString("Remove", comment: "Remove title")
+    static let buttontTitleRemove               = NSLocalizedString("Remove", comment: "Remove title")
     
     static let messageNameNotSet                = NSLocalizedString("Please provide name for your character!", comment: "Error message when character name is empty")
     static let messageDexterityNotSet           = NSLocalizedString("Please set dexterty for your character!", comment: "Error message when character dexterity is not set")
@@ -74,7 +74,7 @@ struct Localization {
     static let messageCharacterIncomplete       = NSLocalizedString("Your character is not complete!", comment: "Error dialog title when character properties not set")
     
     static let buttonTitleRoll                  = NSLocalizedString("Roll", comment: "Roll button title")
-    static let buttonTitleAdd                   = NSLocalizedString("Add", comment: "Add butotn title")
+    static let buttonTitleAdd                   = NSLocalizedString("Add", comment: "Add button title")
     static let buttonTitleChange                = NSLocalizedString("Change", comment: "Change button title")
     
     static let navigationTitleFormatScene       = NSLocalizedString("Scene %d", comment: "Scene navigation title format")
@@ -111,7 +111,7 @@ struct Localization {
     static let sectionTitleStock                = NSLocalizedString("Items in stock", comment: "Trade section title")
     static let sectionTitleInventory            = NSLocalizedString("Your inventory", comment: "Inventory section title")
     
-    static let navigationtTitleIntro            = NSLocalizedString("Intro", comment: "Intro screen navigation title")
+    static let navigationTitleIntro             = NSLocalizedString("Intro", comment: "Intro screen navigation title")
     static let buttonTitleBegin                 = NSLocalizedString("Begin journey", comment: "Begin journey button title")
     static let messageFailedLoadGame            = NSLocalizedString("Failed to load game", comment: "Error message when failed to load game")
 
@@ -149,17 +149,18 @@ struct Localization {
     static let eventDescriptionExtraAttackOpp   = NSLocalizedString("Extra attack from opponent: %@", comment: "Extra attack from opponent event description")
     static let eventDescriptionExtraAttackAvoid = NSLocalizedString("Extra attack avoided with luck", comment: "Extra attack avoided event description")
     
-    static let itemDescriptionFoodRation        = NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format")
+    static let itemDescriptionFormatPotion      = NSLocalizedString("Potion of %@ (rations: %d)", comment: "Potion name format")
     static let itemDescriptionFood              = NSLocalizedString("Food", comment: "Food title")
-    static let itemDescriptionMoney             = NSLocalizedString("Coins (%d)", comment: "Money description format")
+    static let itemDescriptionFormatFood        = NSLocalizedString("Food (rations: %d)", comment: "Food description format")
+    static let itemDescriptionFormatMoney       = NSLocalizedString("Coins (%d)", comment: "Money description format")
     static let itemDescriptionWeapon            = NSLocalizedString("Weapon", comment: "Weapon title")
     static let itemDescriptionSword             = NSLocalizedString("Sword", comment: "Sword title")
     static let itemDescriptionArmor             = NSLocalizedString("Armor", comment: "Armor title")
     static let itemDescriptionShield            = NSLocalizedString("Shield", comment: "Shield title")
     static let itemDescriptionHelmet            = NSLocalizedString("Helmet", comment: "Helmet title")
-    static let itemDescriptionGlove             = NSLocalizedString("Glove", comment: "Glove title")
+    static let itemDescriptionGloves            = NSLocalizedString("Gloves", comment: "Gloves title")
     
-    static let actionDescriptiontryLuck         = NSLocalizedString("Try your luck!", comment: "Try luck action default caption")
+    static let actionDescriptionTryLuck         = NSLocalizedString("Try your luck!", comment: "Try luck action default caption")
     static let actionDescriptionFight           = NSLocalizedString("Fight!", comment: "Fight action default caption")
     static let actionDescriptionRest            = NSLocalizedString("Get some rest!", comment: "Rest action default caption")
     static let actionDescriptionRoll            = NSLocalizedString("Roll!", comment: "Roll action default caption")
