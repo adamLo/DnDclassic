@@ -8,7 +8,18 @@
 
 import Foundation
 
-enum Direction: String {
+enum Direction: String, CustomStringConvertible {
     
     case north, south, west, east, unknown, back
+    
+    var description: String {
+        switch self {
+        case .north:    return Localization.directionNorth
+        case .south:    return Localization.directionSouth
+        case .west:     return Localization.directionWest
+        case .east:     return Localization.directionEast
+        case .unknown:  return Localization.unknown
+        case .back:     return Localization.directionBack
+        }
+    }
 }

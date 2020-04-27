@@ -1,0 +1,450 @@
+/*
+  Localizable.strings - Hungarian
+  
+  Created by Adam Lovastyik on 23/02/2020.
+  Copyright © 2020 Adam Lovastyik. All rights reserved.
+*/
+
+/* Query action answer format */
+"%@ answered %@ for %@" = "%1$@ kérdésre a válasz %2$@ helyes";
+
+/* Character property display format */
+"%d of %d - %0.0f%%" = "%1$d a %2$d -ból, %3$.0f%%";
+
+/* Add button title */
+"Add" = "Hozzáad";
+
+/* Add inventory item event description format */
+"Added %@ to inventory" = "Betette %@ a hátizsákba";
+
+/* Advance event description format */
+"Advanced to scene %d" = "továbbment ide: %d";
+
+/* Alert option title to gamble another round */
+"Another round" = "Még egy kör";
+
+/* Escape alert message */
+"Are you sure you want to escape? It'll cost you 2 healt points!" = "Biztosan elmenekülsz? Ez 2 életerő pontodba kerül!";
+
+/* Armor title */
+"Armor" = "Páncél";
+
+/* Eat event description */
+"Ate a portion of food, gained %d health" = "Evett egy kis ételt amitől visszanyert %d életerőt";
+
+/* Attack modified event description format */
+"Attack modified by %d" = "Támadás módosult %d";
+
+/* Un-equip option title */
+"Back to inventory" = "Vissza a hátizsákba";
+
+/* Bad luck result title */
+"Bad luck :(" = "Balszerencse :(";
+
+/* Begin journey button title */
+"Begin journey" = "Vágj bele a kalandba";
+
+/* Buy option title */
+"Buy" = "Vásárlás";
+
+/* Cancel option title */
+"Cancel" = "Mégsem";
+
+/* Change button title */
+"Change" = "Csere";
+
+/* Money description format */
+"Coins (%d)" = "Pénz (%d)";
+
+/* Alert title when opponent was beaten */
+"Congratlations!" = "Gratulálunk!";
+
+/* Correct answer */
+"Correctly" = "Helyesen";
+
+/* Damage modification event description format */
+"Damage modified from %d to %d due %@" = "A sérülés modosult %1$d-ról %2$d-ra %3$@ miatt";
+
+/* Damage event description format */
+"Damage taken: %d" = "Sérülés: %d";
+
+/* Dexterity title */
+"Dexterity" = "Ügyesség";
+
+/* Die event description */
+"Died" = "Meghalt";
+
+/* Direction title format */
+"Direction %@ to %d" = "%1$@ irányban %2$d felé";
+
+/* Purchase dialog message format */
+"Do you want to buy this item:\n%@\n?" = "Megveszed:\n%@\n?";
+
+/* Drink event description format */
+"Drank potion of %@" = "Megitta: %@";
+
+/* Drink potion button title */
+"Drink potion" = "Ivott";
+
+/* Drink potion alert title format */
+"Drink potion of %@?" = "Iszol a %@? italából";
+
+/* Drop inventory item option title */
+"Drop item" = "Eldobni";
+
+/* Drop inventory item event description format */
+"Dropped %@" = "eldobta: %@";
+
+/* Drop inventory item event description format with amount */
+"Dropped %d of %@" = "Eldobott %1$d %2$@-t";
+
+/* Eat title */
+"Eat" = "Evés";
+
+/* Placeholder for query action textfield title */
+"Enter your answer" = "Írd be a választ";
+
+/* Equip option title */
+"Equip" = "Felvesz";
+
+/* Title when inventory item equipped */
+"Equipped" = "Felvéve";
+
+/* Escape title */
+"Escape" = "Menekülés";
+
+/* Escape action default caption */
+"Escape!" = "Menekülés!";
+
+/* Extra attack avoided event description */
+"Extra attack avoided with luck" = "Extra támadás szerencsésen elkerülte";
+
+/* Extra attack damage without caption format */
+"Extra attack damage taken: %d" = "Extra támadás sérülés: %d";
+
+/* Extra attack damage with caption format */
+"Extra attack damage taken: %d due %@" = "Extra támadás sérülés: %1$d %2$@ miatt";
+
+/* Extra attack from opponent event description */
+"Extra attack from opponent: %@" = "Extra támadás tőle: %@";
+
+/* Error message when failed to load game */
+"Failed to load game" = "nem sierült betölteni a játékot";
+
+/* Fight event description format */
+"Fight round with %@, attack: %d, opponent attack: %d" = "Küzdelem %1$@-el, támadőerő: %2$d, ellenség támadóereje: %3$d";
+
+/* Fight action default caption */
+"Fight!" = "Csata!";
+
+/* Alert title when game finished */
+"Finished" = "Véget ért";
+
+/* Food title */
+"Food" = "Étel";
+
+/* Food description format */
+"Food (rations: %d)" = "Étel (%d adag)";
+
+/* Force action default caption */
+"Force!" = "Erőltesd!";
+
+/* Bonus event description format */
+"Gained %d %@ bonus" = "Kapott %1$d %2$@ pontot";
+
+/* Title gamble */
+"Gamble" = "Fogadás";
+
+/* Gamble action default caption */
+"Gamble!" = "Fogadj!";
+
+/* Rest action default caption */
+"Get some rest!" = "Pihenj kicsit!";
+
+/* Gloves title */
+"Gloves" = "Kesztyű";
+
+/* Go back waypoint title */
+"Go back" = "Vissza";
+
+/* Price label in gold */
+"gold" = "arany";
+
+/* Good luck result title */
+"Good luck!" = "Szerencse!";
+
+/* Good luck dialog message when money is earned */
+"Good luck, you just gained %d gold!" = "Szerencse, nyertél %d aranyat!";
+
+/* Heatlh title */
+"Health" = "Életerő";
+
+/* Helmet title */
+"Helmet" = "Sisak";
+
+/* Alert title to request bet */
+"How much do you bet?" = "Menyit teszel fel?";
+
+/* Intro screen navigation title */
+"Intro" = "Intro";
+
+/* Inventory title */
+"Inventory" = "Hátizsák";
+
+/* Trade section title */
+"Items in stock" = "Kínálat";
+
+/* Kill event description format */
+"Killed %@" = "Megölte %@-t";
+
+/* lamp name */
+"Lamp" = "Lámpa";
+
+/* Leather armor name */
+"Leather Armor" = "Bőrpáncél";
+
+/* Long sword name */
+"Long sword" = "Hosszúkard";
+
+/* Escape event description format */
+"Lost %d health while escaping fight" = "Elveszített %d életerőt menekülés közben";
+
+/* Luck title */
+"Luck" = "Szerencse";
+
+/* Name title */
+"Name" = "Név";
+
+/* Bad luck dialog message when money is lost */
+"Oh no, you just lost %d gold!" = "Jaj ne, elvesztettél %d aranyat!";
+
+/* OK button title */
+"OK" = "Oké";
+
+/* Opponent default title */
+"Opponent" = "Ellenség";
+
+/* Bet query placeholder */
+"Place your bet" = "Tedd meg a téted";
+
+/* Player title */
+"Player" = "Játékos";
+
+/* Error message when character name is empty */
+"Please provide name for your character!" = "Adj nevet a hősödnek!";
+
+/* Error message when character dexterity is not set */
+"Please set dexterty for your character!" = "Adj ügyességet a hősödnek!";
+
+/* Error message when character health is not set */
+"Please set health for your character!" = "Adj életerőt a hősödnek!";
+
+/* Error message when character luck is not set */
+"Please set luck for your character!" = "Adj szerencsét a hősödnek!";
+
+/* Potion title */
+"Potion" = "Ital";
+
+/* Potion name format */
+"Potion of %@ (rations: %d)" = "%1$@ itala (%2$d adag)";
+
+/* Potion of Dexterity title */
+"Potion of Dexterity" = "Ügyesség Itala";
+
+/* Potion of Health title */
+"Potion of Health" = "Élet itala";
+
+/* Potion of Luck title */
+"Potion of Luck" = "Szerencse itala";
+
+/* Properties title */
+"Properties" = "Tulajdonságok";
+
+/* Trade action default caption */
+"Pst! Would you like to buy sumething?" = "Pszt! Akarsz venni valamit?";
+
+/* Purchase dialog title */
+"Purchase" = "Vásárlás";
+
+/* Remove title */
+"Remove" = "Törlés";
+
+/* Rest event description format */
+"Rest gained %d health and %d dexterity" = "A pihenés %1$d életerőt és %2$d ügyességet adott vissza";
+
+/* Restart game title when game finished */
+"Restart game" = "Újrakezdés";
+
+/* Option title to restart game with new character */
+"Restart with new character" = "Újrakezdés ugyanezzel a hőssel";
+
+/* Option title to restart game with the same character */
+"Restart with the same character" = "Újrakezdés másik hőssel";
+
+/* Resting alert title */
+"Resting" = "Pihenés";
+
+/* Dexerity potion option alert message format */
+"Restores your dexerity to start level (%d)" = "Visszaállítja az ügyességet a kezdetire (%d)";
+
+/* Health potion alert message format */
+"Restores your health to start level (%d)" = "Visszaállítja az életerőt a kezdetire (%d)";
+
+/* Luck potoion alert message format */
+"Restores your luck to start level (%d) and increses starting levelby one" = "Visszaállítja a szerencsét a kezdetire (%d) és megnöveli egyel";
+
+/* Roll button title */
+"Roll" = "Dobás";
+
+/* Roll again option title */
+"Roll again" = "Újra dobás";
+
+/* Roll action default caption */
+"Roll!" = "Dobj!";
+
+/* Roll event description format */
+"Rolled %d" = "%d - at dobott";
+
+/* Scene navigation title format */
+"Scene %d" = "%d. helyszín";
+
+/* Potion selection dialog message */
+"Select potion to help you in your journey" = "Válassz eg varázsitalt az útra";
+
+/* Shield title */
+"Shield" = "Pajzs";
+
+/* Sorry */
+"Sorry" = "Sajnos";
+
+/* Message when waypoint condition is not fulfilled */
+"Sorry, you don't fulfil the condition to choose this way!" = "Sajnos erre nem tusz menni!";
+
+/* Sword title */
+"Sword" = "Kard";
+
+/* Alert message when fight is over */
+"The battle is over" = "A csata véget ért";
+
+/* Trade scene navigation title */
+"Trade" = "Kereskedés";
+
+/* Try luck title */
+"Try your luck" = "Próba szerencse";
+
+/* Try luck action default caption */
+"Try your luck!" = "Tedd próbára szerencséd!";
+
+/* Try luck event description format */
+"Tryed luck. Rolled %d = %@" = "Szerencsét próbált. %1$d-t dobott = %2$@";
+
+/* Use luck when hittng on opponent label title */
+"use when hit" = "támadáskor használod";
+
+/* Use invetory item event description format */
+"Used %d amount of %@" = "Felhasznált %1$d-t %2$@-ból";
+
+/* Weapon title */
+"Weapon" = "Fegyver";
+
+/* Inventory item manipulation dialog message format */
+"What would you like to do with %@?" = "Mit szeretnél %@-l tenni?";
+
+/* Eat alert sheet message */
+"Would you like to eat?\nIt increases your health by 4 points and takes one portion of your food rations" = "Eszel?\nMegnöveli az életerődet néggyel écs csökkenti az élelmiszerkészleted egyel";
+
+/* Wrong answer */
+"Wrongly" = "Hibás";
+
+/* Message when user already purchased a unique item */
+"You already have one of this item" = "Már van ilyened";
+
+/* Error message when failed to equip inventory item */
+"You can not equip this item" = "Nem tudod felvenni";
+
+/* Alert message when cannot unequip inventory item */
+"You can not remove this item" = "Nem tudod levenni";
+
+/* Alert message when escapeing from fight s not available */
+"You can't escape just yet!" = "Most nem menekülhetsz el!";
+
+/* Message when user does not have enough money to buy an item */
+"You don't have enough money to buy this item" = "Nincs elég pénzed, hogy megvedd";
+
+/* Resting alert message */
+"You feel refreshed after resting. Where would you like to go from here?" = "Kipihentnek érzed magad. Hova tovább?";
+
+/* Query action default caption */
+"You have to answer a question" = "Válaszolnod kell egy kérdésre";
+
+/* Error message when user wants to find an opponent outside of order */
+"You have to fight your opponents in sequential order!" = "Egymás után sorban kell megküzdened velük!";
+
+/* Alert message when user gone KIA */
+"You just died :(" = "Sajnos meghaltál :(";
+
+/* Alert title when player lost gambling */
+"You lost" = "Vesztettél";
+
+/* Alert message format when user lost gambling */
+"You lost %d gold" = "Elvesztettél %d aranyat";
+
+/* Alert title when opponent damage event triggered */
+"You made a damage to your opponent!" = "Sérülést okoztál az ellenségednek!";
+
+/* Roll value format */
+"You rolled %d" = "Dobtad: %d";
+
+/* Try luck action result message format */
+"You rolled %d, %@" = "%1$d-at dobtál, %2$@";
+
+/* Alert message format when rolled in gambling */
+"You rolled %d, they rolled %d" = "Te %1$d-t dobbtál, ő %2$d-t";
+
+/* Alert title when player damage event triggered */
+"You suffered a bad damage from your opponent!" = "Az ellenséged sérülést okozott!";
+
+/* Try luck action result title */
+"You tried your luck" = "Próbára tetted a szerencséd";
+
+/* Alert message format when user won gambling */
+"You won %d gold" = "Nyertél %d aranyat";
+
+/* Alert message when opponent was beaten */
+"You won again!" = "Megnt győztél!";
+
+/* Alert title when player won gambling */
+"You won!" = "Nyertél!";
+
+/* Alert title when damage event triggered */
+"You're being taken to %@" = "Most elmész ide: %@";
+
+/* Character edit screeen navigation title */
+"Your character" = "A hősöd";
+
+/* Error dialog title when character properties not set */
+"Your character is not complete!" = "A hősöd még nem áll készen!";
+
+/* Inventory section title */
+"Your inventory" = "Hátizsákod";
+
+/* Alert message when game finished */
+"Your journey has come to an end." = "A kalandod itt véget ért.";
+
+/* Direction North */
+"north" = "észak";
+
+/* Direction South */
+"south" = "dél";
+
+/* Direction Est */
+"east" = "kelet";
+
+/* Direction West */
+"west" = "nyugat";
+
+/* Direction Back */
+"back" = "vissza";
+
+/* Unknown title */
+"unknown" = "ismeretlen";

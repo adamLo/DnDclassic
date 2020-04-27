@@ -104,6 +104,7 @@
 		19C9151E243B9184002E0102 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9151D243B9183002E0102 /* Weapon.swift */; };
 		19D295632430D713003713E5 /* HitBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D295622430D713003713E5 /* HitBonus.swift */; };
 		19D2956824312017003713E5 /* SceneInventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D2956724312017003713E5 /* SceneInventoryCell.swift */; };
+		19D7184E24571435003484A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19D7184B24571434003484A5 /* Localizable.strings */; };
 		19E193B9242627CC00334B0F /* FightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193B8242627CC00334B0F /* FightAction.swift */; };
 		19E193BC2426462600334B0F /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BB2426462600334B0F /* FightViewController.swift */; };
 		19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BE242647FC00334B0F /* FightOpponentCell.swift */; };
@@ -249,6 +250,8 @@
 		19C9151D243B9183002E0102 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		19D295622430D713003713E5 /* HitBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitBonus.swift; sourceTree = "<group>"; };
 		19D2956724312017003713E5 /* SceneInventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneInventoryCell.swift; sourceTree = "<group>"; };
+		19D7184C24571434003484A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		19D7184D24571435003484A5 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		19E193B8242627CC00334B0F /* FightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightAction.swift; sourceTree = "<group>"; };
 		19E193BB2426462600334B0F /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		19E193BE242647FC00334B0F /* FightOpponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightOpponentCell.swift; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 		1930153A2402BD4C00E7B815 /* DnDclassic */ = {
 			isa = PBXGroup;
 			children = (
+				19D7184A24571408003484A5 /* Localization */,
 				19A85597240AB6D4007174C8 /* Extensions */,
 				19497D6E2405AE020072CFD0 /* UI */,
 				19301589240318DE00E7B815 /* Resources */,
@@ -531,6 +535,14 @@
 			name = Inventory;
 			sourceTree = "<group>";
 		};
+		19D7184A24571408003484A5 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				19D7184B24571434003484A5 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		19E193BA2426404700334B0F /* Fight */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +712,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hu,
 			);
 			mainGroup = 1930152F2402BD4C00E7B815;
 			productRefGroup = 193015392402BD4C00E7B815 /* Products */;
@@ -723,6 +736,7 @@
 				19825BF3244F061E00488525 /* scene_218.png in Resources */,
 				19825BDD244A0E4A00488525 /* scene_097.png in Resources */,
 				193015482402BD5200E7B815 /* Assets.xcassets in Resources */,
+				19D7184E24571435003484A5 /* Localizable.strings in Resources */,
 				19825C15245204F000488525 /* scene_326.png in Resources */,
 				19825BF5244F079800488525 /* scene_179.png in Resources */,
 				19825BF7244F484F00488525 /* scene_188.png in Resources */,
@@ -908,6 +922,15 @@
 				1930154A2402BD5200E7B815 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19D7184B24571434003484A5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19D7184C24571434003484A5 /* Base */,
+				19D7184D24571435003484A5 /* hu */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

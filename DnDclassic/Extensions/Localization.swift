@@ -173,4 +173,11 @@ struct Localization {
     static let opponent                         = NSLocalizedString("Opponent", comment: "Opponent default title")
     
     static let messageFormatRolled              = NSLocalizedString("You rolled %d", comment: "Roll value format")
+    
+    static let directionNorth                   = NSLocalizedString("north", comment: "Direction North")
+    static let directionSouth                   = NSLocalizedString("south", comment: "Direction South")
+    static let directionEast                    = NSLocalizedString("east", comment: "Direction Est")
+    static let directionWest                    = NSLocalizedString("west", comment: "Direction West")
+    static let directionBack                    = NSLocalizedString("back", comment: "Direction Back")
+    static let unknown                          = NSLocalizedString("unknown", comment: "Unknown title")
 }

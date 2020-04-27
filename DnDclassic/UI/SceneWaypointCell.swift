@@ -26,7 +26,7 @@ class SceneWaypointCell: UITableViewCell {
     func setup(waypoint: WayPoint) {
         
         captionTitle.text = waypoint.caption
-        directionLabel.text = String(format: Localization.messageFormatDirection, waypoint.direction.rawValue, waypoint.destination)
+        directionLabel.text = String(format: Localization.messageFormatDirection, waypoint.direction.description, waypoint.destination)
     }
 
 }
