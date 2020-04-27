@@ -127,7 +127,7 @@ struct Localization {
     static let eventDescriptionDamageTaken      = NSLocalizedString("Damage taken: %d", comment: "Damage event description format")
     static let eventDescriptionDrinkPotion      = NSLocalizedString("Drank potion of %@", comment: "Drink event description format")
     static let eventDescriptionEat              = NSLocalizedString("Ate a portion of food, gained %d health", comment: "Eat event description")
-    static let eventDescriptionLostHealth       = NSLocalizedString("Lost %d health while escaping fight", comment: "Escape event description format")
+    static let eventDescriptionEscape           = NSLocalizedString("Lost %d health while escaping fight", comment: "Escape event description format")
     static let eventDescriptionFigtRound        = NSLocalizedString("Fight round with %@, attack: %d, opponent attack: %d", comment: "Fight event description format")
     static let eventDescriptionKill             = NSLocalizedString("Killed %@", comment: "Kill event description format")
     static let eventDescriptionRest             = NSLocalizedString("Rest gained %d health and %d dexterity", comment: "Rest event description format")

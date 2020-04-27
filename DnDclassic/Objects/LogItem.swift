@@ -50,47 +50,47 @@ struct LogItem: CustomStringConvertible {
         
         switch event {
         case .advance(let sceneId):
-            text = String(format: NSLocalizedString("Advanced to scene %d", comment: "Advance event description format"), sceneId)
+            text = String(format: Localization.eventDescriptionAdvance, sceneId)
         case .bonus(let property, let gain):
-            text = String(format: NSLocalizedString("Gained %d %@ bonus", comment: "Bonus event description format"), gain, property.description)
+            text = String(format: Localization.eventDescriptionGain, gain, property.description)
         case .damage(let value):
-            text = String(format: NSLocalizedString("Damage taken: %d", comment: "Damage event description format"), value)
+            text = String(format: Localization.eventDescriptionDamageTaken, value)
         case .drink(let type):
-            text = String(format: NSLocalizedString("Drank potion of %@", comment: "Drink event description format"), type.description)
+            text = String(format: Localization.eventDescriptionDrinkPotion, type.description)
         case .eat(let gained):
-            text = String(format: NSLocalizedString("Ate a portion of food, gained %d health", comment: "Eat event description"), gained)
+            text = String(format: Localization.eventDescriptionEat, gained)
         case .escape(let damage):
-            text = String(format: NSLocalizedString("Lost %d health while escaping fight", comment: "Escape event description format"), damage)
+            text = String(format: Localization.eventDescriptionEscape, damage)
         case .fight(let opponent, let playerAttack, let opponentAttack):
-            text = String(format: NSLocalizedString("Fight round with %@, attack: %d, opponent attack: %d", comment: "Fight event description format"), opponent, playerAttack, opponentAttack)
+            text = String(format: Localization.eventDescriptionFigtRound, opponent, playerAttack, opponentAttack)
         case .kill(let opponent):
-            text = String(format: NSLocalizedString("Killed %@", comment: "Kill event description format"), opponent)
+            text = String(format: Localization.eventDescriptionKill, opponent)
         case .rest(let healthGain, let dexterityGain):
-            text = String(format: NSLocalizedString("Rest gained %d health and %d dexterity", comment: "Rest event description format"), healthGain ?? 0, dexterityGain ?? 0)
+            text = String(format: Localization.eventDescriptionRest, healthGain ?? 0, dexterityGain ?? 0)
         case .roll(let value):
-            text = String(format: NSLocalizedString("Rolled %d", comment: "Roll event description format"), value)
+            text = String(format: Localization.eventDescriptionRoll, value)
         case .tryLuck(let roll, let success):
-            text = String(format: NSLocalizedString("Tryed luck. Rolled %d = %@", comment: "Try luck event description format"), roll, success ? NSLocalizedString("Good luck", comment: "Good luck title") : NSLocalizedString("Bad luck", comment: "Bad luck title"))
+            text = String(format: Localization.eventDescriptionTryLuck, roll, success ? Localization.goodLuck : Localization.badLuck)
         case .died:
-            text = NSLocalizedString("Died", comment: "Die event description")
+            text = Localization.eventDescriptionDied
         case .use(let item, let amount):
-            text = String(format: NSLocalizedString("Used %d amount of %@", comment: "Use invetory item event description format"), amount, item.description)
+            text = String(format: Localization.eventDescriptionUseItem, amount, item.description)
         case .damageModified(let original, let new, let modifierName):
-            text = String(format: NSLocalizedString("Damage modified from %d to %d due %@", comment: "Damage modification event description format"), original, new, modifierName ?? "N/A")
+            text = String(format: Localization.eventDescriptionDamageMod, original, new, modifierName ?? "N/A")
         case .addInventory(let item):
-            text = String(format: NSLocalizedString("Added %@ to inventory", comment: "Add inventory item event description format"), item.description)
+            text = String(format: Localization.eventDescriptionAddInventory, item.description)
         case .dropInventory(let item, let amount):
-            text = (amount ?? 0) != 0 ? String(format: NSLocalizedString("Dropped %d of %@", comment: "Drop inventory item event description format with amount"), amount ?? 0,  item.description) : String(format: NSLocalizedString("Dropped %@", comment: "Drop inventory item event description format"), item.description)
+            text = (amount ?? 0) != 0 ? String(format: Localization.eventDescriptionDroppedAmount, amount ?? 0,  item.description) : String(format: Localization.eventDescriptionDropItem, item.description)
         case .attackModified(let value):
-            text = String(format: NSLocalizedString("Attack modified by %d", comment: "Attack modified event description format"), value)
+            text = String(format: Localization.eventDescriptionAttackMod, value)
         case .answered(let question, let answer, let correct):
-            text = String(format: NSLocalizedString("%@ answered %@ for %@", comment: "Query action answer format"), correct ? NSLocalizedString("Correctly", comment: "Correct answer") : NSLocalizedString("Wrongly", comment: "Wrong answer"), answer, question)
+            text = String(format: Localization.eventDescriptionQueryAnswer, correct ? Localization.correctly : Localization.wrongly, answer, question)
         case .extraAttack(let damage, let caption):
-            text = caption != nil ? String(format: NSLocalizedString("Extra attack damage taken: %d", comment: "Extra attack damage without caption format"), damage) : String(format: NSLocalizedString("Extra attack damage taken: %d due %@", comment: "Extra attack damage with caption format"), damage, caption ?? "")
+            text = caption != nil ? String(format: Localization.eventDescriptionExtraDamageTaken, damage) : String(format: Localization.eventDescriptionExtraDamageCause, damage, caption ?? "")
         case .extraAttackAvoided:
-            text = NSLocalizedString("Extra attack avoided with luck", comment: "Extra attack avoided event description")
+            text = Localization.eventDescriptionExtraAttackAvoid
         case .extraAttackNoDamage(let caption):
-            text = caption != nil ? String(format: NSLocalizedString("Extra attack from opponent: %@", comment: caption ?? "")) : NSLocalizedString("Extra attack avoided with luck", comment: "Extra attack avoided event description")
+            text = caption != nil ? String(format: Localization.eventDescriptionExtraAttackOpp, caption ?? "") : Localization.eventDescriptionExtraAttackAvoid
         }
         
         let formatter = DateFormatter()
