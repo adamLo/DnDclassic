@@ -51,25 +51,38 @@ class IntroViewController: UIViewController {
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
+        
         title = Strings.navigationTitleIntro
+        
         coverImageView.contentMode = .scaleAspectFill
+        coverImageView.alpha = 0.6
+        
         beginButton.setTitle(Strings.buttonTitleBegin, for: .normal)
         
-        setupLabels()
-        setupButtons()
+        setupFonts()
+        setupColors()
     }
     
-    private func setupLabels() {
+    private func setupFonts() {
         
         titleLabel.font = UIFont.defaultFont(style: .bold, size: .large)
         authorLabel.font = UIFont.defaultFont(style: .regular, size: .small)
         copyrightLabel.font = UIFont.defaultFont(style: .regular, size: .small)
         introTextView.font = UIFont.defaultFont(style: .regular, size: .base)
+        
+        beginButton.titleLabel?.font = UIFont.defaultFont(style: .bold, size: .large)
     }
     
-    private func setupButtons() {
+    private func setupColors() {
         
-        beginButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .large)
+        for label in [titleLabel, authorLabel, copyrightLabel] {
+            label?.textColor = Colors.textDefault
+            label?.backgroundColor = Colors.textBackground
+        }
+        
+        introTextView.textColor = Colors.textDefault
+        beginButton.setTitleColor(Colors.textDefault, for: .normal)
     }
     
     // MARK: - UI manipulations
@@ -109,7 +122,7 @@ class IntroViewController: UIViewController {
         
         copyrightLabel.text = game.copyright?.nilIfEmpty
         
-        introTextView.text = game.intro
+        introTextView.attributedText = NSMutableAttributedString(string: game.intro ?? "", attributes: [NSAttributedString.Key.foregroundColor: Colors.textDefault, NSAttributedString.Key.backgroundColor: Colors.textBackground, NSAttributedString.Key.font: UIFont.defaultFont(style: .regular, size: .base)])
         introTextView.contentInset = UIEdgeInsets(top: coverImageView.frame.size.height - 30, left: 0, bottom: beginButton.frame.size.height + 10, right: 0)
         
         beginButton.isHidden = game.firstScene == nil
