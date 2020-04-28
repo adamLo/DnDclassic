@@ -37,6 +37,8 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
+        
         setupTableView()
         setupNavigationBar()
     }
@@ -44,12 +46,15 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func setupTableView() {
         
         tradeTableView.tableFooterView = UIView()
+        tradeTableView.backgroundColor = UIColor.clear
     }
     
     private func setupNavigationBar() {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
         title = Strings.navigationTitleTrade
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.defaultFont(style: .medium, size: .large)]
     }
     
     // MARK: - UItableView

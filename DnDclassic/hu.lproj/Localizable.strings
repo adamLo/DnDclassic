@@ -9,7 +9,7 @@
 "%@ answered %@ for %@" = "%1$@ kérdésre a válasz %2$@ helyes";
 
 /* Character property display format */
-"%d of %d - %0.0f%%" = "%1$d a %2$d -ból, %3$.0f%%";
+"%d of %d - %0.0f%%" = "%1$d/%2$d, %3$.0f%%";
 
 /* Add button title */
 "Add" = "Hozzáad";
@@ -84,7 +84,7 @@
 "Drank potion of %@" = "Megitta: %@";
 
 /* Drink potion button title */
-"Drink potion" = "Ivott";
+"Drink potion" = "Varázsital";
 
 /* Drink potion alert title format */
 "Drink potion of %@?" = "Iszol a %@? italából";
@@ -339,7 +339,7 @@
 "Tryed luck. Rolled %d = %@" = "Szerencsét próbált. %1$d-t dobott = %2$@";
 
 /* Use luck when hittng on opponent label title */
-"use when hit" = "támadáskor használod";
+"use when hit" = "használni";
 
 /* Use invetory item event description format */
 "Used %d amount of %@" = "Felhasznált %1$d-t %2$@-ból";
@@ -411,7 +411,7 @@
 "You won %d gold" = "Nyertél %d aranyat";
 
 /* Alert message when opponent was beaten */
-"You won again!" = "Megnt győztél!";
+"You won again!" = "Ismét győztél!";
 
 /* Alert title when player won gambling */
 "You won!" = "Nyertél!";

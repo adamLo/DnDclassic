@@ -124,6 +124,7 @@
 		19D7187524585DEC003484A5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D7186324585DEC003484A5 /* Roboto-Bold.ttf */; };
 		19D7187624585DEC003484A5 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D7186424585DEC003484A5 /* Roboto-Thin.ttf */; };
 		19D7187724585DEC003484A5 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19D7186524585DEC003484A5 /* Roboto-Black.ttf */; };
+		19D718792458865A003484A5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7187824588659003484A5 /* NavigationController.swift */; };
 		19E193B9242627CC00334B0F /* FightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193B8242627CC00334B0F /* FightAction.swift */; };
 		19E193BC2426462600334B0F /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BB2426462600334B0F /* FightViewController.swift */; };
 		19E193BF242647FC00334B0F /* FightOpponentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E193BE242647FC00334B0F /* FightOpponentCell.swift */; };
@@ -290,6 +291,7 @@
 		19D7186324585DEC003484A5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		19D7186424585DEC003484A5 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		19D7186524585DEC003484A5 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		19D7187824588659003484A5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		19E193B8242627CC00334B0F /* FightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightAction.swift; sourceTree = "<group>"; };
 		19E193BB2426462600334B0F /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		19E193BE242647FC00334B0F /* FightOpponentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightOpponentCell.swift; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				19FC5405242FCFEF00988644 /* Date.swift */,
 				19825C342455954D00488525 /* Localization.swift */,
 				19D7184F24583EB1003484A5 /* Colors.swift */,
+				19D7187824588659003484A5 /* NavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				19825BCD244219E700488525 /* DamageEvent.swift in Sources */,
 				19825C1724520F1300488525 /* TradeAction.swift in Sources */,
 				19D2956824312017003713E5 /* SceneInventoryCell.swift in Sources */,
+				19D718792458865A003484A5 /* NavigationController.swift in Sources */,
 				19FC5406242FCFEF00988644 /* Date.swift in Sources */,
 				19825BFB244F59B600488525 /* Glove.swift in Sources */,
 				19FC540B242FD4C000988644 /* LogCell.swift in Sources */,

@@ -80,16 +80,30 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
+        
         setupHeader()
         setupTableView()
+        setupNavigationBar()
+    }
+    
+    private func setupLabels() {
+        
+        for label in [useLuckLabel, healthLabel, dexterityLabel, luckLabel] {
+            label?.font = UIFont.defaultFont(style: .regular, size: .base)
+            label?.textColor = Colors.textDefault
+        }
     }
     
     private func setupHeader() {
         
         drinkPotionButton.setTitle(Strings.buttonTitleDrinkPotion, for: .normal)
+        drinkPotionButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .large)
+        drinkPotionButton.setTitleColor(Colors.textDefault, for: .normal)
         
         useLuckLabel.text = Strings.titleUseLuck
         useLuckSwitch.isOn = false
+        
         
         healthLabel.text = nil
         dexterityLabel.text = nil
@@ -99,6 +113,13 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func setupTableView() {
         
         fightTableView.tableFooterView = UIView()
+        fightTableView.backgroundColor = UIColor.clear
+    }
+    
+    private func setupNavigationBar() {
+        
+        title = Strings.actionDescriptionFight
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.defaultFont(style: .medium, size: .large)]
     }
 
     // MARK: - Actions

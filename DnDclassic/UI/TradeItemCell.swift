@@ -19,7 +19,14 @@ class TradeItemCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        nameLabel.font = UIFont.defaultFont(style: .regular, size: .base)
+        nameLabel.textColor = Colors.textDefault
+        
+        priceLabel.font = UIFont.defaultFont(style: .medium, size: .base)
+        priceLabel.textColor = Colors.textDefault
+        
+        selectionStyle = .gray
+        backgroundColor = Colors.panelBackgroundSemiTrans
     }
 
     func setup(with item: TradeItem) {

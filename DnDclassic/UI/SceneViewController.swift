@@ -721,7 +721,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == Segues.fight, let destination = segue.destination as? FightViewController, let fight = sender as? FightAction {
+        if segue.identifier == Segues.fight, let navController = segue.destination as? UINavigationController, let destination = navController.rootViewController as? FightViewController, let fight = sender as? FightAction {
             
             destination.action = fight
             destination.figthOver = {[weak self] (wayPoint) in
@@ -746,7 +746,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             GameData.shared.completed(scene: scene)
         }
-        else if segue.identifier == Segues.trade, let navController = segue.destination as? UINavigationController, let destination = navController.viewControllers.first as? TradeViewController, let trade = sender as? TradeAction {
+        else if segue.identifier == Segues.trade, let navController = segue.destination as? UINavigationController, let destination = navController.rootViewController as? TradeViewController, let trade = sender as? TradeAction {
             
             destination.action = trade
         }
