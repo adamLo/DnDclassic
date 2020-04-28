@@ -3574,7 +3574,27 @@
                 }
             ]
         },
-        
+        {
+            "id": 168,
+            "story": "Az ajtó egy hatalmas terembe nyílik. Az óriási szék és a masszív asztal azt sugallja, hogy magasabb rangú valaki vagy valami használja a szobát. Egy ládát pillantasz meg a szoba közepén. Az egyik sarokban egy ember nagyságú bibircsókos lény áll, mellette ugyanabból a fajtából egy kisebb teremtmény. Korbáccsal a kezében az Ork Törzsfőnök ütlegeli szolgáját, aki a földön fetrengve nyöszörög. Mit csinálsz?",
+            "waypoints": [
+                {
+                    "direction": "unknown",
+                    "caption": "Rátámadsz mindkettőre",
+                    "destination": 372
+                },
+                {
+                    "direction": "unknown",
+                    "caption": "A Törzsfőnökre sújtasz, abban a reményben, hogy a szolgája majd neked fog segíteni a harcban",
+                    "destination": 65
+                },
+                {
+                    "direction": "back",
+                    "caption": "Távozol, és visszamész az elágazáshoz",
+                    "destination": 293
+                }
+            ]
+        },
         {
             "id": 169,
             "story": "Az összes kulcsot, az egyiket a másik után bedugod a zárakba, és amint elfordítod őket, halk kattanást hallasz. Valamennyit jól helyezted be! Amint az utolsó kulcs is megfordul, engedni kezd a láda fedele, és felemelheted.",
