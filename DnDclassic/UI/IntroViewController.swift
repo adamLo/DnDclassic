@@ -71,7 +71,7 @@ class IntroViewController: UIViewController {
         copyrightLabel.font = UIFont.defaultFont(style: .regular, size: .small)
         introTextView.font = UIFont.defaultFont(style: .regular, size: .base)
         
-        beginButton.titleLabel?.font = UIFont.defaultFont(style: .bold, size: .large)
+        beginButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .large)
     }
     
     private func setupColors() {

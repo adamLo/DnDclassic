@@ -18,8 +18,11 @@ class SceneStoryCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        backgroundColor = UIColor.white.withAlphaComponent(0.95)
+        backgroundColor = Colors.panelBackgroundSemiTrans
         selectionStyle = .none
+        
+        storyLabel.textColor = Colors.textDefault
+        storyLabel.font = UIFont.defaultFont(style: .regular, size: .base)
     }
 
     func setup(story: String) {

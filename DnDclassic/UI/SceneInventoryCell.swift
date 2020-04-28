@@ -17,6 +17,12 @@ class SceneInventoryCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
+        
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        selectionStyle = .gray
+        
+        captionLabel.textColor = Colors.textDefault
+        captionLabel.font = UIFont.defaultFont(style: .medium, size: .base)
     }
 
     func setup(item: InventoryItem) {

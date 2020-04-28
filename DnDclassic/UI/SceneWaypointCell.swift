@@ -19,8 +19,14 @@ class SceneWaypointCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        backgroundColor = UIColor.white.withAlphaComponent(0.95)
+        backgroundColor = Colors.panelBackgroundSemiTrans
         selectionStyle = .gray
+        
+        captionTitle.font = UIFont.defaultFont(style: .medium, size: .base)
+        captionTitle.textColor = Colors.textDefault
+        
+        directionLabel.font = UIFont.defaultFont(style: .light, size: .xSmall)
+        directionLabel.textColor = Colors.textDefault
     }
 
     func setup(waypoint: WayPoint) {

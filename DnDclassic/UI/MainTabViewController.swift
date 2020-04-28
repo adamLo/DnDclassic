@@ -16,6 +16,21 @@ class MainTabViewController: UITabBarController {
         
         super.viewDidLoad()
         
+        passSceneData()
+        setupUI()
+    }
+
+    private func setupUI() {
+        
+        let attributesNormal = [NSAttributedString.Key.foregroundColor: Colors.textDefault, NSAttributedString.Key.font: UIFont.defaultFont(style: .regular, size: .base)]
+        let attributesSelected = [NSAttributedString.Key.foregroundColor: Colors.textDefault, NSAttributedString.Key.font: UIFont.defaultFont(style: .medium, size: .base)]
+        
+        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
+    }
+    
+    private func passSceneData() {
+        
         if let _controllers = viewControllers {
             for viewController in _controllers {
                 if let sceneViewcontroller = viewController as? SceneViewController {
@@ -24,5 +39,4 @@ class MainTabViewController: UITabBarController {
             }
         }
     }
-
 }

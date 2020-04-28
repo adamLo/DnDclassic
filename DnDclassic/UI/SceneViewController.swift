@@ -56,6 +56,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         setupUI()
+        
         distributeScene()
     }
     
@@ -77,13 +78,22 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
+        
         setupTableView()
+        setupTitle()
     }
     
     private func setupTableView() {
         
         sceneTableView.backgroundColor = UIColor.clear
         sceneTableView.tableFooterView = UIView()
+    }
+    
+    private func setupTitle() {
+        
+        sceneTitleLabel.font = UIFont.defaultFont(style: .medium, size: .large)
+        sceneTitleLabel.textColor = Colors.textDefault
     }
     
     // MARK: - Data integration

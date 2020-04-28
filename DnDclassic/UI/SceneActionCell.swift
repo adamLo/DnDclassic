@@ -17,21 +17,27 @@ class SceneActionCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-                
-        captionLabel.font = UIFont.boldSystemFont(ofSize: 18)
+
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        selectionStyle = .gray
+        
+        captionLabel.font = UIFont.defaultFont(style: .medium, size: .base)
     }
 
     func setup(action: Action) {
         
-        backgroundColor = UIColor.white
-        
         captionLabel.text = action.caption
         
         if let _fight = action as? FightAction, (_fight.isOver || GameData.shared.player == nil || GameData.shared.player.isDead) {
-            backgroundColor = UIColor.darkGray
+            backgroundColor = Colors.disabledItemBackground
+            captionLabel.textColor = Colors.textOnDarkBackground
         }
         else if GameData.shared.player == nil || GameData.shared.player.luck <= 0 {
-            backgroundColor = UIColor.darkGray
+            backgroundColor = Colors.disabledItemBackground
+            captionLabel.textColor = Colors.textOnDarkBackground
+        }
+        else {
+            captionLabel.textColor = Colors.textDefault
         }
     }
 }
