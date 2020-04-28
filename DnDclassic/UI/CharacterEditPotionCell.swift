@@ -23,13 +23,13 @@ class CharacterEditPotionCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        potionTitleLabel.text = Localization.potion
+        potionTitleLabel.text = Strings.potion
     }
     
     func setup(type: CharacterProperty?) {
         
         potionNameLabel.text = type?.rawValue ?? nil
-        changeButton.setTitle(type == nil ? Localization.buttonTitleAdd : Localization.buttonTitleChange, for: .normal)
+        changeButton.setTitle(type == nil ? Strings.buttonTitleAdd : Strings.buttonTitleChange, for: .normal)
     }
 
     @IBAction func changeButtonTouched(_ sender: Any) {

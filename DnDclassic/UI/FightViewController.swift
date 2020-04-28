@@ -66,7 +66,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidAppear(animated)
         
         guard !action.isOver, GameData.shared.player != nil, !GameData.shared.player.isDead else {
-            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageFightOver) {
+            let alert = UIAlertController.simpleMessageAlert(message: Strings.messageFightOver) {
                 self.dismiss(animated: true) {
                     self.figthOver?(GameData.shared.player.isDead ? nil : self.action.win)
                 }
@@ -86,9 +86,9 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func setupHeader() {
         
-        drinkPotionButton.setTitle(Localization.buttonTitleDrinkPotion, for: .normal)
+        drinkPotionButton.setTitle(Strings.buttonTitleDrinkPotion, for: .normal)
         
-        useLuckLabel.text = Localization.titleUseLuck
+        useLuckLabel.text = Strings.titleUseLuck
         useLuckSwitch.isOn = false
         
         healthLabel.text = nil
@@ -190,7 +190,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             if action.order == .single && action.opponents.count > 1 {
                 
                 guard let current = action.currentOpponent, current == fight.opponent else {
-                    let alert = UIAlertController.simpleMessageAlert(message: Localization.messageFightWrongOrder)
+                    let alert = UIAlertController.simpleMessageAlert(message: Strings.messageFightWrongOrder)
                     present(alert, animated: true, completion: nil)
                     return
                 }
@@ -215,7 +215,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
             useLuckSwitch.isOn = false
             
             if fight.opponent.health <= 0 {
-                let alert = UIAlertController.simpleMessageAlert(message: Localization.messagePlayerWonFight, title: Localization.titlePlayerWonFight) {
+                let alert = UIAlertController.simpleMessageAlert(message: Strings.messagePlayerWonFight, title: Strings.titlePlayerWonFight) {
                     
                     if GameData.shared.player.isDead || self.action.isOver {
                         self.dismiss(animated: true) {
@@ -233,13 +233,13 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func distributeCharacterData() {
 
         let healthStatus = Double(GameData.shared.player.health) / Double(max(GameData.shared.player.healthStarting, 1)) * 100
-        healthLabel.text = Localization.health + ": " + String(format: Localization.displayFormatProperty, GameData.shared.player.health, GameData.shared.player.healthStarting, healthStatus)
+        healthLabel.text = Strings.health + ": " + String(format: Strings.displayFormatProperty, GameData.shared.player.health, GameData.shared.player.healthStarting, healthStatus)
         
         let dexterityStatus = Double(GameData.shared.player.dexterity) / Double(max(GameData.shared.player.dexterityStarting, 1)) * 100
-        dexterityLabel.text = Localization.dexterity + ": " + String(format: Localization.displayFormatProperty, GameData.shared.player.dexterity, GameData.shared.player.dexterityStarting, dexterityStatus)
+        dexterityLabel.text = Strings.dexterity + ": " + String(format: Strings.displayFormatProperty, GameData.shared.player.dexterity, GameData.shared.player.dexterityStarting, dexterityStatus)
         
         let luckStatus = Double(GameData.shared.player.luck) / Double(max(GameData.shared.player.luckStarting, 1)) * 100
-        luckLabel.text = Localization.luck + ": " + String(format: Localization.displayFormatProperty, GameData.shared.player.luck, GameData.shared.player.luckStarting, luckStatus)
+        luckLabel.text = Strings.luck + ": " + String(format: Strings.displayFormatProperty, GameData.shared.player.luck, GameData.shared.player.luckStarting, luckStatus)
         
         if GameData.shared.player.luck < 0 {
             useLuckSwitch.isOn = false
@@ -257,7 +257,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func escape() {
         
         if let _availableRound = action.escapeAvailableInRound, _availableRound > fightRounds {
-            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageEscapeUnavailable)
+            let alert = UIAlertController.simpleMessageAlert(message: Strings.messageEscapeUnavailable)
             present(alert, animated: true, completion: nil)
             return
         }
@@ -279,9 +279,9 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func damageEventTriggered(onPlayer: Bool, waypoint: WayPoint) {
         
-        let title = onPlayer ? Localization.titleDamageSuffered : Localization.titleDamageMade
+        let title = onPlayer ? Strings.titleDamageSuffered : Strings.titleDamageMade
         
-        let alert = UIAlertController.simpleMessageAlert(message: String(format: Localization.alertMessageAdvance, waypoint.caption), title: title) {
+        let alert = UIAlertController.simpleMessageAlert(message: String(format: Strings.alertMessageAdvance, waypoint.caption), title: title) {
             self.dismiss(animated: true) {
                 self.figthOver?(waypoint)
             }
@@ -291,7 +291,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private func fightEventTriggered(waypoint: WayPoint) {
         
-        let alert = UIAlertController.simpleMessageAlert(message: String(format: Localization.alertMessageAdvance, waypoint.caption)) {
+        let alert = UIAlertController.simpleMessageAlert(message: String(format: Strings.alertMessageAdvance, waypoint.caption)) {
             self.dismiss(animated: true) {
                 self.figthOver?(waypoint)
             }
@@ -301,16 +301,16 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     static func escapeDialog(withTryLuck: (() -> ())?, escape: (() -> ())?) -> UIAlertController {
         
-        let alert = UIAlertController(title: Localization.titleEscape, message: Localization.messageEscape, preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.titleEscape, message: Strings.messageEscape, preferredStyle: .alert)
         
         if GameData.shared.player != nil && GameData.shared.player.luck > 0 {
-            alert.addAction(UIAlertAction(title: Localization.titleTryLuck, style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: Strings.titleTryLuck, style: .default, handler: { (_) in
                 withTryLuck?()
             }))
         }
         
         if GameData.shared.player != nil {
-            alert.addAction(UIAlertAction(title: Localization.titleEscape, style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: Strings.titleEscape, style: .default, handler: { (_) in
                 escape?()
             }))
         }

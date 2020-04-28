@@ -50,47 +50,47 @@ struct LogItem: CustomStringConvertible {
         
         switch event {
         case .advance(let sceneId):
-            text = String(format: Localization.eventDescriptionAdvance, sceneId)
+            text = String(format: Strings.eventDescriptionAdvance, sceneId)
         case .bonus(let property, let gain):
-            text = String(format: Localization.eventDescriptionGain, gain, property.description)
+            text = String(format: Strings.eventDescriptionGain, gain, property.description)
         case .damage(let value):
-            text = String(format: Localization.eventDescriptionDamageTaken, value)
+            text = String(format: Strings.eventDescriptionDamageTaken, value)
         case .drink(let type):
-            text = String(format: Localization.eventDescriptionDrinkPotion, type.description)
+            text = String(format: Strings.eventDescriptionDrinkPotion, type.description)
         case .eat(let gained):
-            text = String(format: Localization.eventDescriptionEat, gained)
+            text = String(format: Strings.eventDescriptionEat, gained)
         case .escape(let damage):
-            text = String(format: Localization.eventDescriptionEscape, damage)
+            text = String(format: Strings.eventDescriptionEscape, damage)
         case .fight(let opponent, let playerAttack, let opponentAttack):
-            text = String(format: Localization.eventDescriptionFigtRound, opponent, playerAttack, opponentAttack)
+            text = String(format: Strings.eventDescriptionFigtRound, opponent, playerAttack, opponentAttack)
         case .kill(let opponent):
-            text = String(format: Localization.eventDescriptionKill, opponent)
+            text = String(format: Strings.eventDescriptionKill, opponent)
         case .rest(let healthGain, let dexterityGain):
-            text = String(format: Localization.eventDescriptionRest, healthGain ?? 0, dexterityGain ?? 0)
+            text = String(format: Strings.eventDescriptionRest, healthGain ?? 0, dexterityGain ?? 0)
         case .roll(let value):
-            text = String(format: Localization.eventDescriptionRoll, value)
+            text = String(format: Strings.eventDescriptionRoll, value)
         case .tryLuck(let roll, let success):
-            text = String(format: Localization.eventDescriptionTryLuck, roll, success ? Localization.goodLuck : Localization.badLuck)
+            text = String(format: Strings.eventDescriptionTryLuck, roll, success ? Strings.goodLuck : Strings.badLuck)
         case .died:
-            text = Localization.eventDescriptionDied
+            text = Strings.eventDescriptionDied
         case .use(let item, let amount):
-            text = String(format: Localization.eventDescriptionUseItem, amount, item.description)
+            text = String(format: Strings.eventDescriptionUseItem, amount, item.description)
         case .damageModified(let original, let new, let modifierName):
-            text = String(format: Localization.eventDescriptionDamageMod, original, new, modifierName ?? "N/A")
+            text = String(format: Strings.eventDescriptionDamageMod, original, new, modifierName ?? "N/A")
         case .addInventory(let item):
-            text = String(format: Localization.eventDescriptionAddInventory, item.description)
+            text = String(format: Strings.eventDescriptionAddInventory, item.description)
         case .dropInventory(let item, let amount):
-            text = (amount ?? 0) != 0 ? String(format: Localization.eventDescriptionDroppedAmount, amount ?? 0,  item.description) : String(format: Localization.eventDescriptionDropItem, item.description)
+            text = (amount ?? 0) != 0 ? String(format: Strings.eventDescriptionDroppedAmount, amount ?? 0,  item.description) : String(format: Strings.eventDescriptionDropItem, item.description)
         case .attackModified(let value):
-            text = String(format: Localization.eventDescriptionAttackMod, value)
+            text = String(format: Strings.eventDescriptionAttackMod, value)
         case .answered(let question, let answer, let correct):
-            text = String(format: Localization.eventDescriptionQueryAnswer, correct ? Localization.correctly : Localization.wrongly, answer, question)
+            text = String(format: Strings.eventDescriptionQueryAnswer, correct ? Strings.correctly : Strings.wrongly, answer, question)
         case .extraAttack(let damage, let caption):
-            text = caption != nil ? String(format: Localization.eventDescriptionExtraDamageTaken, damage) : String(format: Localization.eventDescriptionExtraDamageCause, damage, caption ?? "")
+            text = caption != nil ? String(format: Strings.eventDescriptionExtraDamageTaken, damage) : String(format: Strings.eventDescriptionExtraDamageCause, damage, caption ?? "")
         case .extraAttackAvoided:
-            text = Localization.eventDescriptionExtraAttackAvoid
+            text = Strings.eventDescriptionExtraAttackAvoid
         case .extraAttackNoDamage(let caption):
-            text = caption != nil ? String(format: Localization.eventDescriptionExtraAttackOpp, caption ?? "") : Localization.eventDescriptionExtraAttackAvoid
+            text = caption != nil ? String(format: Strings.eventDescriptionExtraAttackOpp, caption ?? "") : Strings.eventDescriptionExtraAttackAvoid
         }
         
         let formatter = DateFormatter()

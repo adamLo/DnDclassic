@@ -20,7 +20,7 @@ class Weapon: InventoryObject {
     }
     
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionWeapon
+        return name?.nilIfEmpty ?? identifier ?? Strings.itemDescriptionWeapon
     }
         
     override func use(amount: Int) {

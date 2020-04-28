@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Localization {
+struct Strings {
     
     static let buttonTitleOk                    = NSLocalizedString("OK", comment: "OK button title")
     static let buttonTitleCancel                = NSLocalizedString("Cancel", comment: "Cancel option title")

@@ -15,6 +15,6 @@ class Glove: Armor {
     }
     
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionGloves
+        return name?.nilIfEmpty ?? identifier ?? Strings.itemDescriptionGloves
     }
 }

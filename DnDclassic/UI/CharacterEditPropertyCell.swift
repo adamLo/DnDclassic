@@ -23,7 +23,7 @@ class CharacterEditPropertyCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        rollButton.setTitle(Localization.roll, for: .normal)
+        rollButton.setTitle(Strings.roll, for: .normal)
     }
 
     func setup(type: CharacterProperty, value: Int) {

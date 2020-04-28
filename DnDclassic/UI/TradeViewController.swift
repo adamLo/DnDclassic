@@ -49,7 +49,7 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func setupNavigationBar() {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(close))
-        title = Localization.navigationTitleTrade
+        title = Strings.navigationTitleTrade
     }
     
     // MARK: - UItableView
@@ -115,9 +115,9 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         switch _section {
         case .trade:
-            return Localization.sectionTitleStock
+            return Strings.sectionTitleStock
         case .inventory:
-            return Localization.sectionTitleInventory
+            return Strings.sectionTitleInventory
         }
     }
     
@@ -126,19 +126,19 @@ class TradeViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func buy(item: TradeItem) {
         
         guard item.price <= GameData.shared.player.money else {
-            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageNotEnoghMoney)
+            let alert = UIAlertController.simpleMessageAlert(message: Strings.messageNotEnoghMoney)
             present(alert, animated: true, completion: nil)
             return
         }
         
         if let itemId = item.inventoryItem.identifier?.nilIfEmpty, GameData.shared.player.hasItem(identifier: itemId) {
-            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageAlreadyPurchased)
+            let alert = UIAlertController.simpleMessageAlert(message: Strings.messageAlreadyPurchased)
             present(alert, animated: true, completion: nil)
             return
         }
         
-        let alert = UIAlertController(title: Localization.titlePurchase, message: String(format: Localization.messageFormatPurchase, item.inventoryItem.description), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Localization.buttontitleBuy, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: Strings.titlePurchase, message: String(format: Strings.messageFormatPurchase, item.inventoryItem.description), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.buttontitleBuy, style: .default, handler: { (_) in
             self.purchase(item: item)
             alert.dismiss(animated: true, completion: nil)
         }))

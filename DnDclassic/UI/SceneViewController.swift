@@ -92,7 +92,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         guard scene != nil else {return}
         
-        let _title = String(format: Localization.navigationTitleFormatScene, scene.id)
+        let _title = String(format: Strings.navigationTitleFormatScene, scene.id)
         title = title
         sceneTitleLabel.text = _title
         coverImageView.image = scene.image
@@ -116,7 +116,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             else if scene.wayPoints == nil, GameData.shared.player.journey.count > 1 {
                 // Add return to previous scene if no waypoints and scene is completed
                 let lastScene = GameData.shared.player.journey[GameData.shared.player.journey.count - 2]
-                let waypoint = WayPoint(direction: .back, destination: lastScene.sceneId, caption: Localization.goBack)
+                let waypoint = WayPoint(direction: .back, destination: lastScene.sceneId, caption: Strings.goBack)
                 waypoints = [waypoint]
                 actions = nil
                 sceneTableView.reloadData()
@@ -199,7 +199,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             case .restart:
                 if GameData.shared.player != nil && GameData.shared.player.isDead {
                     let cell = UITableViewCell(style: .default, reuseIdentifier: "restartCell")
-                    cell.textLabel?.text = Localization.restartGame
+                    cell.textLabel?.text = Strings.restartGame
                     return cell
                 }
             }
@@ -276,7 +276,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let condition = action.condition {
             
             if !GameData.shared.player.isFulfilled(condition: condition) {
-                let alert = UIAlertController.simpleMessageAlert(message: Localization.messageWaypointNotSelectable)
+                let alert = UIAlertController.simpleMessageAlert(message: Strings.messageWaypointNotSelectable)
                 present(alert, animated: true, completion: nil)
                 return
             }
@@ -321,22 +321,22 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
         let luck = GameData.shared.player.tryLuck()
         
-        var message = String(format: Localization.messageFormatRoll, luck.rolled, luck.success ? Localization.goodLuck : Localization.badLuck)
+        var message = String(format: Strings.messageFormatRoll, luck.rolled, luck.success ? Strings.goodLuck : Strings.badLuck)
         
         if action.rollWinsMoney || action.rollLoseMoney {
             
             let money = Money(amount: luck.rolled)
             if luck.success, action.rollWinsMoney {
                 GameData.shared.player.add(inventoryItem: money)
-                message = String(format: Localization.messageFormatGainedGold, luck.rolled)
+                message = String(format: Strings.messageFormatGainedGold, luck.rolled)
             }
             else if !luck.success, action.rollLoseMoney {
                 GameData.shared.player.pay(amount: luck.rolled)
-                message = String(format: Localization.messageFormatLostGold, luck.rolled)
+                message = String(format: Strings.messageFormatLostGold, luck.rolled)
             }
         }
                 
-        let alert = UIAlertController(title: Localization.titleTriedLuck, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.titleTriedLuck, message: message, preferredStyle: .alert)
         
         if luck.success {
             alert.addAction(UIAlertAction(title: action.goodLuck.caption, style: .default, handler: { (_) in
@@ -443,7 +443,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func waypointConditionNotfulfilled() {
         
-        let alert = UIAlertController.simpleMessageAlert(message: Localization.messageWaypointNotSelectable)
+        let alert = UIAlertController.simpleMessageAlert(message: Strings.messageWaypointNotSelectable)
         present(alert, animated: true, completion: nil)
     }
     
@@ -483,13 +483,13 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         if actions.isEmpty {
-            let _action = UIAlertAction(title: Localization.buttonTitleRolAgain, style: .default) { (_) in
+            let _action = UIAlertAction(title: Strings.buttonTitleRolAgain, style: .default) { (_) in
                 self.roll(action)
             }
             actions.append(_action)
         }
         
-        let alert = UIAlertController(title: Localization.roll, message: String(format: Localization.messageFormatRolled, roll), preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.roll, message: String(format: Strings.messageFormatRolled, roll), preferredStyle: .alert)
         for _action in actions {
             alert.addAction(_action)
         }
@@ -552,7 +552,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
         let roll = PropertyRoll(character: GameData.shared.player, action: action).roll()
         
-        let alert = UIAlertController(title: Localization.roll, message: String(format: Localization.messageFormatRolled, roll.roll), preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.roll, message: String(format: Strings.messageFormatRolled, roll.roll), preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: roll.waypoint.caption, style: .default, handler: { (_) in
             self.advance(to: roll.waypoint)
@@ -578,7 +578,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let alert = UIAlertController(title: query.action.caption, message: nil, preferredStyle: .alert)
         alert.addTextField { (textfield) in
-            textfield.placeholder = Localization.placeholderQueryAnswer
+            textfield.placeholder = Strings.placeholderQueryAnswer
         }
         alert.addAction(UIAlertAction.OKAction(title: nil, selected: {
             if let answer = alert.textFields?.first?.text?.nilIfEmpty {
@@ -608,13 +608,13 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         guard GameData.shared.player != nil, GameData.shared.player.isDead else {return}
         guard GameData.shared.game != nil, let firstSceneId = GameData.shared.game.firstScene?.id else {return}
         
-        let alert = UIAlertController(title: Localization.titleFinished, message: Localization.messageGameFinished, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Localization.buttonTitleRestartSameChar, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: Strings.titleFinished, message: Strings.messageGameFinished, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.buttonTitleRestartSameChar, style: .default, handler: { (_) in
             GameData.shared.reset()
             GameData.shared.player.reset()
             self.advance(to: firstSceneId)
         }))
-        alert.addAction(UIAlertAction(title: Localization.buttonTitleRestartNewChar, style: .destructive, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Strings.buttonTitleRestartNewChar, style: .destructive, handler: { (_) in
             GameData.shared.reset()
             GameData.shared.player = nil
             self.navigationController?.popToRootViewController(animated: false)
@@ -643,11 +643,11 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func queryBetAmount(completion: @escaping ((_ amount: Int) ->())) {
         
-        let alert = UIAlertController(title: Localization.titleBetGamble, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.titleBetGamble, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = Localization.placeholderBet
+            textField.placeholder = Strings.placeholderBet
         }
-        alert.addAction(UIAlertAction(title: Localization.titleGamble, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Strings.titleGamble, style: .default, handler: { (_) in
             if let _textField = alert.textFields?.first, let _betString = _textField.text?.nilIfEmpty, let bet = Int(_betString), bet > 0, bet <= GameData.shared.player.money {
                 completion(bet)
             }
@@ -680,14 +680,14 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
             GameData.shared.player.pay(amount: bet)
         }
         
-        let title = roll.win ? Localization.titleGambleWon : Localization.titleGableLost
-        var message = String(format: Localization.messageFormatGableRoll, roll.playerRoll, roll.opponentRoll)
+        let title = roll.win ? Strings.titleGambleWon : Strings.titleGableLost
+        var message = String(format: Strings.messageFormatGableRoll, roll.playerRoll, roll.opponentRoll)
         message += "\n"
-        message += String(format: (roll.win ? Localization.messageFormatGambleWin : Localization.messageFormatGambleLost), bet)
+        message += String(format: (roll.win ? Strings.messageFormatGambleWin : Strings.messageFormatGambleLost), bet)
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if GameData.shared.player.money > 0 {
-            alert.addAction(UIAlertAction(title: Localization.buttonTitleAnotherRound, style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: Strings.buttonTitleAnotherRound, style: .default, handler: { (_) in
                 alert.dismiss(animated: true) {
                     self.queryBetAmount { (bet) in
                         if bet > 0 {
@@ -700,7 +700,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }))
         }
-        alert.addAction(UIAlertAction(title: Localization.titleFinished, style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Strings.titleFinished, style: .cancel, handler: { (_) in
             self.advance(to: gamble.action.finish)
         }))
         
@@ -744,7 +744,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func playerDied() {
         
-        let alert = UIAlertController.simpleMessageAlert(message: Localization.messagePlayerDied, title: Localization.sorry) {
+        let alert = UIAlertController.simpleMessageAlert(message: Strings.messagePlayerDied, title: Strings.sorry) {
             // FIXME: Proceed to dead screen
         }
         present(alert, animated: true, completion: nil)
@@ -756,7 +756,7 @@ class SceneViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         GameData.shared.player.rest(health: action.health, dexterity: action.dexterity)
         
-        let alert = UIAlertController(title: Localization.titleResting, message: Localization.messageResting, preferredStyle: .alert)
+        let alert = UIAlertController(title: Strings.titleResting, message: Strings.messageResting, preferredStyle: .alert)
         for waypoint in action.finished {
             alert.addAction(UIAlertAction(title: waypoint.caption, style: .default, handler: { (_) in
                 self.advance(to: waypoint)

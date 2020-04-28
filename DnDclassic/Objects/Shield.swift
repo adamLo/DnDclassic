@@ -15,7 +15,7 @@ class Shield: Armor {
     }
         
     override var description: String {
-        return name?.nilIfEmpty ?? identifier ?? Localization.itemDescriptionShield
+        return name?.nilIfEmpty ?? identifier ?? Strings.itemDescriptionShield
     }
     
     /// Damage modifier for special items

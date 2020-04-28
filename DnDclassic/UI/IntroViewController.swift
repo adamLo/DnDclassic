@@ -51,9 +51,9 @@ class IntroViewController: UIViewController {
     
     private func setupUI() {
         
-        title = Localization.navigationTitleIntro
+        title = Strings.navigationTitleIntro
         coverImageView.contentMode = .scaleAspectFill
-        beginButton.setTitle(Localization.buttonTitleBegin, for: .normal)
+        beginButton.setTitle(Strings.buttonTitleBegin, for: .normal)
         
         setupLabels()
         setupButtons()
@@ -150,7 +150,7 @@ class IntroViewController: UIViewController {
                     _self.displayGame()
                 }
                 else {
-                    let alert = UIAlertController(title: nil, message: Localization.messageFailedLoadGame, preferredStyle: .alert)
+                    let alert = UIAlertController(title: nil, message: Strings.messageFailedLoadGame, preferredStyle: .alert)
                     alert.addAction(UIAlertAction.OKAction())
                     _self.present(alert, animated: true, completion: nil)
                 }

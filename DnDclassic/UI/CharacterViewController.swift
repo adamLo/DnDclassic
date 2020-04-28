@@ -116,9 +116,9 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let _section = Section(rawValue: section) else {return nil}
         
         switch _section {
-        case .name:         return Localization.name
-        case .properties:   return Localization.properties
-        case .inventory:    return Localization.inventory
+        case .name:         return Strings.name
+        case .properties:   return Strings.properties
+        case .inventory:    return Strings.inventory
         }
     }
     
@@ -147,8 +147,8 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         guard GameData.shared.player != nil, GameData.shared.game != nil, let currentScene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) else {return}
 
-        let alert = UIAlertController(title: Localization.titleEat, message: Localization.messageEat, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: Localization.titleEat, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: Strings.titleEat, message: Strings.messageEat, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Strings.titleEat, style: .default, handler: { (_) in
             GameData.shared.player.eat(gainModifier: currentScene.restGainModifier)
             self.characterTableView.reloadData()
         }))
@@ -165,15 +165,15 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch property {
         case .dexterity:
-            message = String(format: Localization.messageFormatDexterityPotion, GameData.shared.player.dexterityStarting)
+            message = String(format: Strings.messageFormatDexterityPotion, GameData.shared.player.dexterityStarting)
         case .health:
-            message = String(format: Localization.messageFormatHealthPotion, GameData.shared.player.healthStarting)
+            message = String(format: Strings.messageFormatHealthPotion, GameData.shared.player.healthStarting)
         case .luck:
-            message = String(format: Localization.messageFormatLuckPotion, GameData.shared.player.luckStarting)
+            message = String(format: Strings.messageFormatLuckPotion, GameData.shared.player.luckStarting)
         }
         
-        let alert = UIAlertController(title: String(format: Localization.messageFormatDrinkPotion, property.description), message: message, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: Localization.buttonTitleDrinkPotion, style: .default, handler: { (_) in
+        let alert = UIAlertController(title: String(format: Strings.messageFormatDrinkPotion, property.description), message: message, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Strings.buttonTitleDrinkPotion, style: .default, handler: { (_) in
             
             GameData.shared.player.drink(potion: potion)
             self.characterTableView.reloadData()
@@ -189,28 +189,28 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if inventoryItem.equipped, !(inventoryItem.item.canUnEquip ?? true) {
             
-            let alert = UIAlertController.simpleMessageAlert(message: Localization.messageCannotUnequip)
+            let alert = UIAlertController.simpleMessageAlert(message: Strings.messageCannotUnequip)
             present(alert, animated: true, completion: nil)
             return
         }
         
-        let alert = UIAlertController(title: nil, message: String(format: Localization.messageFormatInventoryItem, inventoryItem.item.description), preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: String(format: Strings.messageFormatInventoryItem, inventoryItem.item.description), preferredStyle: .alert)
         
         if inventoryItem.item.type.equippable {
             
             if inventoryItem.equipped {
-                alert.addAction(UIAlertAction(title: Localization.buttonTitleUnequip, style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: Strings.buttonTitleUnequip, style: .default, handler: { (_) in
                     GameData.shared.player.equip(item: inventoryItem, equipped: false)
                     self.characterTableView.reloadData()
                 }))
             }
             else {
-                alert.addAction(UIAlertAction(title: Localization.buttonTitleEquip, style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: Strings.buttonTitleEquip, style: .default, handler: { (_) in
                     if GameData.shared.player.equip(item: inventoryItem, equipped: true) {
                         self.characterTableView.reloadData()
                     }
                     else {
-                        let errorAlert = UIAlertController.simpleMessageAlert(message: Localization.messageCannotEquip)
+                        let errorAlert = UIAlertController.simpleMessageAlert(message: Strings.messageCannotEquip)
                         alert.dismiss(animated: true) {
                             self.present(errorAlert, animated: true, completion: nil)
                         }
@@ -219,7 +219,7 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
-        alert.addAction(UIAlertAction(title: Localization.titleDropItem, style: .destructive, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Strings.titleDropItem, style: .destructive, handler: { (_) in
             
             GameData.shared.player.drop(inventoryItem: inventoryItem)
             if GameData.shared.game != nil, let scene = GameData.shared.game.scene(id: GameData.shared.currentSceneId) {

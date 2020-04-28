@@ -64,7 +64,7 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func setupNavigationBar() {
         
-        title = Localization.navigationTitleCharacterEdit
+        title = Strings.navigationTitleCharacterEdit
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTopuched(_:)))
     }
     
@@ -161,10 +161,10 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         guard let _section = Section(rawValue: section) else {return nil}
         
         switch _section {
-        case .name:         return Localization.name
-        case .properties:   return Localization.properties
-        case .potion:       return Localization.potion
-        case .inventory:    return Localization.inventory
+        case .name:         return Strings.name
+        case .properties:   return Strings.properties
+        case .potion:       return Strings.potion
+        case .inventory:    return Strings.inventory
         }
     }
     
@@ -201,24 +201,24 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
             self.characterTableView.endUpdates()
         }
                 
-        let alert = UIAlertController(title: Localization.potion, message: Localization.messageSelectPotion, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Strings.potion, message: Strings.messageSelectPotion, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + Localization.titlePotionHealth, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .health ? "* " : "")" + Strings.titlePotionHealth, style: .default, handler: { (_) in
             self.potion = .health
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: "\(current == .dexterity ? "* " : "")" + Localization.titlePotionDexterity, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .dexterity ? "* " : "")" + Strings.titlePotionDexterity, style: .default, handler: { (_) in
             self.potion = .dexterity
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + Localization.titlePotionLuck, style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "\(current == .luck ? "* " : "")" + Strings.titlePotionLuck, style: .default, handler: { (_) in
             self.potion = .luck
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: Localization.buttontTitleRemove, style: .destructive, handler: { (_) in
+        alert.addAction(UIAlertAction(title: Strings.buttontTitleRemove, style: .destructive, handler: { (_) in
             self.potion = nil
             reload()
         }))
@@ -233,25 +233,25 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
         var errors = [String]()
         
         if name?.nilIfEmpty == nil {
-            errors.append(Localization.messageNameNotSet)
+            errors.append(Strings.messageNameNotSet)
         }
         
         if dexerity ?? 0 <= 0 {
-            errors.append(Localization.messageDexterityNotSet)
+            errors.append(Strings.messageDexterityNotSet)
         }
         
         if health ?? 0 <= 0 {
-            errors.append(Localization.messageHealthNotSet)
+            errors.append(Strings.messageHealthNotSet)
         }
         
         if luck ?? 0 <= 0 {
-            errors.append(Localization.messageLuckNotset)
+            errors.append(Strings.messageLuckNotset)
         }
         
         if !errors.isEmpty {
             
-            let alert = UIAlertController(title: Localization.messageCharacterIncomplete, message: errors.joined(separator: "\n"), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: Localization.buttonTitleOk, style: .default, handler: nil))
+            let alert = UIAlertController(title: Strings.messageCharacterIncomplete, message: errors.joined(separator: "\n"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Strings.buttonTitleOk, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             
             return nil

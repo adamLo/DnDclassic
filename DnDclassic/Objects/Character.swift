@@ -25,7 +25,7 @@ class InventoryWrapper: Equatable, CustomStringConvertible {
     }
     
     var description: String {
-        return item.description + (equipped ? " [\(Localization.equipped)]" : "") + " \(identifier)"
+        return item.description + (equipped ? " [\(Strings.equipped)]" : "") + " \(identifier)"
     }
 }
 
@@ -194,9 +194,9 @@ class Character: Deserializable, Equatable {
     
     static var startInventory: [InventoryWrapper] {
      
-        let sword = InventoryObject(type: .sword, name: Localization.longSword, identifier: "longsword_default")
-        let armor = InventoryObject(type: .armor, name: Localization.leatherArmor, identifier: "leatherarmor_default")
-        let lamp = InventoryObject(type: .lighting, name: Localization.lamp, identifier: "lamp_default")
+        let sword = InventoryObject(type: .sword, name: Strings.longSword, identifier: "longsword_default")
+        let armor = InventoryObject(type: .armor, name: Strings.leatherArmor, identifier: "leatherarmor_default")
+        let lamp = InventoryObject(type: .lighting, name: Strings.lamp, identifier: "lamp_default")
         let food = Food(amount: 10)
         
         return [
@@ -332,7 +332,7 @@ class Character: Deserializable, Equatable {
         let item = LogItem(event: event)
         log.append(item)
         
-        print("\(item.description) \(name) \(isPlayer ? "- (\(Localization.player))" : "")")
+        print("\(item.description) \(name) \(isPlayer ? "- (\(Strings.player))" : "")")
     }
     
     func hasInventoryItem(of type: InventoryItemType) -> Bool {

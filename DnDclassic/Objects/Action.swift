@@ -24,15 +24,15 @@ class Action: Deserializable {
             return __caption
         }
         switch type {
-        case .tryLuck:              return Localization.actionDescriptionTryLuck
-        case .fight:                return Localization.actionDescriptionFight
-        case .rest:                 return Localization.actionDescriptionRest
-        case .roll, .propertyRoll:  return Localization.actionDescriptionRoll
-        case .escape:               return Localization.actionDescriptionEscape
-        case .force:                return Localization.actionDescriptionForce
-        case .gamble:               return Localization.actionDescriptionGamble
-        case .query:                return Localization.actionDescriptionQuery
-        case .trade:                return Localization.actionDescriptionTrade
+        case .tryLuck:              return Strings.actionDescriptionTryLuck
+        case .fight:                return Strings.actionDescriptionFight
+        case .rest:                 return Strings.actionDescriptionRest
+        case .roll, .propertyRoll:  return Strings.actionDescriptionRoll
+        case .escape:               return Strings.actionDescriptionEscape
+        case .force:                return Strings.actionDescriptionForce
+        case .gamble:               return Strings.actionDescriptionGamble
+        case .query:                return Strings.actionDescriptionQuery
+        case .trade:                return Strings.actionDescriptionTrade
         }
     }
     

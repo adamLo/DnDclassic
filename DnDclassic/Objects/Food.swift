@@ -20,7 +20,7 @@ class Food: InventoryObject {
     
     init(amount: Int) {
         
-        super.init(type: .food, name: Localization.itemDescriptionFood)
+        super.init(type: .food, name: Strings.itemDescriptionFood)
         self.amount = amount
     }
     
@@ -30,7 +30,7 @@ class Food: InventoryObject {
     }
     
     override var description: String {
-        return String(format: Localization.itemDescriptionFormatFood, amount)
+        return String(format: Strings.itemDescriptionFormatFood, amount)
     }
     
     @discardableResult func eat() -> Bool {

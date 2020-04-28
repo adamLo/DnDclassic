@@ -20,7 +20,7 @@ class Money: InventoryObject {
     
     init(amount: Int) {
         
-        super.init(type: .money, name: String(format: Localization.itemDescriptionFormatMoney, amount))
+        super.init(type: .money, name: String(format: Strings.itemDescriptionFormatMoney, amount))
         self.amount = amount
     }
     
@@ -30,6 +30,6 @@ class Money: InventoryObject {
     }
     
     override var description: String {
-        return String(format: Localization.itemDescriptionFormatMoney, amount)
+        return String(format: Strings.itemDescriptionFormatMoney, amount)
     }
 }

@@ -22,7 +22,7 @@ class CharacterEditNameCell: UITableViewCell {
         
         selectionStyle = .none
         
-        nameTextField.placeholder = Localization.name
+        nameTextField.placeholder = Strings.name
     }
     
     func setup(name: String?) {

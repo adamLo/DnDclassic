@@ -21,7 +21,7 @@ class GambleAction: Action {
             opponentName = _opponent
         }
         else {
-            opponentName = Localization.opponent
+            opponentName = Strings.opponent
         }
         
         guard let _finishObject = json[JSONkeys.finish] as? JSON, let _finish = WayPoint(json: _finishObject) else {return nil}
