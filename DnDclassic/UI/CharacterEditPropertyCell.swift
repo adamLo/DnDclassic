@@ -23,7 +23,16 @@ class CharacterEditPropertyCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
         rollButton.setTitle(Strings.roll, for: .normal)
+        rollButton.setTitleColor(Colors.buttonTitleDefault, for: .normal)
+        rollButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .base)
+        
+        for label in [propertyNameLabel, propertyValueLabel] {
+            label?.textColor = Colors.textDefault
+            label?.font = UIFont.defaultFont(style: .regular, size: .base)
+        }
     }
 
     func setup(type: CharacterProperty, value: Int) {

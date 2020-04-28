@@ -95,7 +95,7 @@ struct LogItem: CustomStringConvertible {
         
         let formatter = DateFormatter()
         formatter.dateStyle = time.isToday ? .none : .short
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
         
         text = formatter.string(from: time) + " " + text
         if let _info = info?.nilIfEmpty {

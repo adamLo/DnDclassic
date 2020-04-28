@@ -18,7 +18,14 @@ class CharacterViewPropertyCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
+        
         selectionStyle = .none
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
+        for label in [nameLabel, valueLabel] {
+            label?.textColor = Colors.textDefault
+            label?.font = UIFont.defaultFont(style: .regular, size: .base)
+        }
     }
 
     func setup(character: Character, property: CharacterProperty) {

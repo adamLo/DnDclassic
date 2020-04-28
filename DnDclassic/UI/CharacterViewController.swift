@@ -39,7 +39,14 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
 
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        
         characterTableView.tableFooterView = UIView()
+        characterTableView.backgroundColor = UIColor.clear
     }
     
     // MARK: - Tableview

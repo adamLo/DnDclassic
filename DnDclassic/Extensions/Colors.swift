@@ -18,6 +18,8 @@ extension UIColor {
     
     static let midGray = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1.0)
     static let veryLightGray = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1.0)
+    
+    static let darkBlue = UIColor(red: 60/255, green: 60/255, blue: 120/255, alpha: 1.0)
 }
 
 struct Colors {
@@ -29,4 +31,6 @@ struct Colors {
     static let panelBackgroundSemiTrans = UIColor.semiTransparentWhite90
     static let panelBackgroundOpaque    = UIColor.white
     static let disabledItemBackground   = UIColor.midGray
+    static let textFieldPlaceholder     = UIColor.midGray
+    static let buttonTitleDefault       = UIColor.darkBlue
 }

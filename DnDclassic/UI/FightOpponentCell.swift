@@ -16,6 +16,21 @@ class FightOpponentCell: UITableViewCell {
     @IBOutlet var dexterityLabel: UILabel!    
 
     static let reuseId = "opponentCell"
+    
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        
+        selectionStyle = .gray
+        
+        nameLabel.font = UIFont.defaultFont(style: .medium, size: .base)
+        healthLabel.font = UIFont.defaultFont(style: .regular, size: .base)
+        dexterityLabel.font = UIFont.defaultFont(style: .regular, size: .base)
+        
+        for label in [nameLabel, healthLabel, dexterityLabel] {
+            label?.textColor = Colors.textDefault
+        }
+    }
 
     func setup(opponent: Opponent) {
         

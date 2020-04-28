@@ -10,7 +10,6 @@ import UIKit
 
 class CharacterEditPotionCell: UITableViewCell {
 
-    @IBOutlet weak var potionTitleLabel: UILabel!
     @IBOutlet weak var potionNameLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
@@ -23,12 +22,28 @@ class CharacterEditPotionCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        potionTitleLabel.text = Strings.potion
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
+        changeButton.setTitleColor(Colors.buttonTitleDefault, for: .normal)
+        changeButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .base)
+        
+        potionNameLabel.textColor = Colors.textDefault
+        potionNameLabel.font = UIFont.defaultFont(style: .regular, size: .base)        
     }
     
     func setup(type: CharacterProperty?) {
         
-        potionNameLabel.text = type?.rawValue ?? nil
+        if let _type = type {
+            switch _type {
+            case .dexterity: potionNameLabel.text = Strings.titlePotionDexterity
+            case .health: potionNameLabel.text = Strings.titlePotionHealth
+            case .luck: potionNameLabel.text = Strings.titlePotionLuck
+            }
+        }
+        else {
+            potionNameLabel.text = nil
+        }
+
         changeButton.setTitle(type == nil ? Strings.buttonTitleAdd : Strings.buttonTitleChange, for: .normal)
     }
 

@@ -82,7 +82,7 @@ class IntroViewController: UIViewController {
         }
         
         introTextView.textColor = Colors.textDefault
-        beginButton.setTitleColor(Colors.textDefault, for: .normal)
+        beginButton.setTitleColor(Colors.buttonTitleDefault, for: .normal)
     }
     
     // MARK: - UI manipulations
@@ -152,13 +152,13 @@ class IntroViewController: UIViewController {
                     _self.game = __game
                     GameData.shared.game = __game
                                         
-                    let player = Character(isPlayer: true, name: "Adam Test", dexterity: Character.generate(property: .dexterity), health: Character.generate(property: .health), luck: Character.generate(property: .luck), inventory: Character.startInventory)
-                    GameData.shared.player = player
-                    player.changed?()
-                    
-                    // FIXME: Remove in production!
-                    player.add(inventoryItem: Potion(type: .luck))
-                    player.add(inventoryItem: Money(amount: 50))
+//                    let player = Character(isPlayer: true, name: "Adam Test", dexterity: Character.generate(property: .dexterity), health: Character.generate(property: .health), luck: Character.generate(property: .luck), inventory: Character.startInventory)
+//                    GameData.shared.player = player
+//                    player.changed?()
+//                    
+//                    // FIXME: Remove in production!
+//                    player.add(inventoryItem: Potion(type: .luck))
+//                    player.add(inventoryItem: Money(amount: 50))
                     
                     _self.displayGame()
                 }

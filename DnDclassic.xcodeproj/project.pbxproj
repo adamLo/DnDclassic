@@ -364,6 +364,7 @@
 		1930153A2402BD4C00E7B815 /* DnDclassic */ = {
 			isa = PBXGroup;
 			children = (
+				1930154C2402BD5200E7B815 /* Info.plist */,
 				19D7184A24571408003484A5 /* Localization */,
 				19A85597240AB6D4007174C8 /* Extensions */,
 				19497D6E2405AE020072CFD0 /* UI */,
@@ -371,9 +372,7 @@
 				1930156E2402BD6B00E7B815 /* Objects */,
 				19A8559A240AC69F007174C8 /* Application */,
 				19D7185224585DAC003484A5 /* Assets */,
-				193015492402BD5200E7B815 /* LaunchScreen.storyboard */,
-				1930154C2402BD5200E7B815 /* Info.plist */,
-				193015442402BD4C00E7B815 /* DnDclassic.xcdatamodeld */,
+				19D7187A24589355003484A5 /* Persistence */,
 			);
 			path = DnDclassic;
 			sourceTree = "<group>";
@@ -467,10 +466,10 @@
 		19497D6E2405AE020072CFD0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19825C1B245315D300488525 /* Trade */,
 				19FC5407242FD11000988644 /* Log */,
 				19E193BA2426404700334B0F /* Fight */,
-				193015412402BD4C00E7B815 /* Main.storyboard */,
 				19497D782406AD370072CFD0 /* Character */,
 				19497D6F2405AE100072CFD0 /* Scene */,
 				19E193CA2427F6B300334B0F /* MainTabViewController.swift */,
@@ -554,6 +553,7 @@
 			children = (
 				1930153B2402BD4C00E7B815 /* AppDelegate.swift */,
 				19A8559B240AC6B6007174C8 /* GameData.swift */,
+				193015492402BD5200E7B815 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -619,6 +619,14 @@
 			name = Roboto;
 			path = DnDclassic/Resources/Roboto;
 			sourceTree = SOURCE_ROOT;
+		};
+		19D7187A24589355003484A5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				193015442402BD4C00E7B815 /* DnDclassic.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
 		};
 		19E193BA2426404700334B0F /* Fight */ = {
 			isa = PBXGroup;

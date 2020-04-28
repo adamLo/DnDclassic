@@ -18,7 +18,11 @@ class CharacterViewNameCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        nameLabel.font = UIFont.defaultFont(style: .medium, size: .large)
+        nameLabel.textColor = Colors.textDefault
+        
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
         selectionStyle = .none
     }
 

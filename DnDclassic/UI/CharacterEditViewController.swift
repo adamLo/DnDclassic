@@ -57,7 +57,8 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - UI customization
     
     private func setupUI() {
-                    
+
+        view.backgroundColor = Colors.defaultBackground
         setupNavigationBar()
         setupTableView()
     }
@@ -65,11 +66,17 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
     private func setupNavigationBar() {
         
         title = Strings.navigationTitleCharacterEdit
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTopuched(_:)))
+        
+        let item = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTopuched(_:)))
+        navigationItem.rightBarButtonItem = item
+        item.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.defaultFont(style: .medium, size: .large)], for: .normal)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.defaultFont(style: .medium, size: .large)]
     }
     
     private func setupTableView() {
         
+        characterTableView.backgroundColor = UIColor.clear
         characterTableView.tableFooterView = UIView()
     }
 
@@ -218,10 +225,12 @@ class CharacterEditViewController: UIViewController, UITableViewDelegate, UITabl
             reload()
         }))
         
-        alert.addAction(UIAlertAction(title: Strings.buttontTitleRemove, style: .destructive, handler: { (_) in
-            self.potion = nil
-            reload()
-        }))
+        if self.potion != nil {
+            alert.addAction(UIAlertAction(title: Strings.buttontTitleRemove, style: .destructive, handler: { (_) in
+                self.potion = nil
+                reload()
+            }))
+        }
         
         alert.addAction(UIAlertAction.cancelAction())
         

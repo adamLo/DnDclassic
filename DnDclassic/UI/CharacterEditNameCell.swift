@@ -22,7 +22,8 @@ class CharacterEditNameCell: UITableViewCell {
         
         selectionStyle = .none
         
-        nameTextField.placeholder = Strings.name
+        nameTextField.attributedPlaceholder = NSAttributedString(string: Strings.name, attributes: [NSAttributedString.Key.font: UIFont.defaultFont(style: .regular, size: .base), NSAttributedString.Key.foregroundColor: Colors.textFieldPlaceholder]) 
+        nameTextField.font = UIFont.defaultFont(style: .regular, size: .base)
     }
     
     func setup(name: String?) {

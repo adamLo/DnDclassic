@@ -25,7 +25,9 @@ class LogViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.defaultBackground
         logTableView.tableFooterView = UIView()
+        logTableView.backgroundColor = UIColor.clear
     }
     
     override func viewWillAppear(_ animated: Bool) {

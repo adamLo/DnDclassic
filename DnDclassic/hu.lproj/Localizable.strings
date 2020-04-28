@@ -243,7 +243,7 @@
 "Please set luck for your character!" = "Adj szerencsét a hősödnek!";
 
 /* Potion title */
-"Potion" = "Ital";
+"Potion" = "Varázsital";
 
 /* Potion name format */
 "Potion of %@ (rations: %d)" = "%1$@ itala (%2$d adag)";
@@ -309,7 +309,7 @@
 "Scene %d" = "%d. helyszín";
 
 /* Potion selection dialog message */
-"Select potion to help you in your journey" = "Válassz eg varázsitalt az útra";
+"Select potion to help you in your journey" = "Válassz egy varázsitalt az útra";
 
 /* Shield title */
 "Shield" = "Pajzs";

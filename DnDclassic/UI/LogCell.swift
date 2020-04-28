@@ -19,6 +19,11 @@ class LogCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
+        titleLabel.font = UIFont.defaultFont(style: .regular, size: .base)
+        titleLabel.textColor = Colors.textDefault
     }
 
     func setup(item: LogItem) {

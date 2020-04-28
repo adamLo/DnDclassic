@@ -18,6 +18,11 @@ class CharacterViewInventoryCell: UITableViewCell {
         
         super.awakeFromNib()
         
+        selectionStyle = .none
+        backgroundColor = Colors.panelBackgroundSemiTrans
+        
+        nameLabel.font = UIFont.defaultFont(style: .regular, size: .base)
+        nameLabel.textColor = Colors.textDefault
     }
 
     func setup(item: InventoryWrapper) {

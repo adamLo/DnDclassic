@@ -233,14 +233,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="38.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyV-iY-M5P">
-                                                    <rect key="frame" x="9.9999999999999929" y="8.6666666666666643" width="124.33333333333331" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-Lw-wMG">
-                                                    <rect key="frame" x="139.33333333333334" y="8.6666666666666643" width="50" height="21"/>
+                                                    <rect key="frame" x="10" y="8.6666666666666643" width="50" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -255,21 +249,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="7dz-Ko-qaU" secondAttribute="bottom" constant="4" id="1cC-fC-v9W"/>
-                                                <constraint firstItem="XyV-iY-M5P" firstAttribute="centerY" secondItem="xie-zx-jFo" secondAttribute="centerY" id="5yk-QT-3GC"/>
                                                 <constraint firstAttribute="trailing" secondItem="7dz-Ko-qaU" secondAttribute="trailing" constant="10" id="8iE-FA-Qdm"/>
-                                                <constraint firstItem="XyV-iY-M5P" firstAttribute="leading" secondItem="xie-zx-jFo" secondAttribute="leading" constant="10" id="9Qd-zY-TLp"/>
                                                 <constraint firstItem="7dz-Ko-qaU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UXK-Lw-wMG" secondAttribute="trailing" constant="5" id="IqZ-8p-uu8"/>
-                                                <constraint firstItem="UXK-Lw-wMG" firstAttribute="leading" secondItem="XyV-iY-M5P" secondAttribute="trailing" constant="5" id="Pqk-R4-lwz"/>
-                                                <constraint firstItem="XyV-iY-M5P" firstAttribute="width" secondItem="xie-zx-jFo" secondAttribute="width" multiplier="0.3" id="otI-Xn-zqu"/>
-                                                <constraint firstItem="UXK-Lw-wMG" firstAttribute="centerY" secondItem="XyV-iY-M5P" secondAttribute="centerY" id="pDK-DQ-Cg4"/>
+                                                <constraint firstItem="UXK-Lw-wMG" firstAttribute="leading" secondItem="xie-zx-jFo" secondAttribute="leading" constant="10" id="Shi-j8-WMt"/>
                                                 <constraint firstItem="7dz-Ko-qaU" firstAttribute="top" secondItem="xie-zx-jFo" secondAttribute="top" constant="4" id="qes-bZ-BV0"/>
                                                 <constraint firstItem="7dz-Ko-qaU" firstAttribute="width" relation="greaterThanOrEqual" secondItem="xie-zx-jFo" secondAttribute="width" multiplier="0.15" id="tL2-MY-paO"/>
+                                                <constraint firstItem="UXK-Lw-wMG" firstAttribute="centerY" secondItem="xie-zx-jFo" secondAttribute="centerY" id="zXY-cL-YsH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="changeButton" destination="7dz-Ko-qaU" id="Lob-7U-kRr"/>
                                             <outlet property="potionNameLabel" destination="UXK-Lw-wMG" id="FCD-wR-oRa"/>
-                                            <outlet property="potionTitleLabel" destination="XyV-iY-M5P" id="Tif-UK-lpt"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterInventoryCell" id="Mkq-2B-enD" customClass="CharacterEditInventoryItemCell" customModule="DnDclassic" customModuleProvider="target">

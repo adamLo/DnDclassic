@@ -99,7 +99,7 @@ class FightViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         drinkPotionButton.setTitle(Strings.buttonTitleDrinkPotion, for: .normal)
         drinkPotionButton.titleLabel?.font = UIFont.defaultFont(style: .medium, size: .large)
-        drinkPotionButton.setTitleColor(Colors.textDefault, for: .normal)
+        drinkPotionButton.setTitleColor(Colors.buttonTitleDefault, for: .normal)
         
         useLuckLabel.text = Strings.titleUseLuck
         useLuckSwitch.isOn = false
